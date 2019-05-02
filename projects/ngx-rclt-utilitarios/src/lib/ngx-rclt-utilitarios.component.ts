@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
     </p>
     <ngxrclt-cards></ngxrclt-cards>
   `,
-  styles: []
+  styles: ["./ngx-rclt-utilitarios.component.scss"]
 })
 export class NgxRcltUtilitariosComponent implements OnInit {
 
