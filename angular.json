@@ -130,6 +130,41 @@
           }
         }
       }
+    },
+    "NgxRcltUtilitarios": {
+      "root": "projects/ngx-rclt-utilitarios",
+      "sourceRoot": "projects/ngx-rclt-utilitarios/src",
+      "projectType": "library",
+      "prefix": "ngxrclt",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ngx-rclt-utilitarios/tsconfig.lib.json",
+            "project": "projects/ngx-rclt-utilitarios/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-rclt-utilitarios/src/test.ts",
+            "tsConfig": "projects/ngx-rclt-utilitarios/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-rclt-utilitarios/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ngx-rclt-utilitarios/tsconfig.lib.json",
+              "projects/ngx-rclt-utilitarios/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "renatoclt"
