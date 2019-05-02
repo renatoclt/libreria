@@ -7,7 +7,7 @@
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
-      "prefix": "clt",
+      "prefix": "rclt",
       "schematics": {},
       "architect": {
         "build": {
