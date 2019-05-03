@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NgxRcltUtilitariosComponent } from './ngx-rclt-utilitarios.component';
+import { CardsComponent } from './cards.component';
 
-describe('NgxRcltUtilitariosComponent', () => {
-  let component: NgxRcltUtilitariosComponent;
-  let fixture: ComponentFixture<NgxRcltUtilitariosComponent>;
+describe('CardsComponent', () => {
+  let component: CardsComponent;
+  let fixture: ComponentFixture<CardsComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NgxRcltUtilitariosComponent ]
+      declarations: [ CardsComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NgxRcltUtilitariosComponent);
+    fixture = TestBed.createComponent(CardsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

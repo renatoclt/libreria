@@ -23,6 +23,8 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/font-awesome/css/font-awesome.css",
               "src/styles.css"
             ],
             "scripts": [],
@@ -131,33 +133,38 @@
         }
       }
     },
-    "NgxRcltUtilitarios": {
-      "root": "projects/ngx-rclt-utilitarios",
-      "sourceRoot": "projects/ngx-rclt-utilitarios/src",
+    "ngx-utilitario-rclt": {
+      "root": "projects/ngx-utilitario-rclt",
+      "sourceRoot": "projects/ngx-utilitario-rclt/src",
       "projectType": "library",
-      "prefix": "ngxrclt",
+      "prefix": "ngx-utilitario",
+      "schematics": {
+        "@schematics/angular:component": {
+          "styleext": "scss"
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
           "options": {
-            "tsConfig": "projects/ngx-rclt-utilitarios/tsconfig.lib.json",
-            "project": "projects/ngx-rclt-utilitarios/ng-package.json"
+            "tsConfig": "projects/ngx-utilitario-rclt/tsconfig.lib.json",
+            "project": "projects/ngx-utilitario-rclt/ng-package.json"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/ngx-rclt-utilitarios/src/test.ts",
-            "tsConfig": "projects/ngx-rclt-utilitarios/tsconfig.spec.json",
-            "karmaConfig": "projects/ngx-rclt-utilitarios/karma.conf.js"
+            "main": "projects/ngx-utilitario-rclt/src/test.ts",
+            "tsConfig": "projects/ngx-utilitario-rclt/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-utilitario-rclt/karma.conf.js"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/ngx-rclt-utilitarios/tsconfig.lib.json",
-              "projects/ngx-rclt-utilitarios/tsconfig.spec.json"
+              "projects/ngx-utilitario-rclt/tsconfig.lib.json",
+              "projects/ngx-utilitario-rclt/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"

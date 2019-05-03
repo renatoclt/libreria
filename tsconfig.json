@@ -50,6 +50,26 @@
       ],
       "ngx-rclt-utilitarios/*": [
         "dist/ngx-rclt-utilitarios/*"
+      ],
+      "ngx-common": [
+        "dist/ngx-common",
+        "dist/ngx-common"
+      ],
+      "ngx-common/*": [
+        "dist/ngx-common/*",
+        "dist/ngx-common/*"
+      ],
+      "ngx-utilitarioclt": [
+        "dist/ngx-utilitarioclt"
+      ],
+      "ngx-utilitarioclt/*": [
+        "dist/ngx-utilitarioclt/*"
+      ],
+      "ngx-utilitario-rclt": [
+        "dist/ngx-utilitario-rclt"
+      ],
+      "ngx-utilitario-rclt/*": [
+        "dist/ngx-utilitario-rclt/*"
       ]
     }
   }

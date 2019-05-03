@@ -1,17 +1,22 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { NgxRcltUtilitariosModule  } from 'ngx-rclt-utilitarios';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { NgxUtilitarioRcltModule } from 'ngx-utilitario-rclt';
+import { CardsComponent } from './cards/cards.component'
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CardsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgxRcltUtilitariosModule
+    AngularFontAwesomeModule,
+    NgxUtilitarioRcltModule
   ],
   providers: [],
   bootstrap: [AppComponent]
