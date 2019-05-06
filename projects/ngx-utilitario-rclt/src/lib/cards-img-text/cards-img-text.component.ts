@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'ngx-utilitario-cards-img-text',
@@ -22,9 +22,12 @@ export class CardsImgTextComponent implements OnInit {
   @Input() classIcono:string = "col-1 align-middle";
   @Input() color:string = "#000";
   @Input() height:string = "6.5rem";
+  @Output() click:EventEmitter<any> = new EventEmitter();
   constructor() { }
   
   ngOnInit() {
   }
-  
+  clickCard($event){
+    this.click.emit($event);
+  }
 }

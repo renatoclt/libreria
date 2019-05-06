@@ -1,11 +1,12 @@
-import { Input, Component, SimpleChanges, OnInit, OnChanges, SimpleChange } from '@angular/core';
+import { Input, Component, SimpleChanges, OnInit, OnChanges, SimpleChange, Output } from '@angular/core';
+import { EventEmitter } from 'events';
 
 @Component({
   selector: 'rclt-cards',
   templateUrl: './cards.component.html',
   styleUrls: ['./cards.component.css']
 })
-export class CardsComponent implements OnInit, OnChanges {
+export class CardsComponent implements OnInit {
   
   @Input() titulo:string;
   @Input() subtitulo:string;
@@ -18,14 +19,14 @@ export class CardsComponent implements OnInit, OnChanges {
    * Enviar el tamaño de columnas y el tamaño del icono
    */
   @Input() classIcono:string = "w-20 fontSize2-5";
-  @Input() color:string = "#7a5449";
+  @Input() color:string = "#000";
+  @Output() click:EventEmitter = new EventEmitter();
   constructor() { }
   
   ngOnInit() {
   }
   
-  ngOnChanges(changes: SimpleChanges): void {
-    const name: SimpleChange = changes.name;
-    console.log(name)
+  clickCard($event){
+    this.click.emit($event);
   }
 }
