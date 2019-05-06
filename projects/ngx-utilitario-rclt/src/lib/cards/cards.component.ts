@@ -1,11 +1,11 @@
-import { Input, Component, SimpleChanges, OnInit, OnChanges, SimpleChange } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'rclt-cards',
+  selector: 'ngx-utilitario-cards',
   templateUrl: './cards.component.html',
   styleUrls: ['./cards.component.css']
 })
-export class CardsComponent implements OnInit, OnChanges {
+export class CardsComponent implements OnInit {
   
   @Input() titulo:string;
   @Input() subtitulo:string;
@@ -18,13 +18,11 @@ export class CardsComponent implements OnInit, OnChanges {
    * Enviar el tamaño de columnas y el tamaño del icono
    */
   @Input() classImagen:string = "w-20 fontSize40";
+  @Input() color:string = "#000";
+
   constructor() { }
   
   ngOnInit() {
   }
   
-  ngOnChanges(changes: SimpleChanges): void {
-    const name: SimpleChange = changes.name;
-    console.log(name)
-  }
 }

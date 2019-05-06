@@ -7,6 +7,7 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { CardsComponent } from './cards/cards.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material';
+import { CardsImgTextComponent } from './cards-img-text/cards-img-text.component';
 
 
 
@@ -14,7 +15,8 @@ import {MatButtonModule} from '@angular/material';
 @NgModule({
   declarations: [
     AppComponent,
-    CardsComponent
+    CardsComponent,
+    CardsImgTextComponent
   ],
   imports: [
     BrowserModule,

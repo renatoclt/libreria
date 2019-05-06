@@ -15,18 +15,19 @@
     font-weight: 700;
     text-transform: uppercase;
     color: #595959;
-    padding: 0.95rem 0 0 1.2rem;  
+    padding: 0.35rem 0 0 1.2rem;  
+    margin: 0;
 }
 .cardsSubtitulo{
     color: #b0b0b0;
     font-size: 1.5rem;
     font-weight: 600;
     line-height: 1.5;
-    padding: 0rem 0 0.95rem 1.2rem;  
+    padding: 0 0 0 1.2rem;  
 }
 
 .cardIcono{
-    padding: 1.55rem 0.5rem 0.5rem 0;
+    padding: 0.7rem 0.5rem 0.5rem 0;
 }
 
 .fontSize40{
