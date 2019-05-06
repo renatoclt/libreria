@@ -1,0 +1,54 @@
+.cards{
+    background: #fff;
+    box-shadow: rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    width: 100%;
+    float: left;
+}
+
+.cards:hover{
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.cardsImagen{
+    width: 100%;
+    object-fit: fill;
+    padding-left: 1.2rem;
+}
+
+.cardsTitulo{
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #595959;
+    padding: 0.35rem 0 0 1.2rem;  
+    margin: 0;
+}
+.cardsDescripcion{
+    color: #b0b0b0;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.5;
+    padding: 0 0 0 1.2rem;  
+}
+
+.cardsEtiqueta{
+    display: inline-block;
+    margin: 0 0 0 1.2rem;
+    padding: 0.25rem 0.5rem;
+    background-color: #ed2a21;
+    color: #fff;
+    font-size: 0.6rem;
+    text-transform: capitalize;
+    border-radius: 0.25rem;
+}
+.classIcono{
+    vertical-align: middle;
+}
+.cardIcono{
+    padding: 0.7rem 0.5rem 0.5rem 0;
+}
+
+.fontSize40{
+    font-size: 2.5rem;
+    padding-right: 0rem;
+}

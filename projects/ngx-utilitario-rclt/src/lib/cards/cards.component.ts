@@ -7,6 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class CardsComponent implements OnInit {
   
+   
   @Input() titulo:string;
   @Input() subtitulo:string;
   /**
@@ -17,12 +18,10 @@ export class CardsComponent implements OnInit {
   /**
    * Enviar el tamaño de columnas y el tamaño del icono
    */
-  @Input() classImagen:string = "w-20 fontSize40";
-  @Input() color:string = "#000";
-
+  @Input() classIcono:string = "w-20 fontSize2-5";
+  @Input() color:string = "#7a5449";
   constructor() { }
   
   ngOnInit() {
   }
-  
 }

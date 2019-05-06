@@ -1,3 +1,15 @@
-<p>
-  cards-img-text works!
-</p>
+<div class="row cards row-no-padding" [style.color]="color">
+    <div class="col-2 float-left">
+        <img class="cardsImagen" src={{imagen}} [style.height]="height" />
+    </div>
+    <div class="col-9">
+        <div [ngClass]="classTexto">
+            <h2 class="cardsTitulo" [style.color]="color">{{titulo}}</h2>
+            <h3 class="cardsDescripcion">{{descripcion}}</h3>
+            <h3 class="cardsEtiqueta">{{etiqueta}}</h3>
+        </div>
+    </div>
+    <div [ngClass]="classIcono">
+        <i class="{{icono}} float-right cardIcono"></i>
+    </div>
+</div>

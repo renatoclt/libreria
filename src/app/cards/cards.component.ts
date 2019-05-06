@@ -17,7 +17,7 @@ export class CardsComponent implements OnInit, OnChanges {
   /**
    * Enviar el tamaño de columnas y el tamaño del icono
    */
-  @Input() classImagen:string = "w-20 fontSize40";
+  @Input() classIcono:string = "w-20 fontSize2-5";
   @Input() color:string = "#7a5449";
   constructor() { }
   
