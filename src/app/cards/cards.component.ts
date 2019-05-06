@@ -9,8 +9,15 @@ export class CardsComponent implements OnInit, OnChanges {
   
   @Input() titulo:string;
   @Input() subtitulo:string;
-  @Input() classTexto:string = "col-8";
-  @Input() classImagen:string = "col-4";
+  /**
+   * recibe el icono a usar
+   */
+  @Input() icono:string = "fa fa-user";
+  @Input() classTexto:string = "w-80 float-left";
+  /**
+   * Enviar el tamaño de columnas y el tamaño del icono
+   */
+  @Input() classImagen:string = "w-20 fontSize40";
   constructor() { }
   
   ngOnInit() {

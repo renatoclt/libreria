@@ -8,12 +8,114 @@ $candy-app-warm: mat-palette($mat-red);
 $candy-app-theme: mat-light-theme($candy-app-primary,$candy-app-accent, $candy-app-warm);
 
 @include angular-material-theme($candy-app-theme);
+/**
+    la variable la podemos crear desde esta url http://mcg.mbitson.com/#!?mcgpalette0=%233f51b5
+*/
+$mat-establecimiento: (
+    50 : #e4f1fa,
+    100 : #baddf3,
+    200 : #8dc6eb,
+    300 : #5fafe3,
+    400 : #3c9ddd,
+    500 : #1a8cd7,
+    600 : #1784d3,
+    700 : #1379cd,
+    800 : #0f6fc7,
+    900 : #085cbe,
+    A100 : #e8f2ff,
+    A200 : #b5d4ff,
+    A400 : #82b6ff,
+    A700 : #69a7ff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$mat-inmuebles:(
+    50 : #fbe5f0,
+    100 : #f5bdd9,
+    200 : #ef92c0,
+    300 : #e966a7,
+    400 : #e44594,
+    500 : #df2481,
+    600 : #db2079,
+    700 : #d71b6e,
+    800 : #d21664,
+    900 : #ca0d51,
+    A100 : #fff6f9,
+    A200 : #ffc3d6,
+    A400 : #ff90b3,
+    A700 : #ff77a2,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$mat-eventos:(
+    50 : #f1f6e7,
+    100 : #dce8c3,
+    200 : #c4d89b,
+    300 : #acc873,
+    400 : #9bbd55,
+    500 : #89b137,
+    600 : #81aa31,
+    700 : #76a12a,
+    800 : #6c9823,
+    900 : #598816,
+    A100 : #e2ffbe,
+    A200 : #ccff8b,
+    A400 : #b5ff58,
+    A700 : #aaff3e,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #ffffff,
+        600 : #000000,
+        700 : #000000,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
 
 .tBusca-tema{
-    $tBusca-app-primary: mat-palette($mat-red);
-    $tBusca-app-accent: mat-palette($mat-yellow);
-    $tBusca-app-warm: mat-palette($mat-blue);
-    $tBusca-app-theme: mat-light-theme($tBusca-app-primary,$tBusca-app-accent, $tBusca-app-warm);
+    //DEFAULT, LIGTER, DARKER
+    $tBusca-app-primary: mat-palette($mat-establecimiento);
+    $tBusca-app-accent: mat-palette($mat-inmuebles);
+    $tBusca-app-warm: mat-palette($mat-eventos);
+    $tBusca-app-theme: mat-dark-theme($tBusca-app-primary,$tBusca-app-accent, $tBusca-app-warm);
 
     @include angular-material-theme($tBusca-app-theme);
 }

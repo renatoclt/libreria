@@ -1,9 +1,9 @@
-<div class="row">
+<div class="cards">
     <div [ngClass]="classTexto">
-        <h2>{{titulo}}</h2>
-        <h3>{{subtitulo}}</h3>
+        <h2 class="cardsTitulo">{{titulo}}</h2>
+        <h3 class="cardsSubtitulo">{{subtitulo}}</h3>
     </div>
     <div [ngClass]="classImagen">
-        <i class="fa fa-user" style="color: #7a5449;"></i>
+        <i class="{{icono}} float-right cardIcono" style="color: #7a5449;"></i>
     </div>
 </div>
