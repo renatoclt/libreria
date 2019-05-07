@@ -1,6 +1,6 @@
 {
   "name": "renatoclt",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -14,8 +14,8 @@
     "publish": "cd dist/ngx-utilitario-rclt && npm publish"
   },
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/renatoclt/libreria"
+    "type": "git",
+    "url": "https://github.com/renatoclt/libreria"
   },
   "dependencies": {
     "@angular/animations": "^7.2.14",
@@ -50,7 +50,9 @@
     "bootstrap": "^4.3.1",
     "codelyzer": "~4.5.0",
     "grunt-bump": "^0.8.0",
+    "grunt-bump-version": "^0.2.1",
     "grunt-contrib-jshint": "^2.1.0",
+    "grunt-version-bump": "^1.0.8",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~4.0.0",
