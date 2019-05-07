@@ -1,6 +1,6 @@
 {
   "name": "renatoclt",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build_lib": "ng build ngx-utilitario-rclt",
+    "build_lib": "grunt bump && ng build ngx-utilitario-rclt",
     "npm_pack": "cd dist/ngx-utilitario-rclt && npm pack",
     "package": "npm run build_lib && npm run npm_pack",
     "publish": "cd dist/ngx-utilitario-rclt && npm publish"
