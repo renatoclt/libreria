@@ -1,13 +1,17 @@
 {
   "name": "renatoclt",
-  "version": "0.0.0",
+  "version": "0.0.2",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "build_lib": "ng build ngx-utilitario-rclt",
+    "npm_pack": "cd dist/ngx-utilitario-rclt && npm pack",
+    "package": "npm run build_lib && npm run npm_pack",
+    "publish": "cd dist/ngx-utilitario-rclt && npm publish"
   },
   "dependencies": {
     "@angular/animations": "^7.2.14",
@@ -23,6 +27,8 @@
     "angular-font-awesome": "^3.1.2",
     "core-js": "^2.5.4",
     "font-awesome": "^4.7.0",
+    "grunt": "^1.0.4",
+    "grunt-contrib-uglify": "^4.0.1",
     "rxjs": "~6.3.3",
     "scss-bundle": "^2.5.1",
     "tslib": "^1.9.0",
@@ -39,6 +45,8 @@
     "@types/node": "~8.9.4",
     "bootstrap": "^4.3.1",
     "codelyzer": "~4.5.0",
+    "grunt-bump": "^0.8.0",
+    "grunt-contrib-jshint": "^2.1.0",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~4.0.0",
