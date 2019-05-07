@@ -1,6 +1,6 @@
 {
   "name": "renatoclt",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -12,6 +12,10 @@
     "npm_pack": "cd dist/ngx-utilitario-rclt && npm pack",
     "package": "npm run build_lib && npm run npm_pack",
     "publish": "cd dist/ngx-utilitario-rclt && npm publish"
+  },
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/renatoclt/libreria"
   },
   "dependencies": {
     "@angular/animations": "^7.2.14",
