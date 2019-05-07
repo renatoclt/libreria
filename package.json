@@ -8,10 +8,11 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
+    "red": "ng serve --host 192.168.1.60",
     "build_lib": "grunt bump && ng build ngx-utilitario-rclt",
     "npm_pack": "cd dist/ngx-utilitario-rclt && npm pack",
     "package": "npm run build_lib && npm run npm_pack",
-    "publish": "npm run build_lib && cd dist/ngx-utilitario-rclt && npm publish" 
+    "publish": "npm run build_lib && cd dist/ngx-utilitario-rclt && npm publish"
   },
   "repository": {
     "type": "git",

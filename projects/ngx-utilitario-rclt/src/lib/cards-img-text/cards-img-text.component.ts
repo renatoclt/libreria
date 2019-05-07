@@ -19,10 +19,11 @@ export class CardsImgTextComponent implements OnInit {
   /**
    * Enviar el tamaño de columnas y el tamaño del icono
    */
-  @Input() classIcono:string = "col-1 align-middle";
+  @Input() classIcono:string = "col-1 align-middle cardIcono";
   @Input() color:string = "#000";
   @Input() height:string = "6.5rem";
   @Output() click:EventEmitter<any> = new EventEmitter();
+
   constructor() { }
   
   ngOnInit() {
