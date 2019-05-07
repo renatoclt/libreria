@@ -6,7 +6,7 @@
         <div [ngClass]="classTexto">
             <h2 class="cardsTitulo" [style.color]="color">{{titulo}}</h2>
             <h3 class="cardsDescripcion">{{descripcion}}</h3>
-            <h3 class="cardsEtiqueta">{{etiqueta}}</h3>
+            <h3 class="cardsEtiqueta" [style.background]="color">{{etiqueta}}</h3>
         </div>
     </div>
     <div [ngClass]="classIcono">

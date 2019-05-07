@@ -8,6 +8,7 @@ import { CardsComponent } from './cards/cards.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material';
 import { CardsImgTextComponent } from './cards-img-text/cards-img-text.component';
+import { CardsImgTextTresDivComponent } from './cards-img-text-tres-div/cards-img-text-tres-div.component';
 
 
 
@@ -16,7 +17,8 @@ import { CardsImgTextComponent } from './cards-img-text/cards-img-text.component
   declarations: [
     AppComponent,
     CardsComponent,
-    CardsImgTextComponent
+    CardsImgTextComponent,
+    CardsImgTextTresDivComponent
   ],
   imports: [
     BrowserModule,
