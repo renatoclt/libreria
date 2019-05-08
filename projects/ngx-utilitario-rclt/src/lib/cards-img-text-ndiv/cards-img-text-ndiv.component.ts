@@ -6,6 +6,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./cards-img-text-ndiv.component.scss']
 })
 export class CardsImgTextNdivComponent implements OnInit {
+  
   @Input() titulo:string;
   @Input() descripcion:string ="afdasdf";
   @Input() etiqueta:string ="etiqueta";

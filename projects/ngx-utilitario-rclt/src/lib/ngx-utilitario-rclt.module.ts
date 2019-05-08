@@ -18,6 +18,7 @@ import { CardsImgTextNdivComponent } from './cards-img-text-ndiv/cards-img-text-
             CardsComponent,
             CardsImgTextComponent, 
             RepeatIconComponent,
+            CardsImgTextNdivComponent,
             /**
              * pipes
              *  */ 
