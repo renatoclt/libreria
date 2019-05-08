@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'rclt-repeat-icon',
@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RepeatIconComponent implements OnInit {
 
+  @Input() repetir:number = 5; 
+  @Input() activo:number = 0; 
+  @Input() icono:string = "fa fa-user"; 
+  @Input() color:string = "#000"; 
+  @Input() colorActivo:string = "#000"; 
   constructor() { }
-
   ngOnInit() {
   }
-
 }
