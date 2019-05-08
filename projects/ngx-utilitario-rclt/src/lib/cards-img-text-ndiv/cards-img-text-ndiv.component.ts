@@ -1,12 +1,11 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: 'rclt-cards-img-text-ndiv',
+  selector: 'ngx-utilitario-cards-img-text-ndiv',
   templateUrl: './cards-img-text-ndiv.component.html',
-  styleUrls: ['./cards-img-text-ndiv.component.css']
+  styleUrls: ['./cards-img-text-ndiv.component.scss']
 })
 export class CardsImgTextNdivComponent implements OnInit {
-
   @Input() titulo:string;
   @Input() descripcion:string ="afdasdf";
   @Input() etiqueta:string ="etiqueta";
