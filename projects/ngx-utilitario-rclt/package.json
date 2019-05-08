@@ -2,6 +2,12 @@
   "name": "ngx-utilitario-rclt",
   "version": "0.2.9",
   "author": "renato cohaila la torre",
+  "description": "Esta es una libreria que contiene los utilitarios que se pueden utilizar en diferentes proyectos.",
+  "keywords" :["Angular","Utilitario"],
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/renatoclt/libreria"
+  },
   "peerDependencies": {
     "@angular/common": "^7.2.0",
     "@angular/core": "^7.2.0"
