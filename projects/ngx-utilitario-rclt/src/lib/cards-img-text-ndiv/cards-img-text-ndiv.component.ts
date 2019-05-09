@@ -3,7 +3,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 @Component({
   selector: 'ngx-utilitario-cards-img-text-ndiv',
   templateUrl: './cards-img-text-ndiv.component.html',
-  styleUrls: ['./cards-img-text-ndiv.component.scss']
+  styleUrls: ['./cards-img-text-ndiv.component.scss','../styles/styles_custom.scss']
 })
 export class CardsImgTextNdivComponent implements OnInit {
   
