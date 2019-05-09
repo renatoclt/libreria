@@ -1,37 +1,43 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div class="jumbotron">
-    <h1 class="display-4">Hello, world!</h1>
-    <p class="lead">Estos son los componentes que tienene esta libreria.</p>
-    <p>Se usa bootsrap y fontawesome para estilo e iconos</p>
-    <p>Se tiene la clases row-no-padding elimina los padding de los costados a las columnas automaticamente </p>
+  <h1 class="display-4">Hello, world!</h1>
+  <p class="lead">Estos son los componentes que tienene esta libreria.</p>
+  <p>Se usa bootsrap y fontawesome para estilo e iconos</p>
+  <p>Se tiene la clases row-no-padding elimina los padding de los costados a las columnas automaticamente </p>
 </div>
 
 <div class="row">
   <rclt-cards class="col-2" titulo="Mi Perfil" subtitulo="Editar" color="#fd3212"></rclt-cards>
   <div class="col-10"></div>
-</div>  
+</div>
 <div class="row">
   <rclt-cards-img-text class="col-12" titulo="Mi Perfil" subtitulo="Editar" color="#fd3212"></rclt-cards-img-text>
-</div>  
+</div>
 <div class="row">
-  <rclt-cards-img-text-ndiv class="col-12" titulo="Mi Perfil" subtitulo="Editar" color="#fd3212" [contenido]="[1,1,1,'content']">
-    <rclt-repeat-icon class="col-12" activo=2 color="#9c9c9c" colorActivo="#f2c231" icono="fa fa-star"></rclt-repeat-icon>
+  <rclt-cards-img-text-ndiv class="col-12" titulo="Mi Perfil" subtitulo="Editar" color="#fd3212"
+    [contenido]="[1,1,1,'content']">
+    <rclt-repeat-icon class="col-12" activo=2 color="#9c9c9c" colorActivo="#f2c231" icono="fa fa-star">
+    </rclt-repeat-icon>
   </rclt-cards-img-text-ndiv>
-</div>  
+</div>
 <div class="row">
   <rclt-repeat-icon class="col-12" activo=2 color="#9c9c9c" colorActivo="#f2c231" icono="fa fa-star"></rclt-repeat-icon>
 </div>
+<div class="row">
+  <rclt-list-chat class="col-12"></rclt-list-chat>
+</div>
+
 
 <div class="jumbotron">
-    <h1>pipes</h1>
-    <h3>| numberToArray'</h3>
+  <h1>pipes</h1>
+  <h3>| numberToArray'</h3>
 </div>
 <ul>
-    <li>Method First Using PIPE</li>
-    <li *ngFor='let key of 5 | numberToArray'>
-      {{key}}
-    </li>
-  </ul>
+  <li>Method First Using PIPE</li>
+  <li *ngFor='let key of 5 | numberToArray'>
+    {{key}}
+  </li>
+</ul>
 <h3>Basic Buttons</h3>
 <div class="example-button-row">
   <button mat-button>Basic</button>

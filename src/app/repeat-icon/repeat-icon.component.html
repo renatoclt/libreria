@@ -1,2 +1,4 @@
-<i *ngFor="let item of activo | numberToArray" class="{{icono}}" [style.color]="colorActivo"></i>
-<i *ngFor="let item of (repetir - activo) | numberToArray" class="{{icono}}" [style.color]="color"></i>
+<ng-container class="repetirIcono">
+    <i *ngFor="let item of activo | numberToArray" class="{{icono}}" [style.color]="colorActivo"></i>
+    <i *ngFor="let item of (repetir - activo) | numberToArray" class="{{icono}}" [style.color]="color"></i>
+</ng-container>
