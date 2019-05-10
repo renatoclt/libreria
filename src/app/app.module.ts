@@ -13,6 +13,7 @@ import { RepeatIconComponent } from './repeat-icon/repeat-icon.component';
 import { NumberToArrayPipe } from './pipe/number-to-array.pipe';
 import { ChatComponent } from './chat/chat.component';
 import { ListChatComponent } from './chat/list-chat/list-chat.component';
+import { ModalComponent } from './modal/modal.component';
 
 
 
@@ -24,7 +25,7 @@ import { ListChatComponent } from './chat/list-chat/list-chat.component';
     CardsImgTextComponent,
     CardsImgTextNdivComponent,
     RepeatIconComponent,    
-    NumberToArrayPipe, ChatComponent, ListChatComponent
+    NumberToArrayPipe, ChatComponent, ListChatComponent, ModalComponent
   ],
   imports: [
     BrowserModule,
