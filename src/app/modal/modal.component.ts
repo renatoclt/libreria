@@ -1,6 +1,6 @@
-import { Component, OnInit, Input, ElementRef } from '@angular/core';
+import { Component, OnInit, Input, ElementRef, Renderer2, Inject } from '@angular/core';
 import { ModalService } from './modal.service';
-
+import { DOCUMENT } from '@angular/common';
 @Component({
   selector: 'rclt-modal',
   templateUrl: './modal.component.html',
@@ -11,7 +11,7 @@ export class ModalComponent implements OnInit {
   @Input() id: string;
   private element: any;
 
-  constructor(private modalService: ModalService, private el: ElementRef) {
+  constructor( @Inject(DOCUMENT) private document: Document, private modalService: ModalService, private el: ElementRef, private renderer: Renderer2) {
     this.element = el.nativeElement;
   }
 
@@ -46,14 +46,16 @@ export class ModalComponent implements OnInit {
   // open modal
   open(): void {
     this.element.style.display = 'block';
-    document.body.classList.add('ngx-utilitario-modal-open','aparecer');
+    this.renderer.addClass(this.document.body, 'ngx-utilitario-modal-open');
+    // this.renderer.setStyle(document.body, 'overflow','hidden');
     console.log('fasd')
   }
-
+  
   // close modal
   close(): void {
     this.element.style.display = 'none';
-    document.body.classList.remove('ngx-utilitario-modal-open');
+    this.renderer.removeClass(this.document.body, 'ngx-utilitario-modal-open' )
+    // this.renderer.setStyle(document.body, 'overflow', 'auto' )
   }
 
 }
