@@ -46,7 +46,7 @@ export class ModalComponent implements OnInit {
   // open modal
   open(): void {
     this.element.style.display = 'block';
-    document.body.classList.add('ngx-utilitario-modal-open');
+    document.body.classList.add('ngx-utilitario-modal-open','aparecer');
     console.log('fasd')
   }
 
