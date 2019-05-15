@@ -4,4 +4,5 @@ export interface IMensajeDetalle{
     nombre:string;
     mensaje:string;
     fechaHora:string;
+    notificacion:number;
 }

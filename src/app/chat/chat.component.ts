@@ -14,6 +14,7 @@ export class ChatComponent implements OnInit {
     nombre:'nombre',
     mensaje:'mensajes',
     fechaHora:'00:00',
+    notificacion:0
   }
   @Input() listaMensajes:IMensajeDetalle[] = [this.mensajeListaTem,this.mensajeListaTem];
   constructor() { }

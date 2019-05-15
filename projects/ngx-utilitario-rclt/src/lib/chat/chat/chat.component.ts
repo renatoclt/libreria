@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { IMensajeDetalle } from 'src/app/chat/iMensajeDetalle';
+import { IMensajeDetalle } from '../dto/imensaje-detalle';
 
 @Component({
   selector: 'ngx-utilitario-chat',
@@ -8,7 +8,7 @@ import { IMensajeDetalle } from 'src/app/chat/iMensajeDetalle';
 })
 export class ChatComponent implements OnInit {
 
-  @Input() listaMensajes:IMensajeDetalle[];
+  @Input() lista:IMensajeDetalle[] = [];
   constructor() { }
 
   ngOnInit() {

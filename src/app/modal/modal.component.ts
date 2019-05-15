@@ -1,10 +1,11 @@
-import { Component, OnInit, Input, ElementRef, Renderer2, Inject } from '@angular/core';
+import { Component, OnInit, Input, ElementRef, Renderer2, Inject, ViewEncapsulation } from '@angular/core';
 import { ModalService } from './modal.service';
 import { DOCUMENT } from '@angular/common';
 @Component({
   selector: 'rclt-modal',
   templateUrl: './modal.component.html',
-  styleUrls: ['./modal.component.css']
+  styleUrls: ['./modal.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class ModalComponent implements OnInit {
 
