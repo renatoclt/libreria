@@ -14,18 +14,28 @@ import { NumberToArrayPipe } from './pipe/number-to-array.pipe';
 import { ChatComponent } from './chat/chat.component';
 import { ListChatComponent } from './chat/list-chat/list-chat.component';
 import { ModalComponent } from './modal/modal.component';
+import { FormsModule } from './forms/forms.module';
 
 
 
 
 @NgModule({
   declarations: [
+    /**
+     * component
+     */
     AppComponent,
     CardsComponent,
     CardsImgTextComponent,
     CardsImgTextNdivComponent,
     RepeatIconComponent,    
-    NumberToArrayPipe, ChatComponent, ListChatComponent, ModalComponent
+    ChatComponent, 
+    ListChatComponent, 
+    ModalComponent,
+    /**
+     * pipes
+     */
+    NumberToArrayPipe 
   ],
   imports: [
     BrowserModule,
@@ -33,6 +43,7 @@ import { ModalComponent } from './modal/modal.component';
     MatButtonModule,
     AppRoutingModule,
     AngularFontAwesomeModule,
+    FormsModule
     // NgxUtilitarioRcltModule
   ],
   providers: [],
