@@ -1,0 +1,16 @@
+.ngx-utilitario-busqueda{
+    padding: 15px;
+    background: #ececec;
+    box-sizing: border-box;
+}
+.ngx-utilitario-busqueda-input{
+    background: #fff;
+    border-radius: 50px;
+    box-shadow: none;
+    border:none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 12px;
+}
+.ngx-utilitario-busqueda-input:focus{
+    outline:none;
+}

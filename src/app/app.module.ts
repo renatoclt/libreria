@@ -11,10 +11,9 @@ import { CardsImgTextComponent } from './cards-img-text/cards-img-text.component
 import { CardsImgTextNdivComponent } from './cards-img-text-ndiv/cards-img-text-ndiv.component';
 import { RepeatIconComponent } from './repeat-icon/repeat-icon.component';
 import { NumberToArrayPipe } from './pipe/number-to-array.pipe';
-import { ChatComponent } from './chat/chat.component';
-import { ListChatComponent } from './chat/list-chat/list-chat.component';
 import { ModalComponent } from './modal/modal.component';
 import { FormsModule } from './forms/forms.module';
+import { ChatModule } from './chat/chat.module';
 
 
 
@@ -29,13 +28,12 @@ import { FormsModule } from './forms/forms.module';
     CardsImgTextComponent,
     CardsImgTextNdivComponent,
     RepeatIconComponent,    
-    ChatComponent, 
-    ListChatComponent, 
     ModalComponent,
     /**
      * pipes
      */
-    NumberToArrayPipe 
+    NumberToArrayPipe,
+    
   ],
   imports: [
     BrowserModule,
@@ -43,6 +41,7 @@ import { FormsModule } from './forms/forms.module';
     MatButtonModule,
     AppRoutingModule,
     AngularFontAwesomeModule,
+    ChatModule,
     FormsModule
     // NgxUtilitarioRcltModule
   ],

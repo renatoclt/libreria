@@ -1,0 +1,10 @@
+.ngx-utilitario-chat-lista{
+    padding: 0.9rem; 
+}
+.ngx-utilitario-label-notificacion{
+    background-color:  #e7b723;
+    padding: 4px 8px;
+    color: #fff;
+    display: inline-block;
+    border-radius: 0.6rem;
+}

@@ -1,0 +1,21 @@
+<div class="content ngx-utilitario-chat-lista">
+  <div class="row">
+    <div class="col-2"><img class="img-fluid rounded-circle" src={{detalle.img}} /></div>
+    <div class="col-8">
+      <div class="content">
+        {{detalle.nombre}}
+      </div>
+      <div class="content">
+        {{detalle.mensaje}}
+      </div>
+    </div>
+    <div class="col-2 float-right text-right">
+      <div class="content">
+        {{detalle.fechaHora}}
+      </div>
+      <div *ngIf="notificacion>0" class="content ngx-utilitario-label-notificacion">
+        {{detalle.notificacion}}
+      </div>
+    </div>
+  </div>
+</div>
