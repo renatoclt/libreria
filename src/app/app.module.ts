@@ -13,7 +13,7 @@ import { RepeatIconComponent } from './repeat-icon/repeat-icon.component';
 import { NumberToArrayPipe } from './pipe/number-to-array.pipe';
 import { ModalComponent } from './modal/modal.component';
 import { FormsModule } from './forms/forms.module';
-import { ChatModule } from './chat/chat.module';
+import { NgxUtilitarioChatModule } from './chat/ngx-utilitario-rclt-chat.module';
 
 
 
@@ -41,8 +41,8 @@ import { ChatModule } from './chat/chat.module';
     MatButtonModule,
     AppRoutingModule,
     AngularFontAwesomeModule,
-    ChatModule,
-    FormsModule
+    FormsModule,
+    NgxUtilitarioChatModule
     // NgxUtilitarioRcltModule
   ],
   providers: [],

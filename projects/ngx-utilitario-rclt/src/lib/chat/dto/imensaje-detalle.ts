@@ -1,4 +1,4 @@
-import { EstadoChat } from './estado';
+import { EstadoChat } from './eestado-chat';
 
 export interface IMensajeDetalle {
     id:string;

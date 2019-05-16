@@ -11,7 +11,7 @@ export * from './lib/chat/ngx-utilitario-rclt-chat.module';
  * 
  * enum
  */
-export * from './lib/chat/dto/estado';
+export * from './lib/chat/dto/eestado-chat';
 //component
 
 // export {CardsComponent} from './lib/cards/cards.component'

@@ -1,15 +1,14 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { IMensajeDetalle } from '../iMensajeDetalle';
+import { IMensajeDetalle } from '../../dto/imensaje-detalle';
 
 @Component({
-  selector: 'rclt-chat-lista',
+  selector: 'ngx-utilitario-chat-lista',
   templateUrl: './chat-lista.component.html',
-  styleUrls: ['./chat-lista.component.css']
+  styleUrls: ['./chat-lista.component.scss']
 })
 export class ChatListaComponent implements OnInit {
 
-  @Input() detalle:IMensajeDetalle;
-  
+  @Input() lista:IMensajeDetalle[] = [];
   constructor() { }
 
   ngOnInit() {

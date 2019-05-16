@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'rclt-chat-busqueda',
+  selector: 'ngx-utilitario-chat-busqueda',
   templateUrl: './chat-busqueda.component.html',
-  styleUrls: ['./chat-busqueda.component.css']
+  styleUrls: ['./chat-busqueda.component.scss']
 })
 export class ChatBusquedaComponent implements OnInit {
 
