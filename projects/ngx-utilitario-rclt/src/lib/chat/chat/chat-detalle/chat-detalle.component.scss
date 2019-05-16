@@ -1,13 +1,23 @@
 .ngx-utilitario-chat-detalle{
     padding: 0.9rem; 
 }
+
+.ngx-utilitario-fecha-not-chat{
+    padding: 0px;
+}
+
 .ngx-utilitario-label-notificacion{
     background-color:  #e7b723;
     padding: 4px 8px;
     color: #fff;
     display: inline-block;
-    border-radius: 0.6rem;
+    border-radius: 0.6rem;   
 }
+
+.ngx-utilitario-fecha-chat{
+    font-size: 0.7rem;
+}
+
 .estadoConectado{
     background: #22af47;
     border: 1px solid #fff;
