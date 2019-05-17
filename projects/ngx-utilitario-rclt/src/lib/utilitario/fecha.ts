@@ -14,16 +14,12 @@ export class Fecha {
      * @param fecha1 
      * @param fecha2 
      */
-    compararFechas(fecha1: string, fecha2?: string): boolean {
-        
-        let fec1: Moment, fec2: Moment;
+    compararFechas(fecha1: Date, fecha2?: Date): boolean {
+        let fec1 = moment(fecha1);
         if (fecha2 === undefined) {
-            fec2 = moment(new Date());
-        } else {
-            fec2 = moment(fecha2);
-
+            fecha2 = new Date();
         }
-        fec1 = moment(fecha1);
+        let fec2 = moment(fecha2);
         if (fec1.startOf('day').isSame(fec2.startOf('day'))) {
             console.log(fec1.startOf('day').isSame(fec2.startOf('day')))
             return true;

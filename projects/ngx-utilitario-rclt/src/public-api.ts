@@ -12,6 +12,16 @@ export * from './lib/chat/ngx-utilitario-rclt-chat.module';
  * utilitario
  */
 export * from './lib/utilitario/fecha';
+
+/**
+ * 
+ * Enum
+ */
+
+ export * from './lib/chat/dto/eestado-chat';
+ export * from './lib/chat/dto/eestado-mensaje';
+ export * from './lib/chat/dto/etipo-mensaje';
+
 //component
 
 // export {CardsComponent} from './lib/cards/cards.component'

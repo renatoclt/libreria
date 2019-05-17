@@ -12,6 +12,7 @@ import { EEstadoMensaje } from '../../dto/eestado-mensaje';
 })
 export class ChatConversacionComponent implements OnInit {
 
+  
   @Input() conversacion: IChatConversacion = {
     id: '',
     img: '',
@@ -30,9 +31,18 @@ export class ChatConversacionComponent implements OnInit {
 
   lineaDia(fecha) {
     let tem = this.fechaAnterior;
+    let tDate:Date;
     this.fechaAnterior = fecha;
+    if(tem === undefined){
+      tDate = new Date(fecha);
+      tDate.setDate(tDate.getDate()-1);
+    }
+    else{
+      tDate = new Date();
+    }
+    
     console.log('envio', fecha, tem)
-    return !this.fecha.compararFechas(fecha, tem);
+    return !this.fecha.compararFechas(new Date(fecha), tDate);
   }
 
   diferenciaDias(fecha) {
