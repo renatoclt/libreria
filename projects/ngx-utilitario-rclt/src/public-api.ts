@@ -9,9 +9,9 @@ export * from './lib/chat/ngx-utilitario-rclt-chat.module';
 
 /**
  * 
- * enum
+ * utilitario
  */
-export * from './lib/chat/dto/eestado-chat';
+export * from './lib/utilitario/fecha';
 //component
 
 // export {CardsComponent} from './lib/cards/cards.component'

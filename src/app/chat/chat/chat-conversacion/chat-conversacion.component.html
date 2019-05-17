@@ -1,29 +1,45 @@
 <div class="col-12">
   <div class="row">
     <div class="col-2 img-fluid">
-      <img class="img-fluid rounded-circle" src="imagen" />
+      <img class="img-fluid rounded-circle" src="{{conversacion.img}}" />
     </div>
     <div class="col-9">
       <div class="row">
         <div class="col-12">
-          nombre
+          {{conversacion.nombre}}
         </div>
       </div>
       <div class="row">
-        <div class="col-12">conectado</div>
+        <div class="col-12">{{conversacion.estado}}</div>
       </div>
     </div>
-    <div class="col-1">icono</div>
+    <div class="col-1"></div>
   </div>
 </div>
-<div class="col-12">
-  <div class="row">
-    <div class="float-left text-left">mensaje</div>
-  </div>
-  <div class="row">
-    <div class="float-right text-right">mensaje</div>
-  </div>
-  <div class="row">
-    <div class="float-right text-right">mensaje</div>
+<div class="row">
+  <div class="col-12" *ngFor="let item of conversacion.mensajes">
+    <div class="row" *ngIf="lineaDia(item.fecha)">
+      <div class="col-12 ngx-utilitario-chat-linea">
+        <span class="ngx-utilitario-chat-linea-span">
+          {{diferenciaDias(item.fecha)}}
+        </span>
+      </div>
+    </div>
+    <div [ngClass]="escogerEstilo(item.tipoMensaje)">
+      <div>{{item.mensaje}}</div>
+      <div>{{item.hora}}
+        <span *ngIf="estadoMensajeEnviado(item.estadoMensaje, item.tipoMensaje)" class="ngx-utilitario-msj-enviado">
+          <i class="fa fa-check"></i>
+        </span>
+        <span *ngIf="estadoMensajeRecibido(item.estadoMensaje, item.tipoMensaje)" class="ngx-utilitario-msj-recibido">
+          <i class="fa fa-check"></i>
+          <i class="fa fa-check"></i>
+        </span>
+        <span *ngIf="estadoMensajeLeido(item.estadoMensaje, item.tipoMensaje)" class="ngx-utilitario-msj-leido">
+          <i class="fa fa-check"></i>
+          <i class="fa fa-check"></i>
+        </span>
+      </div>
+    </div>
   </div>
 </div>

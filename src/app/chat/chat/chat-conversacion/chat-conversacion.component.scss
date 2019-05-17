@@ -1,0 +1,40 @@
+.ngx-utilitario-chat-linea {
+    display: block;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap; 
+}
+
+.ngx-utilitario-chat-linea > span {
+    position: relative;
+    display: inline-block;
+}
+
+.ngx-utilitario-chat-linea > span:before,
+.ngx-utilitario-chat-linea > span:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 40rem;
+    height: 0.08rem;
+    background: #9e9e9e;
+}
+
+.ngx-utilitario-chat-linea > span:before {
+    right: 100%;
+    margin-right: 15px;
+}
+
+.ngx-utilitario-chat-linea > span:after {
+    left: 100%;
+    margin-left: 15px;
+}
+
+
+.ngx-utilitario-msj-enviado{
+    
+}
+.ngx-utilitario-msj-recibido{
+}
+.ngx-utilitario-msj-leido{
+}

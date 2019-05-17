@@ -1,4 +1,4 @@
-import { EstadoChat } from './eestado-chat';
+import { EEstadoChat } from './eestado-chat';
 
 export interface IMensajeDetalle {
     id:string;
@@ -7,5 +7,5 @@ export interface IMensajeDetalle {
     mensaje:string;
     fechaHora:string;
     notificacion:number;
-    estado:EstadoChat;
+    estado:EEstadoChat;
 }

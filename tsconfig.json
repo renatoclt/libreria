@@ -66,10 +66,10 @@
         "dist/ngx-utilitarioclt/*"
       ],
       "ngx-utilitario-rclt": [
-        "dist/ngx-utilitario-rclt"
+        "dist/npm_pack"
       ],
       "ngx-utilitario-rclt/*": [
-        "dist/ngx-utilitario-rclt/*"
+        "dist/npm_pack/*"
       ]
     }
   }

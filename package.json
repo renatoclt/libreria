@@ -13,6 +13,7 @@
     "npm_pack": "cd dist/ngx-utilitario-rclt && npm pack",
     "package": "npm run build_lib && npm run npm_pack",
     "publish": "npm run build_lib && cd dist/ngx-utilitario-rclt && npm publish",
+    "publish_tgz": "npm run npm_pack && npm publish ./dist/ngx-utilitario-rclt/ngx-utilitario-0.3.29.tgz",
     "packagr": "ng-packagr -p ng-package.json"
   },
   "repository": {
@@ -36,6 +37,7 @@
     "font-awesome": "^4.7.0",
     "grunt": "^1.0.4",
     "grunt-contrib-uglify": "^4.0.1",
+    "moment": "^2.24.0",
     "rxjs": "~6.3.3",
     "scss-bundle": "^2.5.1",
     "tslib": "^1.9.0",
@@ -69,6 +71,7 @@
     "tsickle": ">=0.34.0",
     "tslib": "^1.9.0",
     "tslint": "~5.11.0",
-    "typescript": "~3.2.2"
+    "typescript": "~3.2.2",
+    "moment": "^2.24.0"
   }
 }
