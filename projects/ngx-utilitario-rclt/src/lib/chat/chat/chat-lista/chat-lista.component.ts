@@ -16,7 +16,7 @@ export class ChatListaComponent implements OnInit {
   ngOnInit() {
   }
 
-  click(detalle:IMensajeDetalle){
+  click(detalle:any){
     this.clickLista.emit(detalle);
   }
 }

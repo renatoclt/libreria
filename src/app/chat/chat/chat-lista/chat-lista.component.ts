@@ -8,6 +8,7 @@ import { IMensajeDetalle } from '../../dto/imensaje-detalle';
 })
 export class ChatListaComponent implements OnInit {
 
+  
   @Input() lista:IMensajeDetalle[] = [];
   @Output() clickLista:EventEmitter<any> =  new EventEmitter();
   constructor() { }

@@ -8,7 +8,9 @@ import { IChatConversacion } from '../dto/ichat-conversacion';
   styleUrls: ['./chat.component.scss']
 })
 export class ChatComponent implements OnInit {
+  
   @Input() lista:IMensajeDetalle[] = [];
+  @Input() conversacion: IChatConversacion
   @Output() clickLista:EventEmitter<any> =  new EventEmitter();
 
   constructor() { }
@@ -16,7 +18,7 @@ export class ChatComponent implements OnInit {
   ngOnInit() {
   }
 
-  clickListaDetalle(detalle:IMensajeDetalle){
+  clickListaDetalle(detalle:any){
     this.clickLista.emit(detalle);
   }
 
