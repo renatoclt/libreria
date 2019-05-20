@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { IMensajeDetalle } from '../../dto/imensaje-detalle';
+import { EEstadoChat } from '../../dto/eestado-chat';
 
 @Component({
   selector: 'ngx-utilitario-chat-lista',
@@ -8,7 +9,6 @@ import { IMensajeDetalle } from '../../dto/imensaje-detalle';
 })
 export class ChatListaComponent implements OnInit {
 
-  
   @Input() lista:IMensajeDetalle[] = [];
   @Output() clickLista:EventEmitter<any> =  new EventEmitter();
   constructor() { }

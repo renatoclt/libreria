@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { IMensajeDetalle } from '../../dto/imensaje-detalle';
+import { IChatConversacion } from '../../dto/ichat-conversacion';
 
 @Component({
   selector: 'ngx-utilitario-chat-detalle',
@@ -16,6 +17,15 @@ export class ChatDetalleComponent implements OnInit {
   }
   click(){
     this.clickDetalle.emit(this.detalle);
+  }
+  ultimoMensaje(mensajes: IChatConversacionDetalle[]){
+    if(mensajes.length > 0){
+      if(mensajes[mensajes.length-1].img === null)
+        return mensajes[mensajes.length - 1].mensaje ;
+      else  
+        return 'Foto'
+    }
+    return '';
   }
 
 }

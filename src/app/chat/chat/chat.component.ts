@@ -1,6 +1,10 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { IMensajeDetalle } from '../dto/imensaje-detalle';
 import { IChatConversacion } from 'ngx-utilitario-rclt/lib/chat/dto/ichat-conversacion';
+import { EEstadoChat } from '../dto/eestado-chat';
+import { IChatConversacionDetalle } from 'ngx-utilitario-rclt/lib/chat/dto/ichat-conversacion-detalle';
+import { EEstadoMensaje } from '../dto/eestado-mensaje';
+import { ETipoMensaje } from '../dto/etipo-mensaje';
 
 @Component({
   selector: 'ngx-utilitario-chat',
@@ -9,8 +13,51 @@ import { IChatConversacion } from 'ngx-utilitario-rclt/lib/chat/dto/ichat-conver
 })
 export class ChatComponent implements OnInit {
 
-  @Input() lista:IMensajeDetalle[] = [];
-  @Input() conversacion: IChatConversacion
+  conversacion1:IChatConversacionDetalle = {
+    estadoMensaje: EEstadoMensaje.enviado,
+    fecha: 'may. 18, 19',
+    hora:'13:30',
+    img:null,
+    mensaje: 'fas',
+    tipoMensaje: ETipoMensaje.enviado
+  };
+
+  conversacion2:IChatConversacionDetalle = {
+    estadoMensaje: EEstadoMensaje.enviado,
+    fecha: 'may. 18, 19',
+    hora:'13:30',
+    img:null,
+    mensaje: 'fas',
+    tipoMensaje: ETipoMensaje.enviado
+  };
+
+  detalle:IMensajeDetalle = {
+    fechaHora : '11:30',
+    estado : EEstadoChat.conectado,
+    id: '1',
+    img: 'fd',
+    mensaje: [this.conversacion1],
+    nombre: 're1',
+    notificacion: 2
+  }
+
+  detalle2:IMensajeDetalle = {
+    fechaHora : '11:30',
+    estado : EEstadoChat.conectado,
+    id: '1',
+    img: 'fd',
+    mensaje: [],
+    nombre: 'r2',
+    notificacion: 2
+  }
+  @Input() lista:IMensajeDetalle[] = [ this.detalle, this.detalle2 ];
+  @Input() conversacion: IChatConversacion = {
+    id: '',
+    img: '',
+    nombre: '',
+    estado: null,
+    mensajes: []
+  };
   @Output() clickLista:EventEmitter<any> =  new EventEmitter();
 
   constructor() { }
@@ -20,6 +67,16 @@ export class ChatComponent implements OnInit {
 
   clickListaDetalle(detalle:any){
     this.clickLista.emit(detalle);
+    this.cambiarConversacion(detalle);
+    console.log(detalle)
+  }
+
+  cambiarConversacion(detalle:IMensajeDetalle){
+    this.conversacion.estado = detalle.estado;
+    this.conversacion.nombre = detalle.nombre;
+    this.conversacion.id = detalle.id;
+    this.conversacion.mensajes = [];
+    this.conversacion.img = detalle.img;
   }
 
 }
