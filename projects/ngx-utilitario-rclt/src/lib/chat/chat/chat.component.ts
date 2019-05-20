@@ -28,7 +28,7 @@ export class ChatComponent implements OnInit {
     this.conversacion.estado = detalle.estado;
     this.conversacion.nombre = detalle.nombre;
     this.conversacion.id = detalle.id;
-    this.conversacion.mensajes = [];
+    this.conversacion.mensajes = detalle.mensaje;
     this.conversacion.img = detalle.img;
   }
 

@@ -6,7 +6,6 @@ export interface IMensajeDetalle {
     img:string ;
     nombre:string;
     mensaje:IChatConversacionDetalle[];
-    fechaHora:string;
     notificacion:number;
     estado:EEstadoChat;
 }

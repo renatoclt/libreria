@@ -21,7 +21,6 @@ export class Fecha {
         }
         let fec2 = moment(fecha2);
         if (fec1.startOf('day').isSame(fec2.startOf('day'))) {
-            console.log(fec1.startOf('day').isSame(fec2.startOf('day')))
             return true;
         }
         return false;

@@ -1,10 +1,10 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { IMensajeDetalle } from '../dto/imensaje-detalle';
-import { IChatConversacion } from 'ngx-utilitario-rclt/lib/chat/dto/ichat-conversacion';
 import { EEstadoChat } from '../dto/eestado-chat';
-import { IChatConversacionDetalle } from 'ngx-utilitario-rclt/lib/chat/dto/ichat-conversacion-detalle';
 import { EEstadoMensaje } from '../dto/eestado-mensaje';
 import { ETipoMensaje } from '../dto/etipo-mensaje';
+import { IChatConversacionDetalle } from '../dto/ichat-conversacion-detalle';
+import { IChatConversacion } from '../dto/ichat-conversacion';
 
 @Component({
   selector: 'ngx-utilitario-chat',
@@ -32,7 +32,6 @@ export class ChatComponent implements OnInit {
   };
 
   detalle:IMensajeDetalle = {
-    fechaHora : '11:30',
     estado : EEstadoChat.conectado,
     id: '1',
     img: 'fd',
@@ -42,7 +41,6 @@ export class ChatComponent implements OnInit {
   }
 
   detalle2:IMensajeDetalle = {
-    fechaHora : '11:30',
     estado : EEstadoChat.conectado,
     id: '1',
     img: 'fd',
@@ -75,7 +73,7 @@ export class ChatComponent implements OnInit {
     this.conversacion.estado = detalle.estado;
     this.conversacion.nombre = detalle.nombre;
     this.conversacion.id = detalle.id;
-    this.conversacion.mensajes = [];
+    this.conversacion.mensajes = detalle.mensaje;
     this.conversacion.img = detalle.img;
   }
 

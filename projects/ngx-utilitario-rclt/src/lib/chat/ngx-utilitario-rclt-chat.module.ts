@@ -5,9 +5,10 @@ import { ChatBusquedaComponent } from './chat/chat-busqueda/chat-busqueda.compon
 import { ChatListaComponent } from './chat/chat-lista/chat-lista.component';
 import { ChatDetalleComponent } from './chat/chat-detalle/chat-detalle.component';
 import { ChatConversacionComponent } from './chat/chat-conversacion/chat-conversacion.component';
+import { ChatDetalleAgregarComponent } from './chat/chat-detalle-agregar/chat-detalle-agregar.component';
 
 @NgModule({
-  declarations: [ChatComponent, ChatBusquedaComponent, ChatListaComponent, ChatDetalleComponent, ChatConversacionComponent ],
+  declarations: [ChatComponent, ChatBusquedaComponent, ChatListaComponent, ChatDetalleComponent, ChatConversacionComponent, ChatDetalleAgregarComponent ],
   imports: [
     CommonModule
   ],
