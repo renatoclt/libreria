@@ -56,6 +56,7 @@ export class ChatComponent implements OnInit {
     estado: null,
     mensajes: []
   };
+  @Output() nuevoMensaje:EventEmitter<any> = new EventEmitter();
   @Output() clickLista:EventEmitter<any> =  new EventEmitter();
 
   constructor() { }
@@ -75,6 +76,10 @@ export class ChatComponent implements OnInit {
     this.conversacion.id = detalle.id;
     this.conversacion.mensajes = detalle.mensaje;
     this.conversacion.img = detalle.img;
+  }
+
+  enviarMensaje(mensaje){
+    this.nuevoMensaje.emit(mensaje);
   }
 
 }

@@ -1,3 +1,4 @@
-<p>
-  chat-detalle-agregar works!
-</p>
+<form [formGroup]="mensajeForm">
+  <input formControlName="mensaje">
+</form>
+<button (click)="enviarMensaje()">enviar</button>
