@@ -13,36 +13,12 @@ import { EEstadoMensaje } from '../../dto/eestado-mensaje';
 })
 export class ChatConversacionComponent implements OnInit {
 
-  mensaje: IChatConversacionDetalle = {
-    img: null,
-    mensaje: 'mensaje',
-    fecha: 'may. 15, 19',
-    hora: '13:15',
-    tipoMensaje: ETipoMensaje.enviado,
-    estadoMensaje: EEstadoMensaje.enviado
-  }
-  mensaje2: IChatConversacionDetalle = {
-    img: null,
-    mensaje: 'mensaje',
-    fecha: 'may. 16, 19',
-    hora: '13:15',
-    tipoMensaje: ETipoMensaje.recibido,
-    estadoMensaje: EEstadoMensaje.enviado
-  }
-  mensaje3: IChatConversacionDetalle = {
-    img: null,
-    mensaje: 'mensaje',
-    fecha: 'may. 19, 19',
-    hora: '13:15',
-    tipoMensaje: ETipoMensaje.recibido,
-    estadoMensaje: EEstadoMensaje.enviado
-  }
   @Input() conversacion: IChatConversacion = {
     id: '',
     img: '',
     nombre: '',
     estado: null,
-    mensajes: [this.mensaje, this.mensaje2, this.mensaje3]
+    mensajes: []
   };
   fecha: Fecha = undefined;
   constructor() {

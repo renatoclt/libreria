@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { IMensajeDetalle } from '../../dto/imensaje-detalle';
 
 @Component({
@@ -9,9 +9,13 @@ import { IMensajeDetalle } from '../../dto/imensaje-detalle';
 export class ChatDetalleComponent implements OnInit {
 
   @Input() detalle:IMensajeDetalle;
+  @Output() clickDetalle:EventEmitter<any> =  new EventEmitter();
   constructor() { }
 
   ngOnInit() {
+  }
+  click(){
+    this.clickDetalle.emit(this.detalle);
   }
 
 }
