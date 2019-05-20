@@ -20,37 +20,29 @@ export class ChatConversacionComponent implements OnInit {
     estado: null,
     mensajes: []
   };
-  fecha: Fecha;
-  fechaAnterior: string;
-  
+  fecha: Fecha = undefined;
   constructor() {
+    this.fecha = new Fecha();
   }
 
   ngOnInit() {
   }
-
-  lineaDia(fecha) {
-    let tem = this.fechaAnterior;
-    let tDate:Date;
-    this.fechaAnterior = fecha;
-    if(tem === undefined){
+  lineaDia(fecha,index) {
+    let tDate: Date;
+    if (index === 0) {
       tDate = new Date(fecha);
-      tDate.setDate(tDate.getDate()-1);
+      tDate.setDate(tDate.getDate() - 1);
     }
-    else{
-      tDate = new Date();
+    else {
+      tDate = new Date(this.conversacion.mensajes[index -1].fecha);
     }
-    
-    console.log('envio', fecha, tem)
     return !this.fecha.compararFechas(new Date(fecha), tDate);
   }
-
   diferenciaDias(fecha) {
     return this.fecha.textoDiferenciaDias(fecha);
   }
-
   escogerEstilo(tipoMensaje) {
-    if(tipoMensaje === ETipoMensaje.enviado){
+    if (tipoMensaje === ETipoMensaje.enviado) {
       return "float-right";
     }
     return "float-left";

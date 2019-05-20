@@ -13,12 +13,28 @@ import { EEstadoMensaje } from '../../dto/eestado-mensaje';
 })
 export class ChatConversacionComponent implements OnInit {
 
-  mensaje:IChatConversacionDetalle = {
+  mensaje: IChatConversacionDetalle = {
+    img: null,
+    mensaje: 'mensaje',
+    fecha: 'may. 15, 19',
+    hora: '13:15',
+    tipoMensaje: ETipoMensaje.enviado,
+    estadoMensaje: EEstadoMensaje.enviado
+  }
+  mensaje2: IChatConversacionDetalle = {
     img: null,
     mensaje: 'mensaje',
     fecha: 'may. 16, 19',
     hora: '13:15',
-    tipoMensaje: ETipoMensaje.enviado,
+    tipoMensaje: ETipoMensaje.recibido,
+    estadoMensaje: EEstadoMensaje.enviado
+  }
+  mensaje3: IChatConversacionDetalle = {
+    img: null,
+    mensaje: 'mensaje',
+    fecha: 'may. 19, 19',
+    hora: '13:15',
+    tipoMensaje: ETipoMensaje.recibido,
     estadoMensaje: EEstadoMensaje.enviado
   }
   @Input() conversacion: IChatConversacion = {
@@ -26,36 +42,31 @@ export class ChatConversacionComponent implements OnInit {
     img: '',
     nombre: '',
     estado: null,
-    mensajes: [this.mensaje]
+    mensajes: [this.mensaje, this.mensaje2, this.mensaje3]
   };
   fecha: Fecha = undefined;
-  fechaAnterior: string;
   constructor() {
     this.fecha = new Fecha();
   }
 
   ngOnInit() {
   }
-  lineaDia(fecha) {
-    let tem = this.fechaAnterior;
-    let tDate:Date;
-    this.fechaAnterior = fecha;
-    if(tem === undefined){
+  lineaDia(fecha,index) {
+    let tDate: Date;
+    if (index === 0) {
       tDate = new Date(fecha);
-      tDate.setDate(tDate.getDate()-1);
+      tDate.setDate(tDate.getDate() - 1);
     }
-    else{
-      tDate = new Date();
+    else {
+      tDate = new Date(this.conversacion.mensajes[index -1].fecha);
     }
-    
-    console.log('envio', fecha, tem)
     return !this.fecha.compararFechas(new Date(fecha), tDate);
   }
   diferenciaDias(fecha) {
     return this.fecha.textoDiferenciaDias(fecha);
   }
   escogerEstilo(tipoMensaje) {
-    if(tipoMensaje === ETipoMensaje.enviado){
+    if (tipoMensaje === ETipoMensaje.enviado) {
       return "float-right";
     }
     return "float-left";
