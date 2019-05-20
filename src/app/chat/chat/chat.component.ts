@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, SimpleChanges, SimpleChange } from '@angular/core';
 import { IMensajeDetalle } from '../dto/imensaje-detalle';
 import { EEstadoChat } from '../dto/eestado-chat';
 import { EEstadoMensaje } from '../dto/eestado-mensaje';
@@ -13,26 +13,26 @@ import { IChatConversacion } from '../dto/ichat-conversacion';
 })
 export class ChatComponent implements OnInit {
 
-  conversacion1:IChatConversacionDetalle = {
+  conversacion1: IChatConversacionDetalle = {
     estadoMensaje: EEstadoMensaje.enviado,
     fecha: 'may. 18, 19',
-    hora:'13:30',
-    img:null,
+    hora: '13:30',
+    img: null,
     mensaje: 'fas',
     tipoMensaje: ETipoMensaje.enviado
   };
 
-  conversacion2:IChatConversacionDetalle = {
+  conversacion2: IChatConversacionDetalle = {
     estadoMensaje: EEstadoMensaje.enviado,
     fecha: 'may. 18, 19',
-    hora:'13:30',
-    img:null,
+    hora: '13:30',
+    img: null,
     mensaje: 'fas',
     tipoMensaje: ETipoMensaje.enviado
   };
 
-  detalle:IMensajeDetalle = {
-    estado : EEstadoChat.conectado,
+  detalle: IMensajeDetalle = {
+    estado: EEstadoChat.conectado,
     id: '1',
     img: 'fd',
     mensaje: [this.conversacion1],
@@ -40,15 +40,17 @@ export class ChatComponent implements OnInit {
     notificacion: 2
   }
 
-  detalle2:IMensajeDetalle = {
-    estado : EEstadoChat.conectado,
+  detalle2: IMensajeDetalle = {
+    estado: EEstadoChat.conectado,
     id: '1',
     img: 'fd',
     mensaje: [],
     nombre: 'r2',
     notificacion: 2
   }
-  @Input() lista:IMensajeDetalle[] = [ this.detalle, this.detalle2 ];
+  @Input() lista: IMensajeDetalle[] = [this.detalle, this.detalle2];
+
+
   @Input() conversacion: IChatConversacion = {
     id: '',
     img: '',
@@ -58,16 +60,29 @@ export class ChatComponent implements OnInit {
   };
   @Output() nuevoMensaje:EventEmitter<any> = new EventEmitter();
   @Output() clickLista:EventEmitter<any> =  new EventEmitter();
+  
 
+  
+  
   constructor() { }
-
+  
   ngOnInit() {
   }
-
+  
+  ngOnChanges(changes: SimpleChanges): void {
+    const name: SimpleChange = changes.name;
+    if(changes.lista){
+      this.lista.forEach(chat=>{
+        if(chat.id === this.conversacion.id){
+          this.conversacion.mensajes = chat.mensaje;
+        }
+      })
+    }
+  }
+  
   clickListaDetalle(detalle:any){
     this.clickLista.emit(detalle);
     this.cambiarConversacion(detalle);
-    console.log(detalle)
   }
 
   cambiarConversacion(detalle:IMensajeDetalle){
@@ -79,7 +94,7 @@ export class ChatComponent implements OnInit {
   }
 
   enviarMensaje(mensaje){
-    this.nuevoMensaje.emit(mensaje);
+    this.conversacion.mensajes.push(mensaje);
+    this.nuevoMensaje.emit(this.conversacion);
   }
-
 }

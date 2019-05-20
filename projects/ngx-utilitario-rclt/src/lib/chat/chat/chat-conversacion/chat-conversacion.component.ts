@@ -1,9 +1,10 @@
 
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { Fecha } from '../../../utilitario/fecha';
 import { IChatConversacion } from '../../dto/ichat-conversacion';
 import { ETipoMensaje } from '../../dto/etipo-mensaje';
 import { EEstadoMensaje } from '../../dto/eestado-mensaje';
+import { IChatConversacionDetalle } from '../../dto/ichat-conversacion-detalle';
 
 @Component({
   selector: 'ngx-utilitario-chat-conversacion',
@@ -20,6 +21,8 @@ export class ChatConversacionComponent implements OnInit {
     estado: null,
     mensajes: []
   };
+  @Output() nuevoMensaje:EventEmitter<any> = new EventEmitter();
+
   fecha: Fecha = undefined;
   constructor() {
     this.fecha = new Fecha();
@@ -62,5 +65,16 @@ export class ChatConversacionComponent implements OnInit {
     if (estado === EEstadoMensaje.leido && tipoMensaje === ETipoMensaje.enviado)
       return true;
     return false
+  }
+  enviarMensaje(mensaje:any){
+    let nuevoMensaje:IChatConversacionDetalle = {
+      estadoMensaje: EEstadoMensaje.enviado,
+      fecha: new Fecha().format(new Date(),'LL'),
+      hora: new Fecha().format(new Date(),'HH:mm'),
+      img: null,
+      mensaje: mensaje,
+      tipoMensaje: ETipoMensaje.enviado
+    };
+    this.nuevoMensaje.emit(nuevoMensaje);
   }
 }

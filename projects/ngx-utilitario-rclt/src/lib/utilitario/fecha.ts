@@ -68,5 +68,22 @@ export class Fecha {
             }
         }
     }
+
+    /**
+     * Aplicar el formato a una fecha con moment 
+     * L    = Date (in local format)
+     * LL   = Month name, day of month, year
+     * LLL  = Month name, day of month, year, time
+     * LLLL = Day of week, month name, day of month, year, time
+     * LT   = Time (without seconds)
+     * LTS  = Time (with seconds)
+     * H HH = Time (with seconds)
+     * @param fecha 
+     * @param format 
+     */
+    format(fecha:Date,format:string){
+        let fec1= moment(fecha);
+        return fec1.format(format);
+    }
 }
 

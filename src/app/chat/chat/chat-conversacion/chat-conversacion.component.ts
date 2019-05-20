@@ -65,7 +65,15 @@ export class ChatConversacionComponent implements OnInit {
       return true;
     return false
   }
-  enviarMensaje(mensaje){
-    this.nuevoMensaje.emit(mensaje);
+  enviarMensaje(mensaje:any){
+    let nuevoMensaje:IChatConversacionDetalle = {
+      estadoMensaje: EEstadoMensaje.enviado,
+      fecha: new Fecha().format(new Date(),'LL'),
+      hora: new Fecha().format(new Date(),'HH:mm'),
+      img: null,
+      mensaje: mensaje,
+      tipoMensaje: ETipoMensaje.enviado
+    };
+    this.nuevoMensaje.emit(nuevoMensaje);
   }
 }

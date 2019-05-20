@@ -42,6 +42,7 @@ export class ChatDetalleComponent implements OnInit {
     return ''
   }
   
+  
 }
 
 
