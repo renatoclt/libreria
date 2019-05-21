@@ -28,6 +28,7 @@ export class ChatComponent implements OnInit,OnChanges {
         if(chat.id === this.conversacion.id){
           this.conversacion.mensajes = chat.mensaje;
           this.conversacion.bloqueo = chat.bloqueo;
+          this.conversacion.bloqueo = chat.bloqueo;
         }
       })
     }

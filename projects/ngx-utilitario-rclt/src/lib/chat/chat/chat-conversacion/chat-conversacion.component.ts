@@ -21,7 +21,7 @@ export class ChatConversacionComponent implements OnInit {
     nombre: '',
     estado: null,
     mensajes: [],
-    bloqueo: EBloqueoChat.debloqueado
+    bloqueo: EBloqueoChat.desbloqueado
   };
   @Output() nuevoMensaje:EventEmitter<any> = new EventEmitter();
   @Output() eliminarMensajes:EventEmitter<any> = new EventEmitter();
@@ -88,12 +88,12 @@ export class ChatConversacionComponent implements OnInit {
   }
 
   bloquear(){
-    this.conversacion.bloqueo = EBloqueoChat.bloqueado;
-    this.bloquearConversacion.emit(EBloqueoChat.bloqueado);
+    this.conversacion.bloqueo = EBloqueoChat.bloqueo;
+    this.bloquearConversacion.emit(EBloqueoChat.bloqueo);
   }
 
   desbloquear(){
-    this.conversacion.bloqueo = EBloqueoChat.debloqueado;
-    this.bloquearConversacion.emit(EBloqueoChat.debloqueado);
+    this.conversacion.bloqueo = EBloqueoChat.desbloqueado;
+    this.bloquearConversacion.emit(EBloqueoChat.desbloqueado);
   }
 }

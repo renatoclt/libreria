@@ -39,7 +39,7 @@ export class ChatComponent implements OnInit {
     mensaje: [this.conversacion1],
     nombre: 're1',
     notificacion: 2,
-    bloqueo: EBloqueoChat.debloqueado
+    bloqueo: EBloqueoChat.desbloqueado
   }
 
   detalle2: IMensajeDetalle = {
@@ -49,7 +49,7 @@ export class ChatComponent implements OnInit {
     mensaje: [],
     nombre: 'r2',
     notificacion: 2,
-    bloqueo: EBloqueoChat.debloqueado
+    bloqueo: EBloqueoChat.desbloqueado
   }
   @Input() lista: IMensajeDetalle[] = [this.detalle, this.detalle2];
 
@@ -60,7 +60,7 @@ export class ChatComponent implements OnInit {
     nombre: '',
     estado: null,
     mensajes: [],
-    bloqueo: EBloqueoChat.debloqueado
+    bloqueo: EBloqueoChat.desbloqueado
   };
   @Output() nuevoMensaje:EventEmitter<any> = new EventEmitter();
   @Output() clickLista:EventEmitter<any> =  new EventEmitter();
@@ -80,6 +80,7 @@ export class ChatComponent implements OnInit {
       this.lista.forEach(chat=>{
         if(chat.id === this.conversacion.id){
           this.conversacion.mensajes = chat.mensaje;
+          this.conversacion.bloqueo = chat.bloqueo;
           this.conversacion.bloqueo = chat.bloqueo;
         }
       })
@@ -114,7 +115,4 @@ export class ChatComponent implements OnInit {
     this.conversacion.bloqueo = estadoBloqueo;
     this.bloquearConversacion.emit(this.conversacion);
   }
-  
 }
-
-

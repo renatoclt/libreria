@@ -1,4 +1,5 @@
 export enum EBloqueoChat{
-    bloqueado = 1,
-    debloqueado = 0
+    desbloqueado = 0,
+    bloqueo = 1,
+    bloqueado = 2,
 }
