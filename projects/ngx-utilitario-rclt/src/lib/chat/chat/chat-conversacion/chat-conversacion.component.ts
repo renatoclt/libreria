@@ -96,4 +96,11 @@ export class ChatConversacionComponent implements OnInit {
     this.conversacion.bloqueo = EBloqueoChat.desbloqueado;
     this.bloquearConversacion.emit(EBloqueoChat.desbloqueado);
   }
+
+  validarEstadoBLoqueado(estado){
+    if(estado === EBloqueoChat.bloqueo){
+      return true;
+    }
+    return false;
+  }
 }

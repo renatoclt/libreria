@@ -39,7 +39,7 @@ export class ChatComponent implements OnInit {
     mensaje: [this.conversacion1],
     nombre: 're1',
     notificacion: 2,
-    bloqueo: EBloqueoChat.desbloqueado
+    bloqueo: EBloqueoChat.bloqueado
   }
 
   detalle2: IMensajeDetalle = {

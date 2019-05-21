@@ -89,7 +89,13 @@ export class ChatConversacionComponent implements OnInit {
   }
   
   desbloquear(){
-    this.conversacion.bloqueo = EBloqueoChat.debloqueado;
-    this.bloquearConversacion.emit(EBloqueoChat.debloqueado);
+    this.conversacion.bloqueo = EBloqueoChat.desbloqueado;
+    this.bloquearConversacion.emit(EBloqueoChat.desbloqueado);
+  }
+  validarEstadoBLoqueado(estado){
+    if(estado === EBloqueoChat.bloqueo){
+      return true;
+    }
+    return false;
   }
 }

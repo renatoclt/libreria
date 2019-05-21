@@ -16,7 +16,7 @@
     <div class="col-1">
       <i class="fa fa-trash-o" aria-hidden="true" alt="eliminar conversacion" (click)="eliminarConversacion()"></i>
       <i *ngIf="!conversacion.bloqueo" class="fa fa-ban" aria-hidden="true" alt="Bloquear conversacion" (click)="bloquear()"></i>
-      <i *ngIf="conversacion.bloqueo" class="fa fa-unlock" aria-hidden="true" alt="Bloquear conversacion" (click)="desbloquear()"></i>
+      <i *ngIf="validarEstadoBLoqueado(conversacion.bloqueo)" class="fa fa-unlock" aria-hidden="true" alt="Bloquear conversacion" (click)="desbloquear()"></i>
     </div>
   </div>
 </div>
