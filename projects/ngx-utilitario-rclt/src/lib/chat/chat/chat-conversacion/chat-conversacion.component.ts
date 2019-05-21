@@ -34,6 +34,7 @@ export class ChatConversacionComponent implements OnInit {
 
   ngOnInit() {
   }
+  
   lineaDia(fecha,index) {
     let tDate: Date;
     if (index === 0) {

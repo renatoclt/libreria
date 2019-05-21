@@ -80,6 +80,7 @@ export class ChatComponent implements OnInit {
       this.lista.forEach(chat=>{
         if(chat.id === this.conversacion.id){
           this.conversacion.mensajes = chat.mensaje;
+          this.conversacion.bloqueo = chat.bloqueo;
         }
       })
     }
