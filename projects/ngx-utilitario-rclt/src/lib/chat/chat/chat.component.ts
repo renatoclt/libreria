@@ -15,7 +15,7 @@ export class ChatComponent implements OnInit,OnChanges {
   @Output() nuevoMensaje:EventEmitter<any> = new EventEmitter();
   @Output() clickLista:EventEmitter<any> =  new EventEmitter();
   @Output() eliminarConversacion:EventEmitter<any> = new EventEmitter();
-  
+  @Output() bloquearConversacion:EventEmitter<any> = new EventEmitter();
   constructor() { }
   
   ngOnInit() {
@@ -43,6 +43,7 @@ export class ChatComponent implements OnInit,OnChanges {
     this.conversacion.id = detalle.id;
     this.conversacion.mensajes = detalle.mensaje;
     this.conversacion.img = detalle.img;
+    this.conversacion.bloqueo = detalle.bloqueo;
   }
 
   enviarMensaje(mensaje){
@@ -53,5 +54,10 @@ export class ChatComponent implements OnInit,OnChanges {
   eliminarMensajes(){
     this.conversacion.mensajes = [];
     this.eliminarConversacion.emit(this.conversacion);
+  }
+
+  bloquearChat(estadoBloqueo){
+    this.conversacion.bloqueo = estadoBloqueo;
+    this.bloquearConversacion.emit(this.conversacion);
   }
 }

@@ -11,7 +11,9 @@
     <ngx-utilitario-chat-conversacion 
     [conversacion]="conversacion" 
     (nuevoMensaje)="enviarMensaje($event)"
-    (eliminarMensajes)="eliminarMensajes()">
+    (eliminarMensajes)="eliminarMensajes()"
+    (bloquearConversacion)="bloquearChat($event)"
+    >
   </ngx-utilitario-chat-conversacion>
   </div>
 </div>

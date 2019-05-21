@@ -80,7 +80,9 @@ export class ChatConversacionComponent implements OnInit {
     };
     this.nuevoMensaje.emit(nuevoMensaje);
   }
-
+  eliminarConversacion(){
+    this.eliminarMensajes.emit();
+  }
   bloquear(){
     this.conversacion.bloqueo = EBloqueoChat.bloqueado;
     this.bloquearConversacion.emit(EBloqueoChat.bloqueado);

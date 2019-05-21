@@ -38,7 +38,8 @@ export class ChatComponent implements OnInit {
     img: 'fd',
     mensaje: [this.conversacion1],
     nombre: 're1',
-    notificacion: 2
+    notificacion: 2,
+    bloqueo: EBloqueoChat.debloqueado
   }
 
   detalle2: IMensajeDetalle = {
@@ -47,7 +48,8 @@ export class ChatComponent implements OnInit {
     img: 'fd',
     mensaje: [],
     nombre: 'r2',
-    notificacion: 2
+    notificacion: 2,
+    bloqueo: EBloqueoChat.debloqueado
   }
   @Input() lista: IMensajeDetalle[] = [this.detalle, this.detalle2];
 
@@ -63,7 +65,7 @@ export class ChatComponent implements OnInit {
   @Output() nuevoMensaje:EventEmitter<any> = new EventEmitter();
   @Output() clickLista:EventEmitter<any> =  new EventEmitter();
   @Output() eliminarConversacion:EventEmitter<any> = new EventEmitter();
-
+  @Output() bloquearConversacion:EventEmitter<any> = new EventEmitter();
 
   
   
@@ -94,6 +96,7 @@ export class ChatComponent implements OnInit {
     this.conversacion.id = detalle.id;
     this.conversacion.mensajes = detalle.mensaje;
     this.conversacion.img = detalle.img;
+    this.conversacion.bloqueo = detalle.bloqueo;
   }
 
   enviarMensaje(mensaje){
@@ -105,4 +108,12 @@ export class ChatComponent implements OnInit {
     this.conversacion.mensajes = [];
     this.eliminarConversacion.emit(this.conversacion);
   }
+
+  bloquearChat(estadoBloqueo){
+    this.conversacion.bloqueo = estadoBloqueo;
+    this.bloquearConversacion.emit(this.conversacion);
+  }
+  
 }
+
+

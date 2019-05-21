@@ -19,6 +19,7 @@ export * from './lib/utilitario/fecha';
  */
 
  export * from './lib/chat/dto/eestado-chat';
+ export * from './lib/chat/dto/ebloqueo-chat';
  export * from './lib/chat/dto/eestado-mensaje';
  export * from './lib/chat/dto/etipo-mensaje';
 
