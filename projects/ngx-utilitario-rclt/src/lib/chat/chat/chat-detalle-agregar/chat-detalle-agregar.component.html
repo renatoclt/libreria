@@ -1,4 +1,4 @@
 <form [formGroup]="mensajeForm">
-  <input formControlName="mensaje">
+  <input formControlName="mensaje" [attr.disabled]="!disabled ? '' : null">
 </form>
-<button (click)="enviarMensaje()">enviar</button>
+<button (click)="enviarMensaje()" [disabled]="!disabled">enviar</button>

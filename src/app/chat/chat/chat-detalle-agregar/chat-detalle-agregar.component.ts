@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
@@ -8,6 +8,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class ChatDetalleAgregarComponent implements OnInit {
 
+  @Input() disabled;
   @Output() nuevoMensaje:EventEmitter<any> = new EventEmitter();
   mensajeForm: FormGroup;
 

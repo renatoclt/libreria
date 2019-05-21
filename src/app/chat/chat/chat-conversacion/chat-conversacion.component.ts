@@ -5,6 +5,7 @@ import { ETipoMensaje } from '../../dto/etipo-mensaje';
 import { IChatConversacionDetalle } from '../../dto/ichat-conversacion-detalle';
 import { Fecha } from 'src/app/utilitario/fecha';
 import { EEstadoMensaje } from '../../dto/eestado-mensaje';
+import { EBloqueoChat } from '../../dto/ebloqueo-chat';
 
 @Component({
   selector: 'ngx-utilitario-chat-conversacion',
@@ -18,10 +19,12 @@ export class ChatConversacionComponent implements OnInit {
     img: '',
     nombre: '',
     estado: null,
-    mensajes: []
+    mensajes: [],
+    bloqueo: EBloqueoChat.bloqueado
   };
   @Output() nuevoMensaje:EventEmitter<any> = new EventEmitter();
   @Output() eliminarMensajes:EventEmitter<any> = new EventEmitter();
+  @Output() bloquearConversacion:EventEmitter<any> = new EventEmitter();
 
   fecha: Fecha = undefined;
   constructor() {
@@ -78,7 +81,13 @@ export class ChatConversacionComponent implements OnInit {
     this.nuevoMensaje.emit(nuevoMensaje);
   }
 
-  eliminarConversacion(){
-    this.eliminarMensajes.emit();
+  bloquear(){
+    this.conversacion.bloqueo = EBloqueoChat.bloqueado;
+    this.bloquearConversacion.emit(EBloqueoChat.bloqueado);
+  }
+
+  desbloquear(){
+    this.conversacion.bloqueo = EBloqueoChat.debloqueado;
+    this.bloquearConversacion.emit(EBloqueoChat.debloqueado);
   }
 }

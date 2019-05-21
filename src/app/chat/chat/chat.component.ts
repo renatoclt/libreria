@@ -5,6 +5,7 @@ import { EEstadoMensaje } from '../dto/eestado-mensaje';
 import { ETipoMensaje } from '../dto/etipo-mensaje';
 import { IChatConversacionDetalle } from '../dto/ichat-conversacion-detalle';
 import { IChatConversacion } from '../dto/ichat-conversacion';
+import { EBloqueoChat } from '../dto/ebloqueo-chat';
 
 @Component({
   selector: 'ngx-utilitario-chat',
@@ -56,7 +57,8 @@ export class ChatComponent implements OnInit {
     img: '',
     nombre: '',
     estado: null,
-    mensajes: []
+    mensajes: [],
+    bloqueo: EBloqueoChat.debloqueado
   };
   @Output() nuevoMensaje:EventEmitter<any> = new EventEmitter();
   @Output() clickLista:EventEmitter<any> =  new EventEmitter();
