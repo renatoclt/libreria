@@ -60,7 +60,8 @@ export class ChatComponent implements OnInit {
   };
   @Output() nuevoMensaje:EventEmitter<any> = new EventEmitter();
   @Output() clickLista:EventEmitter<any> =  new EventEmitter();
-  
+  @Output() eliminarConversacion:EventEmitter<any> = new EventEmitter();
+
 
   
   
@@ -96,5 +97,10 @@ export class ChatComponent implements OnInit {
   enviarMensaje(mensaje){
     this.conversacion.mensajes.push(mensaje);
     this.nuevoMensaje.emit(this.conversacion);
+  }
+
+  eliminarMensajes(){
+    this.conversacion.mensajes = [];
+    this.eliminarConversacion.emit(this.conversacion);
   }
 }

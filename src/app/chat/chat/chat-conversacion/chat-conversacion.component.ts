@@ -21,6 +21,7 @@ export class ChatConversacionComponent implements OnInit {
     mensajes: []
   };
   @Output() nuevoMensaje:EventEmitter<any> = new EventEmitter();
+  @Output() eliminarMensajes:EventEmitter<any> = new EventEmitter();
 
   fecha: Fecha = undefined;
   constructor() {
@@ -75,5 +76,9 @@ export class ChatConversacionComponent implements OnInit {
       tipoMensaje: ETipoMensaje.enviado
     };
     this.nuevoMensaje.emit(nuevoMensaje);
+  }
+
+  eliminarConversacion(){
+    this.eliminarMensajes.emit();
   }
 }

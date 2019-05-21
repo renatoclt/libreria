@@ -22,6 +22,7 @@ export class ChatConversacionComponent implements OnInit {
     mensajes: []
   };
   @Output() nuevoMensaje:EventEmitter<any> = new EventEmitter();
+  @Output() eliminarMensajes:EventEmitter<any> = new EventEmitter();
 
   fecha: Fecha = undefined;
   constructor() {
@@ -30,6 +31,7 @@ export class ChatConversacionComponent implements OnInit {
 
   ngOnInit() {
   }
+  
   lineaDia(fecha,index) {
     let tDate: Date;
     if (index === 0) {
@@ -56,16 +58,19 @@ export class ChatConversacionComponent implements OnInit {
       return true;
     return false
   }
+
   estadoMensajeRecibido(estado, tipoMensaje) {
     if (estado === EEstadoMensaje.recibido && tipoMensaje === ETipoMensaje.enviado)
       return true;
     return false
   }
+
   estadoMensajeLeido(estado, tipoMensaje) {
     if (estado === EEstadoMensaje.leido && tipoMensaje === ETipoMensaje.enviado)
       return true;
     return false
   }
+
   enviarMensaje(mensaje:any){
     let nuevoMensaje:IChatConversacionDetalle = {
       estadoMensaje: EEstadoMensaje.enviado,
@@ -76,5 +81,9 @@ export class ChatConversacionComponent implements OnInit {
       tipoMensaje: ETipoMensaje.enviado
     };
     this.nuevoMensaje.emit(nuevoMensaje);
+  }
+
+  eliminarConversacion(){
+    this.eliminarMensajes.emit();
   }
 }

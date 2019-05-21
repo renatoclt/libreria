@@ -13,7 +13,9 @@
         <div class="col-12">{{conversacion.estado}}</div>
       </div>
     </div>
-    <div class="col-1"></div>
+    <div class="col-1">
+      <i class="fa fa-trash-o" aria-hidden="true" alt="eliminar conversacion" (click)="eliminarConversacion()"></i>
+    </div>
   </div>
 </div>
 <div class="row">
@@ -43,5 +45,4 @@
     </div>
   </div>
 </div>
-
 <ngx-utilitario-chat-detalle-agregar (nuevoMensaje)="enviarMensaje($event)"></ngx-utilitario-chat-detalle-agregar>

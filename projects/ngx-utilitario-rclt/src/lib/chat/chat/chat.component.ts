@@ -14,9 +14,7 @@ export class ChatComponent implements OnInit,OnChanges {
   @Input() conversacion: IChatConversacion;
   @Output() nuevoMensaje:EventEmitter<any> = new EventEmitter();
   @Output() clickLista:EventEmitter<any> =  new EventEmitter();
-  
-
-  
+  @Output() eliminarConversacion:EventEmitter<any> = new EventEmitter();
   
   constructor() { }
   
@@ -50,5 +48,10 @@ export class ChatComponent implements OnInit,OnChanges {
   enviarMensaje(mensaje){
     this.conversacion.mensajes.push(mensaje);
     this.nuevoMensaje.emit(this.conversacion);
+  }
+
+  eliminarMensajes(){
+    this.conversacion.mensajes = [];
+    this.eliminarConversacion.emit(this.conversacion);
   }
 }
