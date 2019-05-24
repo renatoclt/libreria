@@ -1,4 +1,8 @@
-<form [formGroup]="mensajeForm">
-  <input formControlName="mensaje" [attr.disabled]="disabled ? '' : null">
-</form>
-<button (click)="enviarMensaje()" [disabled]="disabled">enviar</button>
+  <div class="row">
+    <div class="col-8">
+      <form [formGroup]="mensajeForm">
+        <input class="col-12" formControlName="mensaje" [attr.disabled]="disabled ? '' : null">
+      </form>
+    </div>
+    <button class="col-4" (click)="enviarMensaje()" [disabled]="disabled">enviar</button>
+  </div>

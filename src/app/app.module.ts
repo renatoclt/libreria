@@ -14,6 +14,7 @@ import { NumberToArrayPipe } from './pipe/number-to-array.pipe';
 import { ModalComponent } from './modal/modal.component';
 import { FormsModule } from './forms/forms.module';
 import { NgxUtilitarioChatModule } from './chat/ngx-utilitario-rclt-chat.module';
+import { NgxUtilitarioMenuModule } from './menu/ngx-utilitario-menu.module';
 
 
 
@@ -42,7 +43,8 @@ import { NgxUtilitarioChatModule } from './chat/ngx-utilitario-rclt-chat.module'
     AppRoutingModule,
     AngularFontAwesomeModule,
     FormsModule,
-    NgxUtilitarioChatModule
+    NgxUtilitarioChatModule,
+    NgxUtilitarioMenuModule
     // NgxUtilitarioRcltModule
   ],
   providers: [],
