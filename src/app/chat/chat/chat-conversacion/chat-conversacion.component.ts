@@ -49,9 +49,9 @@ export class ChatConversacionComponent implements OnInit {
   }
   escogerEstilo(tipoMensaje) {
     if (tipoMensaje === ETipoMensaje.enviado) {
-      return "float-right";
+      return "ngx-utilitario-chat-right float-right arrow_box";
     }
-    return "float-left";
+    return "ngx-utilitario-chat-left float-left";
   }
 
   estadoMensajeEnviado(estado, tipoMensaje) {

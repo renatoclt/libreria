@@ -10,6 +10,7 @@ export class ChatDetalleAgregarComponent implements OnInit {
 
   @Input() disabled;
   @Output() nuevoMensaje:EventEmitter<any> = new EventEmitter();
+  placeholder:string="Escribir mensaje ...";
   mensajeForm: FormGroup;
 
   constructor(private formBuilder: FormBuilder) { }

@@ -23,33 +23,37 @@
   </div>
   <div class="row ngx-utilitario-cuerpo-Chat">
     <div class="col-12" *ngFor="let item of conversacion.mensajes; let i=index ">
-      <div class="row" *ngIf="lineaDia(item.fecha,i)">
-        <div class="col-12 ngx-utilitario-chat-linea">
-          <span class="ngx-utilitario-chat-linea-span">
-            {{diferenciaDias(item.fecha)}}
-          </span>
+      <div class="container">
+        <div class="row" *ngIf="lineaDia(item.fecha,i)">
+          <div class="w-100 ngx-utilitario-chat-linea">
+            <span class="ngx-utilitario-chat-linea-span">
+              {{diferenciaDias(item.fecha)}}
+            </span>
+          </div>
         </div>
       </div>
-      <div [ngClass]="escogerEstilo(item.tipoMensaje)">
-        <div>{{item.mensaje}}</div>
-        <div>{{item.hora}}
-          <span *ngIf="estadoMensajeEnviado(item.estadoMensaje, item.tipoMensaje)" class="ngx-utilitario-msj-enviado">
-            <i class="fa fa-check"></i>
-          </span>
-          <span *ngIf="estadoMensajeRecibido(item.estadoMensaje, item.tipoMensaje)" class="ngx-utilitario-msj-recibido">
-            <i class="fa fa-check"></i>
-            <i class="fa fa-check"></i>
-          </span>
-          <span *ngIf="estadoMensajeLeido(item.estadoMensaje, item.tipoMensaje)" class="ngx-utilitario-msj-leido">
-            <i class="fa fa-check"></i>
-            <i class="fa fa-check"></i>
-          </span>
+      <div class="container">
+          <div [ngClass]="escogerEstilo(item.tipoMensaje)">
+            <div>{{item.mensaje}}</div>
+            <div>{{item.hora}}
+              <span *ngIf="estadoMensajeEnviado(item.estadoMensaje, item.tipoMensaje)" class="ngx-utilitario-msj-enviado">
+                <i class="fa fa-check"></i>
+              </span>
+              <span *ngIf="estadoMensajeRecibido(item.estadoMensaje, item.tipoMensaje)" class="ngx-utilitario-msj-recibido">
+                <i class="fa fa-check"></i>
+                <i class="fa fa-check"></i>
+              </span>
+              <span *ngIf="estadoMensajeLeido(item.estadoMensaje, item.tipoMensaje)" class="ngx-utilitario-msj-leido">
+                <i class="fa fa-check"></i>
+                <i class="fa fa-check"></i>
+              </span>
+          </div>
         </div>
       </div>
     </div>
   </div>
   <div class="row">
-    <ngx-utilitario-chat-detalle-agregar class="col-12 ngx-utilitario-chat-agregar" (nuevoMensaje)="enviarMensaje($event)"
-      [disabled]="conversacion.bloqueo"></ngx-utilitario-chat-detalle-agregar>
+    <ngx-utilitario-chat-detalle-agregar class="col-12 ngx-utilitario-chat-agregar"
+      (nuevoMensaje)="enviarMensaje($event)" [disabled]="conversacion.bloqueo"></ngx-utilitario-chat-detalle-agregar>
   </div>
 </div>

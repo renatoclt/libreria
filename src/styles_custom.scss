@@ -1,12 +1,67 @@
 .row-no-padding {
-    [class*="col-"] {
-        padding-left: 0 !important;
-        padding-right: 0 !important;
-    }
+  [class*="col-"] {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
 }
 
-.ngx-utilitario-modal-background{
-    animation-duration: 4s;
-    animation-direction: reverse;
-  }
-  
+.ngx-utilitario-modal-background {
+  animation-duration: 4s;
+  animation-direction: reverse;
+}
+
+/**
+* Estilo para un conjunto de botones 
+*/
+.ngx-utilitario-btns-acciones {
+  display: inline-block;
+  vertical-align: middle;
+  width: 100%;
+  text-align: center;
+}
+
+.ngx-utilitario-btn-icon {
+  background-color: #fff;
+  color: #2e2e2e;
+  opacity: 0.8;
+  border-color: #fff;
+  border: 1px solid;
+  margin: 0rem 0.2rem;
+  transition: all 1.2s;
+  width: 3rem;
+}
+.ngx-utilitario-btn-icon:hover {
+  opacity: 1;
+  background-color: rgba(255, 255, 255, 0.2);
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+}
+
+.ngx-utilitario-btn-gray {
+  color: #adb3b6 !important;
+  box-shadow: none;
+  font-size: 16px;
+  padding: 8px 10px;
+  border-radius: 50px;
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
+  transform: scale(1.1);
+  -webkit-transition: 0.3s ease;
+  -moz-transition: 0.3s ease;
+  transition: 0.3s ease;
+  border: none;
+}
+
+.ngx-utilitario-btn-gray:hover {
+  background: rgba(50, 65, 72, 0.1) !important;
+  opacity: 1;
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+  border-color: transparent !important;
+}

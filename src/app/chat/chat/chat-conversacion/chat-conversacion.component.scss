@@ -27,6 +27,51 @@
     top: 50%;
     width: 100%;
 }
+
+.ngx-utilitario-chat-right{
+    background: #e7b723;
+    padding: 10px 15px;
+    border-radius: .25rem;
+    display: inline-block;
+    position: relative;
+    margin-bottom: 5px;
+    word-wrap: break-word;
+    max-width: 60%;
+    color: white;
+    text-align: right;
+}
+.ngx-utilitario-chat-left{
+    background: #fff;
+}
+
+.arrow_box {
+	position: relative;
+}
+.arrow_box:after, .arrow_box:before {
+	left: 100%;
+	top: 10%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.arrow_box:after {
+	border-color: rgba(136, 183, 213, 0);
+	border-left-color: #e7b723;
+	border-width: 7px;
+	margin-top: 0px;
+}
+.arrow_box:before {
+	border-color: rgba(194, 225, 245, 0);
+	border-left-color: #e7b723;
+	border-width: 7px;
+	margin-top: 0px;
+}
+
+
 // .ngx-utilitario-chat-linea > span {
 //     position: relative;
 //     display: inline-block;
@@ -72,5 +117,6 @@
 }
 
 .ngx-utilitario-cuerpo-Chat{
-    height: 10rem;
+    height: 700px;
+    overflow-y: auto;
 }

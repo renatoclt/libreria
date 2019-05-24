@@ -1,8 +1,18 @@
-  <div class="row">
-    <div class="col-8">
+<div class="container">
+  <div class="row ngx-utilitario-detalle-agregar">
+    <div class="col-10">
       <form [formGroup]="mensajeForm">
-        <input class="col-12" formControlName="mensaje" [attr.disabled]="disabled ? '' : null">
+        <input class="col-12" formControlName="mensaje" [attr.disabled]="disabled ? '' : null"
+          [placeholder]="placeholder">
       </form>
     </div>
-    <button class="col-4" (click)="enviarMensaje()" [disabled]="disabled">enviar</button>
+    <div class="col-2">
+      <div class="ngx-utilitario-btns-acciones">
+        <button type="button" class="col-6 btn ngx-utilitario-btn-icon ngx-utilitario-btn-gray"><i class="fa fa-camera"
+            aria-hidden="true"></i></button>
+        <button type="button" class="col-6 btn ngx-utilitario-btn-icon ngx-utilitario-btn-gray" (click)="enviarMensaje()"><i class="fa fa-paper-plane"
+            aria-hidden="true"></i></button>
+      </div>
+    </div>
   </div>
+</div>
