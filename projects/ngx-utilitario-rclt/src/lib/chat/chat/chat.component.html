@@ -1,4 +1,4 @@
-<div class="row row-no-padding">
+<div class="row row-no-padding ngx-utilitario-chat">
   <div class="col-4">
     <header class="header-chat">
       Chats
@@ -8,8 +8,12 @@
     <ngx-utilitario-chat-lista [lista]="lista" (clickLista)="clickListaDetalle($event)"></ngx-utilitario-chat-lista>
   </div>
   <div class="col-8">
-    <ngx-utilitario-chat-conversacion [conversacion]="conversacion" (nuevoMensaje)="enviarMensaje($event)"
-      (eliminarMensajes)="eliminarMensajes()" (bloquearConversacion)="bloquearChat($event)">
-    </ngx-utilitario-chat-conversacion>
+    <ngx-utilitario-chat-conversacion 
+    [conversacion]="conversacion" 
+    (nuevoMensaje)="enviarMensaje($event)"
+    (eliminarMensajes)="eliminarMensajes()"
+    (bloquearConversacion)="bloquearChat($event)"
+    >
+  </ngx-utilitario-chat-conversacion>
   </div>
 </div>

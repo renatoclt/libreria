@@ -3,9 +3,9 @@ import { IChatConversacion } from '../../dto/ichat-conversacion';
 import { EEstadoChat } from '../../dto/eestado-chat';
 import { ETipoMensaje } from '../../dto/etipo-mensaje';
 import { IChatConversacionDetalle } from '../../dto/ichat-conversacion-detalle';
-import { Fecha } from 'src/app/utilitario/fecha';
 import { EEstadoMensaje } from '../../dto/eestado-mensaje';
 import { EBloqueoChat } from '../../dto/ebloqueo-chat';
+import { Fecha } from '../../../utilitario/fecha';
 
 @Component({
   selector: 'ngx-utilitario-chat-conversacion',

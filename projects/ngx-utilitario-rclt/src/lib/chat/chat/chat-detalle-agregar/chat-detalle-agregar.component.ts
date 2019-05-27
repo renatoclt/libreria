@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'ngx-utilitario-chat-detalle-agregar',
@@ -10,6 +10,7 @@ export class ChatDetalleAgregarComponent implements OnInit {
 
   @Input() disabled;
   @Output() nuevoMensaje:EventEmitter<any> = new EventEmitter();
+  placeholder:string="Escribir mensaje ...";
   mensajeForm: FormGroup;
 
   constructor(private formBuilder: FormBuilder) { }
@@ -28,4 +29,3 @@ export class ChatDetalleAgregarComponent implements OnInit {
     this.nuevoMensaje.emit(this.mensajeForm.controls['mensaje'].value);
   }
 }
-

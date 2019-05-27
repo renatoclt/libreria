@@ -1,6 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { IMensajeDetalle } from '../../dto/imensaje-detalle';
-import { EEstadoChat } from '../../dto/eestado-chat';
 
 @Component({
   selector: 'ngx-utilitario-chat-lista',

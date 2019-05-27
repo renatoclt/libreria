@@ -1,11 +1,11 @@
-
-import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
-import { Fecha } from '../../../utilitario/fecha';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { IChatConversacion } from '../../dto/ichat-conversacion';
+import { EEstadoChat } from '../../dto/eestado-chat';
 import { ETipoMensaje } from '../../dto/etipo-mensaje';
-import { EEstadoMensaje } from '../../dto/eestado-mensaje';
 import { IChatConversacionDetalle } from '../../dto/ichat-conversacion-detalle';
+import { EEstadoMensaje } from '../../dto/eestado-mensaje';
 import { EBloqueoChat } from '../../dto/ebloqueo-chat';
+import { Fecha } from '../../../utilitario/fecha';
 
 @Component({
   selector: 'ngx-utilitario-chat-conversacion',
@@ -14,14 +14,13 @@ import { EBloqueoChat } from '../../dto/ebloqueo-chat';
 })
 export class ChatConversacionComponent implements OnInit {
 
-  
   @Input() conversacion: IChatConversacion = {
     id: '',
     img: '',
     nombre: '',
     estado: null,
     mensajes: [],
-    bloqueo: EBloqueoChat.desbloqueado
+    bloqueo: EBloqueoChat.bloqueado
   };
   @Output() nuevoMensaje:EventEmitter<any> = new EventEmitter();
   @Output() eliminarMensajes:EventEmitter<any> = new EventEmitter();
@@ -34,7 +33,6 @@ export class ChatConversacionComponent implements OnInit {
 
   ngOnInit() {
   }
-  
   lineaDia(fecha,index) {
     let tDate: Date;
     if (index === 0) {
@@ -51,9 +49,9 @@ export class ChatConversacionComponent implements OnInit {
   }
   escogerEstilo(tipoMensaje) {
     if (tipoMensaje === ETipoMensaje.enviado) {
-      return "float-right";
+      return "ngx-utilitario-chat-right float-right arrow_box";
     }
-    return "float-left";
+    return "ngx-utilitario-chat-left float-left";
   }
 
   estadoMensajeEnviado(estado, tipoMensaje) {
@@ -82,21 +80,18 @@ export class ChatConversacionComponent implements OnInit {
     };
     this.nuevoMensaje.emit(nuevoMensaje);
   }
-  
   eliminarConversacion(){
     this.eliminarMensajes.emit();
   }
-
   bloquear(){
-    this.conversacion.bloqueo = EBloqueoChat.bloqueo;
-    this.bloquearConversacion.emit(EBloqueoChat.bloqueo);
+    this.conversacion.bloqueo = EBloqueoChat.bloqueado;
+    this.bloquearConversacion.emit(EBloqueoChat.bloqueado);
   }
-
+  
   desbloquear(){
     this.conversacion.bloqueo = EBloqueoChat.desbloqueado;
     this.bloquearConversacion.emit(EBloqueoChat.desbloqueado);
   }
-
   validarEstadoBLoqueado(estado){
     if(estado === EBloqueoChat.bloqueo){
       return true;

@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { IMensajeDetalle } from '../../dto/imensaje-detalle';
 import { IChatConversacionDetalle } from '../../dto/ichat-conversacion-detalle';
-import { Fecha } from 'src/app/utilitario/fecha';
+import { Fecha } from '../../../utilitario/fecha';
 
 @Component({
   selector: 'ngx-utilitario-chat-detalle',
