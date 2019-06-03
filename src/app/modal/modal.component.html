@@ -1,7 +1,15 @@
 <div class="ngx-utilitario-modal">
   <div class="ngx-utilitario-modal-body">
-    <ng-content></ng-content>
+    <div class="ngx-utilitario-modal-content">
+      <div style="position: absolute;">
+        <button type="button" class="ngx-utilitario-modal-cerrar" (click)="close()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <ng-content>
+      </ng-content>
+    </div>
   </div>
 </div>
-<div class="ngx-utilitario-modal-background"></div>
+<div class="ngx-utilitario-modal-background" [@openClose]="showModal"></div>
 <div class="ngx-utilitario-modal-open"></div>

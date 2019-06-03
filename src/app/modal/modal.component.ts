@@ -1,14 +1,28 @@
 import { Component, OnInit, Input, ElementRef, Renderer2, Inject, ViewEncapsulation } from '@angular/core';
 import { ModalService } from './modal.service';
 import { DOCUMENT } from '@angular/common';
+import { openClose } from '../animaciones/open-close'
+import { trigger, transition, useAnimation } from '@angular/animations';
 @Component({
   selector: 'rclt-modal',
   templateUrl: './modal.component.html',
   styleUrls: ['./modal.component.css'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
+  animations:[ trigger('openClose', [
+    transition('open => closed', [
+      useAnimation(openClose, {
+        params: {
+          height: 0,
+          opacity: 1,
+          backgroundColor: 'red',
+          time: '1s'
+        }
+      })
+    ])
+  ])]
 })
 export class ModalComponent implements OnInit {
-
+  showModal: 'open' | 'closed';
   @Input() id: string;
   private element: any;
 
@@ -46,6 +60,7 @@ export class ModalComponent implements OnInit {
   }
   // open modal
   open(): void {
+    this.showModal = "open";
     this.element.style.display = 'block';
     this.renderer.addClass(this.document.body, 'ngx-utilitario-modal-open');
     // this.renderer.setStyle(document.body, 'overflow','hidden');
