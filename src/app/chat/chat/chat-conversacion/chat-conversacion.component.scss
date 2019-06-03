@@ -112,11 +112,12 @@
 
 
 .ngx-utilitario-chat-agregar{
-    position: absolute;
-    bottom: 0px;
+    position: relative;
 }
 
 .ngx-utilitario-cuerpo-Chat{
-    height: 700px;
+    height: auto;
+    min-height: 300px;
+    max-height: 300px;
     overflow-y: auto;
 }

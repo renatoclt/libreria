@@ -1,34 +1,101 @@
 .ngx-utilitario-chat-linea {
-    display: block;
+    position: relative;
     text-align: center;
     overflow: hidden;
-    white-space: nowrap; 
+    font-size: 14px;
+    margin: 15px 50px;
+    text-transform: capitalize;
+    color: #9e9e9e;
 }
-
-.ngx-utilitario-chat-linea > span {
-    position: relative;
-    display: inline-block;
-}
-
-.ngx-utilitario-chat-linea > span:before,
-.ngx-utilitario-chat-linea > span:after {
+.ngx-utilitario-chat-linea::before {
+    background: #e0e3e4;
     content: "";
+    height: 1px;
+    right: 50%;
+    margin-right: 28px;
     position: absolute;
     top: 50%;
-    width: 40rem;
-    height: 0.08rem;
-    background: #9e9e9e;
+    width: 100%;
+}
+.ngx-utilitario-chat-linea::after{
+    background: #e0e3e4;
+    content: "";
+    height: 1px;
+    left: 50%;
+    margin-left: 28px;
+    position: absolute;
+    top: 50%;
+    width: 100%;
 }
 
-.ngx-utilitario-chat-linea > span:before {
-    right: 100%;
-    margin-right: 15px;
+.ngx-utilitario-chat-right{
+    background: #e7b723;
+    padding: 10px 15px;
+    border-radius: .25rem;
+    display: inline-block;
+    position: relative;
+    margin-bottom: 5px;
+    word-wrap: break-word;
+    max-width: 60%;
+    color: white;
+    text-align: right;
+}
+.ngx-utilitario-chat-left{
+    background: #fff;
 }
 
-.ngx-utilitario-chat-linea > span:after {
-    left: 100%;
-    margin-left: 15px;
+.arrow_box {
+	position: relative;
 }
+.arrow_box:after, .arrow_box:before {
+	left: 100%;
+	top: 10%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.arrow_box:after {
+	border-color: rgba(136, 183, 213, 0);
+	border-left-color: #e7b723;
+	border-width: 7px;
+	margin-top: 0px;
+}
+.arrow_box:before {
+	border-color: rgba(194, 225, 245, 0);
+	border-left-color: #e7b723;
+	border-width: 7px;
+	margin-top: 0px;
+}
+
+
+// .ngx-utilitario-chat-linea > span {
+//     position: relative;
+//     display: inline-block;
+// }
+
+// .ngx-utilitario-chat-linea > span:before,
+// .ngx-utilitario-chat-linea > span:after {
+//     content: "";
+//     position: absolute;
+//     top: 50%;
+//     width: 100%;
+//     height: 0.08rem;
+//     background: #9e9e9e;
+// }
+
+// .ngx-utilitario-chat-linea > span:before {
+//     right: 100%;
+//     margin-right: 15px;
+// }
+
+// .ngx-utilitario-chat-linea > span:after {
+//     left: 100%;
+//     margin-left: 15px;
+// }
 
 
 .ngx-utilitario-msj-enviado{
@@ -41,4 +108,16 @@
 
 .img-height-3-7{
     height: 3.7rem;
+}
+
+
+.ngx-utilitario-chat-agregar{
+    position: relative;
+}
+
+.ngx-utilitario-cuerpo-Chat{
+    height: auto;
+    min-height: 300px;
+    max-height: 300px;
+    overflow-y: auto;
 }

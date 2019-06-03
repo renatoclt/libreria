@@ -10,9 +10,8 @@ import { Fecha } from '../../../utilitario/fecha';
 })
 export class ChatDetalleComponent implements OnInit {
 
-  
-  @Input() detalle:IMensajeDetalle;
-  @Output() clickDetalle:EventEmitter<any> =  new EventEmitter();
+  @Input() detalle: IMensajeDetalle;
+  @Output() clickDetalle: EventEmitter<any> = new EventEmitter();
   fecha: Fecha;
   constructor() {
     this.fecha = new Fecha();
@@ -42,5 +41,8 @@ export class ChatDetalleComponent implements OnInit {
     }
     return ''
   }
-
+  
+  
 }
+
+

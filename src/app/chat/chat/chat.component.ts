@@ -36,7 +36,7 @@ export class ChatComponent implements OnInit {
     estado: EEstadoChat.conectado,
     id: '1',
     img: 'fd',
-    mensaje: [this.conversacion1],
+    mensaje: [this.conversacion1,],
     nombre: 're1',
     notificacion: 2,
     bloqueo: EBloqueoChat.bloqueado
@@ -46,7 +46,7 @@ export class ChatComponent implements OnInit {
     estado: EEstadoChat.conectado,
     id: '1',
     img: 'fd',
-    mensaje: [],
+    mensaje: [this.conversacion1,this.conversacion1,this.conversacion1,this.conversacion1,this.conversacion1,this.conversacion1,this.conversacion1,this.conversacion1,this.conversacion1,this.conversacion1,this.conversacion1,this.conversacion1,this.conversacion1,this.conversacion1,this.conversacion1,this.conversacion1,this.conversacion1,this.conversacion1,this.conversacion1,this.conversacion1,this.conversacion1,this.conversacion1,this.conversacion1,this.conversacion1,this.conversacion1],
     nombre: 'r2',
     notificacion: 2,
     bloqueo: EBloqueoChat.desbloqueado
