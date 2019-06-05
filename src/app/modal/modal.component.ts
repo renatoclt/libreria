@@ -2,27 +2,40 @@ import { Component, OnInit, Input, ElementRef, Renderer2, Inject, ViewEncapsulat
 import { ModalService } from './modal.service';
 import { DOCUMENT } from '@angular/common';
 import { openClose } from '../animaciones/open-close'
-import { trigger, transition, useAnimation } from '@angular/animations';
+import { trigger, transition, useAnimation, state, style, animate } from '@angular/animations';
 @Component({
   selector: 'rclt-modal',
   templateUrl: './modal.component.html',
   styleUrls: ['./modal.component.css'],
   encapsulation: ViewEncapsulation.None,
-  animations:[ trigger('openClose', [
-    transition('open => closed', [
-      useAnimation(openClose, {
-        params: {
-          height: 0,
-          opacity: 1,
-          backgroundColor: 'red',
-          time: '1s'
-        }
-      })
-    ])
-  ])]
+  animations: [
+    trigger('openClose', [
+      // ...
+      state('open', style({
+        height: '200px',
+        opacity: 1,
+        backgroundColor: 'yellow'
+      })),
+      state('closed', style({
+        height: '100px',
+        opacity: 0.5,
+        backgroundColor: 'green'
+      })),
+      transition('open => closed', [
+        animate('1s')
+      ]),
+      transition('closed => open', [
+        animate('0.5s')
+      ]),
+    ]),
+  ]
 })
 export class ModalComponent implements OnInit {
-  showModal: 'open' | 'closed';
+  isOpen = true;
+ 
+  toggle() {
+    this.isOpen = !this.isOpen;
+  }
   @Input() id: string;
   private element: any;
 
@@ -60,7 +73,6 @@ export class ModalComponent implements OnInit {
   }
   // open modal
   open(): void {
-    this.showModal = "open";
     this.element.style.display = 'block';
     this.renderer.addClass(this.document.body, 'ngx-utilitario-modal-open');
     // this.renderer.setStyle(document.body, 'overflow','hidden');
@@ -72,5 +84,4 @@ export class ModalComponent implements OnInit {
     this.renderer.removeClass(this.document.body, 'ngx-utilitario-modal-open' )
     // this.renderer.setStyle(document.body, 'overflow', 'auto' )
   }
-
 }

@@ -43,12 +43,14 @@
   <button (click)="openModal('custom-modal-2')">Open Modal 2</button>
 </div>
 <rclt-modal id="custom-modal-1">
-  <h1>A Custom Angular 7 Modal!</h1>
-  <p>Home page text: <input type="text" /></p>
-  <button (click)="closeModal('custom-modal-1');">Close</button>
+  <div>
+    <h1>A Custom Angular 7 Modal!</h1>
+    <p>Home page text: <input type="text" /></p>
+    <button (click)="closeModal('custom-modal-1');">Close</button>
+  </div>
 </rclt-modal>
 <rclt-modal id="custom-modal-2">
-  <h1 style="height: 1000px;">A Custom Angular 7 Modal!</h1>
+  <h1 style="height: 1000px; width: 800px">A Custom Angular 7 Modal!</h1>
   <h1>A Tall Custom Modal!</h1>
   <button (click)="closeModal('custom-modal-2');">Close</button>
 </rclt-modal>
