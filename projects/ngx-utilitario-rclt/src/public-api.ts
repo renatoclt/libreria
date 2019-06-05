@@ -6,12 +6,20 @@
  */
 export * from './lib/ngx-utilitario-rclt.module';
 export * from './lib/chat/ngx-utilitario-rclt-chat.module';
+export * from './lib/dynamic-component/ngx-utilitario-rclt-dynamic-component.module';
 
 /**
  * 
  * utilitario
  */
 export * from './lib/utilitario/fecha';
+
+/**
+ * 
+ * Servicios
+ */
+
+export * from './lib/dynamic-component/dynamic-component.service';
 
 /**
  * 

@@ -1,6 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { IChatConversacion } from '../../dto/ichat-conversacion';
-import { EEstadoChat } from '../../dto/eestado-chat';
 import { ETipoMensaje } from '../../dto/etipo-mensaje';
 import { IChatConversacionDetalle } from '../../dto/ichat-conversacion-detalle';
 import { EEstadoMensaje } from '../../dto/eestado-mensaje';
