@@ -5,11 +5,13 @@
         <button type="button" class="ngx-utilitario-modal-cerrar" (click)="close()">
           <span aria-hidden="true">&times;</span>
         </button>
+        <div class="ngx-utilitario-modal-ngcontent">
+          <ng-content>
+          </ng-content>
+        </div>
       </div>
-      <ng-content>
-      </ng-content>
     </div>
   </div>
 </div>
-<div class="ngx-utilitario-modal-background" [@openClose]="showModal"></div>
+<div class="ngx-utilitario-modal-background"></div>
 <div class="ngx-utilitario-modal-open"></div>
