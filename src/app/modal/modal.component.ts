@@ -12,30 +12,49 @@ import { trigger, transition, useAnimation, state, style, animate } from '@angul
     trigger('openClose', [
       // ...
       state('open', style({
-        height: '200px',
-        opacity: 1,
-        backgroundColor: 'yellow'
+        opacity: 1
       })),
       state('closed', style({
-        height: '100px',
-        opacity: 0.5,
-        backgroundColor: 'green'
+        opacity: 0
+        // height: '0px',
+        // width: '0px',
       })),
       transition('open => closed', [
-        animate('1s')
+        animate('0.35s')
       ]),
       transition('closed => open', [
-        animate('0.5s')
+        animate('0.35s')
       ]),
     ]),
+    trigger('openCloseBackground', [
+      // ...
+      state('closed', style({
+        // top: '50%',
+        // right: '50%',
+        // bottom: '49%',
+        // left: '49%'
+        opacity: 0
+      })),
+      state('open', style({
+        // top: '0',
+        // right: '0',
+        // bottom: '0',
+        // left: '0'
+        opacity: 0.7
+      })),
+      transition('open => closed', [
+        animate('0.35s')
+      ]),
+      transition('closed => open', [
+        animate('0.35s')
+      ]),
+    ])
   ]
 })
 export class ModalComponent implements OnInit {
-  isOpen = true;
+  openclose : 'open' |  'closed' = 'closed';
  
-  toggle() {
-    this.isOpen = !this.isOpen;
-  }
+
   @Input() id: string;
   private element: any;
 
@@ -73,6 +92,7 @@ export class ModalComponent implements OnInit {
   }
   // open modal
   open(): void {
+    this.openclose = 'open'
     this.element.style.display = 'block';
     this.renderer.addClass(this.document.body, 'ngx-utilitario-modal-open');
     // this.renderer.setStyle(document.body, 'overflow','hidden');
@@ -80,6 +100,7 @@ export class ModalComponent implements OnInit {
   
   // close modal
   close(): void {
+    this.openclose = 'closed'
     this.element.style.display = 'none';
     this.renderer.removeClass(this.document.body, 'ngx-utilitario-modal-open' )
     // this.renderer.setStyle(document.body, 'overflow', 'auto' )
