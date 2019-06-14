@@ -19,52 +19,6 @@
       "dom"
     ],
     "paths": {
-      "ngx-rclt-cards": [
-        "dist/ngx-rclt-cards"
-      ],
-      "ngx-rclt-cards/*": [
-        "dist/ngx-rclt-cards/*"
-      ],
-      "ngx-rclt": [
-        "dist/ngx-rclt",
-        "dist/ngx-rclt"
-      ],
-      "ngx-rclt/*": [
-        "dist/ngx-rclt/*",
-        "dist/ngx-rclt/*"
-      ],
-      "ngx-util": [
-        "dist/ngx-util"
-      ],
-      "ngx-util/*": [
-        "dist/ngx-util/*"
-      ],
-      "ngx-util-utilitarios": [
-        "dist/ngx-util-utilitarios"
-      ],
-      "ngx-util-utilitarios/*": [
-        "dist/ngx-util-utilitarios/*"
-      ],
-      "ngx-rclt-utilitarios": [
-        "dist/ngx-rclt-utilitarios"
-      ],
-      "ngx-rclt-utilitarios/*": [
-        "dist/ngx-rclt-utilitarios/*"
-      ],
-      "ngx-common": [
-        "dist/ngx-common",
-        "dist/ngx-common"
-      ],
-      "ngx-common/*": [
-        "dist/ngx-common/*",
-        "dist/ngx-common/*"
-      ],
-      "ngx-utilitarioclt": [
-        "dist/ngx-utilitarioclt"
-      ],
-      "ngx-utilitarioclt/*": [
-        "dist/ngx-utilitarioclt/*"
-      ],
       "ngx-utilitario-rclt": [
         "dist/npm_pack"
       ],

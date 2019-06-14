@@ -14,7 +14,8 @@
     "package": "npm run build_lib && npm run npm_pack",
     "publish": "npm run build_lib && cd dist/ngx-utilitario-rclt && npm publish",
     "publish_tgz": "npm run npm_pack && npm publish ./dist/ngx-utilitario-rclt/ngx-utilitario-0.3.29.tgz",
-    "packagr": "ng-packagr -p ng-package.json"
+    "packagr": "ng-packagr -p ng-package.json",
+    "compodoc": "./node_modules/.bin/compodoc -p src/tsconfig.app.json -w -s"
   },
   "repository": {
     "type": "git",
@@ -49,6 +50,7 @@
     "@angular/cli": "~7.3.5",
     "@angular/compiler-cli": "~7.2.0",
     "@angular/language-service": "~7.2.0",
+    "@compodoc/compodoc": "^1.1.9",
     "@types/jasmine": "~2.8.8",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
@@ -65,13 +67,13 @@
     "karma-coverage-istanbul-reporter": "~2.0.1",
     "karma-jasmine": "~1.1.2",
     "karma-jasmine-html-reporter": "^0.2.2",
+    "moment": "^2.24.0",
     "ng-packagr": "^4.7.1",
     "protractor": "~5.4.0",
     "ts-node": "^7.0.1",
     "tsickle": ">=0.34.0",
     "tslib": "^1.9.0",
     "tslint": "~5.11.0",
-    "typescript": "~3.2.2",
-    "moment": "^2.24.0"
+    "typescript": "~3.2.2"
   }
 }

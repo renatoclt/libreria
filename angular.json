@@ -7,7 +7,7 @@
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
-      "prefix": "rclt",
+      "prefix": "ngx-utilitario",
       "schematics": {},
       "architect": {
         "build": {
