@@ -111,13 +111,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/DynamicComponentModule.html" data-type="entity-link">DynamicComponentModule</a>
                                 <li class="chapter inner">
                                     <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                        'data-target="#injectables-links-module-DynamicComponentModule-5966d70aa3d9b7e560406163759fe15a"' : 'data-target="#xs-injectables-links-module-DynamicComponentModule-5966d70aa3d9b7e560406163759fe15a"' }>
+                                        'data-target="#injectables-links-module-DynamicComponentModule-b3a8b7f4a65fe8cf5550683ff66e8375"' : 'data-target="#xs-injectables-links-module-DynamicComponentModule-b3a8b7f4a65fe8cf5550683ff66e8375"' }>
                                         <span class="icon ion-md-arrow-round-down"></span>
                                         <span>Injectables</span>
                                         <span class="icon ion-ios-arrow-down"></span>
                                     </div>
-                                    <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-DynamicComponentModule-5966d70aa3d9b7e560406163759fe15a"' :
-                                        'id="xs-injectables-links-module-DynamicComponentModule-5966d70aa3d9b7e560406163759fe15a"' }>
+                                    <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-DynamicComponentModule-b3a8b7f4a65fe8cf5550683ff66e8375"' :
+                                        'id="xs-injectables-links-module-DynamicComponentModule-b3a8b7f4a65fe8cf5550683ff66e8375"' }>
                                         <li class="link">
                                             <a href="injectables/DynamicComponentService.html"
                                                 data-type="entity-link" data-context="sub-entity" data-context-id="modules" }>DynamicComponentService</a>
@@ -147,13 +147,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/NgxUtilitarioChatModule.html" data-type="entity-link">NgxUtilitarioChatModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-NgxUtilitarioChatModule-b9387ccd31b36e965693bea75f91aa38"' : 'data-target="#xs-components-links-module-NgxUtilitarioChatModule-b9387ccd31b36e965693bea75f91aa38"' }>
+                                            'data-target="#components-links-module-NgxUtilitarioChatModule-dae0accb9ea0173bbe92f3a7606c0e7f"' : 'data-target="#xs-components-links-module-NgxUtilitarioChatModule-dae0accb9ea0173bbe92f3a7606c0e7f"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-NgxUtilitarioChatModule-b9387ccd31b36e965693bea75f91aa38"' :
-                                            'id="xs-components-links-module-NgxUtilitarioChatModule-b9387ccd31b36e965693bea75f91aa38"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-NgxUtilitarioChatModule-dae0accb9ea0173bbe92f3a7606c0e7f"' :
+                                            'id="xs-components-links-module-NgxUtilitarioChatModule-dae0accb9ea0173bbe92f3a7606c0e7f"' }>
                                             <li class="link">
                                                 <a href="components/ChatBusquedaComponent.html"
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">ChatBusquedaComponent</a>
@@ -185,13 +185,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/NgxUtilitarioMenuModule.html" data-type="entity-link">NgxUtilitarioMenuModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-NgxUtilitarioMenuModule-2d0a042a78933415c1174e5f7899b5d5"' : 'data-target="#xs-components-links-module-NgxUtilitarioMenuModule-2d0a042a78933415c1174e5f7899b5d5"' }>
+                                            'data-target="#components-links-module-NgxUtilitarioMenuModule-e4e3354f70680eb5059097027b52e0f2"' : 'data-target="#xs-components-links-module-NgxUtilitarioMenuModule-e4e3354f70680eb5059097027b52e0f2"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-NgxUtilitarioMenuModule-2d0a042a78933415c1174e5f7899b5d5"' :
-                                            'id="xs-components-links-module-NgxUtilitarioMenuModule-2d0a042a78933415c1174e5f7899b5d5"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-NgxUtilitarioMenuModule-e4e3354f70680eb5059097027b52e0f2"' :
+                                            'id="xs-components-links-module-NgxUtilitarioMenuModule-e4e3354f70680eb5059097027b52e0f2"' }>
                                             <li class="link">
                                                 <a href="components/MenuDotComponent.html"
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">MenuDotComponent</a>

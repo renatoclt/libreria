@@ -49,6 +49,9 @@
             <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
         </li>
         <li >
+            <a href="#readme" role="tab" id="readme-tab" data-toggle="tab" data-link="readme">README</a>
+        </li>
+        <li >
             <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
         </li>
 </ul>
@@ -63,6 +66,13 @@
             <code>src/app/pipe/number-to-array.pipe.ts</code>
         </p>
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Crea un arreglo de tamaño n </p>
+
+            </p>
 
 
         <section>
@@ -97,21 +107,23 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>transform(value: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, args?: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+<code>transform(length: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="8"
-                            class="link-to-prism">src/app/pipe/number-to-array.pipe.ts:8</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="21"
+                            class="link-to-prism">src/app/pipe/number-to-array.pipe.ts:21</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>crea un arreglo de tamaño n</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -121,13 +133,14 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>value</td>
+                                    <td>length</td>
                                     <td>
-                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
                                     </td>
 
                                     <td>
@@ -135,30 +148,27 @@
                                     </td>
 
 
-                                </tr>
-                                <tr>
-                                    <td>args</td>
                                     <td>
-                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                        <p>tamaño del nuevo arreglo</p>
+
                                     </td>
-
-                                    <td>
-                                        Yes
-                                    </td>
-
-
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                     <div>
+                        <b>Example :</b>
+                        <div>
+                            <pre class="line-numbers"><code class="language-html">*ngFor=&amp;quot;let item of 2 | numberToArray&amp;quot;</code></pre>
+                        </div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                        <b>Returns : </b>    <code>number[]</code>
 
                     </div>
                     <div class="io-description">
-                        
+                        <p>un arreglo de tamaño n</p>
+
                     </div>
                 </td>
             </tr>
@@ -168,18 +178,38 @@
 
     </div>
 
+    <div class="tab-pane fade " id="c-readme">
+        <p><h1 id="numbertoarray">numberToArray</h1>
+<p>crea un arreglo de tamaño n </p>
+<h2 id="ejemplo">ejemplo</h2>
+<p>*ngFor=&quot;let item of 2 | numberToArray&quot;</p>
+</p>
+    </div>
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Pipe, PipeTransform } from &#x27;@angular/core&#x27;;
 
+/**
+ * Crea un arreglo de tamaño n 
+ */
 @Pipe({
   name: &#x27;numberToArray&#x27;
 })
 export class NumberToArrayPipe implements PipeTransform {
 
-  transform(value: any, args?: any): any {
+  /**
+   * crea un arreglo de tamaño n
+   * 
+   * @example
+   * *ngFor&#x3D;&quot;let item of 2 | numberToArray&quot;
+   * 
+   * @param {number} length tamaño del nuevo arreglo
+   * 
+   * @returns un arreglo de tamaño n
+   */
+  transform(length: number): number[] {
     let res &#x3D; [];
-    for (let i &#x3D; 0; i &lt; value; i++) {
+    for (let i &#x3D; 0; i &lt; length; i++) {
       res.push(i);
     }
     return res;
