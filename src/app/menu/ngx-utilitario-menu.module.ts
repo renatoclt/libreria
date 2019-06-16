@@ -10,7 +10,7 @@ import { MatMenuModule, MatIconModule } from '@angular/material';
     MatIconModule,
     CommonModule
   ],
-  exports:[
+  exports: [
     MenuDotComponent
   ]
 })

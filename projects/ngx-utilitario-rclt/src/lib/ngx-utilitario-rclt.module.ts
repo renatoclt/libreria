@@ -19,15 +19,15 @@ import { NgxUtilitarioDynamicComponentModule } from './dynamic-component/ngx-uti
   exports: [
             /**
              * component
-             *  */ 
+             *  */
             CardsComponent,
-            CardsImgTextComponent, 
+            CardsImgTextComponent,
             RepeatIconComponent,
             CardsImgTextNdivComponent,
             ModalComponent,
             /**
              * pipes
-             *  */ 
+             *  */
             NumberToArrayPipe]
 })
 export class NgxUtilitarioRcltModule { }

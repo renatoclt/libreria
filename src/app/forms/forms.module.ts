@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { InputComponent } from './input/input.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { MatInputModule, MatFormFieldModule,MatTooltipModule } from '@angular/material';
+import { MatInputModule, MatFormFieldModule, MatTooltipModule } from '@angular/material';
 
 @NgModule({
   declarations: [InputComponent],
@@ -13,7 +13,7 @@ import { MatInputModule, MatFormFieldModule,MatTooltipModule } from '@angular/ma
     MatInputModule,
     MatTooltipModule
   ],
-  exports:[
+  exports: [
     InputComponent
   ]
 })

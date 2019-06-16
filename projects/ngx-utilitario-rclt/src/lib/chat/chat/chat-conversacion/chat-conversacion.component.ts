@@ -22,9 +22,9 @@ export class ChatConversacionComponent implements OnInit {
     mensajes: [],
     bloqueo: EBloqueoChat.bloqueado
   };
-  @Output() nuevoMensaje:EventEmitter<any> = new EventEmitter();
-  @Output() eliminarMensajes:EventEmitter<any> = new EventEmitter();
-  @Output() bloquearConversacion:EventEmitter<any> = new EventEmitter();
+  @Output() nuevoMensaje: EventEmitter<any> = new EventEmitter();
+  @Output() eliminarMensajes: EventEmitter<any> = new EventEmitter();
+  @Output() bloquearConversacion: EventEmitter<any> = new EventEmitter();
 
   fecha: Fecha = undefined;
   constructor() {
@@ -33,14 +33,13 @@ export class ChatConversacionComponent implements OnInit {
 
   ngOnInit() {
   }
-  lineaDia(fecha,index) {
+  lineaDia(fecha, index) {
     let tDate: Date;
     if (index === 0) {
       tDate = new Date(fecha);
       tDate.setDate(tDate.getDate() - 1);
-    }
-    else {
-      tDate = new Date(this.conversacion.mensajes[index -1].fecha);
+    } else {
+      tDate = new Date(this.conversacion.mensajes[index - 1].fecha);
     }
     return !this.fecha.compararFechas(new Date(fecha), tDate);
   }
@@ -49,51 +48,54 @@ export class ChatConversacionComponent implements OnInit {
   }
   escogerEstilo(tipoMensaje) {
     if (tipoMensaje === ETipoMensaje.enviado) {
-      return "ngx-utilitario-chat-right float-right arrow_box";
+      return 'ngx-utilitario-chat-right float-right arrow_box';
     }
-    return "ngx-utilitario-chat-left float-left";
+    return 'ngx-utilitario-chat-left float-left';
   }
 
   estadoMensajeEnviado(estado, tipoMensaje) {
-    if (estado === EEstadoMensaje.enviado && tipoMensaje === ETipoMensaje.enviado)
+    if (estado === EEstadoMensaje.enviado && tipoMensaje === ETipoMensaje.enviado) {
       return true;
-    return false
+    }
+    return false;
   }
   estadoMensajeRecibido(estado, tipoMensaje) {
-    if (estado === EEstadoMensaje.recibido && tipoMensaje === ETipoMensaje.enviado)
+    if (estado === EEstadoMensaje.recibido && tipoMensaje === ETipoMensaje.enviado) {
       return true;
-    return false
+    }
+    return false;
   }
   estadoMensajeLeido(estado, tipoMensaje) {
-    if (estado === EEstadoMensaje.leido && tipoMensaje === ETipoMensaje.enviado)
+    if (estado === EEstadoMensaje.leido && tipoMensaje === ETipoMensaje.enviado) {
       return true;
-    return false
+    }
+    return false;
   }
-  enviarMensaje(mensaje:any){
-    let nuevoMensaje:IChatConversacionDetalle = {
+  enviarMensaje(mensaje: any) {
+    const nuevoMensaje: IChatConversacionDetalle = {
       estadoMensaje: EEstadoMensaje.enviado,
-      fecha: new Fecha().format(new Date(),'LL'),
-      hora: new Fecha().format(new Date(),'HH:mm'),
+      fecha: new Fecha().format(new Date(), 'LL'),
+      hora: new Fecha().format(new Date(), 'HH:mm'),
       img: null,
-      mensaje: mensaje,
+      mensaje,
       tipoMensaje: ETipoMensaje.enviado
     };
     this.nuevoMensaje.emit(nuevoMensaje);
   }
-  eliminarConversacion(){
+  eliminarConversacion() {
     this.eliminarMensajes.emit();
   }
-  bloquear(){
+  bloquear() {
     this.conversacion.bloqueo = EBloqueoChat.bloqueado;
     this.bloquearConversacion.emit(EBloqueoChat.bloqueado);
   }
-  
-  desbloquear(){
+
+  desbloquear() {
     this.conversacion.bloqueo = EBloqueoChat.desbloqueado;
     this.bloquearConversacion.emit(EBloqueoChat.desbloqueado);
   }
-  validarEstadoBLoqueado(estado){
-    if(estado === EBloqueoChat.bloqueo){
+  validarEstadoBLoqueado(estado) {
+    if (estado === EBloqueoChat.bloqueo) {
       return true;
     }
     return false;

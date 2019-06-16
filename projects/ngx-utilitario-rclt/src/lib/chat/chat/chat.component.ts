@@ -36,21 +36,34 @@ export class ChatComponent implements OnInit {
     estado: EEstadoChat.conectado,
     id: '1',
     img: 'fd',
-    mensaje: [this.conversacion1,],
+    mensaje: [this.conversacion1, ],
     nombre: 're1',
     notificacion: 2,
     bloqueo: EBloqueoChat.bloqueado
-  }
+  };
 
   detalle2: IMensajeDetalle = {
     estado: EEstadoChat.conectado,
     id: '1',
     img: 'fd',
-    mensaje: [this.conversacion1,this.conversacion1,this.conversacion1,this.conversacion1,this.conversacion1,this.conversacion1,this.conversacion1,this.conversacion1,this.conversacion1,this.conversacion1,this.conversacion1,this.conversacion1,this.conversacion1,this.conversacion1,this.conversacion1,this.conversacion1,this.conversacion1,this.conversacion1,this.conversacion1,this.conversacion1,this.conversacion1,this.conversacion1,this.conversacion1,this.conversacion1,this.conversacion1],
+    mensaje: [this.conversacion1,
+              this.conversacion1,
+              this.conversacion1,
+              this.conversacion1,
+              this.conversacion1,
+              this.conversacion1,
+              this.conversacion1,
+              this.conversacion1,
+              this.conversacion1,
+              this.conversacion1,
+              this.conversacion1,
+              this.conversacion1,
+              this.conversacion1,
+              this.conversacion1],
     nombre: 'r2',
     notificacion: 2,
     bloqueo: EBloqueoChat.desbloqueado
-  }
+  };
   @Input() lista: IMensajeDetalle[] = [this.detalle, this.detalle2];
 
 
@@ -62,37 +75,37 @@ export class ChatComponent implements OnInit {
     mensajes: [],
     bloqueo: EBloqueoChat.desbloqueado
   };
-  @Output() nuevoMensaje:EventEmitter<any> = new EventEmitter();
-  @Output() clickLista:EventEmitter<any> =  new EventEmitter();
-  @Output() eliminarConversacion:EventEmitter<any> = new EventEmitter();
-  @Output() bloquearConversacion:EventEmitter<any> = new EventEmitter();
+  @Output() nuevoMensaje: EventEmitter<any> = new EventEmitter();
+  @Output() clickLista: EventEmitter<any> =  new EventEmitter();
+  @Output() eliminarConversacion: EventEmitter<any> = new EventEmitter();
+  @Output() bloquearConversacion: EventEmitter<any> = new EventEmitter();
 
-  
-  
+
+
   constructor() { }
-  
+
   ngOnInit() {
   }
-  
+
   ngOnChanges(changes: SimpleChanges): void {
     const name: SimpleChange = changes.name;
-    if(changes.lista){
-      this.lista.forEach(chat=>{
-        if(chat.id === this.conversacion.id){
+    if (changes.lista) {
+      this.lista.forEach(chat => {
+        if (chat.id === this.conversacion.id) {
           this.conversacion.mensajes = chat.mensaje;
           this.conversacion.bloqueo = chat.bloqueo;
           this.conversacion.bloqueo = chat.bloqueo;
         }
-      })
+      });
     }
   }
-  
-  clickListaDetalle(detalle:any){
+
+  clickListaDetalle(detalle: any) {
     this.clickLista.emit(detalle);
     this.cambiarConversacion(detalle);
   }
 
-  cambiarConversacion(detalle:IMensajeDetalle){
+  cambiarConversacion(detalle: IMensajeDetalle) {
     this.conversacion.estado = detalle.estado;
     this.conversacion.nombre = detalle.nombre;
     this.conversacion.id = detalle.id;
@@ -101,17 +114,17 @@ export class ChatComponent implements OnInit {
     this.conversacion.bloqueo = detalle.bloqueo;
   }
 
-  enviarMensaje(mensaje){
+  enviarMensaje(mensaje) {
     this.conversacion.mensajes.push(mensaje);
     this.nuevoMensaje.emit(this.conversacion);
   }
 
-  eliminarMensajes(){
+  eliminarMensajes() {
     this.conversacion.mensajes = [];
     this.eliminarConversacion.emit(this.conversacion);
   }
 
-  bloquearChat(estadoBloqueo){
+  bloquearChat(estadoBloqueo) {
     this.conversacion.bloqueo = estadoBloqueo;
     this.bloquearConversacion.emit(this.conversacion);
   }

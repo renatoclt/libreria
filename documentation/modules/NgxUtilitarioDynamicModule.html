@@ -34,7 +34,7 @@
 
 <ol class="breadcrumb">
     <li>Modules</li>
-    <li>DynamicComponentModule</li>
+    <li>NgxUtilitarioDynamicModule</li>
 </ol>
 
 <div class="text-center module-graph-container">
@@ -62,11 +62,11 @@
 <polygon fill="#fb8072" stroke="transparent" points="406,-10 406,-30 426,-30 426,-10 406,-10"/>
 <text text-anchor="start" x="429.7258" y="-15.4" font-family="sans-serif" font-size="14.00" fill="#000000"> &#160;Exports</text>
 <g id="clust1" class="cluster">
-<title>cluster_DynamicComponentModule</title>
+<title>cluster_NgxUtilitarioDynamicModule</title>
 <polygon fill="none" stroke="#000000" stroke-dasharray="1,5" points="112,-70 112,-195 384,-195 384,-70 112,-70"/>
 </g>
 <g id="clust6" class="cluster">
-<title>cluster_DynamicComponentModule_providers</title>
+<title>cluster_NgxUtilitarioDynamicModule_providers</title>
 <polygon fill="none" stroke="#000000" points="120,-78 120,-130 376,-130 376,-78 120,-78"/>
 </g>
 <!-- DynamicComponentService -->
@@ -75,15 +75,15 @@
 <ellipse fill="#fdb462" stroke="#000000" cx="248" cy="-104" rx="120.4091" ry="18"/>
 <text text-anchor="middle" x="248" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">DynamicComponentService</text>
 </g>
-<!-- DynamicComponentModule -->
+<!-- NgxUtilitarioDynamicModule -->
 <g id="node2" class="node">
-<title>DynamicComponentModule</title>
-<polygon fill="#8dd3c7" stroke="#000000" points="336.1993,-187 333.1993,-191 312.1993,-191 309.1993,-187 159.8007,-187 159.8007,-151 336.1993,-151 336.1993,-187"/>
-<text text-anchor="middle" x="248" y="-164.8" font-family="Times,serif" font-size="14.00" fill="#000000">DynamicComponentModule</text>
+<title>NgxUtilitarioDynamicModule</title>
+<polygon fill="#8dd3c7" stroke="#000000" points="341.299,-187 338.299,-191 317.299,-191 314.299,-187 154.701,-187 154.701,-151 341.299,-151 341.299,-187"/>
+<text text-anchor="middle" x="248" y="-164.8" font-family="Times,serif" font-size="14.00" fill="#000000">NgxUtilitarioDynamicModule</text>
 </g>
-<!-- DynamicComponentService&#45;&gt;DynamicComponentModule -->
+<!-- DynamicComponentService&#45;&gt;NgxUtilitarioDynamicModule -->
 <g id="edge1" class="edge">
-<title>DynamicComponentService&#45;&gt;DynamicComponentModule</title>
+<title>DynamicComponentService&#45;&gt;NgxUtilitarioDynamicModule</title>
 <path fill="none" stroke="#000000" d="M248,-122.1061C248,-122.1061 248,-140.991 248,-140.991"/>
 <polygon fill="#000000" stroke="#000000" points="244.5001,-140.9909 248,-150.991 251.5001,-140.991 244.5001,-140.9909"/>
 </g>
@@ -121,6 +121,13 @@
         </p>
 
 
+        <p class="comment">
+            <h3>Description</h3>
+        </p>
+        <p class="comment">
+            <p>Modulo dynamic el cual contiene el servicio para añadir un componente en tiempo de ejecucion</p>
+
+        </p>
 
 
         <div class="container-fluid module">
@@ -144,8 +151,11 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { NgModule } from &#x27;@angular/core&#x27;;
 import { CommonModule } from &#x27;@angular/common&#x27;;
-import { DynamicComponentService } from &#x27;./dynamic-component.service&#x27;;
+import { DynamicComponentService } from &#x27;./dynamic-component/dynamic-component.service&#x27;;
 
+/**
+ * Modulo dynamic el cual contiene el servicio para añadir un componente en tiempo de ejecucion
+ */
 @NgModule({
   declarations: [],
   imports: [
@@ -155,7 +165,7 @@ import { DynamicComponentService } from &#x27;./dynamic-component.service&#x27;;
     DynamicComponentService
   ]
 })
-export class DynamicComponentModule { }
+export class NgxUtilitarioDynamicModule { }
 </code></pre>
     </div>
 </div>
@@ -190,7 +200,7 @@ export class DynamicComponentModule { }
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'module';
-            var COMPODOC_CURRENT_PAGE_URL = 'DynamicComponentModule.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'NgxUtilitarioDynamicModule.html';
        </script>
 
        <script src="../js/libs/custom-elements.min.js"></script>

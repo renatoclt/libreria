@@ -50,6 +50,9 @@
             <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
         </li>
         <li >
+            <a href="#readme" role="tab" id="readme-tab" data-toggle="tab" data-link="readme">README</a>
+        </li>
+        <li >
             <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
         </li>
 </ul>
@@ -63,6 +66,13 @@
             <code>src/app/utilitario/fecha.ts</code>
         </p>
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Clase que trabajara sobre el tipo de dato &quot;date&quot; con la libreria &quot;moment&quot; </p>
+
+            </p>
 
 
 
@@ -95,16 +105,16 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#compararFechas">compararFechas</a>
+                                <a href="#compareDates">compareDates</a>
                             </li>
                             <li>
-                                <a href="#diferenciaDias">diferenciaDias</a>
+                                <a href="#differenceDays">differenceDays</a>
+                            </li>
+                            <li>
+                                <a href="#differenceDaysText">differenceDaysText</a>
                             </li>
                             <li>
                                 <a href="#format">format</a>
-                            </li>
-                            <li>
-                                <a href="#textoDiferenciaDias">textoDiferenciaDias</a>
                             </li>
                         </ul>
                     </td>
@@ -129,10 +139,16 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="6" class="link-to-prism">src/app/utilitario/fecha.ts:6</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/utilitario/fecha.ts:10</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Obtiene la fecha actual</p>
+</div>
+                    </td>
+                </tr>
             </tbody>
         </table>
 </section>
@@ -162,10 +178,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="6" class="link-to-prism">src/app/utilitario/fecha.ts:6</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/utilitario/fecha.ts:10</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>valor donde guardamos la fecha actual de iniciacion de la clase</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -180,33 +202,33 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="compararFechas"></a>
+                    <a name="compareDates"></a>
                     <span class="name">
                         <b>
-                            compararFechas
+                            compareDates
                         </b>
-                        <a href="#compararFechas"><span class="icon ion-ios-link"></span></a>
+                        <a href="#compareDates"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>compararFechas(fecha1: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank">Date</a>, fecha2?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank">Date</a>)</code>
+<code>compareDates(date1: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank">Date</a>, date2?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank">Date</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="15"
-                            class="link-to-prism">src/app/utilitario/fecha.ts:15</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="27"
+                            class="link-to-prism">src/app/utilitario/fecha.ts:27</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>Compara si la fecha1 es mayor a la fecha2 si no se envia la fecha2 se tomara la fecha actual </p>
+                    <div class="io-description"><p>Comparar dos fechas</p>
 </div>
 
                     <div class="io-description">
@@ -217,11 +239,12 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>fecha1</td>
+                                    <td>date1</td>
                                     <td>
                                                 <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" >Date</a></code>
                                     </td>
@@ -231,9 +254,13 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>fecha a comparar</p>
+
+                                    </td>
                                 </tr>
                                 <tr>
-                                    <td>fecha2</td>
+                                    <td>date2</td>
                                     <td>
                                                 <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" >Date</a></code>
                                     </td>
@@ -243,18 +270,28 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>si no envia una fecha se tomara la fecha actual</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                     <div>
+                        <b>Example :</b>
+                        <div>
+                            <pre class="line-numbers"><code class="language-html">this.fecha.compareDates(new Date())
+this.fecha.compareDates(new Date(), &amp;#39;2019-10-13&amp;#39;)</code></pre>
+                        </div>
                     </div>
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
 
                     </div>
                     <div class="io-description">
-                        
+                        <p>retorna true si la fecha1 es mayor a la fecha2</p>
+
                     </div>
                 </td>
             </tr>
@@ -264,33 +301,33 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="diferenciaDias"></a>
+                    <a name="differenceDays"></a>
                     <span class="name">
                         <b>
-                            diferenciaDias
+                            differenceDays
                         </b>
-                        <a href="#diferenciaDias"><span class="icon ion-ios-link"></span></a>
+                        <a href="#differenceDays"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>diferenciaDias(fecha1: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank">Date</a>, fecha2?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank">Date</a>)</code>
+<code>differenceDays(date1: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank">Date</a>, date2?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank">Date</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="32"
-                            class="link-to-prism">src/app/utilitario/fecha.ts:32</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="48"
+                            class="link-to-prism">src/app/utilitario/fecha.ts:48</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>Cuenta los dias entre la fecha1 y la fecha2. si no se envia la fecha 2 se tomara la fecha actual</p>
+                    <div class="io-description"><p>Cuenta los dias entre dos fechas. si no se envia la fecha 2 se tomara la fecha actual</p>
 </div>
 
                     <div class="io-description">
@@ -301,11 +338,12 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>fecha1</td>
+                                    <td>date1</td>
                                     <td>
                                                 <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" >Date</a></code>
                                     </td>
@@ -315,9 +353,13 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>fecha a comparar</p>
+
+                                    </td>
                                 </tr>
                                 <tr>
-                                    <td>fecha2</td>
+                                    <td>date2</td>
                                     <td>
                                                 <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" >Date</a></code>
                                     </td>
@@ -327,18 +369,144 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>si no envia una fecha se tomara la fecha actual</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                     <div>
+                        <b>Example :</b>
+                        <div>
+                            <pre class="line-numbers"><code class="language-html">this.fecha.DifferenceDays(new Date())
+this.fecha.DifferenceDays(new Date(), &amp;#39;2019-10-13&amp;#39;)</code></pre>
+                        </div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
 
                     </div>
                     <div class="io-description">
-                        
+                        <p>retorna los dias de diferencia</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="differenceDaysText"></a>
+                    <span class="name">
+                        <b>
+                            differenceDaysText
+                        </b>
+                        <a href="#differenceDaysText"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>differenceDaysText(date1: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank">Date</a>, date2?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank">Date</a>, format?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="69"
+                            class="link-to-prism">src/app/utilitario/fecha.ts:69</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Cuenta los dias entre dos fechas. si no se envia la fecha 2 se tomara la fecha actual </p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>date1</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" >Date</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>fecha a comparar</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>date2</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" >Date</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                    <td>
+                                        <p>si no envia una fecha se tomara la fecha actual </p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>format</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                    <td>
+                                        <p>en este formato se retornara la fecha  en formato de moment por defecto tiene el formato DD/MM/YYYY</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                        <b>Example :</b>
+                        <div>
+                            <pre class="line-numbers"><code class="language-html">this.fecha.DifferenceDays(new Date())
+this.fecha.DifferenceDays(new Date(), &amp;#39;2019-10-13&amp;#39;)
+this.fecha.DifferenceDays(new Date(), &amp;#39;2019-10-13&amp;#39;, &amp;#39;DD/MM/YYYY&amp;#39;)</code></pre>
+                        </div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>si la diferencia es entre -1 o 1 retornara ayer hoy o mañana si no retornara la fecha en el formato indicado</p>
+
                     </div>
                 </td>
             </tr>
@@ -359,105 +527,22 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>format(fecha: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank">Date</a>, format: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+<code>format(date: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank">Date</a>, format: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="70"
-                            class="link-to-prism">src/app/utilitario/fecha.ts:70</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="101"
+                            class="link-to-prism">src/app/utilitario/fecha.ts:101</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>fecha</td>
-                                    <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" >Date</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                                <tr>
-                                    <td>format</td>
-                                    <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
-
-                    </div>
-                    <div class="io-description">
-                        
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="textoDiferenciaDias"></a>
-                    <span class="name">
-                        <b>
-                            textoDiferenciaDias
-                        </b>
-                        <a href="#textoDiferenciaDias"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>textoDiferenciaDias(fecha1: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank">Date</a>, fecha2?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank">Date</a>, format?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="48"
-                            class="link-to-prism">src/app/utilitario/fecha.ts:48</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-description"><p>Cuenta los dias entre la fecha1 y la fecha2. si no se envia la fecha 2 se tomara la fecha actual 
-el formato que se devolvera la fecha &quot;moment&quot;</p>
+                    <div class="io-description"><p>Cambia el formato de la fecha en formato de moment</p>
 </div>
 
                     <div class="io-description">
@@ -468,11 +553,12 @@ el formato que se devolvera la fecha &quot;moment&quot;</p>
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>fecha1</td>
+                                    <td>date</td>
                                     <td>
                                                 <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" >Date</a></code>
                                     </td>
@@ -482,18 +568,10 @@ el formato que se devolvera la fecha &quot;moment&quot;</p>
                                     </td>
 
 
-                                </tr>
-                                <tr>
-                                    <td>fecha2</td>
                                     <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" >Date</a></code>
+                                        <p>fecha a cambiar el formato</p>
+
                                     </td>
-
-                                    <td>
-                                        Yes
-                                    </td>
-
-
                                 </tr>
                                 <tr>
                                     <td>format</td>
@@ -502,22 +580,31 @@ el formato que se devolvera la fecha &quot;moment&quot;</p>
                                     </td>
 
                                     <td>
-                                        Yes
+                                        No
                                     </td>
 
 
+                                    <td>
+                                        <p>formato que se desea la fecha</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                     <div>
+                        <b>Example :</b>
+                        <div>
+                            <pre class="line-numbers"><code class="language-html">this.fecha.DifferenceDays(new Date(), &amp;#39;DD/MM/YYYY&amp;#39;)</code></pre>
+                        </div>
                     </div>
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 
                     </div>
                     <div class="io-description">
-                        
+                        <p>la fecha en el formato deseado</p>
+
                     </div>
                 </td>
             </tr>
@@ -531,80 +618,116 @@ el formato que se devolvera la fecha &quot;moment&quot;</p>
 
     </div>
 
+    <div class="tab-pane fade " id="c-readme">
+        <p><h1 id="fecha">Fecha</h1>
+<p>Esta clase esta utilizando moment.js y nos permite comparar fechas y cambiar el formato</p>
+</p>
+    </div>
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import * as moment from &#x27;moment&#x27;;
 import { Moment } from &#x27;moment&#x27;;
-
+/**
+ * Clase que trabajara sobre el tipo de dato &quot;date&quot; con la libreria &quot;moment&quot; 
+ */
 export class Fecha {
-    
+    /**
+     * valor donde guardamos la fecha actual de iniciacion de la clase
+     */
     now: Date;
+
+    /**
+     * Obtiene la fecha actual
+     */
     constructor() {
         this.now &#x3D; new Date();
     }
     /**
-     * Compara si la fecha1 es mayor a la fecha2 si no se envia la fecha2 se tomara la fecha actual 
-     * @param fecha1 
-     * @param fecha2 
+     * Comparar dos fechas
+     * @example
+     *  this.fecha.compareDates(new Date())
+     *  this.fecha.compareDates(new Date(), &#x27;2019-10-13&#x27;)
+     * @param date1 fecha a comparar
+     * @param date2 si no envia una fecha se tomara la fecha actual
+     * @return retorna true si la fecha1 es mayor a la fecha2
      */
-    compararFechas(fecha1: Date, fecha2?: Date): boolean {
-        let fec1 &#x3D; moment(fecha1);
-        if (fecha2 &#x3D;&#x3D;&#x3D; undefined) {
-            fecha2 &#x3D; new Date();
+    compareDates(date1: Date, date2?: Date): boolean {
+        const dat1 &#x3D; moment(date1);
+        if (date2 &#x3D;&#x3D;&#x3D; undefined) {
+            date2 &#x3D; new Date();
         }
-        let fec2 &#x3D; moment(fecha2);
-        if (fec1.startOf(&#x27;day&#x27;).isSame(fec2.startOf(&#x27;day&#x27;))) {
+        const dat2 &#x3D; moment(date2);
+        if (dat1.startOf(&#x27;day&#x27;).isSame(dat2.startOf(&#x27;day&#x27;))) {
             return true;
         }
         return false;
     }
 
     /**
-     * Cuenta los dias entre la fecha1 y la fecha2. si no se envia la fecha 2 se tomara la fecha actual
-     * @param fecha1 
-     * @param fecha2 
+     * Cuenta los dias entre dos fechas. si no se envia la fecha 2 se tomara la fecha actual
+     * @example
+     *  this.fecha.DifferenceDays(new Date())
+     *  this.fecha.DifferenceDays(new Date(), &#x27;2019-10-13&#x27;)
+     * @param  date1 fecha a comparar
+     * @param  date2 si no envia una fecha se tomara la fecha actual
+     * @return retorna los dias de diferencia
      */
-    diferenciaDias(fecha1: Date, fecha2?: Date) {
-        let fec1 &#x3D; moment(fecha1);
-        if (fecha2 &#x3D;&#x3D;&#x3D; undefined) {
-            fecha2 &#x3D; new Date();
+    differenceDays(date1: Date, date2?: Date): number {
+        const dat1 &#x3D; moment(date1);
+        if (date2 &#x3D;&#x3D;&#x3D; undefined) {
+            date2 &#x3D; new Date();
         }
-        let fec2 &#x3D; moment(fecha2);
-        return fec1.diff(fec2, &#x27;days&#x27;, false);
+        const dat2 &#x3D; moment(date2);
+        return dat1.diff(dat2, &#x27;days&#x27;, false);
     }
 
     /**
-     * Cuenta los dias entre la fecha1 y la fecha2. si no se envia la fecha 2 se tomara la fecha actual 
-     * el formato que se devolvera la fecha &quot;moment&quot;
-     * @param fecha1 
-     * @param fecha2 
-     * @param format 
+     * Cuenta los dias entre dos fechas. si no se envia la fecha 2 se tomara la fecha actual 
+     * @example
+     *  this.fecha.DifferenceDays(new Date())
+     *  this.fecha.DifferenceDays(new Date(), &#x27;2019-10-13&#x27;)
+     *  this.fecha.DifferenceDays(new Date(), &#x27;2019-10-13&#x27;, &#x27;DD/MM/YYYY&#x27;)
+     * @param   date1 fecha a comparar
+     * @param   date2 si no envia una fecha se tomara la fecha actual 
+     * @param  {string} format  en este formato se retornara la fecha  en formato de moment por defecto tiene el formato DD/MM/YYYY
+     * 
+     * @returns si la diferencia es entre -1 o 1 retornara ayer hoy o mañana si no retornara la fecha en el formato indicado
      */
-    textoDiferenciaDias(fecha1: Date, fecha2?: Date, format?: string): string {
-        let fec1 &#x3D; moment(fecha1);
-        let dias: number &#x3D; this.diferenciaDias(fecha1, fecha2);
+    differenceDaysText(date1: Date, date2?: Date, format?: string): string {
+        const dat1 &#x3D; moment(date1);
+        const dias: number &#x3D; this.differenceDays(date1, date2);
         if (format &#x3D;&#x3D;&#x3D; undefined) {
-            format &#x3D; &#x27;DD/MM/YYYY&#x27;
+            format &#x3D; &#x27;DD/MM/YYYY&#x27;;
         }
         switch (dias) {
             case 0: {
-                return &quot;Hoy&quot;;
+                return &#x27;Hoy&#x27;;
             }
             case 1: {
-                return &quot;Mañana&quot;;
+                return &#x27;Mañana&#x27;;
             }
             case -1: {
-                return &quot;Ayer&quot;;
+                return &#x27;Ayer&#x27;;
             }
             default: {
-                return fec1.format(format);
+                return dat1.format(format);
             }
         }
     }
 
-    format(fecha:Date,format:string){
-        let fec1&#x3D; moment(fecha);
-        return fec1.format(format);
+    /**
+     * Cambia el formato de la fecha en formato de moment
+     * @example
+     *  this.fecha.DifferenceDays(new Date(), &#x27;DD/MM/YYYY&#x27;)
+     * 
+     * @param date fecha a cambiar el formato
+     * @param format formato que se desea la fecha
+     * 
+     * @returns la fecha en el formato deseado
+     */
+    format(date: Date, format: string): string{
+        const dat1 &#x3D; moment(date);
+        return dat1.format(format);
     }
 }
 

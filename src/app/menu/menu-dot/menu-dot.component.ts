@@ -8,23 +8,23 @@ import { IMenuDot } from '../dto/Imenu-dto';
 })
 export class MenuDotComponent implements OnInit {
 
-  menu1:IMenuDot={
+  menu1: IMenuDot = {
     icon: 'block',
     nombre: 'bloqueo',
     text: 'Ver Chats Bloqueados'
-  }
-  menu2:IMenuDot={
+  };
+  menu2: IMenuDot = {
     icon: 'block',
     nombre: 'bloqueo',
     text: 'block 2'
-  }
-  menus:IMenuDot[] = [this.menu1, this.menu2];
+  };
+  menus: IMenuDot[] = [this.menu1, this.menu2];
   constructor() { }
 
   ngOnInit() {
   }
 
-  menuClick(item:IMenuDot){
+  menuClick(item: IMenuDot) {
     console.log(item);
   }
 }

@@ -10,7 +10,7 @@
     "component-selector": [
       true,
       "element",
-      "clt",
+      "ngx-utilitario",
       "kebab-case"
     ]
   }

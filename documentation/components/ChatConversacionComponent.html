@@ -1165,10 +1165,10 @@ export class ChatConversacionComponent implements OnInit {
     else {
       tDate &#x3D; new Date(this.conversacion.mensajes[index -1].fecha);
     }
-    return !this.fecha.compararFechas(new Date(fecha), tDate);
+    return !this.fecha.differenceDays(new Date(fecha), tDate);
   }
   diferenciaDias(fecha) {
-    return this.fecha.textoDiferenciaDias(fecha);
+    return this.fecha.differenceDaysText(fecha);
   }
   escogerEstilo(tipoMensaje) {
     if (tipoMensaje &#x3D;&#x3D;&#x3D; ETipoMensaje.enviado) {

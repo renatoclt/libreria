@@ -7,11 +7,11 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class RepeatIconComponent implements OnInit {
 
-  @Input() repetir:number = 5; 
-  @Input() activo:number = 0; 
-  @Input() icono:string = "fa fa-user"; 
-  @Input() color:string = "#000"; 
-  @Input() colorActivo:string = "#000"; 
+  @Input() repetir = 5;
+  @Input() activo = 0;
+  @Input() icono = 'fa fa-user';
+  @Input() color = '#000';
+  @Input() colorActivo = '#000';
   constructor() { }
   ngOnInit() {
   }

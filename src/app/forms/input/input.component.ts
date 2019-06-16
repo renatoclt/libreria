@@ -8,9 +8,9 @@ import { FormGroup } from '@angular/forms';
 })
 export class InputComponent implements OnInit {
 
-  @Input() appearance:string = 'outline';
+  @Input() appearance = 'outline';
   @Input() parent: FormGroup = new FormGroup({});
-  @Input() tooltip:string = '';
+  @Input() tooltip = '';
   @Input() position = 'above';
   constructor() { }
 

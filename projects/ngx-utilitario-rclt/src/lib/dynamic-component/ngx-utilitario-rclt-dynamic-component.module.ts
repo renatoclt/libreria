@@ -7,7 +7,7 @@ import { DynamicComponentService } from './dynamic-component.service';
   imports: [
     CommonModule
   ],
-  providers:[
+  providers: [
     DynamicComponentService
   ]
 })

@@ -28,13 +28,13 @@ import { NgxUtilitarioMenuModule } from './menu/ngx-utilitario-menu.module';
     CardsComponent,
     CardsImgTextComponent,
     CardsImgTextNdivComponent,
-    RepeatIconComponent,    
+    RepeatIconComponent,
     ModalComponent,
     /**
      * pipes
      */
     NumberToArrayPipe,
-    
+
   ],
   imports: [
     BrowserModule,

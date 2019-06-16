@@ -1,5 +1,5 @@
 export interface IMenuDot {
-    icon:string;
-    nombre:string ;
-    text:string ;
+    icon: string;
+    nombre: string ;
+    text: string ;
 }

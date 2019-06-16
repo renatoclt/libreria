@@ -56,9 +56,16 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/app/dynamic-component/dynamic-component.service.ts</code>
+            <code>src/app/dynamic-component/dynamic-component/dynamic-component.service.ts</code>
         </p>
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Servicio que añade un componente en tiempo de ejecucion</p>
+
+            </p>
 
 
 
@@ -106,78 +113,6 @@
     </table>
 </section>
 
-            <section>
-    <h3 id="constructor">Constructor</h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-<code>constructor(injector: <a href="https://angular.io/api/core/Injector" target="_blank">Injector</a>, resolver: <a href="https://angular.io/api/core/ComponentFactoryResolver" target="_blank">ComponentFactoryResolver</a>, appRef: <a href="https://angular.io/api/core/ApplicationRef" target="_blank">ApplicationRef</a>)</code>
-                    </td>
-                </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="7" class="link-to-prism">src/app/dynamic-component/dynamic-component.service.ts:7</a></div>
-                            </td>
-                        </tr>
-
-                <tr>
-                    <td class="col-md-4">
-                            <div>
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>injector</td>
-                                                  
-                                                        <td>
-                                                                        <code><a href="https://angular.io/api/core/Injector" target="_blank" >Injector</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                                <tr>
-                                                        <td>resolver</td>
-                                                  
-                                                        <td>
-                                                                        <code><a href="https://angular.io/api/core/ComponentFactoryResolver" target="_blank" >ComponentFactoryResolver</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                                <tr>
-                                                        <td>appRef</td>
-                                                  
-                                                        <td>
-                                                                        <code><a href="https://angular.io/api/core/ApplicationRef" target="_blank" >ApplicationRef</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-</section>
 
             <section>
     
@@ -201,15 +136,15 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>injectComponent(undefined: literal type)</code>
+                    <code>injectComponent(component: Type<T>, propertySetter?: (type?: T) => void)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="12"
-                            class="link-to-prism">src/app/dynamic-component/dynamic-component.service.ts:12</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="24"
+                            class="link-to-prism">src/app/dynamic-component/dynamic-component/dynamic-component.service.ts:24</a></div>
                 </td>
             </tr>
 
@@ -233,12 +168,14 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
+                                    <td>component</td>
                                     <td>
-                                            <code>literal type</code>
+                                            <code>Type&lt;T&gt;</code>
                                     </td>
 
                                     <td>
@@ -246,6 +183,26 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>El componente a insertar</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>propertySetter</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/function" target="_blank" >function</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                    <td>
+                                        <p>Las propiedades del componente que va a recibir</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -290,10 +247,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="7" class="link-to-prism">src/app/dynamic-component/dynamic-component.service.ts:7</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/dynamic-component/dynamic-component/dynamic-component.service.ts:13</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Variable en la cual se guarda el componente que se mostrara</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -305,32 +268,50 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable, ComponentRef, Injector, ComponentFactoryResolver, ApplicationRef, Type } from &#x27;@angular/core&#x27;;
 
+/**
+ * Servicio que añade un componente en tiempo de ejecucion
+ */
 @Injectable({
   providedIn: &#x27;root&#x27;
 })
 export class DynamicComponentService {
+  /**
+   * Variable en la cual se guarda el componente que se mostrara
+   */
   private compRef: ComponentRef&lt;any&gt;;
-  
+  /**
+   * @ignore
+   */
   constructor(private injector: Injector, private resolver: ComponentFactoryResolver, private appRef: ApplicationRef) {
   }
 
-  public injectComponent&lt;T&gt;({ component, propertySetter }: { component: Type&lt;T&gt;; propertySetter?: (type: T) &#x3D;&gt; void; }): HTMLDivElement{
+  /**
+   * @param component El componente a insertar
+   * @param propertySetter Las propiedades del componente que va a recibir
+   */
+  public injectComponent&lt;T&gt;(component: Type&lt;T&gt;, propertySetter?: (type: T) &#x3D;&gt; void): HTMLDivElement {
     // Remove the Component if it Already Exists
-    if (this.compRef) this.compRef.destroy();
+    if (this.compRef) {
+      this.compRef.destroy();
+    }
+
     // Resolve the Component and Create
     const compFactory &#x3D; this.resolver.resolveComponentFactory(component);
     this.compRef &#x3D; compFactory.create(this.injector);
+
     // Allow a Property Setter to be Passed in (To Set a Model Property, etc)
-    if(propertySetter){
+    if (propertySetter) {
       propertySetter(this.compRef.instance);
     }
-    
+
     // Attach to Application
     this.appRef.attachView(this.compRef.hostView);
 
     // Create Wrapper Div and Inject Html
-    let div &#x3D; document.createElement(&#x27;div&#x27;);
+    const div &#x3D; document.createElement(&#x27;div&#x27;);
     div.appendChild(this.compRef.location.nativeElement);
+
+    // Return the Rendered DOM Element
     return div;
   }
 }

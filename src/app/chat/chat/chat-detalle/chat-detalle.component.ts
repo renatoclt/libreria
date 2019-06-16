@@ -23,26 +23,27 @@ export class ChatDetalleComponent implements OnInit {
   }
   ultimoMensaje(mensajes: IChatConversacionDetalle[]) {
     if (mensajes.length > 0) {
-      if (mensajes[mensajes.length - 1].img === null)
+      if (mensajes[mensajes.length - 1].img === null) {
         return mensajes[mensajes.length - 1].mensaje;
-      else
-        return 'Foto'
+      } else {
+        return 'Foto';
+      }
     }
     return '';
   }
   ultimaFecha(mensajes: IChatConversacionDetalle[]) {
     if (mensajes.length > 0) {
-      if (this.fecha.compararFechas(new Date(mensajes[mensajes.length-1].fecha)))
+      if (this.fecha.differenceDays(new Date(mensajes[mensajes.length - 1].fecha))) {
         return mensajes[mensajes.length - 1].hora;
-      else{
+      } else {
         return mensajes[mensajes.length - 1].fecha;
 
       }
     }
-    return ''
+    return '';
   }
-  
-  
+
+
 }
 
 

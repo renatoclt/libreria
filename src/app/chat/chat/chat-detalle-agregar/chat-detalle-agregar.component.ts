@@ -9,8 +9,8 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 export class ChatDetalleAgregarComponent implements OnInit {
 
   @Input() disabled;
-  @Output() nuevoMensaje:EventEmitter<any> = new EventEmitter();
-  placeholder:string="Escribir mensaje ...";
+  @Output() nuevoMensaje: EventEmitter<any> = new EventEmitter();
+  placeholder = 'Escribir mensaje ...';
   mensajeForm: FormGroup;
 
   constructor(private formBuilder: FormBuilder) { }
@@ -25,7 +25,7 @@ export class ChatDetalleAgregarComponent implements OnInit {
     });
   }
 
-  enviarMensaje(){
-    this.nuevoMensaje.emit(this.mensajeForm.controls['mensaje'].value);
+  enviarMensaje() {
+    this.nuevoMensaje.emit(this.mensajeForm.controls.mensaje.value);
   }
 }

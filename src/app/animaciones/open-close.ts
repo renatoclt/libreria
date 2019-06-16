@@ -1,5 +1,7 @@
 import { animation, trigger, animateChild, group, transition, animate, style, query, state } from '@angular/animations';
-
+/**
+ * Animacion que aumenta el opocity y lo disminuye
+ */
 export const openClose = animation([
   trigger('openClose', [
     // ...

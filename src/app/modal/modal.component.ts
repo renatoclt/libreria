@@ -1,7 +1,7 @@
-import { Component, OnInit, Input, ElementRef, Renderer2, Inject, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, Input, ElementRef, Renderer2, Inject, ViewEncapsulation, OnDestroy } from '@angular/core';
 import { ModalService } from './modal.service';
 import { DOCUMENT } from '@angular/common';
-import { openClose } from '../animaciones/open-close'
+import { openClose } from '../animaciones/open-close';
 import { trigger, transition, useAnimation, state, style, animate } from '@angular/animations';
 @Component({
   selector: 'rclt-modal',
@@ -51,19 +51,22 @@ import { trigger, transition, useAnimation, state, style, animate } from '@angul
     ])
   ]
 })
-export class ModalComponent implements OnInit {
-  openclose : 'open' |  'closed' = 'closed';
- 
+export class ModalComponent implements OnInit, OnDestroy {
+  openclose: 'open' |  'closed' = 'closed';
+
 
   @Input() id: string;
   private element: any;
 
-  constructor( @Inject(DOCUMENT) private document: Document, private modalService: ModalService, private el: ElementRef, private renderer: Renderer2) {
+  constructor( @Inject(DOCUMENT) private document: Document,
+               private modalService: ModalService,
+               private el: ElementRef,
+               private renderer: Renderer2) {
     this.element = el.nativeElement;
   }
 
   ngOnInit() {
-    let modal = this;
+    const modal = this;
 
     // ensure id attribute exists
     if (!this.id) {
@@ -75,7 +78,7 @@ export class ModalComponent implements OnInit {
     document.body.appendChild(this.element);
 
     // close modal on background click
-    this.element.addEventListener('click', function (e: any) {
+    this.element.addEventListener('click', function(e: any) {
       if (e.target.className === 'ngx-utilitario-modal') {
         modal.close();
       }
@@ -83,7 +86,7 @@ export class ModalComponent implements OnInit {
 
     // add self (this modal instance) to the modal service so it's accessible from controllers
     this.modalService.add(this);
-    this.close()
+    this.close();
   }
   // remove self from modal service when component is destroyed
   ngOnDestroy(): void {
@@ -92,17 +95,17 @@ export class ModalComponent implements OnInit {
   }
   // open modal
   open(): void {
-    this.openclose = 'open'
+    this.openclose = 'open';
     this.element.style.display = 'block';
     this.renderer.addClass(this.document.body, 'ngx-utilitario-modal-open');
     // this.renderer.setStyle(document.body, 'overflow','hidden');
   }
-  
+
   // close modal
   close(): void {
-    this.openclose = 'closed'
+    this.openclose = 'closed';
     this.element.style.display = 'none';
-    this.renderer.removeClass(this.document.body, 'ngx-utilitario-modal-open' )
+    this.renderer.removeClass(this.document.body, 'ngx-utilitario-modal-open' );
     // this.renderer.setStyle(document.body, 'overflow', 'auto' )
   }
 }
