@@ -533,7 +533,7 @@ export class CardsComponent implements OnInit {
     &lt;/div&gt;
 
     &lt;div [ngClass]&#x3D;&quot;classIcono&quot;&gt;
-        &lt;i class&#x3D;&quot;{{icono}} float-right cardIcono&quot; [style.color]&#x3D;&quot;color&quot;&gt;&lt;/i&gt;
+        &lt;em class&#x3D;&quot;{{icono}} float-right cardIcono&quot; [style.color]&#x3D;&quot;color&quot;&gt;&lt;/em&gt;
     &lt;/div&gt;
 &lt;/div&gt;</code></pre>
     </div>
@@ -618,8 +618,8 @@ export class CardsComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="cards" (click)="clickCard($event)">    <div [ngClass]="classTexto">        <h2 class="cardsTitulo">{{titulo}}</h2>        <h3 class="cardsSubtitulo">{{subtitulo}}</h3>        <h3 class="cardsContenido"><ng-content></ng-content></h3>    </div>    <div [ngClass]="classIcono">        <i class="{{icono}} float-right cardIcono" [style.color]="color"></i>    </div></div></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'clt-root'},{'name': 'CardsComponent', 'selector': 'ngx-utilitario-cards'},{'name': 'CardsImgTextComponent', 'selector': 'ngx-utilitario-cards-img-text'},{'name': 'CardsImgTextNdivComponent', 'selector': 'ngx-utilitario-img-text-ndiv'},{'name': 'ChatBusquedaComponent', 'selector': 'ngx-utilitario-chat-busqueda'},{'name': 'ChatComponent', 'selector': 'ngx-utilitario-chat'},{'name': 'ChatConversacionComponent', 'selector': 'ngx-utilitario-chat-conversacion'},{'name': 'ChatDetalleAgregarComponent', 'selector': 'ngx-utilitario-chat-detalle-agregar'},{'name': 'ChatDetalleComponent', 'selector': 'ngx-utilitario-chat-detalle'},{'name': 'ChatListaComponent', 'selector': 'ngx-utilitario-chat-lista'},{'name': 'InputComponent', 'selector': 'rclt-input'},{'name': 'MenuDotComponent', 'selector': 'rclt-menu-dot'},{'name': 'ModalComponent', 'selector': 'rclt-modal'},{'name': 'RepeatIconComponent', 'selector': 'rclt-repeat-icon'}];
+        var COMPONENT_TEMPLATE = '<div><div class="cards" (click)="clickCard($event)">    <div [ngClass]="classTexto">        <h2 class="cardsTitulo">{{titulo}}</h2>        <h3 class="cardsSubtitulo">{{subtitulo}}</h3>        <h3 class="cardsContenido"><ng-content></ng-content></h3>    </div>    <div [ngClass]="classIcono">        <em class="{{icono}} float-right cardIcono" [style.color]="color"></em>    </div></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'ngx-utilitario-app'},{'name': 'CardsComponent', 'selector': 'ngx-utilitario-cards'},{'name': 'CardsImgTextComponent', 'selector': 'ngx-utilitario-cards-img-text'},{'name': 'CardsImgTextNdivComponent', 'selector': 'ngx-utilitario-img-text-ndiv'},{'name': 'ChatBusquedaComponent', 'selector': 'ngx-utilitario-chat-busqueda'},{'name': 'ChatComponent', 'selector': 'ngx-utilitario-chat'},{'name': 'ChatConversacionComponent', 'selector': 'ngx-utilitario-chat-conversacion'},{'name': 'ChatDetalleAgregarComponent', 'selector': 'ngx-utilitario-chat-detalle-agregar'},{'name': 'ChatDetalleComponent', 'selector': 'ngx-utilitario-chat-detalle'},{'name': 'ChatListaComponent', 'selector': 'ngx-utilitario-chat-lista'},{'name': 'InputComponent', 'selector': 'ngx-utilitario-input'},{'name': 'MenuDotComponent', 'selector': 'ngx-utilitario-menu-dot'},{'name': 'ModalComponent', 'selector': 'ngx-utilitario-modal'},{'name': 'RepeatIconComponent', 'selector': 'ngx-utilitario-repeat-icon'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'CardsComponent'};
 </script>

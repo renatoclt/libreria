@@ -61,9 +61,16 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/app/modal/modal.component.ts</code>
+    <code>src/app/modal/modal/modal.component.ts</code>
 </p>
 
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Abre el nuevo componente enuna ventana emergente con una animacion de oppocity</p>
+
+    </p>
 
 
     <p class="comment">
@@ -96,7 +103,7 @@
 
             <tr>
                 <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>rclt-modal</code></td>
+                <td class="col-md-9"><code>ngx-utilitario-modal</code></td>
             </tr>
 
             <tr>
@@ -191,90 +198,6 @@
     </table>
 </section>
 
-    <section>
-    <h3 id="constructor">Constructor</h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-<code>constructor(document: Document, modalService: <a href="../injectables/ModalService.html">ModalService</a>, el: <a href="https://angular.io/api/core/ElementRef" target="_blank">ElementRef</a>, renderer: <a href="https://angular.io/api/core/Renderer2" target="_blank">Renderer2</a>)</code>
-                    </td>
-                </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="59" class="link-to-prism">src/app/modal/modal.component.ts:59</a></div>
-                            </td>
-                        </tr>
-
-                <tr>
-                    <td class="col-md-4">
-                            <div>
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>document</td>
-                                                  
-                                                        <td>
-                                                                    <code>Document</code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                                <tr>
-                                                        <td>modalService</td>
-                                                  
-                                                        <td>
-                                                                        <code><a href="../injectables/ModalService.html" target="_self" >ModalService</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                                <tr>
-                                                        <td>el</td>
-                                                  
-                                                        <td>
-                                                                        <code><a href="https://angular.io/api/core/ElementRef" target="_blank" >ElementRef</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                                <tr>
-                                                        <td>renderer</td>
-                                                  
-                                                        <td>
-                                                                        <code><a href="https://angular.io/api/core/Renderer2" target="_blank" >Renderer2</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-</section>
 
     <section>
     <h3 id="inputs">Inputs</h3>
@@ -294,9 +217,15 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="58" class="link-to-prism">src/app/modal/modal.component.ts:58</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="61" class="link-to-prism">src/app/modal/modal/modal.component.ts:61</a></div>
                             </td>
                         </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>id que recibe el modal para poder mostrarlo o ocultarlo</p>
+</div>
+                    </td>
+                </tr>
             </tbody>
         </table>
 </section>
@@ -330,14 +259,19 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="105"
-                            class="link-to-prism">src/app/modal/modal.component.ts:105</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="133"
+                            class="link-to-prism">src/app/modal/modal/modal.component.ts:133</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Cerramos el modal
+Cambiamos la variable de la animacion
+le aplicamos el estilo display none y le removemos la
+clase ngx-utilitario-modal-open que permite visualizar el componente</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -369,14 +303,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="92"
-                            class="link-to-prism">src/app/modal/modal.component.ts:92</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="110"
+                            class="link-to-prism">src/app/modal/modal/modal.component.ts:110</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Se elimina del modal service cuando el componente es destruido</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -408,8 +344,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="68"
-                            class="link-to-prism">src/app/modal/modal.component.ts:68</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="84"
+                            class="link-to-prism">src/app/modal/modal/modal.component.ts:84</a></div>
                 </td>
             </tr>
 
@@ -447,14 +383,19 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="97"
-                            class="link-to-prism">src/app/modal/modal.component.ts:97</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="120"
+                            class="link-to-prism">src/app/modal/modal/modal.component.ts:120</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>abrimos el modal
+Cambiamos la variable de la animacion
+le aplicamos el estilo display block y le asignamos la
+clase ngx-utilitario-modal-open que permite visualizar el componente</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -491,10 +432,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="59" class="link-to-prism">src/app/modal/modal.component.ts:59</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="69" class="link-to-prism">src/app/modal/modal/modal.component.ts:69</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Variable donde guardamos el contenido del modal</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -523,10 +470,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="55" class="link-to-prism">src/app/modal/modal.component.ts:55</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="65" class="link-to-prism">src/app/modal/modal/modal.component.ts:65</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>variable por la cual asignamos la animacion al modal</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -537,12 +490,15 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, Input, ElementRef, Renderer2, Inject, ViewEncapsulation, OnDestroy } from &#x27;@angular/core&#x27;;
-import { ModalService } from &#x27;./modal.service&#x27;;
+import { ModalService } from &#x27;../services/modal.service&#x27;;
 import { DOCUMENT } from &#x27;@angular/common&#x27;;
-import { openClose } from &#x27;../animaciones/open-close&#x27;;
+import { openClose } from &#x27;../../animaciones/open-close&#x27;;
 import { trigger, transition, useAnimation, state, style, animate } from &#x27;@angular/animations&#x27;;
+/**
+ * Abre el nuevo componente enuna ventana emergente con una animacion de oppocity
+ */
 @Component({
-  selector: &#x27;rclt-modal&#x27;,
+  selector: &#x27;ngx-utilitario-modal&#x27;,
   templateUrl: &#x27;./modal.component.html&#x27;,
   styleUrls: [&#x27;./modal.component.css&#x27;],
   encapsulation: ViewEncapsulation.None,
@@ -590,19 +546,32 @@ import { trigger, transition, useAnimation, state, style, animate } from &#x27;@
   ]
 })
 export class ModalComponent implements OnInit, OnDestroy {
-  openclose: &#x27;open&#x27; |  &#x27;closed&#x27; &#x3D; &#x27;closed&#x27;;
-
-
+  /**
+   * id que recibe el modal para poder mostrarlo o ocultarlo
+   */
   @Input() id: string;
+  /**
+   * variable por la cual asignamos la animacion al modal
+   */
+  openclose: &#x27;open&#x27; | &#x27;closed&#x27; &#x3D; &#x27;closed&#x27;;
+  /**
+   * Variable donde guardamos el contenido del modal
+   */
   private element: any;
 
-  constructor( @Inject(DOCUMENT) private document: Document,
-               private modalService: ModalService,
-               private el: ElementRef,
-               private renderer: Renderer2) {
+  /**
+   * @ignore
+   */
+  constructor(@Inject(DOCUMENT) private document: Document,
+    private modalService: ModalService,
+    private el: ElementRef,
+    private renderer: Renderer2) {
     this.element &#x3D; el.nativeElement;
   }
 
+  /**
+   * 
+   */
   ngOnInit() {
     const modal &#x3D; this;
 
@@ -616,7 +585,7 @@ export class ModalComponent implements OnInit, OnDestroy {
     document.body.appendChild(this.element);
 
     // close modal on background click
-    this.element.addEventListener(&#x27;click&#x27;, function(e: any) {
+    this.element.addEventListener(&#x27;click&#x27;, function (e: any) {
       if (e.target.className &#x3D;&#x3D;&#x3D; &#x27;ngx-utilitario-modal&#x27;) {
         modal.close();
       }
@@ -626,12 +595,19 @@ export class ModalComponent implements OnInit, OnDestroy {
     this.modalService.add(this);
     this.close();
   }
-  // remove self from modal service when component is destroyed
+  /**
+   * Se elimina del modal service cuando el componente es destruido
+   */
   ngOnDestroy(): void {
     this.modalService.remove(this.id);
     this.element.remove();
   }
-  // open modal
+  /**
+   * abrimos el modal
+   * Cambiamos la variable de la animacion
+   * le aplicamos el estilo display block y le asignamos la
+   * clase ngx-utilitario-modal-open que permite visualizar el componente
+   */
   open(): void {
     this.openclose &#x3D; &#x27;open&#x27;;
     this.element.style.display &#x3D; &#x27;block&#x27;;
@@ -639,11 +615,16 @@ export class ModalComponent implements OnInit, OnDestroy {
     // this.renderer.setStyle(document.body, &#x27;overflow&#x27;,&#x27;hidden&#x27;);
   }
 
-  // close modal
+  /**
+   * Cerramos el modal
+   * Cambiamos la variable de la animacion
+   * le aplicamos el estilo display none y le removemos la
+   * clase ngx-utilitario-modal-open que permite visualizar el componente
+   */
   close(): void {
     this.openclose &#x3D; &#x27;closed&#x27;;
     this.element.style.display &#x3D; &#x27;none&#x27;;
-    this.renderer.removeClass(this.document.body, &#x27;ngx-utilitario-modal-open&#x27; );
+    this.renderer.removeClass(this.document.body, &#x27;ngx-utilitario-modal-open&#x27;);
     // this.renderer.setStyle(document.body, &#x27;overflow&#x27;, &#x27;auto&#x27; )
   }
 }
@@ -743,14 +724,6 @@ export class ModalComponent implements OnInit, OnDestroy {
     opacity: 0.75;
     z-index: 900;
     animation-delay: 2s;
-}
-
-/**
-*
-* Modal animation
-*/
-
-.ngx-utilitario-modal-background {
     animation-duration: 4s;
     animation-direction: reverse;
 }
@@ -791,7 +764,7 @@ export class ModalComponent implements OnInit, OnDestroy {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><div class="ngx-utilitario-modal">  <div class="ngx-utilitario-modal-body">    <div class="ngx-utilitario-modal-content">      <div style="position: relative;">        <button type="button" class="ngx-utilitario-modal-cerrar" (click)="close()">          <span aria-hidden="true">&times;</span>        </button>        <div class="ngx-utilitario-modal-ngcontent" [@openClose]="openclose">          <ng-content>          </ng-content>        </div>      </div>    </div>  </div></div><div class="ngx-utilitario-modal-background" [@openCloseBackground]="openclose"></div><div class="ngx-utilitario-modal-open"></div></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'clt-root'},{'name': 'CardsComponent', 'selector': 'ngx-utilitario-cards'},{'name': 'CardsImgTextComponent', 'selector': 'ngx-utilitario-cards-img-text'},{'name': 'CardsImgTextNdivComponent', 'selector': 'ngx-utilitario-img-text-ndiv'},{'name': 'ChatBusquedaComponent', 'selector': 'ngx-utilitario-chat-busqueda'},{'name': 'ChatComponent', 'selector': 'ngx-utilitario-chat'},{'name': 'ChatConversacionComponent', 'selector': 'ngx-utilitario-chat-conversacion'},{'name': 'ChatDetalleAgregarComponent', 'selector': 'ngx-utilitario-chat-detalle-agregar'},{'name': 'ChatDetalleComponent', 'selector': 'ngx-utilitario-chat-detalle'},{'name': 'ChatListaComponent', 'selector': 'ngx-utilitario-chat-lista'},{'name': 'InputComponent', 'selector': 'rclt-input'},{'name': 'MenuDotComponent', 'selector': 'rclt-menu-dot'},{'name': 'ModalComponent', 'selector': 'rclt-modal'},{'name': 'RepeatIconComponent', 'selector': 'rclt-repeat-icon'}];
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'ngx-utilitario-app'},{'name': 'CardsComponent', 'selector': 'ngx-utilitario-cards'},{'name': 'CardsImgTextComponent', 'selector': 'ngx-utilitario-cards-img-text'},{'name': 'CardsImgTextNdivComponent', 'selector': 'ngx-utilitario-img-text-ndiv'},{'name': 'ChatBusquedaComponent', 'selector': 'ngx-utilitario-chat-busqueda'},{'name': 'ChatComponent', 'selector': 'ngx-utilitario-chat'},{'name': 'ChatConversacionComponent', 'selector': 'ngx-utilitario-chat-conversacion'},{'name': 'ChatDetalleAgregarComponent', 'selector': 'ngx-utilitario-chat-detalle-agregar'},{'name': 'ChatDetalleComponent', 'selector': 'ngx-utilitario-chat-detalle'},{'name': 'ChatListaComponent', 'selector': 'ngx-utilitario-chat-lista'},{'name': 'InputComponent', 'selector': 'ngx-utilitario-input'},{'name': 'MenuDotComponent', 'selector': 'ngx-utilitario-menu-dot'},{'name': 'ModalComponent', 'selector': 'ngx-utilitario-modal'},{'name': 'RepeatIconComponent', 'selector': 'ngx-utilitario-repeat-icon'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'ModalComponent'};
 </script>

@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { ModalService } from './modal/modal.service';
+import { ModalService } from './modal/services/modal.service';
 
 @Component({
-  selector: 'clt-root',
+  selector: 'ngx-utilitario-app',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })

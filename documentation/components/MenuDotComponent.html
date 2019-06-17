@@ -49,9 +49,6 @@
             <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
         </li>
         <li >
-            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
-        </li>
-        <li >
             <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
 </ul>
@@ -91,13 +88,9 @@
 
             <tr>
                 <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>rclt-menu-dot</code></td>
+                <td class="col-md-9"><code>ngx-utilitario-menu-dot</code></td>
             </tr>
 
-            <tr>
-                <td class="col-md-3">styleUrls</td>
-                <td class="col-md-9"><code>./menu-dot.component.css</code></td>
-            </tr>
 
 
 
@@ -179,7 +172,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/menu/menu-dot/menu-dot.component.ts:21</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/menu/menu-dot/menu-dot.component.ts:20</a></div>
                             </td>
                         </tr>
 
@@ -218,8 +211,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="27"
-                            class="link-to-prism">src/app/menu/menu-dot/menu-dot.component.ts:27</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="26"
+                            class="link-to-prism">src/app/menu/menu-dot/menu-dot.component.ts:26</a></div>
                 </td>
             </tr>
 
@@ -288,8 +281,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="24"
-                            class="link-to-prism">src/app/menu/menu-dot/menu-dot.component.ts:24</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="23"
+                            class="link-to-prism">src/app/menu/menu-dot/menu-dot.component.ts:23</a></div>
                 </td>
             </tr>
 
@@ -340,7 +333,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/menu/menu-dot/menu-dot.component.ts:11</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/menu/menu-dot/menu-dot.component.ts:10</a></div>
                             </td>
                         </tr>
 
@@ -376,7 +369,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/menu/menu-dot/menu-dot.component.ts:16</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/menu/menu-dot/menu-dot.component.ts:15</a></div>
                             </td>
                         </tr>
 
@@ -408,7 +401,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/menu/menu-dot/menu-dot.component.ts:21</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/menu/menu-dot/menu-dot.component.ts:20</a></div>
                             </td>
                         </tr>
 
@@ -425,9 +418,8 @@
 import { IMenuDot } from &#x27;../dto/Imenu-dto&#x27;;
 
 @Component({
-  selector: &#x27;rclt-menu-dot&#x27;,
+  selector: &#x27;ngx-utilitario-menu-dot&#x27;,
   templateUrl: &#x27;./menu-dot.component.html&#x27;,
-  styleUrls: [&#x27;./menu-dot.component.css&#x27;]
 })
 export class MenuDotComponent implements OnInit {
 
@@ -466,12 +458,6 @@ export class MenuDotComponent implements OnInit {
 &lt;/mat-menu&gt;</code></pre>
     </div>
 
-    <div class="tab-pane fade " id="c-styleData">
-                <p class="comment">
-                    <code>./menu-dot.component.css</code>
-                </p>
-                <pre class="line-numbers"><code class="language-scss"></code></pre>
-    </div>
 
     <div class="tab-pane fade " id="c-tree">
         <div id="tree-container"></div>
@@ -499,7 +485,7 @@ export class MenuDotComponent implements OnInit {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><button mat-icon-button [matMenuTriggerFor]="menuDot">  <mat-icon>more_vert</mat-icon></button><mat-menu #menuDot="matMenu">  <button mat-menu-item *ngFor="let item of menus" (click)="menuClick(item)" >    <mat-icon>{{item.icon}}</mat-icon>    <span>{{item.texto}}</span>  </button></mat-menu></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'clt-root'},{'name': 'CardsComponent', 'selector': 'ngx-utilitario-cards'},{'name': 'CardsImgTextComponent', 'selector': 'ngx-utilitario-cards-img-text'},{'name': 'CardsImgTextNdivComponent', 'selector': 'ngx-utilitario-img-text-ndiv'},{'name': 'ChatBusquedaComponent', 'selector': 'ngx-utilitario-chat-busqueda'},{'name': 'ChatComponent', 'selector': 'ngx-utilitario-chat'},{'name': 'ChatConversacionComponent', 'selector': 'ngx-utilitario-chat-conversacion'},{'name': 'ChatDetalleAgregarComponent', 'selector': 'ngx-utilitario-chat-detalle-agregar'},{'name': 'ChatDetalleComponent', 'selector': 'ngx-utilitario-chat-detalle'},{'name': 'ChatListaComponent', 'selector': 'ngx-utilitario-chat-lista'},{'name': 'InputComponent', 'selector': 'rclt-input'},{'name': 'MenuDotComponent', 'selector': 'rclt-menu-dot'},{'name': 'ModalComponent', 'selector': 'rclt-modal'},{'name': 'RepeatIconComponent', 'selector': 'rclt-repeat-icon'}];
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'ngx-utilitario-app'},{'name': 'CardsComponent', 'selector': 'ngx-utilitario-cards'},{'name': 'CardsImgTextComponent', 'selector': 'ngx-utilitario-cards-img-text'},{'name': 'CardsImgTextNdivComponent', 'selector': 'ngx-utilitario-img-text-ndiv'},{'name': 'ChatBusquedaComponent', 'selector': 'ngx-utilitario-chat-busqueda'},{'name': 'ChatComponent', 'selector': 'ngx-utilitario-chat'},{'name': 'ChatConversacionComponent', 'selector': 'ngx-utilitario-chat-conversacion'},{'name': 'ChatDetalleAgregarComponent', 'selector': 'ngx-utilitario-chat-detalle-agregar'},{'name': 'ChatDetalleComponent', 'selector': 'ngx-utilitario-chat-detalle'},{'name': 'ChatListaComponent', 'selector': 'ngx-utilitario-chat-lista'},{'name': 'InputComponent', 'selector': 'ngx-utilitario-input'},{'name': 'MenuDotComponent', 'selector': 'ngx-utilitario-menu-dot'},{'name': 'ModalComponent', 'selector': 'ngx-utilitario-modal'},{'name': 'RepeatIconComponent', 'selector': 'ngx-utilitario-repeat-icon'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'MenuDotComponent'};
 </script>

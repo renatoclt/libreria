@@ -49,9 +49,6 @@
             <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
         </li>
         <li >
-            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
-        </li>
-        <li >
             <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
 </ul>
@@ -91,13 +88,9 @@
 
             <tr>
                 <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>rclt-input</code></td>
+                <td class="col-md-9"><code>ngx-utilitario-input</code></td>
             </tr>
 
-            <tr>
-                <td class="col-md-3">styleUrls</td>
-                <td class="col-md-9"><code>./input.component.css</code></td>
-            </tr>
 
 
 
@@ -179,7 +172,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/forms/input/input.component.ts:14</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/forms/input/input.component.ts:13</a></div>
                             </td>
                         </tr>
 
@@ -204,7 +197,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/forms/input/input.component.ts:11</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/forms/input/input.component.ts:10</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -230,7 +223,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/forms/input/input.component.ts:12</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/forms/input/input.component.ts:11</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -250,7 +243,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/forms/input/input.component.ts:14</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/forms/input/input.component.ts:13</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -270,7 +263,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/forms/input/input.component.ts:13</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/forms/input/input.component.ts:12</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -306,8 +299,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="17"
-                            class="link-to-prism">src/app/forms/input/input.component.ts:17</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="16"
+                            class="link-to-prism">src/app/forms/input/input.component.ts:16</a></div>
                 </td>
             </tr>
 
@@ -333,9 +326,8 @@
 import { FormGroup } from &#x27;@angular/forms&#x27;;
 
 @Component({
-  selector: &#x27;rclt-input&#x27;,
+  selector: &#x27;ngx-utilitario-input&#x27;,
   templateUrl: &#x27;./input.component.html&#x27;,
-  styleUrls: [&#x27;./input.component.css&#x27;]
 })
 export class InputComponent implements OnInit {
 
@@ -353,35 +345,7 @@ export class InputComponent implements OnInit {
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;!-- &lt;div [formGroup]&#x3D;&quot;parent&quot;&gt;
-    &lt;mat-form-field [appearance]&#x3D;&quot;appearance&quot; [matTooltip]&#x3D;&quot;tooltip&quot; [matTooltipPosition]&#x3D;&quot;position&quot; &gt;
-      &lt;mat-label &gt;
-        {{label}}
-      &lt;/mat-label&gt;
-      &lt;span class&#x3D;&quot;monedaSimbolo&quot; *ngIf&#x3D;&quot;moneda&quot; matPrefix&gt;S/&lt;/span&gt;
-      &lt;span class&#x3D;&quot;codigoStyle&quot; *ngIf&#x3D;&quot;codigo&quot; matPrefix&gt;+51&lt;/span&gt;
-      &lt;input [ngClass]&#x3D;&quot;moneda &amp;&amp;  !cuestionario? &#x27;monedaStyle&#x27; : &#x27;normalStyle&#x27;&quot; matInput formControlName&#x3D;&quot;{{nombre}}&quot; placeHolder&#x3D;&quot;placeHolder&quot;
-        min&#x3D;&quot;0&quot; (keyup)&#x3D;&quot;onKey($event)&quot; [type]&#x3D;&quot;type&quot; [readonly]&#x3D;&quot;readonly&quot;&gt;
-      &lt;mat-error *ngIf&#x3D;&quot;invalid(nombre)&quot;&gt;
-        {{mensajeError}}
-      &lt;/mat-error&gt;
-      &lt;div class&#x3D;&quot;alternate-theme&quot;&gt;
-        &lt;mat-progress-bar *ngIf&#x3D;&quot;password&quot; [color]&#x3D;&quot;colorPassword&quot; [value]&#x3D;&quot;valuePassword&quot;&gt;&lt;/mat-progress-bar&gt;
-      &lt;/div&gt;
-      &lt;mat-hint *ngIf&#x3D;&quot;password&quot;&gt;
-        {{passwordMessage}}
-      &lt;/mat-hint&gt;
-  
-      &lt;mat-hint *ngIf&#x3D;&quot;cellphone&quot;&gt;
-        Deberás validar este número
-      &lt;/mat-hint&gt;
-  
-      &lt;mat-hint *ngIf&#x3D;&quot;ruc&quot;&gt;
-        Se validará el RUC con tus boletas
-      &lt;/mat-hint&gt;
-    &lt;/mat-form-field&gt;
-  &lt;/div&gt; --&gt;
-&lt;div [formGroup]&#x3D;&quot;parent&quot;&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;div [formGroup]&#x3D;&quot;parent&quot;&gt;
   &lt;mat-form-field [appearance]&#x3D;&quot;appearance&quot; [matTooltip]&#x3D;&quot;tooltip&quot; [matTooltipPosition]&#x3D;&quot;position&quot; &gt;
     &lt;mat-label&gt;
       {{label}}
@@ -394,12 +358,6 @@ export class InputComponent implements OnInit {
 &lt;/div&gt;</code></pre>
     </div>
 
-    <div class="tab-pane fade " id="c-styleData">
-                <p class="comment">
-                    <code>./input.component.css</code>
-                </p>
-                <pre class="line-numbers"><code class="language-scss"></code></pre>
-    </div>
 
     <div class="tab-pane fade " id="c-tree">
         <div id="tree-container"></div>
@@ -426,8 +384,8 @@ export class InputComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><!-- <div [formGroup]="parent">    <mat-form-field [appearance]="appearance" [matTooltip]="tooltip" [matTooltipPosition]="position" >      <mat-label >        {{label}}      </mat-label>      <span class="monedaSimbolo" *ngIf="moneda" matPrefix>S/</span>      <span class="codigoStyle" *ngIf="codigo" matPrefix>+51</span>      <input [ngClass]="moneda &&  !cuestionario? \'monedaStyle\' : \'normalStyle\'" matInput formControlName="{{nombre}}" placeHolder="placeHolder"        min="0" (keyup)="onKey($event)" [type]="type" [readonly]="readonly">      <mat-error *ngIf="invalid(nombre)">        {{mensajeError}}      </mat-error>      <div class="alternate-theme">        <mat-progress-bar *ngIf="password" [color]="colorPassword" [value]="valuePassword"></mat-progress-bar>      </div>      <mat-hint *ngIf="password">        {{passwordMessage}}      </mat-hint>        <mat-hint *ngIf="cellphone">        Deberás validar este número      </mat-hint>        <mat-hint *ngIf="ruc">        Se validará el RUC con tus boletas      </mat-hint>    </mat-form-field>  </div> --><div [formGroup]="parent">  <mat-form-field [appearance]="appearance" [matTooltip]="tooltip" [matTooltipPosition]="position" >    <mat-label>      {{label}}    </mat-label>    <input matInput>    <mat-hint>      Se validará el RUC con tus boletas    </mat-hint>  </mat-form-field></div></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'clt-root'},{'name': 'CardsComponent', 'selector': 'ngx-utilitario-cards'},{'name': 'CardsImgTextComponent', 'selector': 'ngx-utilitario-cards-img-text'},{'name': 'CardsImgTextNdivComponent', 'selector': 'ngx-utilitario-img-text-ndiv'},{'name': 'ChatBusquedaComponent', 'selector': 'ngx-utilitario-chat-busqueda'},{'name': 'ChatComponent', 'selector': 'ngx-utilitario-chat'},{'name': 'ChatConversacionComponent', 'selector': 'ngx-utilitario-chat-conversacion'},{'name': 'ChatDetalleAgregarComponent', 'selector': 'ngx-utilitario-chat-detalle-agregar'},{'name': 'ChatDetalleComponent', 'selector': 'ngx-utilitario-chat-detalle'},{'name': 'ChatListaComponent', 'selector': 'ngx-utilitario-chat-lista'},{'name': 'InputComponent', 'selector': 'rclt-input'},{'name': 'MenuDotComponent', 'selector': 'rclt-menu-dot'},{'name': 'ModalComponent', 'selector': 'rclt-modal'},{'name': 'RepeatIconComponent', 'selector': 'rclt-repeat-icon'}];
+        var COMPONENT_TEMPLATE = '<div><div [formGroup]="parent">  <mat-form-field [appearance]="appearance" [matTooltip]="tooltip" [matTooltipPosition]="position" >    <mat-label>      {{label}}    </mat-label>    <input matInput>    <mat-hint>      Se validará el RUC con tus boletas    </mat-hint>  </mat-form-field></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'ngx-utilitario-app'},{'name': 'CardsComponent', 'selector': 'ngx-utilitario-cards'},{'name': 'CardsImgTextComponent', 'selector': 'ngx-utilitario-cards-img-text'},{'name': 'CardsImgTextNdivComponent', 'selector': 'ngx-utilitario-img-text-ndiv'},{'name': 'ChatBusquedaComponent', 'selector': 'ngx-utilitario-chat-busqueda'},{'name': 'ChatComponent', 'selector': 'ngx-utilitario-chat'},{'name': 'ChatConversacionComponent', 'selector': 'ngx-utilitario-chat-conversacion'},{'name': 'ChatDetalleAgregarComponent', 'selector': 'ngx-utilitario-chat-detalle-agregar'},{'name': 'ChatDetalleComponent', 'selector': 'ngx-utilitario-chat-detalle'},{'name': 'ChatListaComponent', 'selector': 'ngx-utilitario-chat-lista'},{'name': 'InputComponent', 'selector': 'ngx-utilitario-input'},{'name': 'MenuDotComponent', 'selector': 'ngx-utilitario-menu-dot'},{'name': 'ModalComponent', 'selector': 'ngx-utilitario-modal'},{'name': 'RepeatIconComponent', 'selector': 'ngx-utilitario-repeat-icon'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'InputComponent'};
 </script>
