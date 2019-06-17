@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ChatConversacionComponent } from './chat-conversacion.component';
+import { ChatDetalleAgregarComponent } from '../chat-detalle-agregar/chat-detalle-agregar.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 describe('ChatConversacionComponent', () => {
   let component: ChatConversacionComponent;
@@ -8,7 +10,10 @@ describe('ChatConversacionComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ChatConversacionComponent ]
+      declarations: [
+        ChatConversacionComponent,
+        ChatDetalleAgregarComponent,
+        ReactiveFormsModule ]
     })
     .compileComponents();
   }));

@@ -9,7 +9,13 @@ import { ChatDetalleAgregarComponent } from './chat/chat-detalle-agregar/chat-de
 import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [ChatComponent, ChatBusquedaComponent, ChatListaComponent, ChatDetalleComponent, ChatConversacionComponent, ChatDetalleAgregarComponent ],
+  declarations: [
+    ChatComponent,
+    ChatBusquedaComponent,
+    ChatListaComponent,
+    ChatDetalleComponent,
+    ChatConversacionComponent,
+    ChatDetalleAgregarComponent ],
   imports: [
     CommonModule,
     ReactiveFormsModule

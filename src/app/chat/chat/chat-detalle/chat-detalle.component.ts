@@ -2,6 +2,8 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { IMensajeDetalle } from '../../dto/imensaje-detalle';
 import { IChatConversacionDetalle } from '../../dto/ichat-conversacion-detalle';
 import { Fecha } from '../../../utilitario/fecha';
+import { EBloqueoChat } from '../../dto/ebloqueo-chat';
+import { EEstadoChat } from '../../dto/eestado-chat';
 
 @Component({
   selector: 'ngx-utilitario-chat-detalle',
@@ -10,7 +12,15 @@ import { Fecha } from '../../../utilitario/fecha';
 })
 export class ChatDetalleComponent implements OnInit {
 
-  @Input() detalle: IMensajeDetalle;
+  @Input() detalle: IMensajeDetalle = {
+    bloqueo: EBloqueoChat.bloqueado,
+    estado : EEstadoChat.conectado,
+    id: '',
+    img: '',
+    mensaje: [],
+    nombre: '',
+    notificacion: 0
+  };
   @Output() clickDetalle: EventEmitter<any> = new EventEmitter();
   fecha: Fecha;
   constructor() {
@@ -42,7 +52,13 @@ export class ChatDetalleComponent implements OnInit {
     }
     return '';
   }
-
+  estadoChat(mensajeDetalle: IMensajeDetalle) {
+    if (mensajeDetalle !== undefined) {
+      return mensajeDetalle.estado;
+    } else {
+      return false;
+    }
+  }
 
 }
 

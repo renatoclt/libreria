@@ -41,10 +41,10 @@ export class ChatConversacionComponent implements OnInit {
     } else {
       tDate = new Date(this.conversacion.mensajes[index - 1].fecha);
     }
-    return !this.fecha.compararFechas(new Date(fecha), tDate);
+    return !this.fecha.compareDates(new Date(fecha), tDate);
   }
   diferenciaDias(fecha) {
-    return this.fecha.textoDiferenciaDias(fecha);
+    return this.fecha.differenceDaysText(fecha);
   }
   escogerEstilo(tipoMensaje) {
     if (tipoMensaje === ETipoMensaje.enviado) {

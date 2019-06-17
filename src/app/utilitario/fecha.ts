@@ -25,8 +25,11 @@ export class Fecha {
      * @return retorna true si la fecha1 es mayor a la fecha2
      */
     compareDates(date1: Date, date2?: Date): boolean {
+        if ( date1 === undefined || date1 === null ) {
+            return false;
+        }
         const dat1 = moment(date1);
-        if (date2 === undefined) {
+        if (date2 === undefined || date2 === null) {
             date2 = new Date();
         }
         const dat2 = moment(date2);
@@ -41,11 +44,14 @@ export class Fecha {
      * @example
      *  this.fecha.DifferenceDays(new Date())
      *  this.fecha.DifferenceDays(new Date(), '2019-10-13')
-     * @param  date1 fecha a comparar
+     * @param  date1 fecha a comparar si es undefined retornara undefined
      * @param  date2 si no envia una fecha se tomara la fecha actual
-     * @return retorna los dias de diferencia
+     * @return retorna los dias de diferencia o undefined si los datos son enviados incorrectamente
      */
     differenceDays(date1: Date, date2?: Date): number {
+        if (date1 === undefined || date1 === null || date2 === null) {
+            return undefined;
+        }
         const dat1 = moment(date1);
         if (date2 === undefined) {
             date2 = new Date();
@@ -67,6 +73,9 @@ export class Fecha {
      * @returns si la diferencia es entre -1 o 1 retornara ayer hoy o mañana si no retornara la fecha en el formato indicado
      */
     differenceDaysText(date1: Date, date2?: Date, format?: string): string {
+        if (date1 === undefined || date1 === null || date2 === null) {
+            return undefined;
+        }
         const dat1 = moment(date1);
         const dias: number = this.differenceDays(date1, date2);
         if (format === undefined) {
@@ -99,6 +108,9 @@ export class Fecha {
      * @returns la fecha en el formato deseado
      */
     format(date: Date, format: string): string {
+        if (date === undefined || date === null ) {
+            return undefined;
+        }
         const dat1 = moment(date);
         return dat1.format(format);
     }

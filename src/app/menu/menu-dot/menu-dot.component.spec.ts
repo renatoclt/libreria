@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MenuDotComponent } from './menu-dot.component';
+import { MatMenuModule, MatIconModule } from '@angular/material';
+import { CommonModule } from '@angular/common';
 
 describe('MenuDotComponent', () => {
   let component: MenuDotComponent;
@@ -8,7 +10,12 @@ describe('MenuDotComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MenuDotComponent ]
+      declarations: [ MenuDotComponent ],
+      imports:[
+        MatMenuModule,
+        MatIconModule,
+        CommonModule
+      ]
     })
     .compileComponents();
   }));

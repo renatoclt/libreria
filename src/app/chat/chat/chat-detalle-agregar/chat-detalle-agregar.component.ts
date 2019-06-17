@@ -8,7 +8,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class ChatDetalleAgregarComponent implements OnInit {
 
-  @Input() disabled;
+  @Input() disabled: number;
   @Output() nuevoMensaje: EventEmitter<any> = new EventEmitter();
   placeholder = 'Escribir mensaje ...';
   mensajeForm: FormGroup;

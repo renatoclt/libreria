@@ -33,7 +33,7 @@ export class ChatDetalleComponent implements OnInit {
   }
   ultimaFecha(mensajes: IChatConversacionDetalle[]) {
     if (mensajes.length > 0) {
-      if (this.fecha.compararFechas(new Date(mensajes[mensajes.length - 1].fecha))) {
+      if (this.fecha.compareDates(new Date(mensajes[mensajes.length - 1].fecha))) {
         return mensajes[mensajes.length - 1].hora;
       } else {
         return mensajes[mensajes.length - 1].fecha;

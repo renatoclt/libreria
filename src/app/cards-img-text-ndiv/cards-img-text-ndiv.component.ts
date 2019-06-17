@@ -1,8 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-// tslint:disable-next-line: component-selector
-  selector: 'rclt-cards-img-text-ndiv',
+  selector: 'ngx-utilitario-img-text-ndiv',
   templateUrl: './cards-img-text-ndiv.component.html',
   styleUrls: ['./cards-img-text-ndiv.component.css']
 })

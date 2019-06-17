@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { RepeatIconComponent } from './repeat-icon.component';
+import { NumberToArrayPipe } from '../pipe/number-to-array.pipe';
 
 describe('RepeatIconComponent', () => {
   let component: RepeatIconComponent;
@@ -8,7 +9,8 @@ describe('RepeatIconComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RepeatIconComponent ]
+      declarations: [ RepeatIconComponent, NumberToArrayPipe ],
+      imports: []
     })
     .compileComponents();
   }));
