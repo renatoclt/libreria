@@ -45,16 +45,16 @@
             <div>{{item.mensaje}}</div>
             <div>{{item.hora}}
               <span *ngIf="estadoMensajeEnviado(item.estadoMensaje, item.tipoMensaje)" class="ngx-utilitario-msj-enviado">
-                <i class="fa fa-check"></i> <!-- Compliant icon fonts usage -->
+                <em class="fa fa-check"></em> 
               </span>
               <span *ngIf="estadoMensajeRecibido(item.estadoMensaje, item.tipoMensaje)"
                 class="ngx-utilitario-msj-recibido">
-                <i class="fa fa-check"></i> <!-- Compliant icon fonts usage -->
-                <i class="fa fa-check"></i> <!-- Compliant icon fonts usage -->
+                <em class="fa fa-check"></em> 
+                <em class="fa fa-check"></em> 
               </span>
               <span *ngIf="estadoMensajeLeido(item.estadoMensaje, item.tipoMensaje)" class="ngx-utilitario-msj-leido">
-                <i class="fa fa-check"></i> <!-- Compliant icon fonts usage -->
-                <i class="fa fa-check"></i> <!-- Compliant icon fonts usage -->
+                <em class="fa fa-check"></em> 
+                <em class="fa fa-check"></em> 
               </span>
             </div>
           </div>

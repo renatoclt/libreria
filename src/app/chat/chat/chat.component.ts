@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter, SimpleChanges, SimpleChange } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, SimpleChanges, SimpleChange, OnChanges } from '@angular/core';
 import { IMensajeDetalle } from '../dto/imensaje-detalle';
 import { EEstadoChat } from '../dto/eestado-chat';
 import { EEstadoMensaje } from '../dto/eestado-mensaje';
@@ -12,7 +12,7 @@ import { EBloqueoChat } from '../dto/ebloqueo-chat';
   templateUrl: './chat.component.html',
   styleUrls: ['./chat.component.scss']
 })
-export class ChatComponent implements OnInit {
+export class ChatComponent implements OnInit, OnChanges {
 
   conversacion1: IChatConversacionDetalle = {
     estadoMensaje: EEstadoMensaje.enviado,
@@ -46,7 +46,26 @@ export class ChatComponent implements OnInit {
     estado: EEstadoChat.conectado,
     id: '1',
     img: 'fd',
-    mensaje: [this.conversacion1, this.conversacion1, this.conversacion1, this.conversacion1, this.conversacion1, this.conversacion1, this.conversacion1, this.conversacion1, this.conversacion1, this.conversacion1, this.conversacion1, this.conversacion1, this.conversacion1, this.conversacion1, this.conversacion1, this.conversacion1, this.conversacion1, this.conversacion1, this.conversacion1, this.conversacion1, this.conversacion1, this.conversacion1, this.conversacion1, this.conversacion1, this.conversacion1],
+    mensaje: [this.conversacion1,
+              this.conversacion1,
+              this.conversacion1,
+              this.conversacion1,
+              this.conversacion1,
+              this.conversacion1,
+              this.conversacion1,
+              this.conversacion1,
+              this.conversacion1,
+              this.conversacion1,
+              this.conversacion1,
+              this.conversacion1,
+              this.conversacion1,
+              this.conversacion1,
+              this.conversacion1,
+              this.conversacion1,
+              this.conversacion1,
+              this.conversacion1,
+              this.conversacion1,
+              this.conversacion1],
     nombre: 'r2',
     notificacion: 2,
     bloqueo: EBloqueoChat.desbloqueado
@@ -75,7 +94,6 @@ export class ChatComponent implements OnInit {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    const name: SimpleChange = changes.name;
     if (changes.lista) {
       this.lista.forEach(chat => {
         if (chat.id === this.conversacion.id) {

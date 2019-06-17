@@ -2,9 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { IMenuDot } from '../dto/Imenu-dto';
 
 @Component({
-  selector: 'rclt-menu-dot',
+  selector: 'ngx-utilitario-menu-dot',
   templateUrl: './menu-dot.component.html',
-  styleUrls: ['./menu-dot.component.css']
 })
 export class MenuDotComponent implements OnInit {
 

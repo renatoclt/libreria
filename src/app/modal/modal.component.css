@@ -67,14 +67,6 @@
     opacity: 0.75;
     z-index: 900;
     animation-delay: 2s;
-}
-
-/**
-*
-* Modal animation
-*/
-
-.ngx-utilitario-modal-background {
     animation-duration: 4s;
     animation-direction: reverse;
 }

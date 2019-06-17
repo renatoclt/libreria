@@ -1,0 +1,28 @@
+<!-- <div [formGroup]="parent">
+    <mat-form-field [appearance]="appearance" [matTooltip]="tooltip" [matTooltipPosition]="position" >
+      <mat-label >
+        {{label}}
+      </mat-label>
+      <span class="monedaSimbolo" *ngIf="moneda" matPrefix>S/</span>
+      <span class="codigoStyle" *ngIf="codigo" matPrefix>+51</span>
+      <input [ngClass]="moneda &&  !cuestionario? 'monedaStyle' : 'normalStyle'" matInput formControlName="{{nombre}}" placeHolder="placeHolder"
+        min="0" (keyup)="onKey($event)" [type]="type" [readonly]="readonly">
+      <mat-error *ngIf="invalid(nombre)">
+        {{mensajeError}}
+      </mat-error>
+      <div class="alternate-theme">
+        <mat-progress-bar *ngIf="password" [color]="colorPassword" [value]="valuePassword"></mat-progress-bar>
+      </div>
+      <mat-hint *ngIf="password">
+        {{passwordMessage}}
+      </mat-hint>
+  
+      <mat-hint *ngIf="cellphone">
+        Deberás validar este número
+      </mat-hint>
+  
+      <mat-hint *ngIf="ruc">
+        Se validará el RUC con tus boletas
+      </mat-hint>
+    </mat-form-field>
+  </div> -->
