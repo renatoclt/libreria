@@ -70,7 +70,7 @@
                 <h3>Description</h3>
             </p>
             <p class="comment">
-                <p>Crea un arreglo de tamaño n </p>
+                <p>Crea un arreglo de tamaño n</p>
 
             </p>
 
@@ -190,7 +190,7 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Pipe, PipeTransform } from &#x27;@angular/core&#x27;;
 
 /**
- * Crea un arreglo de tamaño n 
+ * Crea un arreglo de tamaño n
  */
 @Pipe({
   name: &#x27;numberToArray&#x27;
@@ -199,16 +199,16 @@ export class NumberToArrayPipe implements PipeTransform {
 
   /**
    * crea un arreglo de tamaño n
-   * 
+   *
    * @example
    * *ngFor&#x3D;&quot;let item of 2 | numberToArray&quot;
-   * 
+   *
    * @param length tamaño del nuevo arreglo
-   * 
+   *
    * @returns un arreglo de tamaño n
    */
   transform(length: number): number[] {
-    let res &#x3D; [];
+    const res &#x3D; [];
     for (let i &#x3D; 0; i &lt; length; i++) {
       res.push(i);
     }

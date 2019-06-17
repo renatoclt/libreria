@@ -929,7 +929,7 @@
     estado: EEstadoChat.conectado,
     id: &#x27;1&#x27;,
     img: &#x27;fd&#x27;,
-    mensaje: [this.conversacion1,],
+    mensaje: [this.conversacion1, ],
     nombre: &#x27;re1&#x27;,
     notificacion: 2,
     bloqueo: EBloqueoChat.bloqueado
@@ -969,7 +969,7 @@
     estado: EEstadoChat.conectado,
     id: &#x27;1&#x27;,
     img: &#x27;fd&#x27;,
-    mensaje: [this.conversacion1,this.conversacion1,this.conversacion1,this.conversacion1,this.conversacion1,this.conversacion1,this.conversacion1,this.conversacion1,this.conversacion1,this.conversacion1,this.conversacion1,this.conversacion1,this.conversacion1,this.conversacion1,this.conversacion1,this.conversacion1,this.conversacion1,this.conversacion1,this.conversacion1,this.conversacion1,this.conversacion1,this.conversacion1,this.conversacion1,this.conversacion1,this.conversacion1],
+    mensaje: [this.conversacion1, this.conversacion1, this.conversacion1, this.conversacion1, this.conversacion1, this.conversacion1, this.conversacion1, this.conversacion1, this.conversacion1, this.conversacion1, this.conversacion1, this.conversacion1, this.conversacion1, this.conversacion1, this.conversacion1, this.conversacion1, this.conversacion1, this.conversacion1, this.conversacion1, this.conversacion1, this.conversacion1, this.conversacion1, this.conversacion1, this.conversacion1, this.conversacion1],
     nombre: &#x27;r2&#x27;,
     notificacion: 2,
     bloqueo: EBloqueoChat.desbloqueado
@@ -1029,21 +1029,21 @@ export class ChatComponent implements OnInit {
     estado: EEstadoChat.conectado,
     id: &#x27;1&#x27;,
     img: &#x27;fd&#x27;,
-    mensaje: [this.conversacion1,],
+    mensaje: [this.conversacion1, ],
     nombre: &#x27;re1&#x27;,
     notificacion: 2,
     bloqueo: EBloqueoChat.bloqueado
-  }
+  };
 
   detalle2: IMensajeDetalle &#x3D; {
     estado: EEstadoChat.conectado,
     id: &#x27;1&#x27;,
     img: &#x27;fd&#x27;,
-    mensaje: [this.conversacion1,this.conversacion1,this.conversacion1,this.conversacion1,this.conversacion1,this.conversacion1,this.conversacion1,this.conversacion1,this.conversacion1,this.conversacion1,this.conversacion1,this.conversacion1,this.conversacion1,this.conversacion1,this.conversacion1,this.conversacion1,this.conversacion1,this.conversacion1,this.conversacion1,this.conversacion1,this.conversacion1,this.conversacion1,this.conversacion1,this.conversacion1,this.conversacion1],
+    mensaje: [this.conversacion1, this.conversacion1, this.conversacion1, this.conversacion1, this.conversacion1, this.conversacion1, this.conversacion1, this.conversacion1, this.conversacion1, this.conversacion1, this.conversacion1, this.conversacion1, this.conversacion1, this.conversacion1, this.conversacion1, this.conversacion1, this.conversacion1, this.conversacion1, this.conversacion1, this.conversacion1, this.conversacion1, this.conversacion1, this.conversacion1, this.conversacion1, this.conversacion1],
     nombre: &#x27;r2&#x27;,
     notificacion: 2,
     bloqueo: EBloqueoChat.desbloqueado
-  }
+  };
   @Input() lista: IMensajeDetalle[] &#x3D; [this.detalle, this.detalle2];
 
 
@@ -1055,37 +1055,37 @@ export class ChatComponent implements OnInit {
     mensajes: [],
     bloqueo: EBloqueoChat.desbloqueado
   };
-  @Output() nuevoMensaje:EventEmitter&lt;any&gt; &#x3D; new EventEmitter();
-  @Output() clickLista:EventEmitter&lt;any&gt; &#x3D;  new EventEmitter();
-  @Output() eliminarConversacion:EventEmitter&lt;any&gt; &#x3D; new EventEmitter();
-  @Output() bloquearConversacion:EventEmitter&lt;any&gt; &#x3D; new EventEmitter();
+  @Output() nuevoMensaje: EventEmitter&lt;any&gt; &#x3D; new EventEmitter();
+  @Output() clickLista: EventEmitter&lt;any&gt; &#x3D;  new EventEmitter();
+  @Output() eliminarConversacion: EventEmitter&lt;any&gt; &#x3D; new EventEmitter();
+  @Output() bloquearConversacion: EventEmitter&lt;any&gt; &#x3D; new EventEmitter();
 
-  
-  
+
+
   constructor() { }
-  
+
   ngOnInit() {
   }
-  
+
   ngOnChanges(changes: SimpleChanges): void {
     const name: SimpleChange &#x3D; changes.name;
-    if(changes.lista){
-      this.lista.forEach(chat&#x3D;&gt;{
-        if(chat.id &#x3D;&#x3D;&#x3D; this.conversacion.id){
+    if (changes.lista) {
+      this.lista.forEach(chat &#x3D;&gt; {
+        if (chat.id &#x3D;&#x3D;&#x3D; this.conversacion.id) {
           this.conversacion.mensajes &#x3D; chat.mensaje;
           this.conversacion.bloqueo &#x3D; chat.bloqueo;
           this.conversacion.bloqueo &#x3D; chat.bloqueo;
         }
-      })
+      });
     }
   }
-  
-  clickListaDetalle(detalle:any){
+
+  clickListaDetalle(detalle: any) {
     this.clickLista.emit(detalle);
     this.cambiarConversacion(detalle);
   }
 
-  cambiarConversacion(detalle:IMensajeDetalle){
+  cambiarConversacion(detalle: IMensajeDetalle) {
     this.conversacion.estado &#x3D; detalle.estado;
     this.conversacion.nombre &#x3D; detalle.nombre;
     this.conversacion.id &#x3D; detalle.id;
@@ -1094,17 +1094,17 @@ export class ChatComponent implements OnInit {
     this.conversacion.bloqueo &#x3D; detalle.bloqueo;
   }
 
-  enviarMensaje(mensaje){
+  enviarMensaje(mensaje) {
     this.conversacion.mensajes.push(mensaje);
     this.nuevoMensaje.emit(this.conversacion);
   }
 
-  eliminarMensajes(){
+  eliminarMensajes() {
     this.conversacion.mensajes &#x3D; [];
     this.eliminarConversacion.emit(this.conversacion);
   }
 
-  bloquearChat(estadoBloqueo){
+  bloquearChat(estadoBloqueo) {
     this.conversacion.bloqueo &#x3D; estadoBloqueo;
     this.bloquearConversacion.emit(this.conversacion);
   }
@@ -1190,7 +1190,7 @@ export class ChatComponent implements OnInit {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><div class="row row-no-padding ngx-utilitario-chat">  <div class="col-4">    <header class="header-chat">      Chats      <span class="fa fa-pencil-square-o"></span>    </header>    <ngx-utilitario-chat-busqueda></ngx-utilitario-chat-busqueda>    <ngx-utilitario-chat-lista [lista]="lista" (clickLista)="clickListaDetalle($event)"></ngx-utilitario-chat-lista>  </div>  <div class="col-8">    <ngx-utilitario-chat-conversacion [conversacion]="conversacion" (nuevoMensaje)="enviarMensaje($event)"      (eliminarMensajes)="eliminarMensajes()" (bloquearConversacion)="bloquearChat($event)">    </ngx-utilitario-chat-conversacion>  </div></div></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'clt-root'},{'name': 'CardsComponent', 'selector': 'rclt-cards'},{'name': 'CardsImgTextComponent', 'selector': 'rclt-cards-img-text'},{'name': 'CardsImgTextNdivComponent', 'selector': 'rclt-cards-img-text-ndiv'},{'name': 'ChatBusquedaComponent', 'selector': 'ngx-utilitario-chat-busqueda'},{'name': 'ChatComponent', 'selector': 'ngx-utilitario-chat'},{'name': 'ChatConversacionComponent', 'selector': 'ngx-utilitario-chat-conversacion'},{'name': 'ChatDetalleAgregarComponent', 'selector': 'ngx-utilitario-chat-detalle-agregar'},{'name': 'ChatDetalleComponent', 'selector': 'ngx-utilitario-chat-detalle'},{'name': 'ChatListaComponent', 'selector': 'ngx-utilitario-chat-lista'},{'name': 'InputComponent', 'selector': 'rclt-input'},{'name': 'MenuDotComponent', 'selector': 'rclt-menu-dot'},{'name': 'ModalComponent', 'selector': 'rclt-modal'},{'name': 'RepeatIconComponent', 'selector': 'rclt-repeat-icon'}];
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'clt-root'},{'name': 'CardsComponent', 'selector': 'ngx-utilitario-cards'},{'name': 'CardsImgTextComponent', 'selector': 'ngx-utilitario-cards-img-text'},{'name': 'CardsImgTextNdivComponent', 'selector': 'ngx-utilitario-img-text-ndiv'},{'name': 'ChatBusquedaComponent', 'selector': 'ngx-utilitario-chat-busqueda'},{'name': 'ChatComponent', 'selector': 'ngx-utilitario-chat'},{'name': 'ChatConversacionComponent', 'selector': 'ngx-utilitario-chat-conversacion'},{'name': 'ChatDetalleAgregarComponent', 'selector': 'ngx-utilitario-chat-detalle-agregar'},{'name': 'ChatDetalleComponent', 'selector': 'ngx-utilitario-chat-detalle'},{'name': 'ChatListaComponent', 'selector': 'ngx-utilitario-chat-lista'},{'name': 'InputComponent', 'selector': 'rclt-input'},{'name': 'MenuDotComponent', 'selector': 'rclt-menu-dot'},{'name': 'ModalComponent', 'selector': 'rclt-modal'},{'name': 'RepeatIconComponent', 'selector': 'rclt-repeat-icon'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'ChatComponent'};
 </script>

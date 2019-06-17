@@ -18,6 +18,10 @@ export class DynamicComponentService {
   }
 
   /**
+   * Servicio que permite injectar componente en tiempo de ejecucion
+   * @example
+   * this.dynamicComponentService.injectComponent(PopupComponent,
+   *        x => { x.tipo = currentFeature.properties.marcador ; x.id = currentFeature.properties.id; }  );
    * @param component El componente a insertar
    * @param propertySetter Las propiedades del componente que va a recibir
    */

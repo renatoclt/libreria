@@ -91,7 +91,7 @@
 
             <tr>
                 <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>rclt-cards-img-text</code></td>
+                <td class="col-md-9"><code>ngx-utilitario-cards-img-text</code></td>
             </tr>
 
             <tr>
@@ -231,13 +231,7 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>&quot;col-1 align-middle cardIcono&quot;</code>
+                        <i>Default value : </i><code>&#x27;col-1 align-middle cardIcono&#x27;</code>
                     </td>
                 </tr>
                         <tr>
@@ -263,13 +257,7 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>&quot;w-80 float-left&quot;</code>
+                        <i>Default value : </i><code>&#x27;w-80 float-left&#x27;</code>
                     </td>
                 </tr>
                         <tr>
@@ -289,13 +277,7 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>&quot;#000&quot;</code>
+                        <i>Default value : </i><code>&#x27;#000&#x27;</code>
                     </td>
                 </tr>
                         <tr>
@@ -315,13 +297,7 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>&quot;afdasdf&quot;</code>
+                        <i>Default value : </i><code>&#x27;afdasdf&#x27;</code>
                     </td>
                 </tr>
                         <tr>
@@ -341,13 +317,7 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>&quot;etiqueta&quot;</code>
+                        <i>Default value : </i><code>&#x27;etiqueta&#x27;</code>
                     </td>
                 </tr>
                         <tr>
@@ -367,13 +337,7 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>&quot;6.5rem&quot;</code>
+                        <i>Default value : </i><code>&#x27;6.5rem&#x27;</code>
                     </td>
                 </tr>
                         <tr>
@@ -393,13 +357,7 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>&quot;fa fa-user&quot;</code>
+                        <i>Default value : </i><code>&#x27;fa fa-user&#x27;</code>
                     </td>
                 </tr>
                         <tr>
@@ -421,12 +379,6 @@
                     <td class="col-md-4">
                         <a name="imagen"></a>
                         <b>imagen</b>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-
                     </td>
                 </tr>
                 <tr>
@@ -608,34 +560,34 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, Input, EventEmitter, Output } from &#x27;@angular/core&#x27;;
 
 @Component({
-  selector: &#x27;rclt-cards-img-text&#x27;,
+  selector: &#x27;ngx-utilitario-cards-img-text&#x27;,
   templateUrl: &#x27;./cards-img-text.component.html&#x27;,
   styleUrls: [&#x27;./cards-img-text.component.css&#x27;]
 })
 export class CardsImgTextComponent implements OnInit {
 
-  @Input() titulo:string;
-  @Input() descripcion:string &#x3D;&quot;afdasdf&quot;;
-  @Input() etiqueta:string &#x3D;&quot;etiqueta&quot;;
-  @Input() imagen:string &#x3D; &#x27;./assets/test.jpg&#x27;;
+  @Input() titulo: string;
+  @Input() descripcion &#x3D; &#x27;afdasdf&#x27;;
+  @Input() etiqueta &#x3D; &#x27;etiqueta&#x27;;
+  @Input() imagen &#x3D; &#x27;./assets/test.jpg&#x27;;
   /**
    * recibe el icono a usar
    */
-  @Input() icono:string &#x3D; &quot;fa fa-user&quot;;
-  @Input() classTexto:string &#x3D; &quot;w-80 float-left&quot;;
+  @Input() icono &#x3D; &#x27;fa fa-user&#x27;;
+  @Input() classTexto &#x3D; &#x27;w-80 float-left&#x27;;
   /**
    * Enviar el tamaño de columnas y el tamaño del icono
    */
-  @Input() classIcono:string &#x3D; &quot;col-1 align-middle cardIcono&quot;;
-  @Input() color:string &#x3D; &quot;#000&quot;;
-  @Input() height:string &#x3D; &quot;6.5rem&quot;;
-  @Output() click:EventEmitter&lt;any&gt; &#x3D; new EventEmitter();
+  @Input() classIcono &#x3D; &#x27;col-1 align-middle cardIcono&#x27;;
+  @Input() color &#x3D; &#x27;#000&#x27;;
+  @Input() height &#x3D; &#x27;6.5rem&#x27;;
+  @Output() click: EventEmitter&lt;any&gt; &#x3D; new EventEmitter();
 
   constructor() { }
-  
+
   ngOnInit() {
   }
-  clickCard($event){
+  clickCard($event) {
     this.click.emit($event);
   }
 }
@@ -768,7 +720,7 @@ export class CardsImgTextComponent implements OnInit {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><div class="row cards row-no-padding" [style.color]="color" (click)="clickCard($event)">    <div class="col-2 float-left">        <img class="cardsImagen" src={{imagen}} [style.height]="height" />    </div>    <div class="col-9">        <div [ngClass]="classTexto">            <h2 class="cardsTitulo" [style.color]="color">{{titulo}}</h2>            <h3 class="cardsDescripcion">{{descripcion}}</h3>            <h3 class="cardsEtiqueta" [style.background]="color">{{etiqueta}}</h3>            <h3 class="cardsContenido"><ng-content></ng-content></h3>        </div>    </div>    <div [ngClass]="classIcono">        <i class="{{icono}} float-right cardIcono"></i>    </div></div></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'clt-root'},{'name': 'CardsComponent', 'selector': 'rclt-cards'},{'name': 'CardsImgTextComponent', 'selector': 'rclt-cards-img-text'},{'name': 'CardsImgTextNdivComponent', 'selector': 'rclt-cards-img-text-ndiv'},{'name': 'ChatBusquedaComponent', 'selector': 'ngx-utilitario-chat-busqueda'},{'name': 'ChatComponent', 'selector': 'ngx-utilitario-chat'},{'name': 'ChatConversacionComponent', 'selector': 'ngx-utilitario-chat-conversacion'},{'name': 'ChatDetalleAgregarComponent', 'selector': 'ngx-utilitario-chat-detalle-agregar'},{'name': 'ChatDetalleComponent', 'selector': 'ngx-utilitario-chat-detalle'},{'name': 'ChatListaComponent', 'selector': 'ngx-utilitario-chat-lista'},{'name': 'InputComponent', 'selector': 'rclt-input'},{'name': 'MenuDotComponent', 'selector': 'rclt-menu-dot'},{'name': 'ModalComponent', 'selector': 'rclt-modal'},{'name': 'RepeatIconComponent', 'selector': 'rclt-repeat-icon'}];
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'clt-root'},{'name': 'CardsComponent', 'selector': 'ngx-utilitario-cards'},{'name': 'CardsImgTextComponent', 'selector': 'ngx-utilitario-cards-img-text'},{'name': 'CardsImgTextNdivComponent', 'selector': 'ngx-utilitario-img-text-ndiv'},{'name': 'ChatBusquedaComponent', 'selector': 'ngx-utilitario-chat-busqueda'},{'name': 'ChatComponent', 'selector': 'ngx-utilitario-chat'},{'name': 'ChatConversacionComponent', 'selector': 'ngx-utilitario-chat-conversacion'},{'name': 'ChatDetalleAgregarComponent', 'selector': 'ngx-utilitario-chat-detalle-agregar'},{'name': 'ChatDetalleComponent', 'selector': 'ngx-utilitario-chat-detalle'},{'name': 'ChatListaComponent', 'selector': 'ngx-utilitario-chat-lista'},{'name': 'InputComponent', 'selector': 'rclt-input'},{'name': 'MenuDotComponent', 'selector': 'rclt-menu-dot'},{'name': 'ModalComponent', 'selector': 'rclt-modal'},{'name': 'RepeatIconComponent', 'selector': 'rclt-repeat-icon'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'CardsImgTextComponent'};
 </script>

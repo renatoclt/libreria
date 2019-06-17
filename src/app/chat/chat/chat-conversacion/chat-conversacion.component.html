@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-2 img-fluid">
-      <img class="img-fluid rounded-circle img-height-3-7" src="{{conversacion.img}}" />
+      <img class="img-fluid rounded-circle img-height-3-7" alt="conversacion.nombre" src="{{conversacion.img}}" />
     </div>
     <div class="col-9">
       <div class="row">
@@ -45,16 +45,16 @@
             <div>{{item.mensaje}}</div>
             <div>{{item.hora}}
               <span *ngIf="estadoMensajeEnviado(item.estadoMensaje, item.tipoMensaje)" class="ngx-utilitario-msj-enviado">
-                <i class="fa fa-check"></i>
+                <i class="fa fa-check"></i> <!-- Compliant icon fonts usage -->
               </span>
               <span *ngIf="estadoMensajeRecibido(item.estadoMensaje, item.tipoMensaje)"
                 class="ngx-utilitario-msj-recibido">
-                <i class="fa fa-check"></i>
-                <i class="fa fa-check"></i>
+                <i class="fa fa-check"></i> <!-- Compliant icon fonts usage -->
+                <i class="fa fa-check"></i> <!-- Compliant icon fonts usage -->
               </span>
               <span *ngIf="estadoMensajeLeido(item.estadoMensaje, item.tipoMensaje)" class="ngx-utilitario-msj-leido">
-                <i class="fa fa-check"></i>
-                <i class="fa fa-check"></i>
+                <i class="fa fa-check"></i> <!-- Compliant icon fonts usage -->
+                <i class="fa fa-check"></i> <!-- Compliant icon fonts usage -->
               </span>
             </div>
           </div>

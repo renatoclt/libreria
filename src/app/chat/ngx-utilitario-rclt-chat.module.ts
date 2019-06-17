@@ -7,7 +7,9 @@ import { ChatDetalleComponent } from './chat/chat-detalle/chat-detalle.component
 import { ChatConversacionComponent } from './chat/chat-conversacion/chat-conversacion.component';
 import { ChatDetalleAgregarComponent } from './chat/chat-detalle-agregar/chat-detalle-agregar.component';
 import { ReactiveFormsModule } from '@angular/forms';
-
+/**
+ * Modulo Chat el cual contiene las partes necesarias para el correcto funcinamiento de un chat
+ */
 @NgModule({
   declarations: [ChatComponent,
                  ChatBusquedaComponent,

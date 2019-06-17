@@ -91,7 +91,7 @@
 
             <tr>
                 <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>rclt-cards</code></td>
+                <td class="col-md-9"><code>ngx-utilitario-cards</code></td>
             </tr>
 
             <tr>
@@ -222,13 +222,7 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>&quot;w-20 fontSize2-5&quot;</code>
+                        <i>Default value : </i><code>&#x27;w-20 fontSize2-5&#x27;</code>
                     </td>
                 </tr>
                         <tr>
@@ -254,13 +248,7 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>&quot;w-80 float-left&quot;</code>
+                        <i>Default value : </i><code>&#x27;w-80 float-left&#x27;</code>
                     </td>
                 </tr>
                         <tr>
@@ -280,13 +268,7 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>&quot;#000&quot;</code>
+                        <i>Default value : </i><code>&#x27;#000&#x27;</code>
                     </td>
                 </tr>
                         <tr>
@@ -306,13 +288,7 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>&quot;fa fa-user&quot;</code>
+                        <i>Default value : </i><code>&#x27;fa fa-user&#x27;</code>
                     </td>
                 </tr>
                         <tr>
@@ -517,31 +493,31 @@
 import { EventEmitter } from &#x27;events&#x27;;
 
 @Component({
-  selector: &#x27;rclt-cards&#x27;,
+  selector: &#x27;ngx-utilitario-cards&#x27;,
   templateUrl: &#x27;./cards.component.html&#x27;,
   styleUrls: [&#x27;./cards.component.css&#x27;]
 })
 export class CardsComponent implements OnInit {
-  
-  @Input() titulo:string;
-  @Input() subtitulo:string;
+
+  @Input() titulo: string;
+  @Input() subtitulo: string;
   /**
    * recibe el icono a usar
    */
-  @Input() icono:string &#x3D; &quot;fa fa-user&quot;;
-  @Input() classTexto:string &#x3D; &quot;w-80 float-left&quot;;
+  @Input() icono &#x3D; &#x27;fa fa-user&#x27;;
+  @Input() classTexto &#x3D; &#x27;w-80 float-left&#x27;;
   /**
    * Enviar el tamaño de columnas y el tamaño del icono
    */
-  @Input() classIcono:string &#x3D; &quot;w-20 fontSize2-5&quot;;
-  @Input() color:string &#x3D; &quot;#000&quot;;
-  @Output() click:EventEmitter &#x3D; new EventEmitter();
+  @Input() classIcono &#x3D; &#x27;w-20 fontSize2-5&#x27;;
+  @Input() color &#x3D; &#x27;#000&#x27;;
+  @Output() click: EventEmitter &#x3D; new EventEmitter();
   constructor() { }
-  
+
   ngOnInit() {
   }
-  
-  clickCard($event){
+
+  clickCard($event) {
     this.click.emit($event);
   }
 }
@@ -643,7 +619,7 @@ export class CardsComponent implements OnInit {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><div class="cards" (click)="clickCard($event)">    <div [ngClass]="classTexto">        <h2 class="cardsTitulo">{{titulo}}</h2>        <h3 class="cardsSubtitulo">{{subtitulo}}</h3>        <h3 class="cardsContenido"><ng-content></ng-content></h3>    </div>    <div [ngClass]="classIcono">        <i class="{{icono}} float-right cardIcono" [style.color]="color"></i>    </div></div></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'clt-root'},{'name': 'CardsComponent', 'selector': 'rclt-cards'},{'name': 'CardsImgTextComponent', 'selector': 'rclt-cards-img-text'},{'name': 'CardsImgTextNdivComponent', 'selector': 'rclt-cards-img-text-ndiv'},{'name': 'ChatBusquedaComponent', 'selector': 'ngx-utilitario-chat-busqueda'},{'name': 'ChatComponent', 'selector': 'ngx-utilitario-chat'},{'name': 'ChatConversacionComponent', 'selector': 'ngx-utilitario-chat-conversacion'},{'name': 'ChatDetalleAgregarComponent', 'selector': 'ngx-utilitario-chat-detalle-agregar'},{'name': 'ChatDetalleComponent', 'selector': 'ngx-utilitario-chat-detalle'},{'name': 'ChatListaComponent', 'selector': 'ngx-utilitario-chat-lista'},{'name': 'InputComponent', 'selector': 'rclt-input'},{'name': 'MenuDotComponent', 'selector': 'rclt-menu-dot'},{'name': 'ModalComponent', 'selector': 'rclt-modal'},{'name': 'RepeatIconComponent', 'selector': 'rclt-repeat-icon'}];
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'clt-root'},{'name': 'CardsComponent', 'selector': 'ngx-utilitario-cards'},{'name': 'CardsImgTextComponent', 'selector': 'ngx-utilitario-cards-img-text'},{'name': 'CardsImgTextNdivComponent', 'selector': 'ngx-utilitario-img-text-ndiv'},{'name': 'ChatBusquedaComponent', 'selector': 'ngx-utilitario-chat-busqueda'},{'name': 'ChatComponent', 'selector': 'ngx-utilitario-chat'},{'name': 'ChatConversacionComponent', 'selector': 'ngx-utilitario-chat-conversacion'},{'name': 'ChatDetalleAgregarComponent', 'selector': 'ngx-utilitario-chat-detalle-agregar'},{'name': 'ChatDetalleComponent', 'selector': 'ngx-utilitario-chat-detalle'},{'name': 'ChatListaComponent', 'selector': 'ngx-utilitario-chat-lista'},{'name': 'InputComponent', 'selector': 'rclt-input'},{'name': 'MenuDotComponent', 'selector': 'rclt-menu-dot'},{'name': 'ModalComponent', 'selector': 'rclt-modal'},{'name': 'RepeatIconComponent', 'selector': 'rclt-repeat-icon'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'CardsComponent'};
 </script>

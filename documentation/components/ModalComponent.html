@@ -71,6 +71,7 @@
     </p>
     <p class="comment">
                     <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+                    <code><a href="https://angular.io/api/core/OnDestroy" target="_blank" >OnDestroy</a></code>
     </p>
 
 
@@ -329,8 +330,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="102"
-                            class="link-to-prism">src/app/modal/modal.component.ts:102</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="105"
+                            class="link-to-prism">src/app/modal/modal.component.ts:105</a></div>
                 </td>
             </tr>
 
@@ -368,8 +369,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="89"
-                            class="link-to-prism">src/app/modal/modal.component.ts:89</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="92"
+                            class="link-to-prism">src/app/modal/modal.component.ts:92</a></div>
                 </td>
             </tr>
 
@@ -407,8 +408,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="65"
-                            class="link-to-prism">src/app/modal/modal.component.ts:65</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="68"
+                            class="link-to-prism">src/app/modal/modal.component.ts:68</a></div>
                 </td>
             </tr>
 
@@ -446,8 +447,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="94"
-                            class="link-to-prism">src/app/modal/modal.component.ts:94</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="97"
+                            class="link-to-prism">src/app/modal/modal.component.ts:97</a></div>
                 </td>
             </tr>
 
@@ -535,10 +536,10 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, Input, ElementRef, Renderer2, Inject, ViewEncapsulation } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, Input, ElementRef, Renderer2, Inject, ViewEncapsulation, OnDestroy } from &#x27;@angular/core&#x27;;
 import { ModalService } from &#x27;./modal.service&#x27;;
 import { DOCUMENT } from &#x27;@angular/common&#x27;;
-import { openClose } from &#x27;../animaciones/open-close&#x27;
+import { openClose } from &#x27;../animaciones/open-close&#x27;;
 import { trigger, transition, useAnimation, state, style, animate } from &#x27;@angular/animations&#x27;;
 @Component({
   selector: &#x27;rclt-modal&#x27;,
@@ -588,19 +589,22 @@ import { trigger, transition, useAnimation, state, style, animate } from &#x27;@
     ])
   ]
 })
-export class ModalComponent implements OnInit {
-  openclose : &#x27;open&#x27; |  &#x27;closed&#x27; &#x3D; &#x27;closed&#x27;;
- 
+export class ModalComponent implements OnInit, OnDestroy {
+  openclose: &#x27;open&#x27; |  &#x27;closed&#x27; &#x3D; &#x27;closed&#x27;;
+
 
   @Input() id: string;
   private element: any;
 
-  constructor( @Inject(DOCUMENT) private document: Document, private modalService: ModalService, private el: ElementRef, private renderer: Renderer2) {
+  constructor( @Inject(DOCUMENT) private document: Document,
+               private modalService: ModalService,
+               private el: ElementRef,
+               private renderer: Renderer2) {
     this.element &#x3D; el.nativeElement;
   }
 
   ngOnInit() {
-    let modal &#x3D; this;
+    const modal &#x3D; this;
 
     // ensure id attribute exists
     if (!this.id) {
@@ -612,7 +616,7 @@ export class ModalComponent implements OnInit {
     document.body.appendChild(this.element);
 
     // close modal on background click
-    this.element.addEventListener(&#x27;click&#x27;, function (e: any) {
+    this.element.addEventListener(&#x27;click&#x27;, function(e: any) {
       if (e.target.className &#x3D;&#x3D;&#x3D; &#x27;ngx-utilitario-modal&#x27;) {
         modal.close();
       }
@@ -620,7 +624,7 @@ export class ModalComponent implements OnInit {
 
     // add self (this modal instance) to the modal service so it&#x27;s accessible from controllers
     this.modalService.add(this);
-    this.close()
+    this.close();
   }
   // remove self from modal service when component is destroyed
   ngOnDestroy(): void {
@@ -629,17 +633,17 @@ export class ModalComponent implements OnInit {
   }
   // open modal
   open(): void {
-    this.openclose &#x3D; &#x27;open&#x27;
+    this.openclose &#x3D; &#x27;open&#x27;;
     this.element.style.display &#x3D; &#x27;block&#x27;;
     this.renderer.addClass(this.document.body, &#x27;ngx-utilitario-modal-open&#x27;);
     // this.renderer.setStyle(document.body, &#x27;overflow&#x27;,&#x27;hidden&#x27;);
   }
-  
+
   // close modal
   close(): void {
-    this.openclose &#x3D; &#x27;closed&#x27;
+    this.openclose &#x3D; &#x27;closed&#x27;;
     this.element.style.display &#x3D; &#x27;none&#x27;;
-    this.renderer.removeClass(this.document.body, &#x27;ngx-utilitario-modal-open&#x27; )
+    this.renderer.removeClass(this.document.body, &#x27;ngx-utilitario-modal-open&#x27; );
     // this.renderer.setStyle(document.body, &#x27;overflow&#x27;, &#x27;auto&#x27; )
   }
 }
@@ -787,7 +791,7 @@ export class ModalComponent implements OnInit {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><div class="ngx-utilitario-modal">  <div class="ngx-utilitario-modal-body">    <div class="ngx-utilitario-modal-content">      <div style="position: relative;">        <button type="button" class="ngx-utilitario-modal-cerrar" (click)="close()">          <span aria-hidden="true">&times;</span>        </button>        <div class="ngx-utilitario-modal-ngcontent" [@openClose]="openclose">          <ng-content>          </ng-content>        </div>      </div>    </div>  </div></div><div class="ngx-utilitario-modal-background" [@openCloseBackground]="openclose"></div><div class="ngx-utilitario-modal-open"></div></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'clt-root'},{'name': 'CardsComponent', 'selector': 'rclt-cards'},{'name': 'CardsImgTextComponent', 'selector': 'rclt-cards-img-text'},{'name': 'CardsImgTextNdivComponent', 'selector': 'rclt-cards-img-text-ndiv'},{'name': 'ChatBusquedaComponent', 'selector': 'ngx-utilitario-chat-busqueda'},{'name': 'ChatComponent', 'selector': 'ngx-utilitario-chat'},{'name': 'ChatConversacionComponent', 'selector': 'ngx-utilitario-chat-conversacion'},{'name': 'ChatDetalleAgregarComponent', 'selector': 'ngx-utilitario-chat-detalle-agregar'},{'name': 'ChatDetalleComponent', 'selector': 'ngx-utilitario-chat-detalle'},{'name': 'ChatListaComponent', 'selector': 'ngx-utilitario-chat-lista'},{'name': 'InputComponent', 'selector': 'rclt-input'},{'name': 'MenuDotComponent', 'selector': 'rclt-menu-dot'},{'name': 'ModalComponent', 'selector': 'rclt-modal'},{'name': 'RepeatIconComponent', 'selector': 'rclt-repeat-icon'}];
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'clt-root'},{'name': 'CardsComponent', 'selector': 'ngx-utilitario-cards'},{'name': 'CardsImgTextComponent', 'selector': 'ngx-utilitario-cards-img-text'},{'name': 'CardsImgTextNdivComponent', 'selector': 'ngx-utilitario-img-text-ndiv'},{'name': 'ChatBusquedaComponent', 'selector': 'ngx-utilitario-chat-busqueda'},{'name': 'ChatComponent', 'selector': 'ngx-utilitario-chat'},{'name': 'ChatConversacionComponent', 'selector': 'ngx-utilitario-chat-conversacion'},{'name': 'ChatDetalleAgregarComponent', 'selector': 'ngx-utilitario-chat-detalle-agregar'},{'name': 'ChatDetalleComponent', 'selector': 'ngx-utilitario-chat-detalle'},{'name': 'ChatListaComponent', 'selector': 'ngx-utilitario-chat-lista'},{'name': 'InputComponent', 'selector': 'rclt-input'},{'name': 'MenuDotComponent', 'selector': 'rclt-menu-dot'},{'name': 'ModalComponent', 'selector': 'rclt-modal'},{'name': 'RepeatIconComponent', 'selector': 'rclt-repeat-icon'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'ModalComponent'};
 </script>

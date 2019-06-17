@@ -64,6 +64,13 @@
             <code>src/app/chat/dto/ichat-conversacion.ts</code>
         </p>
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Los datos que necesitamos para una conversacion entre 2 personas</p>
+
+            </p>
 
 
         <section>
@@ -134,6 +141,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Estado del chat desbloqueado, bloqueo, bloqueado</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -163,6 +176,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Si el chat esta conectado o desconectado</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -192,6 +211,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>id del chat</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -221,6 +246,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>img a mostrar en el chat</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -250,6 +281,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>La lista de mensajes del chat</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -279,6 +316,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Nombre del chat</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
             </section>
@@ -290,12 +333,33 @@
 import { IChatConversacionDetalle } from &#x27;./ichat-conversacion-detalle&#x27;;
 import { EBloqueoChat } from &#x27;./ebloqueo-chat&#x27;;
 
+/**
+ * Los datos que necesitamos para una conversacion entre 2 personas
+ */
 export interface IChatConversacion {
-    id:string;
-    img:string ;
-    nombre:string;
-    bloqueo:EBloqueoChat;
+    /**
+     * id del chat
+     */
+    id: string;
+    /**
+     * img a mostrar en el chat
+     */
+    img: string ;
+    /**
+     * Nombre del chat
+     */
+    nombre: string;
+    /**
+     * Estado del chat desbloqueado, bloqueo, bloqueado
+     */
+    bloqueo: EBloqueoChat;
+    /**
+     * Si el chat esta conectado o desconectado
+     */
     estado: EEstadoChat;
+    /**
+     * La lista de mensajes del chat
+     */
     mensajes: IChatConversacionDetalle[];
 }
 </code></pre>

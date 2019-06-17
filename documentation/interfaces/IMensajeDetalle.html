@@ -64,6 +64,13 @@
             <code>src/app/chat/dto/imensaje-detalle.ts</code>
         </p>
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Los datos que necesitamos para mostrar en una lista de chats</p>
+
+            </p>
 
 
         <section>
@@ -137,6 +144,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Estado del chat desbloqueado, bloqueo , bloqueado</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -166,6 +179,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Estado del chat conectado, desconectado</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -195,6 +214,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>id del chat</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -224,6 +249,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Img a a mostrar</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -253,6 +284,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Mensajes del chat</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -282,6 +319,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>nombre del chat</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -311,6 +354,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Mensajes que tiene el chat sin leer</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
             </section>
@@ -322,14 +371,38 @@
 import { IChatConversacionDetalle } from &#x27;./ichat-conversacion-detalle&#x27;;
 import { EBloqueoChat } from &#x27;./ebloqueo-chat&#x27;;
 
+/**
+ * Los datos que necesitamos para mostrar en una lista de chats
+ */
 export interface IMensajeDetalle {
-    id:string;
-    img:string ;
-    nombre:string;
-    mensaje:IChatConversacionDetalle[];
-    notificacion:number;
-    estado:EEstadoChat;
-    bloqueo:EBloqueoChat;
+    /**
+     * id del chat
+     */
+    id: string;
+    /**
+     * Img a a mostrar
+     */
+    img: string ;
+    /**
+     * nombre del chat
+     */
+    nombre: string;
+    /**
+     * Mensajes del chat
+     */
+    mensaje: IChatConversacionDetalle[];
+    /**
+     * Mensajes que tiene el chat sin leer
+     */
+    notificacion: number;
+    /**
+     * Estado del chat conectado, desconectado
+     */
+    estado: EEstadoChat;
+    /**
+     * Estado del chat desbloqueado, bloqueo , bloqueado
+     */
+    bloqueo: EBloqueoChat;
 
 }
 </code></pre>

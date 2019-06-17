@@ -202,12 +202,6 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
-
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
                         <i>Default value : </i><code>0</code>
                     </td>
                 </tr>
@@ -228,13 +222,7 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>&quot;#000&quot;</code>
+                        <i>Default value : </i><code>&#x27;#000&#x27;</code>
                     </td>
                 </tr>
                         <tr>
@@ -254,13 +242,7 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>&quot;#000&quot;</code>
+                        <i>Default value : </i><code>&#x27;#000&#x27;</code>
                     </td>
                 </tr>
                         <tr>
@@ -280,13 +262,7 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>&quot;fa fa-user&quot;</code>
+                        <i>Default value : </i><code>&#x27;fa fa-user&#x27;</code>
                     </td>
                 </tr>
                         <tr>
@@ -302,12 +278,6 @@
                     <td class="col-md-4">
                         <a name="repetir"></a>
                         <b>repetir</b>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
-
                     </td>
                 </tr>
                 <tr>
@@ -385,11 +355,11 @@
 })
 export class RepeatIconComponent implements OnInit {
 
-  @Input() repetir:number &#x3D; 5; 
-  @Input() activo:number &#x3D; 0; 
-  @Input() icono:string &#x3D; &quot;fa fa-user&quot;; 
-  @Input() color:string &#x3D; &quot;#000&quot;; 
-  @Input() colorActivo:string &#x3D; &quot;#000&quot;; 
+  @Input() repetir &#x3D; 5;
+  @Input() activo &#x3D; 0;
+  @Input() icono &#x3D; &#x27;fa fa-user&#x27;;
+  @Input() color &#x3D; &#x27;#000&#x27;;
+  @Input() colorActivo &#x3D; &#x27;#000&#x27;;
   constructor() { }
   ngOnInit() {
   }
@@ -439,7 +409,7 @@ export class RepeatIconComponent implements OnInit {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><ng-container class="repetirIcono">    <i *ngFor="let item of activo | numberToArray" class="{{icono}}" [style.color]="colorActivo"></i>    <i *ngFor="let item of (repetir - activo) | numberToArray" class="{{icono}}" [style.color]="color"></i></ng-container></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'clt-root'},{'name': 'CardsComponent', 'selector': 'rclt-cards'},{'name': 'CardsImgTextComponent', 'selector': 'rclt-cards-img-text'},{'name': 'CardsImgTextNdivComponent', 'selector': 'rclt-cards-img-text-ndiv'},{'name': 'ChatBusquedaComponent', 'selector': 'ngx-utilitario-chat-busqueda'},{'name': 'ChatComponent', 'selector': 'ngx-utilitario-chat'},{'name': 'ChatConversacionComponent', 'selector': 'ngx-utilitario-chat-conversacion'},{'name': 'ChatDetalleAgregarComponent', 'selector': 'ngx-utilitario-chat-detalle-agregar'},{'name': 'ChatDetalleComponent', 'selector': 'ngx-utilitario-chat-detalle'},{'name': 'ChatListaComponent', 'selector': 'ngx-utilitario-chat-lista'},{'name': 'InputComponent', 'selector': 'rclt-input'},{'name': 'MenuDotComponent', 'selector': 'rclt-menu-dot'},{'name': 'ModalComponent', 'selector': 'rclt-modal'},{'name': 'RepeatIconComponent', 'selector': 'rclt-repeat-icon'}];
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'clt-root'},{'name': 'CardsComponent', 'selector': 'ngx-utilitario-cards'},{'name': 'CardsImgTextComponent', 'selector': 'ngx-utilitario-cards-img-text'},{'name': 'CardsImgTextNdivComponent', 'selector': 'ngx-utilitario-img-text-ndiv'},{'name': 'ChatBusquedaComponent', 'selector': 'ngx-utilitario-chat-busqueda'},{'name': 'ChatComponent', 'selector': 'ngx-utilitario-chat'},{'name': 'ChatConversacionComponent', 'selector': 'ngx-utilitario-chat-conversacion'},{'name': 'ChatDetalleAgregarComponent', 'selector': 'ngx-utilitario-chat-detalle-agregar'},{'name': 'ChatDetalleComponent', 'selector': 'ngx-utilitario-chat-detalle'},{'name': 'ChatListaComponent', 'selector': 'ngx-utilitario-chat-lista'},{'name': 'InputComponent', 'selector': 'rclt-input'},{'name': 'MenuDotComponent', 'selector': 'rclt-menu-dot'},{'name': 'ModalComponent', 'selector': 'rclt-modal'},{'name': 'RepeatIconComponent', 'selector': 'rclt-repeat-icon'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'RepeatIconComponent'};
 </script>

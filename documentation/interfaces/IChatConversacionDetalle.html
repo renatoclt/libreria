@@ -64,6 +64,13 @@
             <code>src/app/chat/dto/ichat-conversacion-detalle.ts</code>
         </p>
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Interface del mensaje en un chat</p>
+
+            </p>
 
 
         <section>
@@ -134,6 +141,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Si el mensaje a sido envido, recibido o leido</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -163,6 +176,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Cuando se envio el mensaje</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -192,6 +211,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Hora del mensaje enviado</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -221,6 +246,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Si el mensaje enviado es una imagen o un texto</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -250,6 +281,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>El mensaje enviado</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -279,6 +316,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Si el mensaje a sido recibido o enviado</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
             </section>
@@ -286,15 +329,36 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ETipoMensaje } from &quot;./etipo-mensaje&quot;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ETipoMensaje } from &#x27;./etipo-mensaje&#x27;;
 import { EEstadoMensaje } from &#x27;./eestado-mensaje&#x27;;
 
+/**
+ * Interface del mensaje en un chat
+ */
 export interface IChatConversacionDetalle {
-    img:string | null;
-    mensaje:string;
+    /**
+     * Si el mensaje enviado es una imagen o un texto
+     */
+    img: string | null;
+    /**
+     * El mensaje enviado
+     */
+    mensaje: string;
+    /**
+     * Cuando se envio el mensaje
+     */
     fecha: string;
+    /**
+     * Hora del mensaje enviado
+     */
     hora: string;
+    /**
+     * Si el mensaje a sido recibido o enviado
+     */
     tipoMensaje: ETipoMensaje;
+    /**
+    * Si el mensaje a sido envido, recibido o leido
+    */
     estadoMensaje: EEstadoMensaje;
 }
 </code></pre>

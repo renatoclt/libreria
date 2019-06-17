@@ -376,8 +376,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="85"
-                            class="link-to-prism">src/app/chat/chat/chat-conversacion/chat-conversacion.component.ts:85</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="87"
+                            class="link-to-prism">src/app/chat/chat/chat-conversacion/chat-conversacion.component.ts:87</a></div>
                 </td>
             </tr>
 
@@ -415,8 +415,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="90"
-                            class="link-to-prism">src/app/chat/chat/chat-conversacion/chat-conversacion.component.ts:90</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="92"
+                            class="link-to-prism">src/app/chat/chat/chat-conversacion/chat-conversacion.component.ts:92</a></div>
                 </td>
             </tr>
 
@@ -454,8 +454,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="46"
-                            class="link-to-prism">src/app/chat/chat/chat-conversacion/chat-conversacion.component.ts:46</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="45"
+                            class="link-to-prism">src/app/chat/chat/chat-conversacion/chat-conversacion.component.ts:45</a></div>
                 </td>
             </tr>
 
@@ -520,8 +520,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="82"
-                            class="link-to-prism">src/app/chat/chat/chat-conversacion/chat-conversacion.component.ts:82</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="84"
+                            class="link-to-prism">src/app/chat/chat/chat-conversacion/chat-conversacion.component.ts:84</a></div>
                 </td>
             </tr>
 
@@ -559,8 +559,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="71"
-                            class="link-to-prism">src/app/chat/chat/chat-conversacion/chat-conversacion.component.ts:71</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="73"
+                            class="link-to-prism">src/app/chat/chat/chat-conversacion/chat-conversacion.component.ts:73</a></div>
                 </td>
             </tr>
 
@@ -629,8 +629,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="49"
-                            class="link-to-prism">src/app/chat/chat/chat-conversacion/chat-conversacion.component.ts:49</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="48"
+                            class="link-to-prism">src/app/chat/chat/chat-conversacion/chat-conversacion.component.ts:48</a></div>
                 </td>
             </tr>
 
@@ -695,8 +695,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="56"
-                            class="link-to-prism">src/app/chat/chat/chat-conversacion/chat-conversacion.component.ts:56</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="55"
+                            class="link-to-prism">src/app/chat/chat/chat-conversacion/chat-conversacion.component.ts:55</a></div>
                 </td>
             </tr>
 
@@ -770,8 +770,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="66"
-                            class="link-to-prism">src/app/chat/chat/chat-conversacion/chat-conversacion.component.ts:66</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="67"
+                            class="link-to-prism">src/app/chat/chat/chat-conversacion/chat-conversacion.component.ts:67</a></div>
                 </td>
             </tr>
 
@@ -1034,8 +1034,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="94"
-                            class="link-to-prism">src/app/chat/chat/chat-conversacion/chat-conversacion.component.ts:94</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="96"
+                            class="link-to-prism">src/app/chat/chat/chat-conversacion/chat-conversacion.component.ts:96</a></div>
                 </td>
             </tr>
 
@@ -1145,9 +1145,9 @@ export class ChatConversacionComponent implements OnInit {
     mensajes: [],
     bloqueo: EBloqueoChat.bloqueado
   };
-  @Output() nuevoMensaje:EventEmitter&lt;any&gt; &#x3D; new EventEmitter();
-  @Output() eliminarMensajes:EventEmitter&lt;any&gt; &#x3D; new EventEmitter();
-  @Output() bloquearConversacion:EventEmitter&lt;any&gt; &#x3D; new EventEmitter();
+  @Output() nuevoMensaje: EventEmitter&lt;any&gt; &#x3D; new EventEmitter();
+  @Output() eliminarMensajes: EventEmitter&lt;any&gt; &#x3D; new EventEmitter();
+  @Output() bloquearConversacion: EventEmitter&lt;any&gt; &#x3D; new EventEmitter();
 
   fecha: Fecha &#x3D; undefined;
   constructor() {
@@ -1156,14 +1156,13 @@ export class ChatConversacionComponent implements OnInit {
 
   ngOnInit() {
   }
-  lineaDia(fecha,index) {
+  lineaDia(fecha, index) {
     let tDate: Date;
     if (index &#x3D;&#x3D;&#x3D; 0) {
       tDate &#x3D; new Date(fecha);
       tDate.setDate(tDate.getDate() - 1);
-    }
-    else {
-      tDate &#x3D; new Date(this.conversacion.mensajes[index -1].fecha);
+    } else {
+      tDate &#x3D; new Date(this.conversacion.mensajes[index - 1].fecha);
     }
     return !this.fecha.differenceDays(new Date(fecha), tDate);
   }
@@ -1172,51 +1171,54 @@ export class ChatConversacionComponent implements OnInit {
   }
   escogerEstilo(tipoMensaje) {
     if (tipoMensaje &#x3D;&#x3D;&#x3D; ETipoMensaje.enviado) {
-      return &quot;ngx-utilitario-chat-right float-right arrow_box&quot;;
+      return &#x27;ngx-utilitario-chat-right float-right arrow_box&#x27;;
     }
-    return &quot;ngx-utilitario-chat-left float-left&quot;;
+    return &#x27;ngx-utilitario-chat-left float-left&#x27;;
   }
 
   estadoMensajeEnviado(estado, tipoMensaje) {
-    if (estado &#x3D;&#x3D;&#x3D; EEstadoMensaje.enviado &amp;&amp; tipoMensaje &#x3D;&#x3D;&#x3D; ETipoMensaje.enviado)
+    if (estado &#x3D;&#x3D;&#x3D; EEstadoMensaje.enviado &amp;&amp; tipoMensaje &#x3D;&#x3D;&#x3D; ETipoMensaje.enviado) {
       return true;
-    return false
+    }
+    return false;
   }
   estadoMensajeRecibido(estado, tipoMensaje) {
-    if (estado &#x3D;&#x3D;&#x3D; EEstadoMensaje.recibido &amp;&amp; tipoMensaje &#x3D;&#x3D;&#x3D; ETipoMensaje.enviado)
+    if (estado &#x3D;&#x3D;&#x3D; EEstadoMensaje.recibido &amp;&amp; tipoMensaje &#x3D;&#x3D;&#x3D; ETipoMensaje.enviado) {
       return true;
-    return false
+    }
+    return false;
   }
   estadoMensajeLeido(estado, tipoMensaje) {
-    if (estado &#x3D;&#x3D;&#x3D; EEstadoMensaje.leido &amp;&amp; tipoMensaje &#x3D;&#x3D;&#x3D; ETipoMensaje.enviado)
+    if (estado &#x3D;&#x3D;&#x3D; EEstadoMensaje.leido &amp;&amp; tipoMensaje &#x3D;&#x3D;&#x3D; ETipoMensaje.enviado) {
       return true;
-    return false
+    }
+    return false;
   }
-  enviarMensaje(mensaje:any){
-    let nuevoMensaje:IChatConversacionDetalle &#x3D; {
+  enviarMensaje(mensaje: any) {
+    const nuevoMensaje: IChatConversacionDetalle &#x3D; {
       estadoMensaje: EEstadoMensaje.enviado,
-      fecha: new Fecha().format(new Date(),&#x27;LL&#x27;),
-      hora: new Fecha().format(new Date(),&#x27;HH:mm&#x27;),
+      fecha: new Fecha().format(new Date(), &#x27;LL&#x27;),
+      hora: new Fecha().format(new Date(), &#x27;HH:mm&#x27;),
       img: null,
-      mensaje: mensaje,
+      mensaje,
       tipoMensaje: ETipoMensaje.enviado
     };
     this.nuevoMensaje.emit(nuevoMensaje);
   }
-  eliminarConversacion(){
+  eliminarConversacion() {
     this.eliminarMensajes.emit();
   }
-  bloquear(){
+  bloquear() {
     this.conversacion.bloqueo &#x3D; EBloqueoChat.bloqueado;
     this.bloquearConversacion.emit(EBloqueoChat.bloqueado);
   }
-  
-  desbloquear(){
+
+  desbloquear() {
     this.conversacion.bloqueo &#x3D; EBloqueoChat.desbloqueado;
     this.bloquearConversacion.emit(EBloqueoChat.desbloqueado);
   }
-  validarEstadoBLoqueado(estado){
-    if(estado &#x3D;&#x3D;&#x3D; EBloqueoChat.bloqueo){
+  validarEstadoBLoqueado(estado) {
+    if (estado &#x3D;&#x3D;&#x3D; EBloqueoChat.bloqueo) {
       return true;
     }
     return false;
@@ -1454,7 +1456,7 @@ export class ChatConversacionComponent implements OnInit {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><div class="container-fluid">  <div class="row">    <div class="col-2 img-fluid">      <img class="img-fluid rounded-circle img-height-3-7" src="{{conversacion.img}}" />    </div>    <div class="col-9">      <div class="row">        <div class="col-12">          {{conversacion.nombre}}        </div>      </div>      <div class="row">        <div class="col-12">{{conversacion.estado}}</div>      </div>    </div>    <div class="col-1 ngx-utilitario-btns-acciones">      <button type="button" class="col-6 btn ngx-utilitario-btn-icon ngx-utilitario-btn-gray"        (click)="eliminarConversacion()">        <i class="fa fa-trash-o" aria-hidden="true" alt="eliminar conversacion"></i>      </button>      <button *ngIf="!conversacion.bloqueo" type="button"        class="col-6 btn ngx-utilitario-btn-icon ngx-utilitario-btn-gray" (click)="bloquear()">        <i class="fa fa-ban" aria-hidden="true" alt="Bloquear conversacion"></i>      </button>      <button *ngIf="validarEstadoBLoqueado(conversacion.bloqueo)" type="button"        class="col-6 btn ngx-utilitario-btn-icon ngx-utilitario-btn-gray" (click)="desbloquear()">        <i class="fa fa-unlock" aria-hidden="true" alt="Bloquear conversacion"></i>      </button>    </div>  </div>  <div class="container-fluid">    <div class="row ngx-utilitario-cuerpo-Chat">      <div class="col-12" *ngFor="let item of conversacion.mensajes; let i=index ">        <div class="container">          <div class="row" *ngIf="lineaDia(item.fecha,i)">            <div class="w-100 ngx-utilitario-chat-linea">              <span class="ngx-utilitario-chat-linea-span">                {{diferenciaDias(item.fecha)}}              </span>            </div>          </div>        </div>        <div class="container">          <div [ngClass]="escogerEstilo(item.tipoMensaje)">            <div>{{item.mensaje}}</div>            <div>{{item.hora}}              <span *ngIf="estadoMensajeEnviado(item.estadoMensaje, item.tipoMensaje)" class="ngx-utilitario-msj-enviado">                <i class="fa fa-check"></i>              </span>              <span *ngIf="estadoMensajeRecibido(item.estadoMensaje, item.tipoMensaje)"                class="ngx-utilitario-msj-recibido">                <i class="fa fa-check"></i>                <i class="fa fa-check"></i>              </span>              <span *ngIf="estadoMensajeLeido(item.estadoMensaje, item.tipoMensaje)" class="ngx-utilitario-msj-leido">                <i class="fa fa-check"></i>                <i class="fa fa-check"></i>              </span>            </div>          </div>        </div>      </div>    </div>  </div>  <div class="container-fluid">    <div class="row">      <ngx-utilitario-chat-detalle-agregar class="col-12 ngx-utilitario-chat-agregar"        (nuevoMensaje)="enviarMensaje($event)" [disabled]="conversacion.bloqueo"></ngx-utilitario-chat-detalle-agregar>    </div>  </div></div></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'clt-root'},{'name': 'CardsComponent', 'selector': 'rclt-cards'},{'name': 'CardsImgTextComponent', 'selector': 'rclt-cards-img-text'},{'name': 'CardsImgTextNdivComponent', 'selector': 'rclt-cards-img-text-ndiv'},{'name': 'ChatBusquedaComponent', 'selector': 'ngx-utilitario-chat-busqueda'},{'name': 'ChatComponent', 'selector': 'ngx-utilitario-chat'},{'name': 'ChatConversacionComponent', 'selector': 'ngx-utilitario-chat-conversacion'},{'name': 'ChatDetalleAgregarComponent', 'selector': 'ngx-utilitario-chat-detalle-agregar'},{'name': 'ChatDetalleComponent', 'selector': 'ngx-utilitario-chat-detalle'},{'name': 'ChatListaComponent', 'selector': 'ngx-utilitario-chat-lista'},{'name': 'InputComponent', 'selector': 'rclt-input'},{'name': 'MenuDotComponent', 'selector': 'rclt-menu-dot'},{'name': 'ModalComponent', 'selector': 'rclt-modal'},{'name': 'RepeatIconComponent', 'selector': 'rclt-repeat-icon'}];
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'clt-root'},{'name': 'CardsComponent', 'selector': 'ngx-utilitario-cards'},{'name': 'CardsImgTextComponent', 'selector': 'ngx-utilitario-cards-img-text'},{'name': 'CardsImgTextNdivComponent', 'selector': 'ngx-utilitario-img-text-ndiv'},{'name': 'ChatBusquedaComponent', 'selector': 'ngx-utilitario-chat-busqueda'},{'name': 'ChatComponent', 'selector': 'ngx-utilitario-chat'},{'name': 'ChatConversacionComponent', 'selector': 'ngx-utilitario-chat-conversacion'},{'name': 'ChatDetalleAgregarComponent', 'selector': 'ngx-utilitario-chat-detalle-agregar'},{'name': 'ChatDetalleComponent', 'selector': 'ngx-utilitario-chat-detalle'},{'name': 'ChatListaComponent', 'selector': 'ngx-utilitario-chat-lista'},{'name': 'InputComponent', 'selector': 'rclt-input'},{'name': 'MenuDotComponent', 'selector': 'rclt-menu-dot'},{'name': 'ModalComponent', 'selector': 'rclt-modal'},{'name': 'RepeatIconComponent', 'selector': 'rclt-repeat-icon'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'ChatConversacionComponent'};
 </script>
