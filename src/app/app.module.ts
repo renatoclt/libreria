@@ -4,16 +4,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 // import { NgxUtilitarioRcltModule } from 'ngx-utilitario-rclt';
-import { CardsComponent } from './cards/cards.component';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule} from '@angular/material';
-import { CardsImgTextComponent } from './cards-img-text/cards-img-text.component';
-import { CardsImgTextNdivComponent } from './cards-img-text-ndiv/cards-img-text-ndiv.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule } from '@angular/material';
 import { NumberToArrayPipe } from './pipe/number-to-array.pipe';
-import { ModalComponent } from './modal/modal/modal.component';
 import { FormsModule } from './forms/forms.module';
 import { NgxUtilitarioChatModule } from './chat/ngx-utilitario-rclt-chat.module';
 import { NgxUtilitarioMenuModule } from './menu/ngx-utilitario-menu.module';
+import { NgxUtilitarioCardsModule } from './cards/cards.module';
+import { NgxUtilitarioDynamicModule } from './dynamic-component/ngx-utilitario-rclt-dynamic.module';
 import { NgxUtilitarioIconsModule } from './icons/ngx-utilitario-rclt-icons.module';
 import { NgxUtilitarioModalModule } from './modal/ngx-utilitario-rclt-modal.module';
 
@@ -26,14 +24,10 @@ import { NgxUtilitarioModalModule } from './modal/ngx-utilitario-rclt-modal.modu
      * component
      */
     AppComponent,
-    CardsComponent,
-    CardsImgTextComponent,
-    CardsImgTextNdivComponent,
     /**
      * pipes
      */
-    NumberToArrayPipe,
-
+    NumberToArrayPipe
   ],
   imports: [
     BrowserModule,
@@ -43,9 +37,12 @@ import { NgxUtilitarioModalModule } from './modal/ngx-utilitario-rclt-modal.modu
     AngularFontAwesomeModule,
     FormsModule,
     NgxUtilitarioChatModule,
-    NgxUtilitarioIconsModule,
     NgxUtilitarioMenuModule,
-    NgxUtilitarioModalModule,
+    NgxUtilitarioCardsModule,
+    NgxUtilitarioDynamicModule,
+    NgxUtilitarioIconsModule,
+    NgxUtilitarioModalModule
+    // NgxUtilitarioRcltModule
   ],
   providers: [],
   bootstrap: [AppComponent]
