@@ -1231,7 +1231,7 @@ export class ChatConversacionComponent implements OnInit {
         <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container-fluid&quot;&gt;
   &lt;div class&#x3D;&quot;row&quot;&gt;
     &lt;div class&#x3D;&quot;col-2 img-fluid&quot;&gt;
-      &lt;img class&#x3D;&quot;img-fluid rounded-circle img-height-3-7&quot; src&#x3D;&quot;{{conversacion.img}}&quot; /&gt;
+      &lt;img class&#x3D;&quot;img-fluid rounded-circle img-height-3-7&quot; alt&#x3D;&quot;conversacion.nombre&quot; src&#x3D;&quot;{{conversacion.img}}&quot; /&gt;
     &lt;/div&gt;
     &lt;div class&#x3D;&quot;col-9&quot;&gt;
       &lt;div class&#x3D;&quot;row&quot;&gt;
@@ -1275,16 +1275,16 @@ export class ChatConversacionComponent implements OnInit {
             &lt;div&gt;{{item.mensaje}}&lt;/div&gt;
             &lt;div&gt;{{item.hora}}
               &lt;span *ngIf&#x3D;&quot;estadoMensajeEnviado(item.estadoMensaje, item.tipoMensaje)&quot; class&#x3D;&quot;ngx-utilitario-msj-enviado&quot;&gt;
-                &lt;i class&#x3D;&quot;fa fa-check&quot;&gt;&lt;/i&gt;
+                &lt;em class&#x3D;&quot;fa fa-check&quot;&gt;&lt;/em&gt; 
               &lt;/span&gt;
               &lt;span *ngIf&#x3D;&quot;estadoMensajeRecibido(item.estadoMensaje, item.tipoMensaje)&quot;
                 class&#x3D;&quot;ngx-utilitario-msj-recibido&quot;&gt;
-                &lt;i class&#x3D;&quot;fa fa-check&quot;&gt;&lt;/i&gt;
-                &lt;i class&#x3D;&quot;fa fa-check&quot;&gt;&lt;/i&gt;
+                &lt;em class&#x3D;&quot;fa fa-check&quot;&gt;&lt;/em&gt; 
+                &lt;em class&#x3D;&quot;fa fa-check&quot;&gt;&lt;/em&gt; 
               &lt;/span&gt;
               &lt;span *ngIf&#x3D;&quot;estadoMensajeLeido(item.estadoMensaje, item.tipoMensaje)&quot; class&#x3D;&quot;ngx-utilitario-msj-leido&quot;&gt;
-                &lt;i class&#x3D;&quot;fa fa-check&quot;&gt;&lt;/i&gt;
-                &lt;i class&#x3D;&quot;fa fa-check&quot;&gt;&lt;/i&gt;
+                &lt;em class&#x3D;&quot;fa fa-check&quot;&gt;&lt;/em&gt; 
+                &lt;em class&#x3D;&quot;fa fa-check&quot;&gt;&lt;/em&gt; 
               &lt;/span&gt;
             &lt;/div&gt;
           &lt;/div&gt;
@@ -1406,11 +1406,13 @@ export class ChatConversacionComponent implements OnInit {
 
 
 .ngx-utilitario-msj-enviado{
-    
+    color: green;   
 }
 .ngx-utilitario-msj-recibido{
+    color: green;   
 }
 .ngx-utilitario-msj-leido{
+    color: green;   
 }
 
 .img-height-3-7{
@@ -1455,8 +1457,8 @@ export class ChatConversacionComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="container-fluid">  <div class="row">    <div class="col-2 img-fluid">      <img class="img-fluid rounded-circle img-height-3-7" src="{{conversacion.img}}" />    </div>    <div class="col-9">      <div class="row">        <div class="col-12">          {{conversacion.nombre}}        </div>      </div>      <div class="row">        <div class="col-12">{{conversacion.estado}}</div>      </div>    </div>    <div class="col-1 ngx-utilitario-btns-acciones">      <button type="button" class="col-6 btn ngx-utilitario-btn-icon ngx-utilitario-btn-gray"        (click)="eliminarConversacion()">        <i class="fa fa-trash-o" aria-hidden="true" alt="eliminar conversacion"></i>      </button>      <button *ngIf="!conversacion.bloqueo" type="button"        class="col-6 btn ngx-utilitario-btn-icon ngx-utilitario-btn-gray" (click)="bloquear()">        <i class="fa fa-ban" aria-hidden="true" alt="Bloquear conversacion"></i>      </button>      <button *ngIf="validarEstadoBLoqueado(conversacion.bloqueo)" type="button"        class="col-6 btn ngx-utilitario-btn-icon ngx-utilitario-btn-gray" (click)="desbloquear()">        <i class="fa fa-unlock" aria-hidden="true" alt="Bloquear conversacion"></i>      </button>    </div>  </div>  <div class="container-fluid">    <div class="row ngx-utilitario-cuerpo-Chat">      <div class="col-12" *ngFor="let item of conversacion.mensajes; let i=index ">        <div class="container">          <div class="row" *ngIf="lineaDia(item.fecha,i)">            <div class="w-100 ngx-utilitario-chat-linea">              <span class="ngx-utilitario-chat-linea-span">                {{diferenciaDias(item.fecha)}}              </span>            </div>          </div>        </div>        <div class="container">          <div [ngClass]="escogerEstilo(item.tipoMensaje)">            <div>{{item.mensaje}}</div>            <div>{{item.hora}}              <span *ngIf="estadoMensajeEnviado(item.estadoMensaje, item.tipoMensaje)" class="ngx-utilitario-msj-enviado">                <i class="fa fa-check"></i>              </span>              <span *ngIf="estadoMensajeRecibido(item.estadoMensaje, item.tipoMensaje)"                class="ngx-utilitario-msj-recibido">                <i class="fa fa-check"></i>                <i class="fa fa-check"></i>              </span>              <span *ngIf="estadoMensajeLeido(item.estadoMensaje, item.tipoMensaje)" class="ngx-utilitario-msj-leido">                <i class="fa fa-check"></i>                <i class="fa fa-check"></i>              </span>            </div>          </div>        </div>      </div>    </div>  </div>  <div class="container-fluid">    <div class="row">      <ngx-utilitario-chat-detalle-agregar class="col-12 ngx-utilitario-chat-agregar"        (nuevoMensaje)="enviarMensaje($event)" [disabled]="conversacion.bloqueo"></ngx-utilitario-chat-detalle-agregar>    </div>  </div></div></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'clt-root'},{'name': 'CardsComponent', 'selector': 'ngx-utilitario-cards'},{'name': 'CardsImgTextComponent', 'selector': 'ngx-utilitario-cards-img-text'},{'name': 'CardsImgTextNdivComponent', 'selector': 'ngx-utilitario-img-text-ndiv'},{'name': 'ChatBusquedaComponent', 'selector': 'ngx-utilitario-chat-busqueda'},{'name': 'ChatComponent', 'selector': 'ngx-utilitario-chat'},{'name': 'ChatConversacionComponent', 'selector': 'ngx-utilitario-chat-conversacion'},{'name': 'ChatDetalleAgregarComponent', 'selector': 'ngx-utilitario-chat-detalle-agregar'},{'name': 'ChatDetalleComponent', 'selector': 'ngx-utilitario-chat-detalle'},{'name': 'ChatListaComponent', 'selector': 'ngx-utilitario-chat-lista'},{'name': 'InputComponent', 'selector': 'rclt-input'},{'name': 'MenuDotComponent', 'selector': 'rclt-menu-dot'},{'name': 'ModalComponent', 'selector': 'rclt-modal'},{'name': 'RepeatIconComponent', 'selector': 'rclt-repeat-icon'}];
+        var COMPONENT_TEMPLATE = '<div><div class="container-fluid">  <div class="row">    <div class="col-2 img-fluid">      <img class="img-fluid rounded-circle img-height-3-7" alt="conversacion.nombre" src="{{conversacion.img}}" />    </div>    <div class="col-9">      <div class="row">        <div class="col-12">          {{conversacion.nombre}}        </div>      </div>      <div class="row">        <div class="col-12">{{conversacion.estado}}</div>      </div>    </div>    <div class="col-1 ngx-utilitario-btns-acciones">      <button type="button" class="col-6 btn ngx-utilitario-btn-icon ngx-utilitario-btn-gray"        (click)="eliminarConversacion()">        <i class="fa fa-trash-o" aria-hidden="true" alt="eliminar conversacion"></i>      </button>      <button *ngIf="!conversacion.bloqueo" type="button"        class="col-6 btn ngx-utilitario-btn-icon ngx-utilitario-btn-gray" (click)="bloquear()">        <i class="fa fa-ban" aria-hidden="true" alt="Bloquear conversacion"></i>      </button>      <button *ngIf="validarEstadoBLoqueado(conversacion.bloqueo)" type="button"        class="col-6 btn ngx-utilitario-btn-icon ngx-utilitario-btn-gray" (click)="desbloquear()">        <i class="fa fa-unlock" aria-hidden="true" alt="Bloquear conversacion"></i>      </button>    </div>  </div>  <div class="container-fluid">    <div class="row ngx-utilitario-cuerpo-Chat">      <div class="col-12" *ngFor="let item of conversacion.mensajes; let i=index ">        <div class="container">          <div class="row" *ngIf="lineaDia(item.fecha,i)">            <div class="w-100 ngx-utilitario-chat-linea">              <span class="ngx-utilitario-chat-linea-span">                {{diferenciaDias(item.fecha)}}              </span>            </div>          </div>        </div>        <div class="container">          <div [ngClass]="escogerEstilo(item.tipoMensaje)">            <div>{{item.mensaje}}</div>            <div>{{item.hora}}              <span *ngIf="estadoMensajeEnviado(item.estadoMensaje, item.tipoMensaje)" class="ngx-utilitario-msj-enviado">                <em class="fa fa-check"></em>               </span>              <span *ngIf="estadoMensajeRecibido(item.estadoMensaje, item.tipoMensaje)"                class="ngx-utilitario-msj-recibido">                <em class="fa fa-check"></em>                 <em class="fa fa-check"></em>               </span>              <span *ngIf="estadoMensajeLeido(item.estadoMensaje, item.tipoMensaje)" class="ngx-utilitario-msj-leido">                <em class="fa fa-check"></em>                 <em class="fa fa-check"></em>               </span>            </div>          </div>        </div>      </div>    </div>  </div>  <div class="container-fluid">    <div class="row">      <ngx-utilitario-chat-detalle-agregar class="col-12 ngx-utilitario-chat-agregar"        (nuevoMensaje)="enviarMensaje($event)" [disabled]="conversacion.bloqueo"></ngx-utilitario-chat-detalle-agregar>    </div>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'ngx-utilitario-app'},{'name': 'CardsComponent', 'selector': 'ngx-utilitario-cards'},{'name': 'CardsImgTextComponent', 'selector': 'ngx-utilitario-cards-img-text'},{'name': 'CardsImgTextNdivComponent', 'selector': 'ngx-utilitario-cards-img-text-ndiv'},{'name': 'ChatBusquedaComponent', 'selector': 'ngx-utilitario-chat-busqueda'},{'name': 'ChatComponent', 'selector': 'ngx-utilitario-chat'},{'name': 'ChatConversacionComponent', 'selector': 'ngx-utilitario-chat-conversacion'},{'name': 'ChatDetalleAgregarComponent', 'selector': 'ngx-utilitario-chat-detalle-agregar'},{'name': 'ChatDetalleComponent', 'selector': 'ngx-utilitario-chat-detalle'},{'name': 'ChatListaComponent', 'selector': 'ngx-utilitario-chat-lista'},{'name': 'InputComponent', 'selector': 'ngx-utilitario-input'},{'name': 'MenuDotComponent', 'selector': 'ngx-utilitario-menu-dot'},{'name': 'ModalComponent', 'selector': 'rclt-modal'},{'name': 'RepeatIconComponent', 'selector': 'rclt-repeat-icon'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'ChatConversacionComponent'};
 </script>
