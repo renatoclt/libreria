@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { ModalService } from './modal/modal.service';
 /**
  * Principal componente de la aplicacion
  */
@@ -16,5 +15,5 @@ export class AppComponent {
   /**
    * @ignore
    */
-  constructor(private modalService: ModalService) { }
+  constructor() { }
 }

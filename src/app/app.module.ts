@@ -6,13 +6,14 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 // import { NgxUtilitarioRcltModule } from 'ngx-utilitario-rclt';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material';
-import { RepeatIconComponent } from './repeat-icon/repeat-icon.component';
 import { NumberToArrayPipe } from './pipe/number-to-array.pipe';
-import { ModalComponent } from './modal/modal.component';
 import { FormsModule } from './forms/forms.module';
 import { NgxUtilitarioChatModule } from './chat/ngx-utilitario-rclt-chat.module';
 import { NgxUtilitarioMenuModule } from './menu/ngx-utilitario-menu.module';
 import { NgxUtilitarioCardsModule } from './cards/cards.module';
+import { NgxUtilitarioDynamicModule } from './dynamic-component/ngx-utilitario-rclt-dynamic.module';
+import { NgxUtilitarioIconsModule } from './icons/ngx-utilitario-rclt-icons.module';
+import { NgxUtilitarioModalModule } from './modal/ngx-utilitario-rclt-modal.module';
 
 
 
@@ -23,8 +24,6 @@ import { NgxUtilitarioCardsModule } from './cards/cards.module';
      * component
      */
     AppComponent,
-    RepeatIconComponent,
-    ModalComponent,
     /**
      * pipes
      */
@@ -39,7 +38,10 @@ import { NgxUtilitarioCardsModule } from './cards/cards.module';
     FormsModule,
     NgxUtilitarioChatModule,
     NgxUtilitarioMenuModule,
-    NgxUtilitarioCardsModule
+    NgxUtilitarioCardsModule,
+    NgxUtilitarioDynamicModule,
+    NgxUtilitarioIconsModule,
+    NgxUtilitarioModalModule
     // NgxUtilitarioRcltModule
   ],
   providers: [],

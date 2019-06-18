@@ -1,11 +1,11 @@
 import { ETipoMensaje } from './etipo-mensaje';
-import { EEstadoMensaje } from './eestado-mensaje';
+import { EMessageState } from './eestado-mensaje';
 
-export interface IChatConversacionDetalle {
+export interface IChatDetailMessage {
     img: string | null;
     mensaje: string;
     fecha: string;
     hora: string;
     tipoMensaje: ETipoMensaje;
-    estadoMensaje: EEstadoMensaje;
+    estadoMensaje: EMessageState;
 }

@@ -23,7 +23,7 @@ export class CardsComponent implements OnInit {
   @Input() icono = 'fa fa-user'
   /**
    * Clase a aplicar al texto
-   */;
+   */
   @Input() classTexto = 'w-80 float-left';
   /**
    * Enviar el tamaño de columnas y el tamaño del icono

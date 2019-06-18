@@ -1,13 +1,13 @@
 import { EEstadoChat } from './eestado-chat';
-import { IChatConversacionDetalle } from './ichat-conversacion-detalle';
-import { EBloqueoChat } from './ebloqueo-chat';
+import { IChatDetailMessage } from './ichat-conversacion-detalle';
+import { EChatLook } from './ebloqueo-chat';
 
 export interface IMensajeDetalle {
     id: string;
     img: string ;
     nombre: string;
-    mensaje: IChatConversacionDetalle[];
+    mensaje: IChatDetailMessage[];
     notificacion: number;
     estado: EEstadoChat;
-    bloqueo: EBloqueoChat;
+    bloqueo: EChatLook;
 }

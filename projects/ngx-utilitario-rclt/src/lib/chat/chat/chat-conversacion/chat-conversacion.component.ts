@@ -1,10 +1,10 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { IChatConversacion } from '../../dto/ichat-conversacion';
+import { IChatDetail } from '../../dto/ichat-conversacion';
 import { EEstadoChat } from '../../dto/eestado-chat';
 import { ETipoMensaje } from '../../dto/etipo-mensaje';
-import { IChatConversacionDetalle } from '../../dto/ichat-conversacion-detalle';
-import { EEstadoMensaje } from '../../dto/eestado-mensaje';
-import { EBloqueoChat } from '../../dto/ebloqueo-chat';
+import { IChatDetailMessage } from '../../dto/ichat-conversacion-detalle';
+import { EMessageState } from '../../dto/eestado-mensaje';
+import { EChatLook } from '../../dto/ebloqueo-chat';
 import { Fecha } from '../../../utilitario/fecha';
 
 @Component({
@@ -14,13 +14,13 @@ import { Fecha } from '../../../utilitario/fecha';
 })
 export class ChatConversacionComponent implements OnInit {
 
-  @Input() conversacion: IChatConversacion = {
+  @Input() conversacion: IChatDetail = {
     id: '',
     img: '',
     nombre: '',
     estado: null,
     mensajes: [],
-    bloqueo: EBloqueoChat.bloqueado
+    bloqueo: EChatLook.bloqueado
   };
   @Output() nuevoMensaje: EventEmitter<any> = new EventEmitter();
   @Output() eliminarMensajes: EventEmitter<any> = new EventEmitter();
@@ -54,26 +54,26 @@ export class ChatConversacionComponent implements OnInit {
   }
 
   estadoMensajeEnviado(estado, tipoMensaje) {
-    if (estado === EEstadoMensaje.enviado && tipoMensaje === ETipoMensaje.enviado) {
+    if (estado === EMessageState.enviado && tipoMensaje === ETipoMensaje.enviado) {
       return true;
     }
     return false;
   }
   estadoMensajeRecibido(estado, tipoMensaje) {
-    if (estado === EEstadoMensaje.recibido && tipoMensaje === ETipoMensaje.enviado) {
+    if (estado === EMessageState.recibido && tipoMensaje === ETipoMensaje.enviado) {
       return true;
     }
     return false;
   }
   estadoMensajeLeido(estado, tipoMensaje) {
-    if (estado === EEstadoMensaje.leido && tipoMensaje === ETipoMensaje.enviado) {
+    if (estado === EMessageState.leido && tipoMensaje === ETipoMensaje.enviado) {
       return true;
     }
     return false;
   }
   enviarMensaje(mensaje: any) {
-    const nuevoMensaje: IChatConversacionDetalle = {
-      estadoMensaje: EEstadoMensaje.enviado,
+    const nuevoMensaje: IChatDetailMessage = {
+      estadoMensaje: EMessageState.enviado,
       fecha: new Fecha().format(new Date(), 'LL'),
       hora: new Fecha().format(new Date(), 'HH:mm'),
       img: null,
@@ -86,16 +86,16 @@ export class ChatConversacionComponent implements OnInit {
     this.eliminarMensajes.emit();
   }
   bloquear() {
-    this.conversacion.bloqueo = EBloqueoChat.bloqueado;
-    this.bloquearConversacion.emit(EBloqueoChat.bloqueado);
+    this.conversacion.bloqueo = EChatLook.bloqueado;
+    this.bloquearConversacion.emit(EChatLook.bloqueado);
   }
 
   desbloquear() {
-    this.conversacion.bloqueo = EBloqueoChat.desbloqueado;
-    this.bloquearConversacion.emit(EBloqueoChat.desbloqueado);
+    this.conversacion.bloqueo = EChatLook.desbloqueado;
+    this.bloquearConversacion.emit(EChatLook.desbloqueado);
   }
   validarEstadoBLoqueado(estado) {
-    if (estado === EBloqueoChat.bloqueo) {
+    if (estado === EChatLook.bloqueo) {
       return true;
     }
     return false;
