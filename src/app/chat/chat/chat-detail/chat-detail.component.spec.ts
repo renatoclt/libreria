@@ -4,7 +4,7 @@ import { ChatDetailComponent } from './chat-detail.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ChatDetailAddComponent } from '../chat-detail-add/chat-detail-add.component';
 
-describe('ChatConversacionComponent', () => {
+describe('ChatDetailComponent', () => {
   let component: ChatDetailComponent;
   let fixture: ComponentFixture<ChatDetailComponent>;
 

@@ -17,7 +17,7 @@ export class ChatDetailAddComponent implements OnInit {
  * 1 no puede enviar mensaje
  * 2 no puede enviar mensaje
  */
-  @Input() disabled: number;
+  @Input() disabled = 1;
   /**
    * Al enviar un mensaje emite un evento
    */
