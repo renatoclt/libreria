@@ -72,29 +72,28 @@ export class ModalComponent implements OnInit, OnDestroy {
    * @ignore
    */
   constructor(@Inject(DOCUMENT) private document: Document,
-    private modalService: ModalService,
-    private el: ElementRef,
-    private renderer: Renderer2) {
+              private modalService: ModalService,
+              private el: ElementRef,
+              private renderer: Renderer2) {
     this.element = el.nativeElement;
   }
 
   /**
-   * 
+   * Al inicializar el componente validamos si tiene un id, lo añadimos al html, y le asignamos una accion de cerrar
    */
   ngOnInit() {
     const modal = this;
-
-    // ensure id attribute exists
+    // Validamos si tiene el atributo id
     if (!this.id) {
       console.error('modal must have an id');
       return;
     }
 
-    // move element to bottom of page (just before </body>) so it can be displayed above everything else
+    // añadimos el modal despues </body>) para que se pueda mostrar sobre todos los elementos
     document.body.appendChild(this.element);
 
-    // close modal on background click
-    this.element.addEventListener('click', function (e: any) {
+    // cerrar modal
+    this.element.addEventListener('click', (e: any) => {
       if (e.target.className === 'ngx-utilitario-modal') {
         modal.close();
       }
