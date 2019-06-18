@@ -1,17 +1,17 @@
 /**
  * Estados que puede tener un chat
  */
-export enum EBloqueoChat {
+export enum EChatLock {
     /**
      * Si el chat esta desbloqueado
      */
-    desbloqueado = 0,
+    unlocked = 0,
     /**
      * Si yo eh bloqueado el chat
      */
-    bloqueo = 1,
+    lock = 1,
     /**
      * Si he sido bloqueado
      */
-    bloqueado = 2,
+    locked = 2,
 }

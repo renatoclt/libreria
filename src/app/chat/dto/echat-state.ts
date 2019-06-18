@@ -1,13 +1,13 @@
 /**
  * Estados posibles de un chat
  */
-export enum EEstadoChat {
+export enum EChatState {
     /**
      * Si estoy conectado al chat
      */
-    conectado = 1,
+    online = 1,
     /**
      * Si estoy desconectado al chat
      */
-    desconectado = 0
+    offline = 0
 }

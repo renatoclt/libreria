@@ -1,11 +1,11 @@
 import { Component, OnInit, Input, Output, EventEmitter, SimpleChanges, SimpleChange } from '@angular/core';
 import { IMensajeDetalle } from '../dto/imensaje-detalle';
 import { EEstadoChat } from '../dto/eestado-chat';
-import { EEstadoMensaje } from '../dto/eestado-mensaje';
+import { EMessageState } from '../dto/eestado-mensaje';
 import { ETipoMensaje } from '../dto/etipo-mensaje';
-import { IChatConversacionDetalle } from '../dto/ichat-conversacion-detalle';
-import { IChatConversacion } from '../dto/ichat-conversacion';
-import { EBloqueoChat } from '../dto/ebloqueo-chat';
+import { IChatDetailMessage } from '../dto/ichat-conversacion-detalle';
+import { IChatDetail } from '../dto/ichat-conversacion';
+import { EChatLook } from '../dto/ebloqueo-chat';
 
 @Component({
   selector: 'ngx-utilitario-chat',
@@ -14,8 +14,8 @@ import { EBloqueoChat } from '../dto/ebloqueo-chat';
 })
 export class ChatComponent implements OnInit {
 
-  conversacion1: IChatConversacionDetalle = {
-    estadoMensaje: EEstadoMensaje.enviado,
+  conversacion1: IChatDetailMessage = {
+    estadoMensaje: EMessageState.enviado,
     fecha: 'may. 18, 19',
     hora: '13:30',
     img: null,
@@ -23,8 +23,8 @@ export class ChatComponent implements OnInit {
     tipoMensaje: ETipoMensaje.enviado
   };
 
-  conversacion2: IChatConversacionDetalle = {
-    estadoMensaje: EEstadoMensaje.enviado,
+  conversacion2: IChatDetailMessage = {
+    estadoMensaje: EMessageState.enviado,
     fecha: 'may. 18, 19',
     hora: '13:30',
     img: null,
@@ -39,7 +39,7 @@ export class ChatComponent implements OnInit {
     mensaje: [this.conversacion1, ],
     nombre: 're1',
     notificacion: 2,
-    bloqueo: EBloqueoChat.bloqueado
+    bloqueo: EChatLook.bloqueado
   };
 
   detalle2: IMensajeDetalle = {
@@ -62,18 +62,18 @@ export class ChatComponent implements OnInit {
               this.conversacion1],
     nombre: 'r2',
     notificacion: 2,
-    bloqueo: EBloqueoChat.desbloqueado
+    bloqueo: EChatLook.desbloqueado
   };
   @Input() lista: IMensajeDetalle[] = [this.detalle, this.detalle2];
 
 
-  @Input() conversacion: IChatConversacion = {
+  @Input() conversacion: IChatDetail = {
     id: '',
     img: '',
     nombre: '',
     estado: null,
     mensajes: [],
-    bloqueo: EBloqueoChat.desbloqueado
+    bloqueo: EChatLook.desbloqueado
   };
   @Output() nuevoMensaje: EventEmitter<any> = new EventEmitter();
   @Output() clickLista: EventEmitter<any> =  new EventEmitter();

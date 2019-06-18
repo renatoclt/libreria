@@ -1,18 +1,18 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ChatListaComponent } from './chat-lista.component';
-import { ChatDetalleComponent } from '../chat-detalle/chat-detalle.component';
+import { ChatDetailComponent } from './chat-detail.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ChatDetailAddComponent } from '../chat-detail-add/chat-detail-add.component';
 
-describe('ChatListaComponent', () => {
-  let component: ChatListaComponent;
-  let fixture: ComponentFixture<ChatListaComponent>;
+describe('ChatConversacionComponent', () => {
+  let component: ChatDetailComponent;
+  let fixture: ComponentFixture<ChatDetailComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        ChatListaComponent,
-        ChatDetalleComponent
+        ChatDetailComponent,
+        ChatDetailAddComponent,
       ],
       imports: [
         ReactiveFormsModule
@@ -22,7 +22,7 @@ describe('ChatListaComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ChatListaComponent);
+    fixture = TestBed.createComponent(ChatDetailComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

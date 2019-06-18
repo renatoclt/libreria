@@ -1,11 +1,11 @@
-import { EEstadoChat } from './eestado-chat';
-import { IChatConversacionDetalle } from './ichat-conversacion-detalle';
-import { EBloqueoChat } from './ebloqueo-chat';
+import { EChatState } from './echat-state';
+import { IChatDetailMessage } from './ichat-detail-message';
+import { EChatLock } from './echat-lock';
 
 /**
  * Los datos que necesitamos para una conversacion entre 2 personas
  */
-export interface IChatConversacion {
+export interface IChatDetail {
     /**
      * id del chat
      */
@@ -17,17 +17,17 @@ export interface IChatConversacion {
     /**
      * Nombre del chat
      */
-    nombre: string;
+    name: string;
     /**
      * Estado del chat desbloqueado, bloqueo, bloqueado
      */
-    bloqueo: EBloqueoChat;
+    lock: EChatLock;
     /**
      * Si el chat esta conectado o desconectado
      */
-    estado: EEstadoChat;
+    state: EChatState;
     /**
      * La lista de mensajes del chat
      */
-    mensajes: IChatConversacionDetalle[];
+    messages: IChatDetailMessage[];
 }

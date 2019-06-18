@@ -1,13 +1,13 @@
 /**
  * TIpo de mensajes
  */
-export enum ETipoMensaje {
+export enum EMessageType {
     /**
      * si yo he enviado el mensaje
      */
-    enviado = 1,
+    sent = 1,
     /**
      * si yo he recibido el mensaje
      */
-    recibido = 0
+    recived = 0
 }

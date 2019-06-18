@@ -1,17 +1,17 @@
 /**
  * Estados posibles de un mensaje en un chat
  */
-export enum EEstadoMensaje {
+export enum EMessageState {
     /**
      * Mensaje enviado
      */
-    enviado = 0,
+    sent = 0,
     /**
      * Mensaje recibido
      */
-    recibido = 1,
+    received = 1,
     /**
      * Mensaje leido
      */
-    leido = 2
+    read = 2
 }

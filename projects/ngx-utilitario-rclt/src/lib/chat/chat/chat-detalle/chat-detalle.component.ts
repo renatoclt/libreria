@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { IMensajeDetalle } from '../../dto/imensaje-detalle';
-import { IChatConversacionDetalle } from '../../dto/ichat-conversacion-detalle';
+import { IChatDetailMessage } from '../../dto/ichat-conversacion-detalle';
 import { Fecha } from '../../../utilitario/fecha';
 
 @Component({
@@ -21,7 +21,7 @@ export class ChatDetalleComponent implements OnInit {
   click() {
     this.clickDetalle.emit(this.detalle);
   }
-  ultimoMensaje(mensajes: IChatConversacionDetalle[]) {
+  ultimoMensaje(mensajes: IChatDetailMessage[]) {
     if (mensajes.length > 0) {
       if (mensajes[mensajes.length - 1].img === null) {
         return mensajes[mensajes.length - 1].mensaje;
@@ -31,7 +31,7 @@ export class ChatDetalleComponent implements OnInit {
     }
     return '';
   }
-  ultimaFecha(mensajes: IChatConversacionDetalle[]) {
+  ultimaFecha(mensajes: IChatDetailMessage[]) {
     if (mensajes.length > 0) {
       if (this.fecha.compareDates(new Date(mensajes[mensajes.length - 1].fecha))) {
         return mensajes[mensajes.length - 1].hora;

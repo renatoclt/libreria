@@ -44,15 +44,15 @@
           <div [ngClass]="escogerEstilo(item.tipoMensaje)">
             <div>{{item.mensaje}}</div>
             <div>{{item.hora}}
-              <span *ngIf="estadoMensajeEnviado(item.estadoMensaje, item.tipoMensaje)" class="ngx-utilitario-msj-enviado">
+              <span *ngIf="estadoMensaje(item.estadoMensaje, item.tipoMensaje, EMessageState.enviado )" class="ngx-utilitario-msj-enviado">
                 <em class="fa fa-check"></em> 
               </span>
-              <span *ngIf="estadoMensajeRecibido(item.estadoMensaje, item.tipoMensaje)"
+              <span *ngIf="estadoMensaje(item.estadoMensaje, item.tipoMensaje, EMessageState.recibido)"
                 class="ngx-utilitario-msj-recibido">
                 <em class="fa fa-check"></em> 
                 <em class="fa fa-check"></em> 
               </span>
-              <span *ngIf="estadoMensajeLeido(item.estadoMensaje, item.tipoMensaje)" class="ngx-utilitario-msj-leido">
+              <span *ngIf="estadoMensaje(item.estadoMensaje, item.tipoMensaje, EMessageState.leido )" class="ngx-utilitario-msj-leido">
                 <em class="fa fa-check"></em> 
                 <em class="fa fa-check"></em> 
               </span>
@@ -64,8 +64,8 @@
   </div>
   <div class="container-fluid">
     <div class="row">
-      <ngx-utilitario-chat-detalle-agregar class="col-12 ngx-utilitario-chat-agregar"
-        (nuevoMensaje)="enviarMensaje($event)" [disabled]="conversacion.bloqueo"></ngx-utilitario-chat-detalle-agregar>
+      <ngx-utilitario-chat-detail-add class="col-12 ngx-utilitario-chat-agregar"
+        (nuevoMensaje)="enviarMensaje($event)" [disabled]="conversacion.bloqueo"></ngx-utilitario-chat-detail-add>
     </div>
   </div>
 </div>
