@@ -18,7 +18,7 @@ export class ChatDetailComponent implements OnInit {
   /**
    * Las caracteristicas de la conversacion 
    */
-  @Input() conversacion: IChatDetail = {
+  @Input() chatDetail: IChatDetail = {
     id: '',
     img: '',
     name: '',
@@ -29,24 +29,24 @@ export class ChatDetailComponent implements OnInit {
   /**
    * Al enviar un nuevo mensaje
    */
-  @Output() nuevoMensaje: EventEmitter<any> = new EventEmitter();
+  @Output() newMessage: EventEmitter<any> = new EventEmitter();
   /**
    * Al eliminar la conversacion
    */
-  @Output() eliminarMensajes: EventEmitter<any> = new EventEmitter();
+  @Output() deleteMessages: EventEmitter<any> = new EventEmitter();
   /**
-   * Al bloquear una conversacion 
+   * Al bloquear una conversacion
    */
-  @Output() bloquearConversacion: EventEmitter<any> = new EventEmitter();
+  @Output() lockChat: EventEmitter<any> = new EventEmitter();
   /**
    * Variable en la cual trabajaremos las fechas
    */
-  fecha: Fecha = undefined;
+  date: Fecha;
   /**
    * @ignore
    */
   constructor() {
-    this.fecha = new Fecha();
+    this.date = new Fecha();
   }
 
   /**
@@ -56,89 +56,89 @@ export class ChatDetailComponent implements OnInit {
   }
   /**
    * Inserta una linea para separar mensajes de diferentes dias el primier elemento no tendra una divicion 
-   * @param fecha recibe la fecha del mensaje
+   * @param date recibe la fecha del mensaje
    * @param index index del elemento en el arreglo
    */
-  lineaDia(fecha, index) {
+  dayLine(date, index) {
     let tDate: Date;
     if (index === 0) {
-      tDate = new Date(fecha);
+      tDate = new Date(date);
       tDate.setDate(tDate.getDate() - 1);
     } else {
-      tDate = new Date(this.conversacion.messages[index - 1].date);
+      tDate = new Date(this.chatDetail.messages[index - 1].date);
     }
-    return !this.fecha.differenceDays(new Date(fecha), tDate);
+    return !this.date.differenceDays(new Date(date), tDate);
   }
   /**
    * Compara los dias entre la fecha actual y la enviada para insertar el texto en el chat 
-   * @param fecha fecha del mensaje
+   * @param date fecha del mensaje
    */
-  diferenciaDias(fecha) {
-    return this.fecha.differenceDaysText(fecha);
+  dayDifference(date) {
+    return this.date.differenceDaysText(date);
   }
   /**
    * Insertamos el estilo al mensaje dependiendo el tipo del mensaje
-   * @param tipoMensaje si es recibido o enviado
+   * @param messageType si es recibido o enviado
    */
-  escogerEstilo(tipoMensaje) {
-    if (tipoMensaje === EMessageType.sent) {
+  escogerEstilo(messageType) {
+    if (messageType === EMessageType.sent) {
       return 'ngx-utilitario-chat-right float-right arrow_box';
     }
     return 'ngx-utilitario-chat-left float-left';
   }
   /**
    * Validamos si el tipo de mensaje es enviado
-   * @param estado estado actual del mensaje
-   * @param tipoMensaje enviado o recibido
-   * @param estadoConsultado tipo que se consulta
+   * @param state estado actual del mensaje
+   * @param messageType enviado o recibido
+   * @param stateSearch tipo que se consulta
    */
-  estadoMensaje(estado, tipoMensaje, estadoConsultado) {
-    if (estado === estadoConsultado && tipoMensaje === EMessageType.sent) {
+  estadoMensaje(state, messageType, stateSearch) {
+    if (state === stateSearch && messageType === EMessageType.sent) {
       return true;
     }
     return false;
   }
   /**
    * Emitimos un nuevo mensaje y añadimos el mensaje
-   * @param mensaje mensaje enviado
+   * @param message mensaje enviado
    */
-  enviarMensaje(mensaje: any) {
-    const nuevoMensaje: IChatDetailMessage = {
+  enviarMensaje(message: any) {
+    const newMessage: IChatDetailMessage = {
       messageState: EMessageState.sent,
       date: new Fecha().format(new Date(), 'LL'),
       hour: new Fecha().format(new Date(), 'HH:mm'),
       img: null,
-      message: mensaje,
+      message,
       messageType: EMessageType.sent
     };
-    this.nuevoMensaje.emit(nuevoMensaje);
+    this.newMessage.emit(newMessage);
   }
   /**
    * Se eliminaran los mensajes en esta conversacion
    */
   eliminarConversacion() {
-    this.eliminarMensajes.emit();
+    this.deleteMessages.emit();
   }
   /**
    * Se bloqueara la conversacion
    */
   bloquear() {
-    this.conversacion.lock = EChatLock.locked;
-    this.bloquearConversacion.emit(EChatLock.locked);
+    this.chatDetail.lock = EChatLock.locked;
+    this.lockChat.emit(EChatLock.locked);
   }
   /**
    * Se desbloqueara la conversacion
    */
   desbloquear() {
-    this.conversacion.lock = EChatLock.unlocked;
-    this.bloquearConversacion.emit(EChatLock.unlocked);
+    this.chatDetail.lock = EChatLock.unlocked;
+    this.lockChat.emit(EChatLock.unlocked);
   }
   /**
    * se validara el estado actual de la conversacion
-   * @param estado bloqueo, bloqueado o desbloqueado
+   * @param state bloqueo, bloqueado o desbloqueado
    */
-  validarEstadoBLoqueado(estado) {
-    if (estado === EChatLock.lock) {
+  validarEstadoBLoqueado(state) {
+    if (state === EChatLock.lock) {
       return true;
     }
     return false;
