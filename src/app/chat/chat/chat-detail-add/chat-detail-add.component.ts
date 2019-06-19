@@ -2,7 +2,7 @@ import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
 /**
- * Componente que permite agregar un mensaje
+ * Componente que permite agregar un mensaje y una nueva imagen
  */
 @Component({
   selector: 'ngx-utilitario-chat-detail-add',
@@ -25,7 +25,11 @@ export class ChatDetailAddComponent implements OnInit {
   /**
    * Al enviar un mensaje emite un evento
    */
-  @Output() newMessage: EventEmitter<any> = new EventEmitter();
+  @Output() newMessage: EventEmitter<string> = new EventEmitter();
+  /**
+   * Al enviar una imagen emite un evento con todos los archivos cargados
+   */
+  @Output() newImage: EventEmitter<FileList> = new EventEmitter();
   /**
    * Variable de formulario
    */
@@ -45,7 +49,7 @@ export class ChatDetailAddComponent implements OnInit {
   }
 
   /**
-   * añadimos el control mensaje al formulario
+   * añadimos el control mensaje e imagen al formulario
    */
   createForm() {
     this.messageForm = this.formBuilder.group({
@@ -54,9 +58,25 @@ export class ChatDetailAddComponent implements OnInit {
   }
 
   /**
-   * Emitimos de que hay un nuevo mensaje
+   * Emitimos de que hay un nuevo mensaje y limpiamos la caja de texto
    */
   sendMessage() {
-    this.newMessage.emit(this.messageForm.controls.mensaje.value);
+    if (this.messageForm.controls.message.value !== '' &&
+        this.messageForm.controls.message.value !== undefined &&
+        this.messageForm.controls.message.value !== null) {
+      this.newMessage.emit(this.messageForm.controls.message.value);
+      this.messageForm.reset();
+    }
+  }
+  /**
+   * Emitimos de que hay una nueva imagen a enviar
+   */
+  sendImage(event: Event) {
+    const target = event.target as HTMLInputElement;
+    const fileList: FileList = target.files;
+    if (fileList && fileList.length > 0) {
+      console.log(fileList)
+      this.newImage.emit(fileList);
+    }
   }
 }

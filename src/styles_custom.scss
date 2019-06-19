@@ -30,7 +30,7 @@
   transition: all 1.2s;
   width: 3rem;
 }
-.ngx-utilitario-btn-icon:hover {
+.ngx-util-btn-icon:hover {
   opacity: 1;
   background-color: rgba(255, 255, 255, 0.2);
   -webkit-border-radius: 100%;
@@ -38,7 +38,7 @@
   border-radius: 100%;
 }
 
-.ngx-utilitario-btn-gray {
+.ngx-util-btn-gray {
   color: #adb3b6 !important;
   box-shadow: none;
   font-size: 16px;
@@ -55,7 +55,7 @@
   border: none;
 }
 
-.ngx-utilitario-btn-gray:hover {
+.ngx-util-btn-gray:hover {
   background: rgba(50, 65, 72, 0.1) !important;
   opacity: 1;
   -webkit-transform: scale(1);
@@ -64,4 +64,8 @@
   -o-transform: scale(1);
   transform: scale(1);
   border-color: transparent !important;
+}
+
+.ngx-util-input-file{
+  display: none !important;
 }

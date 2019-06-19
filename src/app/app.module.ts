@@ -26,8 +26,7 @@ import { ReactiveFormsModule } from '@angular/forms';
      * component
      */
     AppComponent,
-    ChatDetailAddComponent,
-    // NgxUtilitarioChatModule,
+    // ChatDetailAddComponent,
     /**
      * pipes
      */
