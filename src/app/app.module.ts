@@ -14,6 +14,8 @@ import { NgxUtilitarioCardsModule } from './cards/cards.module';
 import { NgxUtilitarioDynamicModule } from './dynamic-component/ngx-utilitario-rclt-dynamic.module';
 import { NgxUtilitarioIconsModule } from './icons/ngx-utilitario-rclt-icons.module';
 import { NgxUtilitarioModalModule } from './modal/ngx-utilitario-rclt-modal.module';
+import { ChatDetailAddComponent } from './chat/chat/chat-detail-add/chat-detail-add.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -24,19 +26,22 @@ import { NgxUtilitarioModalModule } from './modal/ngx-utilitario-rclt-modal.modu
      * component
      */
     AppComponent,
+    ChatDetailAddComponent,
+    // NgxUtilitarioChatModule,
     /**
      * pipes
      */
     NumberToArrayPipe
   ],
   imports: [
+    ReactiveFormsModule,
     BrowserModule,
     BrowserAnimationsModule,
     MatButtonModule,
     AppRoutingModule,
     AngularFontAwesomeModule,
     FormsModule,
-    NgxUtilitarioChatModule,
+    // NgxUtilitarioChatModule,
     NgxUtilitarioMenuModule,
     NgxUtilitarioCardsModule,
     NgxUtilitarioDynamicModule,

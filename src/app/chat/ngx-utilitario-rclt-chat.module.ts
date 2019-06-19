@@ -21,6 +21,9 @@ import { ChatDetailAddComponent } from './chat/chat-detail-add/chat-detail-add.c
     CommonModule,
     ReactiveFormsModule
   ],
+  entryComponents: [
+    ChatDetailAddComponent
+  ],
   exports: [
     ChatComponent
   ]

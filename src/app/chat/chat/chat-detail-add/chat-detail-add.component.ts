@@ -10,22 +10,22 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   styleUrls: ['./chat-detail-add.component.scss']
 })
 export class ChatDetailAddComponent implements OnInit {
-/**
- * Validamos si puede escribir o no un mensaje
- * @example
- * 0 si puede enviar un mensaje
- * 1 no puede enviar mensaje
- * 2 no puede enviar mensaje
- */
-  @Input() disabled = 1;
+  /**
+   * Validamos si puede escribir o no un mensaje
+   * @example
+   * 0 si puede enviar un mensaje
+   * 1 no puede enviar mensaje
+   * 2 no puede enviar mensaje
+   */
+  @Input() disabled = 0;
+  /**
+   * Mensaje que aparecera en la caja de texto
+   */
+  @Input() placeholder = 'Escribir mensaje ...';
   /**
    * Al enviar un mensaje emite un evento
    */
   @Output() newMessage: EventEmitter<any> = new EventEmitter();
-  /**
-   * Mensaje que aparecera en la caja de texto
-   */
-  placeholder = 'Escribir mensaje ...';
   /**
    * Variable de formulario
    */
@@ -56,7 +56,7 @@ export class ChatDetailAddComponent implements OnInit {
   /**
    * Emitimos de que hay un nuevo mensaje
    */
-  enviarMensaje() {
+  sendMessage() {
     this.newMessage.emit(this.messageForm.controls.mensaje.value);
   }
 }
