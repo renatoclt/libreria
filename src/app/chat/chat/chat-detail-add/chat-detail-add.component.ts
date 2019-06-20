@@ -75,7 +75,6 @@ export class ChatDetailAddComponent implements OnInit {
     const target = event.target as HTMLInputElement;
     const fileList: FileList = target.files;
     if (fileList && fileList.length > 0) {
-      console.log(fileList)
       this.newImage.emit(fileList);
     }
   }

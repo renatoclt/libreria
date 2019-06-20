@@ -94,14 +94,6 @@ describe('ChatDetailAddComponent', () => {
     });
   });
   describe('Probar envio de imagen', () => {
-    let button: ElementRef;
-    beforeAll(() => {
-      button = fixture.debugElement.query(By.css('#btn_sendImage'));
-    });
-    // afterAll)
-    it('si creo correctamente el boton', () => {
-      expect(button).toBeTruthy();
-    });
     it('Que emita una nueva imagen si se envia un archivo', () => {
       const mockFile = new File([''], 'filename', { type: '.png' });
       const mockEvt = { target: { files: [mockFile] } };

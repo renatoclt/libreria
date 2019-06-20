@@ -14,17 +14,17 @@
       </div>
     </div>
     <div class="col-1 ngx-util-btns-acciones">
-      <button type="button" class="col-6 btn ngx-util-btn-icon ngx-util-btn-gray"
+      <button id="btn_chatDelete" type="button" class="col-6 btn ngx-util-btn-icon ngx-util-btn-gray"
         (click)="chatDelete()">
         <i class="fa fa-trash-o" aria-hidden="true" alt="eliminar conversacion"></i>
       </button>
-      <button *ngIf="!chatDetail.lock" type="button"
+      <button id="btn_chatLock" *ngIf="lookStateValidate(chatDetail.lock, EChatLock.unlocked)" type="button"
         class="col-6 btn ngx-util-btn-icon ngx-util-btn-gray" (click)="lock()">
         <i class="fa fa-ban" aria-hidden="true" alt="Bloquear conversacion"></i>
       </button>
-      <button *ngIf="lookStateValidate(chatDetail.bloqueo)" type="button"
+      <button id="btn_chatUnlock" *ngIf="lookStateValidate(chatDetail.lock, EChatLock.lock)" type="button"
         class="col-6 btn ngx-util-btn-icon ngx-util-btn-gray" (click)="lock()">
-        <i class="fa fa-unlock" aria-hidden="true" alt="Bloquear conversacion"></i>
+        <i class="fa fa-unlock" aria-hidden="true" alt="Desbloquear conversacion"></i>
       </button>
     </div>
   </div>

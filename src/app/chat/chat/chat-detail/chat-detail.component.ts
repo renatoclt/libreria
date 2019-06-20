@@ -31,7 +31,7 @@ export class ChatDetailComponent implements OnInit {
   /**
    * Al enviar un nuevo mensaje
    */
-  @Output() newMessage: EventEmitter<any> = new EventEmitter();
+  @Output() newMessage: EventEmitter<IChatDetailMessage> = new EventEmitter();
   /**
    * Al eliminar la conversacion
    */
@@ -39,7 +39,7 @@ export class ChatDetailComponent implements OnInit {
   /**
    * Al bloquear una conversacion
    */
-  @Output() lockChat: EventEmitter<any> = new EventEmitter();
+  @Output() lockChat: EventEmitter<EChatLock> = new EventEmitter();
   /**
    * Variable en la cual trabajaremos las fechas
    */
@@ -51,6 +51,10 @@ export class ChatDetailComponent implements OnInit {
     this.date = new Fecha();
   }
 
+  /**
+   * Variable para usar enume en html
+   */
+  EChatLock = EChatLock;
   /**
    * @ignore
    */
@@ -113,7 +117,7 @@ export class ChatDetailComponent implements OnInit {
    * Emitimos un nuevo mensaje y añadimos el mensaje
    * @param message mensaje enviado
    */
-  messageSend(message: any) {
+  messageSend(message: string) {
     const newMessage: IChatDetailMessage = {
       messageState: EMessageState.sent,
       date: new Fecha().format(new Date(), 'LL'),
@@ -145,11 +149,11 @@ export class ChatDetailComponent implements OnInit {
     this.lockChat.emit(EChatLock.unlocked);
   }
   /**
-   * se validara el estado actual de la conversacion
+   * Valida si el estado es el esperado
    * @param state bloqueo, bloqueado o desbloqueado
    */
-  lookStateValidate(state: EChatLock): boolean {
-    if (state === EChatLock.lock) {
+  lookStateValidate(state: EChatLock , expetedState: EChatLock): boolean {
+    if (state === expetedState) {
       return true;
     }
     return false;
@@ -160,7 +164,7 @@ export class ChatDetailComponent implements OnInit {
    * @returns la imagen o una por va
    */
   imageValidate(image: string): string {
-    if (image === null || image === undefined || image || '' ) {
+    if (image === null || image === undefined || image === '' ) {
       return environment.imgUsuario;
     } else {
       return image;

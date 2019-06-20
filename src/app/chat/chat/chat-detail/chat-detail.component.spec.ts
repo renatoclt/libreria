@@ -8,6 +8,9 @@ import { EChatState } from '../../dto/echat-state';
 import { IChatDetailMessage } from '../../dto/ichat-detail-message';
 import { EMessageState } from '../../dto/emessage-state';
 import { EMessageType } from '../../dto/emensaje-type';
+import { ElementRef, Component } from '@angular/core';
+import { By } from '@angular/platform-browser';
+import { environment } from 'src/environments/environment.prod';
 
 describe('ChatDetailComponent', () => {
   let component: ChatDetailComponent;
@@ -93,6 +96,79 @@ describe('ChatDetailComponent', () => {
     });
     it('Debe retornar vacio si el formato es incorrecto', () => {
       expect(component.dayDifference(new Date('13-05-2019'))).toBe('');
+    });
+  });
+  describe('messageSend', () => {
+    it('debe emitir el mensaje', () => {
+      spyOn(component.newMessage , 'emit');
+      component.messageSend('nuevo mensaje')
+      fixture.detectChanges();
+      expect(component.newMessage.emit).toHaveBeenCalledTimes(1);
+    });
+  });
+
+  describe('chatDelete', () => {
+    let button: ElementRef;
+    beforeEach(() => {
+      button = fixture.debugElement.query(By.css('#btn_chatDelete'));
+    });
+    it('si creo correctamente el boton', () => {
+      expect(button).toBeTruthy();
+    });
+    it('debe emitir el mensaje', () => {
+      spyOn(component.deleteMessages , 'emit');
+      button.nativeElement.click();
+      // component.chatDelete();
+      fixture.detectChanges();
+      expect(component.deleteMessages.emit).toHaveBeenCalledTimes(1);
+    });
+  });
+  describe('chatlock', () => {
+    let button: ElementRef;
+    beforeEach(() => {
+      component.chatDetail.lock = EChatLock.unlocked;
+      fixture.detectChanges();
+      button = fixture.debugElement.query(By.css('#btn_chatLock'));
+    });
+    it('si creo correctamente el boton segun la condicion', () => {
+      expect(button).toBeTruthy();
+    });
+    it('debe emitir el mensaje', () => {
+      spyOn(component.lockChat , 'emit');
+      button.nativeElement.click();
+      // component.chatDelete();
+      fixture.detectChanges();
+      fixture.whenStable().then(() => {
+        expect(component.lockChat.emit).toHaveBeenCalledTimes(1);
+      });
+    });
+  });
+  describe('chatUnlock', () => {
+    let button: ElementRef;
+    beforeEach(() => {
+      component.chatDetail.lock = EChatLock.lock;
+      fixture.detectChanges();
+      button = fixture.debugElement.query(By.css('#btn_chatUnlock'));
+    });
+    it('validamos si se muestra el boton correctamente', () => {
+      expect(button).toBeTruthy();
+    });
+    it('debe emitir el mensaje', () => {
+      spyOn(component.lockChat , 'emit');
+      button.nativeElement.click();
+      // component.chatDelete();
+      fixture.detectChanges();
+      fixture.whenStable().then(() => {
+        expect(component.lockChat.emit).toHaveBeenCalledTimes(1);
+      });
+    });
+  });
+  describe('imageValidate', () => {
+    it('validamos si retorna imagen ', () => {
+      expect(component.imageValidate('urlImg')).toBe('urlImg');
+    });
+    it('validamos si retorna imagen de un undefined ', () => {
+      expect(component.imageValidate(undefined).length).toBeGreaterThanOrEqual(1);
     });
   });
 });

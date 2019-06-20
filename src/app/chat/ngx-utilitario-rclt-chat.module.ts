@@ -22,10 +22,13 @@ import { ChatDetailAddComponent } from './chat/chat-detail-add/chat-detail-add.c
     ReactiveFormsModule
   ],
   entryComponents: [
+    ChatListComponent,
     ChatDetailAddComponent
   ],
   exports: [
-    ChatComponent
+    ChatComponent,
+    ChatDetailComponent,
+    ChatDetailAddComponent
   ]
 })
 export class NgxUtilitarioChatModule { }
