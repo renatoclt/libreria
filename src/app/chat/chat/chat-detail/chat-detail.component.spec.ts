@@ -107,22 +107,7 @@ describe('ChatDetailComponent', () => {
     });
   });
 
-  describe('chatDelete', () => {
-    let button: ElementRef;
-    beforeEach(() => {
-      button = fixture.debugElement.query(By.css('#btn_chatDelete'));
-    });
-    it('si creo correctamente el boton', () => {
-      expect(button).toBeTruthy();
-    });
-    it('debe emitir el mensaje', () => {
-      spyOn(component.deleteMessages , 'emit');
-      button.nativeElement.click();
-      // component.chatDelete();
-      fixture.detectChanges();
-      expect(component.deleteMessages.emit).toHaveBeenCalledTimes(1);
-    });
-  });
+ 
   describe('chatlock', () => {
     let button: ElementRef;
     beforeEach(() => {
@@ -161,6 +146,22 @@ describe('ChatDetailComponent', () => {
       fixture.whenStable().then(() => {
         expect(component.lockChat.emit).toHaveBeenCalledTimes(1);
       });
+    });
+  });
+  describe('chatDelete', () => {
+    let button: ElementRef;
+    beforeEach(() => {
+      fixture.detectChanges();
+      button = fixture.debugElement.query(By.css('#btn_chatDelete'));
+    });
+    it('si creo correctamente el boton', () => {
+      expect(button).toBeTruthy();
+    });
+    it('debe emitir el mensaje', () => {
+      spyOn(component.deleteMessages , 'emit');
+      button.nativeElement.click();
+      fixture.detectChanges();
+      expect(component.deleteMessages.emit).toHaveBeenCalledTimes(1);
     });
   });
   describe('imageValidate', () => {

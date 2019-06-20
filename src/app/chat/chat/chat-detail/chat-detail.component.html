@@ -1,9 +1,9 @@
 <!--Si es invalido chatdetail mostraremos una imagen-->
-<div class="container-fluid ngx-util-detail" *ngIf="validateChatDetail()" style="background: #ffe4c4">
+<div class="container-fluid ngx-util-detail" *ngIf="!validateChatDetail()" style="background: #ffe4c4">
   <img class="ngx-util-img-height-res-center" title="Chat" src={{imageChat}} />
 </div>
 <!--Si es valido chatdetail mostraremos el chat-->
-<div class="container-fluid ngx-util-detail" *ngIf="!validateChatDetail()">
+<div class="container-fluid ngx-util-detail" *ngIf="validateChatDetail()">
   <!--Cabecera del chat-->
   <div class="row ngx-util-detail-head">
     <div class="img-fluid detail-head-img">
@@ -23,8 +23,8 @@
     <div class="detail-head-actions no-padding">
       <div class="ngx-util-btns-actions">
         <button id="btn_chatDelete" type="button" class="col-6 btn ngx-util-btn-icon ngx-util-btn-gray"
-          (click)="chatDelete()" title="{{messageTrashIcon}}">
-          <em class="fa fa-trash-o" aria-hidden="true" title="{{messageTrashIcon}}"></em>
+          (click)="chatDelete()" title="{{messageTrashIcon}}" >
+          <i class="fa fa-trash-o" aria-hidden="true" title="{{messageTrashIcon}}"></i>
         </button>
         <button id="btn_chatLock" *ngIf="lookStateValidate(chatDetail.lock, EChatLock.unlocked)" type="button"
           class="col-6 btn ngx-util-btn-icon ngx-util-btn-gray" (click)="lock()" title="{{messageLockIcon}}">

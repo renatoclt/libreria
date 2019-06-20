@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ChatListComponent } from './chat-list.component';
-import { ChatDetalleComponent } from '../chat-list-detail/chat-detail.component';
+import { ChatListDetailComponent } from '../chat-list-detail/chat-list-detail.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
 describe('ChatListaComponent', () => {
@@ -12,7 +12,7 @@ describe('ChatListaComponent', () => {
     TestBed.configureTestingModule({
       declarations: [
         ChatListComponent,
-        ChatDetalleComponent
+        ChatListDetailComponent
       ],
       imports: [
         ReactiveFormsModule

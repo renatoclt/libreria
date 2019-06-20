@@ -193,7 +193,7 @@ export class ChatDetailComponent implements OnInit {
    * Validaremos la variable chat detail
    */
   validateChatDetail(): boolean {
-    if (this.chatDetail === null && this.chatDetail === null) {
+    if (this.chatDetail === undefined || this.chatDetail === null) {
       return false;
     }
     return true;

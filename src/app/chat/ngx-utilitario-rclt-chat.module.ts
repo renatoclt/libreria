@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ChatComponent } from './chat/chat.component';
 import { ChatBusquedaComponent } from './chat/chat-search/chat-busqueda.component';
 import { ChatListComponent } from './chat/chat-list/chat-list.component';
-import { ChatDetalleComponent } from './chat/chat-list-detail/chat-detail.component';
+import { ChatListDetailComponent } from './chat/chat-list-detail/chat-list-detail.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ChatDetailComponent } from './chat/chat-detail/chat-detail.component';
 import { ChatDetailAddComponent } from './chat/chat-detail-add/chat-detail-add.component';
@@ -14,7 +14,7 @@ import { ChatDetailAddComponent } from './chat/chat-detail-add/chat-detail-add.c
   declarations: [ChatComponent,
                  ChatBusquedaComponent,
                  ChatListComponent,
-                 ChatDetalleComponent,
+                 ChatListDetailComponent,
                  ChatDetailComponent,
                  ChatDetailAddComponent ],
   imports: [
@@ -28,7 +28,8 @@ import { ChatDetailAddComponent } from './chat/chat-detail-add/chat-detail-add.c
   exports: [
     ChatComponent,
     ChatDetailComponent,
-    ChatDetailAddComponent
+    ChatDetailAddComponent,
+    ChatListDetailComponent
   ]
 })
 export class NgxUtilitarioChatModule { }

@@ -9,16 +9,16 @@ import { EChatState } from '../../dto/echat-state';
  * Componente que muestra la lista de conversaciones
  */
 @Component({
-  selector: 'ngx-utilitario-chat-detalle',
-  templateUrl: './chat-detalle.component.html',
-  styleUrls: ['./chat-detalle.component.scss']
+  selector: 'ngx-utilitario-chat-list-detail',
+  templateUrl: './chat-list-detail.component.html',
+  styleUrls: ['./chat-list-detail.component.scss']
 })
-export class ChatDetalleComponent implements OnInit {
+export class ChatListDetailComponent implements OnInit {
 
   /**
    * Caracteristicas de una conversacion
    */
-  @Input() detalle: IChatListDetail = {
+  @Input() listDetail: IChatListDetail = {
     lock: EChatLock.unlocked,
     state: EChatState.online,
     id: '',
@@ -30,16 +30,16 @@ export class ChatDetalleComponent implements OnInit {
   /**
    * Retorna un evento cuando cuando cuando hace click en una conversacion
    */
-  @Output() clickDetalle: EventEmitter<any> = new EventEmitter();
+  @Output() clickDetail: EventEmitter<any> = new EventEmitter();
   /**
    * Variable con la cual podremos trabajar de una forma mas sencilla los datos de tipo date
    */
-  fecha: Fecha;
+  date: Fecha;
   /**
    * @ignore
    */
   constructor() {
-    this.fecha = new Fecha();
+    this.date = new Fecha();
   }
   /**
    * @ignore
@@ -47,20 +47,20 @@ export class ChatDetalleComponent implements OnInit {
   ngOnInit() {
   }
   /**
-   * Si realiza un click en una conversacion 
+   * Si realiza un click en una conversacion
    */
   click() {
-    this.clickDetalle.emit(this.detalle);
+    this.clickDetail.emit(this.listDetail);
   }
   /**
    * De la lista de mensajes obtememos el ultimo mensaje y lo mostramos en caso de imagen mostramos la palabra foto
-   * @param mensajes recibe todos los mensajes de la conversacion
+   * @param messages recibe todos los mensajes de la conversacion
    */
-  ultimoMensaje(mensajes: IChatDetailMessage[]) {
-    if(mensajes !== undefined ){
-      if (mensajes.length > 0) {
-        if (mensajes[mensajes.length - 1].img === null) {
-          return mensajes[mensajes.length - 1].message;
+  messageLast(messages: IChatDetailMessage[]) {
+    if (messages !== undefined ) {
+      if (messages.length > 0) {
+        if (messages[messages.length - 1].img === null) {
+          return messages[messages.length - 1].message;
         } else {
           return 'Foto';
         }
@@ -70,25 +70,25 @@ export class ChatDetalleComponent implements OnInit {
   }
   /**
    * De la lista de mensajes obtememos el ultimo mensaje y lo mostramos en caso de imagen mostramos la palabra foto
-   * @param mensajes recibe todos los mensajes de la conversacion
+   * @param messages recibe todos los mensajes de la conversacion
    */
-  ultimaFecha(mensajes: IChatDetailMessage[]) {
-    if (mensajes.length > 0) {
-      if (this.fecha.differenceDays(new Date(mensajes[mensajes.length - 1].date))) {
-        return mensajes[mensajes.length - 1].hour;
+  DateLast(messages: IChatDetailMessage[]) {
+    if (messages.length > 0) {
+      if (this.date.differenceDays(new Date(messages[messages.length - 1].date))) {
+        return messages[messages.length - 1].hour;
       } else {
-        return mensajes[mensajes.length - 1].date;
+        return messages[messages.length - 1].date;
       }
     }
     return '';
   }
   /**
    * Funcion para verficar el estado actual del usuario con el que se esta conversando 
-   * @param mensajes propiedades de la conversacion conectado, desconectado
+   * @param listDetail propiedades de la conversacion conectado, desconectado
    */
-  estadoChat(mensajeDetalle: IChatListDetail) {
-    if (mensajeDetalle !== undefined) {
-      return mensajeDetalle.state;
+  estadoChat(listDetail: IChatListDetail) {
+    if (listDetail !== undefined) {
+      return listDetail.state;
     } else {
       return false;
     }
