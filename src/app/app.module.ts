@@ -16,6 +16,7 @@ import { NgxUtilitarioIconsModule } from './icons/ngx-utilitario-rclt-icons.modu
 import { NgxUtilitarioModalModule } from './modal/ngx-utilitario-rclt-modal.module';
 import { ChatDetailAddComponent } from './chat/chat/chat-detail-add/chat-detail-add.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ChatDetailComponent } from './chat/chat/chat-detail/chat-detail.component';
 
 
 
@@ -26,7 +27,7 @@ import { ReactiveFormsModule } from '@angular/forms';
      * component
      */
     AppComponent,
-    // ChatDetailAddComponent,
+    // ChatDetailComponent,
     /**
      * pipes
      */
@@ -40,7 +41,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     AngularFontAwesomeModule,
     FormsModule,
-    // NgxUtilitarioChatModule,
+    NgxUtilitarioChatModule,
     NgxUtilitarioMenuModule,
     NgxUtilitarioCardsModule,
     NgxUtilitarioDynamicModule,

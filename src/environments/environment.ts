@@ -5,7 +5,9 @@
  * Variables globales en modo desarrollo
  */
 export const environment = {
-  production: false
+  production: false,
+// tslint:disable-next-line: max-line-length
+  imgUsuario: 'https://firebasestorage.googleapis.com/v0/b/ngx-utilitario-rclt.appspot.com/o/usuario.jpg?alt=media&token=46fcd177-c824-45bb-b792-eac934654619'
 };
 
 /*

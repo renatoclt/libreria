@@ -30,4 +30,13 @@ describe('ChatDetailComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  describe('pruebas a la funcion dayLine', () => {
+    it('Debe retornar true ya que son fechas diferente', () => {
+      expect(component.dayLine(new Date(), 0)).toBeFalsy();
+    });
+    it('Debe retornar false ya que son fechas diferente', () => {
+      expect(component.dayLine(new Date(), 1)).toBeTruthy();
+
+    });
+  });
 });

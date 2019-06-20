@@ -5,6 +5,8 @@ import { IChatDetailMessage } from '../../dto/ichat-detail-message';
 import { EMessageState } from '../../dto/emessage-state';
 import { EChatLock} from '../../dto/echat-lock';
 import { Fecha } from '../../../utilitario/fecha';
+import { EChatState } from '../../dto/echat-state';
+import { environment } from 'src/environments/environment';
 
 /**
  * Componente donde mostramos los mensajes de la conversacion
@@ -55,11 +57,11 @@ export class ChatDetailComponent implements OnInit {
   ngOnInit() {
   }
   /**
-   * Inserta una linea para separar mensajes de diferentes dias el primier elemento no tendra una divicion 
+   * Inserta una linea para separar mensajes de diferentes dias el primier elemento no tendra una divicion
    * @param date recibe la fecha del mensaje
    * @param index index del elemento en el arreglo
    */
-  dayLine(date, index) {
+  dayLine(date: Date, index: number): boolean {
     let tDate: Date;
     if (index === 0) {
       tDate = new Date(date);
@@ -73,18 +75,18 @@ export class ChatDetailComponent implements OnInit {
    * Compara los dias entre la fecha actual y la enviada para insertar el texto en el chat 
    * @param date fecha del mensaje
    */
-  dayDifference(date) {
+  dayDifference(date: Date) {
     return this.date.differenceDaysText(date);
   }
   /**
    * Insertamos el estilo al mensaje dependiendo el tipo del mensaje
    * @param messageType si es recibido o enviado
    */
-  escogerEstilo(messageType) {
+  chooseStyle(messageType: EMessageType): string {
     if (messageType === EMessageType.sent) {
-      return 'ngx-utilitario-chat-right float-right arrow_box';
+      return 'ngx-util-chat-right float-right arrow_box';
     }
-    return 'ngx-utilitario-chat-left float-left';
+    return 'ngx-util-chat-left float-left';
   }
   /**
    * Validamos si el tipo de mensaje es enviado
@@ -92,7 +94,7 @@ export class ChatDetailComponent implements OnInit {
    * @param messageType enviado o recibido
    * @param stateSearch tipo que se consulta
    */
-  estadoMensaje(state, messageType, stateSearch) {
+  messageState(state: EMessageState, messageType: EMessageType, stateSearch: EMessageState): boolean {
     if (state === stateSearch && messageType === EMessageType.sent) {
       return true;
     }
@@ -102,7 +104,7 @@ export class ChatDetailComponent implements OnInit {
    * Emitimos un nuevo mensaje y añadimos el mensaje
    * @param message mensaje enviado
    */
-  enviarMensaje(message: any) {
+  messageSend(message: any) {
     const newMessage: IChatDetailMessage = {
       messageState: EMessageState.sent,
       date: new Fecha().format(new Date(), 'LL'),
@@ -116,20 +118,20 @@ export class ChatDetailComponent implements OnInit {
   /**
    * Se eliminaran los mensajes en esta conversacion
    */
-  eliminarConversacion() {
+  chatDelete() {
     this.deleteMessages.emit();
   }
   /**
    * Se bloqueara la conversacion
    */
-  bloquear() {
+  lock() {
     this.chatDetail.lock = EChatLock.locked;
     this.lockChat.emit(EChatLock.locked);
   }
   /**
    * Se desbloqueara la conversacion
    */
-  desbloquear() {
+  unlock() {
     this.chatDetail.lock = EChatLock.unlocked;
     this.lockChat.emit(EChatLock.unlocked);
   }
@@ -137,10 +139,23 @@ export class ChatDetailComponent implements OnInit {
    * se validara el estado actual de la conversacion
    * @param state bloqueo, bloqueado o desbloqueado
    */
-  validarEstadoBLoqueado(state) {
+  lookStateValidate(state: EChatLock): boolean {
     if (state === EChatLock.lock) {
       return true;
     }
     return false;
   }
+  /**
+   * Si la imagen es null, undefined o vacia utilizar una por defecto
+   * @param image url o ubicacion de la imagen
+   * @returns la imagen o una por va
+   */
+  imageValidate(image: string): string {
+    if (image === null || image === undefined || image || '' ) {
+      return environment.imgUsuario;
+    } else {
+      return image;
+    }
+  }
+
 }
