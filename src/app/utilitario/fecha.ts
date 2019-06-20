@@ -77,28 +77,30 @@ export class Fecha {
      * @returns si la diferencia es entre -1 o 1 retornara ayer hoy o mañana si no retornara la fecha en el formato indicado
      */
     differenceDaysText(date1: Date, date2?: Date, format?: string): string {
-        if (date1 === undefined || date1 === null || date2 === null) {
-            return undefined;
+        if (date1 !== undefined && date1 !== null && date2 !== null) {
+            if (!isNaN(date1.getTime())) {
+                const dat1 = moment(date1);
+                const dias: number = this.differenceDays(date1, date2);
+                if (format === undefined) {
+                    format = 'DD/MM/YYYY';
+                }
+                switch (dias) {
+                    case 0: {
+                        return 'Hoy';
+                    }
+                    case 1: {
+                        return 'Mañana';
+                    }
+                    case -1: {
+                        return 'Ayer';
+                    }
+                    default: {
+                        return dat1.format(format);
+                    }
+                }
+            }
         }
-        const dat1 = moment(date1);
-        const dias: number = this.differenceDays(date1, date2);
-        if (format === undefined) {
-            format = 'DD/MM/YYYY';
-        }
-        switch (dias) {
-            case 0: {
-                return 'Hoy';
-            }
-            case 1: {
-                return 'Mañana';
-            }
-            case -1: {
-                return 'Ayer';
-            }
-            default: {
-                return dat1.format(format);
-            }
-        }
+        return undefined;
     }
 
     /**
@@ -142,11 +144,13 @@ export class Fecha {
      * @returns la fecha en el formato deseado
      */
     format(date: Date, format: string): string {
-        if (date === undefined || date === null ) {
-            return undefined;
+        if (date !== undefined && date !== null ) {
+            if (!isNaN(date.getTime())) {
+                const dat1 = moment(date);
+                return dat1.format(format);
+            }
         }
-        const dat1 = moment(date);
-        return dat1.format(format);
+        return undefined;
     }
 }
 

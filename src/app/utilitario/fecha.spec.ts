@@ -23,6 +23,10 @@ describe('Fecha', () => {
       expect(fecha.compareDates(new Date('2019-12-20'), new Date('2019-10-20')))
         .toBeFalsy('compareDates Deberia retornar falso si envio un undefined');
     });
+    it('deber retornar false ya que los formatos de fechas son incorrectos', () => {
+      expect(fecha.compareDates(new Date('20-12-2018'), new Date('20-12-2018')))
+        .toBeFalsy('compareDates Deberia retornar falso si envio un undefined');
+    });
   });
   describe('se probara la funcion DifferenceDays', () => {
     it('deber retornar undefined ya que la fecha no tiene el formato deseado', () => {
@@ -45,6 +49,10 @@ describe('Fecha', () => {
       expect(fecha.differenceDays(new Date('2019-12-06'), null))
         .toBe(undefined, 'differenceDays Deberia retornar undefined ya que es la resta de dias entre las fechas');
     });
+    it('deber retornar undefined ya que los formatos son incorrectos', () => {
+      expect(fecha.differenceDays(new Date('20-06-2018'), new Date('20-06-2018')))
+        .toBe(undefined, 'differenceDays Deberia retornar undefined ya que date no se asigna correctamente por el formato');
+    });
   });
   describe('se probara la funcion differenceDaysText', () => {
     it('deber retornar undefined ya que la fecha no tiene el formato deseado', () => {
@@ -52,12 +60,20 @@ describe('Fecha', () => {
         .toBe(undefined, ' differenceDaysText Deberia retornar undefined ya que la primera fecha es undefined');
     });
     it('deber retornar undefined ya que es la fecha2 es null', () => {
-      expect(fecha.differenceDays(new Date('2019-12-06'), null))
+      expect(fecha.differenceDaysText(new Date('2019-12-06'), null))
         .toBe(undefined, 'differenceDaysText Deberia retornar undefined ya que el segundo parametro es null');
     });
     it('deber retornar undefined si el formato de la fecha es incorrecto', () => {
-      expect(fecha.differenceDays(new Date('13-06-2019'), null))
+      expect(fecha.differenceDaysText(new Date('13-06-2019'), null))
         .toBe(undefined, 'differenceDaysText Deberia retornar undefined ya que el segundo parametro es null');
+    });
+    it('deber retornar undefined ya que los formatos son incorrectos', () => {
+      expect(fecha.differenceDaysText(new Date('20-06-2018'), new Date('20-06-2018')))
+        .toBe(undefined, 'differenceDays Deberia retornar undefined ya que date no se asigna correctamente por el formato');
+    });
+    it('deber retornar undefined ya que los formatos son incorrectos', () => {
+      expect(fecha.differenceDaysText(new Date('20-06-2018')))
+        .toBe(undefined, 'differenceDays Deberia retornar undefined ya que date no se asigna correctamente por el formato');
     });
     it('deber retornar ayer ya que es la fecha1 - fecha2', () => {
       expect(fecha.differenceDaysText(new Date('2019-12-06'), new Date('2019-12-07')))
@@ -80,6 +96,10 @@ describe('Fecha', () => {
     it('deber retornar 20-05-2019 si se envia el formato DD-MM-YYYY', () => {
       expect(fecha.format(new Date('05-20-2019'), 'DD-MM-YYYY'))
         .toBe('20-05-2019', 'format deberia retornar en el formato enviado');
+    });
+    it('deber retornar 20-05-2019 si se envia el formato DD-MM-YYYY', () => {
+      expect(fecha.format(new Date('20-05-2019'), 'DD-MM-YYYY'))
+        .toBe(undefined, 'format deberia retornar en el formato enviado');
     });
     it('deber retornar undefined si se envia una fecha incorrecta', () => {
       expect(fecha.format(undefined, 'DD-MM-YYYY'))

@@ -91,8 +91,8 @@ describe('ChatDetailComponent', () => {
     it('Debe retornar vacio si se envia undefined ', () => {
       expect(component.dayDifference(undefined)).toBe('');
     });
-    // it('Debe retornar vacio si el formato es incorrecto', () => {
-    //   expect(component.dayDifference(new Date('13-05-2019'))).toBe('');
-    // });
+    it('Debe retornar vacio si el formato es incorrecto', () => {
+      expect(component.dayDifference(new Date('13-05-2019'))).toBe('');
+    });
   });
 });
