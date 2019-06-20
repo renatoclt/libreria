@@ -116,7 +116,6 @@ describe('ChatDetailAddComponent', () => {
       spyOn(component.newImage, 'emit');
       component.sendImage(mockEvt as any);
       fixture.detectChanges();
-      console.log(component.newImage.emit.prototype);
       expect(component.newImage.emit).toHaveBeenCalledWith(mockEvt.target.files);
     });
     it('Que no emita ninguna respuesta si no se envian archivos', () => {

@@ -18,7 +18,7 @@ import { environment } from 'src/environments/environment';
 })
 export class ChatDetailComponent implements OnInit {
   /**
-   * Las caracteristicas de la conversacion 
+   * Las caracteristicas de la conversacion
    */
   @Input() chatDetail: IChatDetail = {
     id: '',
@@ -26,7 +26,7 @@ export class ChatDetailComponent implements OnInit {
     name: '',
     state: null,
     messages: [],
-    lock: EChatLock.locked
+    lock: null
   };
   /**
    * Al enviar un nuevo mensaje
@@ -57,26 +57,35 @@ export class ChatDetailComponent implements OnInit {
   ngOnInit() {
   }
   /**
-   * Inserta una linea para separar mensajes de diferentes dias el primier elemento no tendra una divicion
+   * Si el index es 0 a la fecha enviada se le restara un dia para que retorne true y genere una linea
+   * Si el index es mayor a 0 tomara la fecha del mensaje anterior y la comparara
+   * si se envia un undefined un null o una fecha invalidad no imprimira linea
    * @param date recibe la fecha del mensaje
    * @param index index del elemento en el arreglo
+   * @returns si debe mostrar una linea o no
    */
   dayLine(date: Date, index: number): boolean {
-    let tDate: Date;
-    if (index === 0) {
-      tDate = new Date(date);
-      tDate.setDate(tDate.getDate() - 1);
-    } else {
-      tDate = new Date(this.chatDetail.messages[index - 1].date);
+    if (date !== null && date !== undefined  ) {
+      if (!isNaN(date.getTime())) {
+        let tDate: Date;
+        if (index === 0) {
+          tDate = new Date(date);
+          tDate.setDate(tDate.getDate() - 1);
+        } else {
+          tDate = new Date(this.chatDetail.messages[index - 1].date);
+        }
+        return !this.date.compareDates(new Date(date), tDate);
+      }
     }
-    return !this.date.differenceDays(new Date(date), tDate);
+    return false;
   }
   /**
    * Compara los dias entre la fecha actual y la enviada para insertar el texto en el chat 
    * @param date fecha del mensaje
    */
   dayDifference(date: Date) {
-    return this.date.differenceDaysText(date);
+    const temDate = this.date.differenceDaysText(date);
+    return temDate !== undefined ? temDate : '';
   }
   /**
    * Insertamos el estilo al mensaje dependiendo el tipo del mensaje

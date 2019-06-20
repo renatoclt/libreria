@@ -49,15 +49,19 @@ export class Fecha {
      * @return retorna los dias de diferencia o undefined si los datos son enviados incorrectamente
      */
     differenceDays(date1: Date, date2?: Date): number {
-        if (date1 === undefined || date1 === null || date2 === null) {
-            return undefined;
+        if (date1 !== undefined && date1 !== null && date2 !== null) {
+            if (!isNaN(date1.getTime())) {
+                const dat1 = moment(date1);
+                if (date2 === undefined) {
+                    date2 = new Date();
+                }
+                if (!isNaN(date2.getTime())) {
+                    const dat2 = moment(date2);
+                    return dat1.diff(dat2, 'days', false);
+                }
+            }
         }
-        const dat1 = moment(date1);
-        if (date2 === undefined) {
-            date2 = new Date();
-        }
-        const dat2 = moment(date2);
-        return dat1.diff(dat2, 'days', false);
+        return undefined;
     }
 
     /**
