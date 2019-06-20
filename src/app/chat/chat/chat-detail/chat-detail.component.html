@@ -1,9 +1,16 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-2 img-fluid">
-      <img class="img-fluid rounded-circle img-height-3-7" alt="chatDetail.name" src="{{imageValidate(chatDetail.img)}}" />
+<!--Si es invalido chatdetail mostraremos una imagen-->
+<div class="container-fluid ngx-util-detail" *ngIf="validateChatDetail()" style="background: #ffe4c4">
+  <img class="ngx-util-img-height-res-center" title="Chat" src={{imageChat}} />
+</div>
+<!--Si es valido chatdetail mostraremos el chat-->
+<div class="container-fluid ngx-util-detail" *ngIf="!validateChatDetail()">
+  <!--Cabecera del chat-->
+  <div class="row ngx-util-detail-head">
+    <div class="img-fluid detail-head-img">
+      <img class="img-fluid rounded-circle img-height-3-7" alt="chatDetail.name"
+        src="{{imageValidate(chatDetail.img)}}" />
     </div>
-    <div class="col-9">
+    <div class="detail-head-name">
       <div class="row">
         <div class="col-12">
           {{chatDetail.name}}
@@ -13,22 +20,25 @@
         <div class="col-12">{{chatDetail.state}}</div>
       </div>
     </div>
-    <div class="col-1 ngx-util-btns-acciones">
-      <button id="btn_chatDelete" type="button" class="col-6 btn ngx-util-btn-icon ngx-util-btn-gray"
-        (click)="chatDelete()">
-        <i class="fa fa-trash-o" aria-hidden="true" alt="eliminar conversacion"></i>
-      </button>
-      <button id="btn_chatLock" *ngIf="lookStateValidate(chatDetail.lock, EChatLock.unlocked)" type="button"
-        class="col-6 btn ngx-util-btn-icon ngx-util-btn-gray" (click)="lock()">
-        <i class="fa fa-ban" aria-hidden="true" alt="Bloquear conversacion"></i>
-      </button>
-      <button id="btn_chatUnlock" *ngIf="lookStateValidate(chatDetail.lock, EChatLock.lock)" type="button"
-        class="col-6 btn ngx-util-btn-icon ngx-util-btn-gray" (click)="lock()">
-        <i class="fa fa-unlock" aria-hidden="true" alt="Desbloquear conversacion"></i>
-      </button>
+    <div class="detail-head-actions no-padding">
+      <div class="ngx-util-btns-actions">
+        <button id="btn_chatDelete" type="button" class="col-6 btn ngx-util-btn-icon ngx-util-btn-gray"
+          (click)="chatDelete()" title="{{messageTrashIcon}}">
+          <em class="fa fa-trash-o" aria-hidden="true" title="{{messageTrashIcon}}"></em>
+        </button>
+        <button id="btn_chatLock" *ngIf="lookStateValidate(chatDetail.lock, EChatLock.unlocked)" type="button"
+          class="col-6 btn ngx-util-btn-icon ngx-util-btn-gray" (click)="lock()" title="{{messageLockIcon}}">
+          <i class="fa fa-ban" aria-hidden="true" title="{{messageLockIcon}}"></i>
+        </button>
+        <button id="btn_chatUnlock" *ngIf="lookStateValidate(chatDetail.lock, EChatLock.lock)" type="button"
+          class="col-6 btn ngx-util-btn-icon ngx-util-btn-gray" title="{{messageUnlockIcon}}" (click)="unlock()">
+          <i class="fa fa-unlock" aria-hidden="true" title="{{messageUnlockIcon}}"></i>
+        </button>
+      </div>
     </div>
   </div>
-  <div class="container-fluid">
+  <!--Mensajes del chat-->
+  <div class="container-fluid ngx-util-detail-messages">
     <div class="row ngx-utilitario-cuerpo-Chat">
       <div class="col-12" *ngFor="let item of chatDetail.mensajes; let i=index ">
         <div class="container">
@@ -44,17 +54,19 @@
           <div [ngClass]="escogerEstilo(item.tipoMensaje)">
             <div>{{item.mensaje}}</div>
             <div>{{item.hora}}
-              <span *ngIf="estadoMensaje(item.estadoMensaje, item.tipoMensaje, EMessageState.enviado )" class="ngx-utilitario-msj-enviado">
-                <em class="fa fa-check"></em> 
-              </span>
-              <span *ngIf="estadoMensaje(item.estadoMensaje, item.tipoMensaje, EMessageState.recibido)"
-                class="ngx-utilitario-msj-recibido">
-                <em class="fa fa-check"></em> 
-                <em class="fa fa-check"></em> 
-              </span>
-              <span *ngIf="estadoMensaje(item.estadoMensaje, item.tipoMensaje, EMessageState.leido )" class="ngx-utilitario-msj-leido">
-                <em class="fa fa-check"></em> 
-                <em class="fa fa-check"></em> 
+              <span *ngIf="estadoMensaje(item.estadoMensaje, item.tipoMensaje, EMessageState.enviado )"
+              class="ngx-utilitario-msj-enviado">
+              <em class="fa fa-check"></em>
+            </span>
+            <span *ngIf="estadoMensaje(item.estadoMensaje, item.tipoMensaje, EMessageState.recibido)"
+            class="ngx-utilitario-msj-recibido">
+            <em class="fa fa-check"></em>
+            <em class="fa fa-check"></em>
+          </span>
+              <span *ngIf="estadoMensaje(item.estadoMensaje, item.tipoMensaje, EMessageState.leido )"
+                class="ngx-utilitario-msj-leido">
+                <em class="fa fa-check"></em>
+                <em class="fa fa-check"></em>
               </span>
             </div>
           </div>
@@ -62,10 +74,11 @@
       </div>
     </div>
   </div>
-  <div class="container-fluid">
+  <!--Agregar chat-->
+  <div class="container-fluid ngx-util-detail-add">
     <div class="row">
-      <!-- <ngx-utilitario-chat-detail-add class="col-12 ngx-utilitario-chat-agregar"
-        (nuevoMensaje)="enviarMensaje($event)" [disabled]="chatDetail.bloqueo"></ngx-utilitario-chat-detail-add> -->
+      <ngx-utilitario-chat-detail-add class="col-12 ngx-utilitario-chat-agregar" (nuevoMensaje)="enviarMensaje($event)"
+        [disabled]="chatDetail.bloqueo"></ngx-utilitario-chat-detail-add>
     </div>
   </div>
 </div>

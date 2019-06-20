@@ -3,7 +3,7 @@ import { IChatDetail } from '../../dto/ichat-detail';
 import { EMessageType } from '../../dto/emensaje-type';
 import { IChatDetailMessage } from '../../dto/ichat-detail-message';
 import { EMessageState } from '../../dto/emessage-state';
-import { EChatLock} from '../../dto/echat-lock';
+import { EChatLock } from '../../dto/echat-lock';
 import { Fecha } from '../../../utilitario/fecha';
 import { EChatState } from '../../dto/echat-state';
 import { environment } from 'src/environments/environment';
@@ -19,15 +19,18 @@ import { environment } from 'src/environments/environment';
 export class ChatDetailComponent implements OnInit {
   /**
    * Las caracteristicas de la conversacion
+   * Si se envia null en lock no podra bloquear ni desbloquear un chat
    */
-  @Input() chatDetail: IChatDetail = {
-    id: '',
-    img: '',
-    name: '',
-    state: null,
-    messages: [],
-    lock: null
-  };
+  @Input() chatDetail: IChatDetail = undefined;
+  // TODO Eliminar al probarlo
+  // @Input() chatDetail: IChatDetail = {
+  //   id: '',
+  //   img: '',
+  //   name: 'renato',
+  //   state: null,
+  //   messages: [],
+  //   lock: EChatLock.unlocked
+  // };
   /**
    * Al enviar un nuevo mensaje
    */
@@ -50,7 +53,22 @@ export class ChatDetailComponent implements OnInit {
   constructor() {
     this.date = new Fecha();
   }
-
+  /**
+   * Alt en icono de trash
+   */
+  @Input() messageTrashIcon = 'eliminar conversacion';
+  /**
+   * Alt en icono de trash
+   */
+  @Input() messageLockIcon = 'bloquear conversacion';
+  /**
+   * Alt en icono de trash
+   */
+  @Input() messageUnlockIcon = 'desbloquear conversacion';
+  /**
+   * Imagen a mostrar en el chat cuando chatDetail esta vacio 
+   */
+  @Input() imageChat = environment.chatWifi;
   /**
    * Variable para usar enume en html
    */
@@ -69,7 +87,7 @@ export class ChatDetailComponent implements OnInit {
    * @returns si debe mostrar una linea o no
    */
   dayLine(date: Date, index: number): boolean {
-    if (date !== null && date !== undefined  ) {
+    if (date !== null && date !== undefined) {
       if (!isNaN(date.getTime())) {
         let tDate: Date;
         if (index === 0) {
@@ -138,8 +156,8 @@ export class ChatDetailComponent implements OnInit {
    * Se bloqueara la conversacion
    */
   lock() {
-    this.chatDetail.lock = EChatLock.locked;
-    this.lockChat.emit(EChatLock.locked);
+    this.chatDetail.lock = EChatLock.lock;
+    this.lockChat.emit(EChatLock.lock);
   }
   /**
    * Se desbloqueara la conversacion
@@ -152,7 +170,7 @@ export class ChatDetailComponent implements OnInit {
    * Valida si el estado es el esperado
    * @param state bloqueo, bloqueado o desbloqueado
    */
-  lookStateValidate(state: EChatLock , expetedState: EChatLock): boolean {
+  lookStateValidate(state: EChatLock, expetedState: EChatLock): boolean {
     if (state === expetedState) {
       return true;
     }
@@ -164,11 +182,21 @@ export class ChatDetailComponent implements OnInit {
    * @returns la imagen o una por va
    */
   imageValidate(image: string): string {
-    if (image === null || image === undefined || image === '' ) {
+    if (image === null || image === undefined || image === '') {
       return environment.imgUsuario;
     } else {
       return image;
     }
+  }
+
+  /**
+   * Validaremos la variable chat detail
+   */
+  validateChatDetail(): boolean {
+    if (this.chatDetail === null && this.chatDetail === null) {
+      return false;
+    }
+    return true;
   }
 
 }

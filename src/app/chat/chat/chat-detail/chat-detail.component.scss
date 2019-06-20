@@ -1,3 +1,15 @@
+.ngx-util-detail{
+    display: flex;
+    flex-flow: column;
+    // position: relative; 
+    height: 450px;
+}
+.ngx-util-detail-head{
+    height: 64px;
+}
+.ngx-util-detail-messages{
+    flex-grow : 1;
+}
 .ngx-util-chat-linea {
     position: relative;
     text-align: center;
@@ -121,4 +133,29 @@
     min-height: 300px;
     max-height: 300px;
     overflow-y: auto;
+}
+
+.detail-head-img{
+    flex: 0 0 7%;
+    max-width: 7%;
+    min-width: 7%;
+}
+
+
+.detail-head-name{
+    flex: 0 0 84%;
+    max-width: 84%;
+    @media screen and (max-width: 1130px){
+        max-width: 82%;
+        flex: 0 0 82%;
+    }
+    @media screen and (max-width: 880px){
+        max-width: 80%;
+        flex: 0 0 80%;
+    }
+}
+
+.detail-head-actions{
+    flex: 0 0 8%;
+    max-width: 8%;
 }

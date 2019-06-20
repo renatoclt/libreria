@@ -21,7 +21,7 @@
 .ngx-util-btns-actions {
     display: flex;
     vertical-align: middle;
-    width: 100%;
+    width: auto;
     text-align: center;
 }
 
@@ -74,4 +74,11 @@
 
 .ngx-util-input-file {
     display: none !important;
+}
+
+.ngx-util-img-height-res-center{
+    height: -webkit-fill-available;
+    margin-right: auto;
+    margin-left: auto;
+    width: auto;
 }
