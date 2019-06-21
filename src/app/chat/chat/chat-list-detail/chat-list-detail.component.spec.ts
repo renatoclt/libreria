@@ -21,16 +21,20 @@ describe('ChatDetalleComponent', () => {
     fixture.detectChanges();
   });
 
-  // describe('probando funcion click en chat', () => {
-  //   let div: ElementRef;
-  //   beforeEach(async(() => {
-  //     div = fixture.debugElement.query(By.css('#div_detailMessages'));
-  //   }));
-  //   it('realizo click en conversacion debe emitir un evento' , () => {
-  //     spyOn(component.clickDetail, 'emit');
-  //     div.nativeElement.click();
-  //     fixture.detectChanges();
-  //     expect(component.clickDetail.emit).toHaveBeenCalledTimes(1);
-  //   });
-  // })
+  describe('probando funcion click en chat', () => {
+    let div: any;
+    beforeEach(async(() => {
+      fixture.detectChanges();
+      div = fixture.debugElement.query(By.css('div'));
+    }));
+    it('validamos si se muestra el div correctamente', () => {
+      expect(div).toBeTruthy();
+    });
+    it('realizo click en conversacion debe emitir un evento' , () => {
+      spyOn(component.clickDetail, 'emit');
+      div.nativeElement.click();
+      fixture.detectChanges();
+      expect(component.clickDetail.emit).toHaveBeenCalledTimes(1);
+    });
+  })
 });
