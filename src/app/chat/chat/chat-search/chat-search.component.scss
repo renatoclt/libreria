@@ -1,8 +1,7 @@
 .ngx-util-search{
-    padding: 0.9rem 1rem 0 1rem;
+    padding:  1rem ;
     background: #ececec;
     box-sizing: border-box;
-    height: 5rem;
 }
 
 
@@ -36,4 +35,7 @@
 
 ::ng-deep .mat-input-element {
     padding-left: 0.7rem !important;
+}
+::ng-deep .mat-form-field-wrapper {
+    padding-bottom: 0rem !important;
 }

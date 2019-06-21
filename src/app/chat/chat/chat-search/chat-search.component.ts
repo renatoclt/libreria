@@ -11,8 +11,10 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 })
 export class ChatSearchComponent implements OnInit {
 
+  /**
+   * Variable en la cual guardaremos la busqueda
+   */
   searchForm: FormGroup;
-
   /**
    * @ignore
    */
