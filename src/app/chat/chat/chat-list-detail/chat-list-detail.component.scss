@@ -1,13 +1,17 @@
-.ngx-utilitario-chat-detalle{
-    padding: 0.9rem; 
-    cursor: pointer;
+.ngx-util-chat-detail{
+    // padding: 0.9rem; 
+    // cursor: pointer;
+    // display:flex;
+    display: flex;
+    width:98%;
+    margin-left: 5px;
 }
 
-.ngx-utilitario-fecha-not-chat{
+.ngx-utili-date-not-chat{
     padding: 0px;
 }
 
-.ngx-utilitario-label-notificacion{
+.ngx-util-label-notification{
     background-color:  #e7b723;
     padding: 4px 8px;
     color: #fff;
@@ -15,17 +19,30 @@
     border-radius: 0.6rem;   
 }
 
-.ngx-utilitario-fecha-chat{
+.ngx-util-date-chat{
     font-size: 0.7rem;
 }
 
-.estadoConectado{
+.list-detail-img-state{
     background: #22af47;
     border: 1px solid #fff;
-    width: 10px;
-    height: 10px;
+    width: 12px;
+    height: 12px;
     position: absolute;
     border-radius: 50%;
-    right: 0;
-    bottom: 0;
+    right: 5px;
+    bottom: 5px;
+}
+
+.list-detail-img{
+    position: relative;
+    width: 75px;
+    margin-right: 8px;
+    // margin-left: 5px;
+}
+.list-detail-name{
+    flex: 1 1 auto;
+}
+.list-detail-date{
+    flex: 0 0 auto;
 }
