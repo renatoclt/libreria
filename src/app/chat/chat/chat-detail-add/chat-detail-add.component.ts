@@ -34,7 +34,6 @@ export class ChatDetailAddComponent implements OnInit {
    * Variable de formulario
    */
   messageForm: FormGroup;
-
   /**
    * @ignore
    * @param formBuilder inicializacion de formulario
@@ -56,7 +55,6 @@ export class ChatDetailAddComponent implements OnInit {
       message: '',
     });
   }
-
   /**
    * Emitimos de que hay un nuevo mensaje y limpiamos la caja de texto
    */
