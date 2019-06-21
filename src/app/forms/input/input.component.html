@@ -1,11 +1,12 @@
-<div [formGroup]="parent">
-  <mat-form-field [appearance]="appearance" [matTooltip]="tooltip" [matTooltipPosition]="position" >
-    <mat-label>
+<div [formGroup]="parent" class="w-100">
+  <mat-form-field class="w-100" [appearance]="appearance" [matTooltip]="tooltip" [matTooltipPosition]="position" >
+    <mat-label *ngIf="validationLabel()">
       {{label}}
     </mat-label>
-    <input matInput>
-    <mat-hint>
-      Se validará el RUC con tus boletas
+    <input matInput >
+    <mat-hint *ngIf="validationHint()">
+      {{hint}}
     </mat-hint>
   </mat-form-field>
 </div>
+<!-- <div style="background: red; height:42px"></div> -->

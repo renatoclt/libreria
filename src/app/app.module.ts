@@ -7,7 +7,7 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material';
 import { NumberToArrayPipe } from './pipe/number-to-array.pipe';
-import { FormsModule } from './forms/forms.module';
+import { NgxUtilitarioFormstModule } from './forms/ngx-utilitario-rclt-forms.module';
 import { NgxUtilitarioChatModule } from './chat/ngx-utilitario-rclt-chat.module';
 import { NgxUtilitarioMenuModule } from './menu/ngx-utilitario-menu.module';
 import { NgxUtilitarioCardsModule } from './cards/cards.module';
@@ -34,7 +34,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatButtonModule,
     AppRoutingModule,
     AngularFontAwesomeModule,
-    FormsModule,
+    NgxUtilitarioFormstModule,
     NgxUtilitarioChatModule,
     NgxUtilitarioMenuModule,
     NgxUtilitarioCardsModule,

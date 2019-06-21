@@ -6,6 +6,7 @@ import { FormGroup } from '@angular/forms';
 @Component({
   selector: 'ngx-utilitario-input',
   templateUrl: './input.component.html',
+  styleUrls: ['./input.component.scss']
 })
 export class InputComponent implements OnInit {
  /**
@@ -25,6 +26,14 @@ export class InputComponent implements OnInit {
    */
   @Input() position = 'above';
   /**
+   * texto abajo del input
+   */
+  @Input() hint = '';
+  /**
+   * label en el input
+   */
+  @Input() label = '';
+  /**
    * @ignore
    */
   constructor() { }
@@ -35,4 +44,22 @@ export class InputComponent implements OnInit {
   ngOnInit() {
   }
 
+  /**
+   * Validacion de propiedades hint
+   */
+  validationHint() {
+    if (this.hint !== undefined && this.hint !== null && this.hint !== '') {
+      return true;
+    }
+    return false;
+  }
+  /**
+   * Validacion de label
+   */
+  validationLabel() {
+    if (this.label !== undefined && this.label !== null && this.label !== '') {
+      return true;
+    }
+    return false;
+  }
 }

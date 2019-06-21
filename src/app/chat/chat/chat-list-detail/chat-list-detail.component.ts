@@ -21,16 +21,7 @@ export class ChatListDetailComponent implements OnInit {
   /**
    * Caracteristicas de una conversacion
    */
-  // @Input() listDetail: IChatListDetail = undefined;
-  @Input() listDetail: IChatListDetail = {
-    lock: EChatLock.unlocked,
-    state: EChatState.online,
-    id: 'prueba chat',
-    img: undefined,
-    message: [ ],
-    name: 'renato prueba',
-    notification: undefined
-  };
+  @Input() listDetail: IChatListDetail = undefined;
   /**
    * El mensaje a mostrar cuando se envie una imagen
    */

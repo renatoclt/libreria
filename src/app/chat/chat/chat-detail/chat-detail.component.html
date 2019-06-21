@@ -77,8 +77,8 @@
   <!--Agregar chat-->
   <div class="container-fluid ngx-util-detail-add">
     <div class="row">
-      <ngx-utilitario-chat-detail-add class="col-12 ngx-utilitario-chat-agregar" (nuevoMensaje)="enviarMensaje($event)"
-        [disabled]="chatDetail.bloqueo"></ngx-utilitario-chat-detail-add>
+      <ngx-utilitario-chat-detail-add class="col-12 ngx-utilitario-chat-agregar" (messageSend)="messageSend($event)"
+        [disabled]="chatDetail.lock"></ngx-utilitario-chat-detail-add>
     </div>
   </div>
 </div>
