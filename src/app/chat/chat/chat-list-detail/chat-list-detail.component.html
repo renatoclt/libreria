@@ -1,33 +1,26 @@
-<div id="div_detailMessages" class="content ngx-util-chat-detail" (click)="click()" *ngIf="validateListDetail(listDetail)">
-  <div class="ngx-util-chat-detail">
-    <div class="list-detail-img">
-      <!--Imagen-->
-      <div class="list-detail-img">
-        <img class="img-fluid rounded-circle" title="listDetail.name" src={{imageValidate(listDetail)}} />
-        <div *ngIf="chatState(listDetail)" class="list-detail-img-state"></div>
-      </div>
+<div id="div_detailMessages" class="content ngx-util-chat-detail" (click)="click()"
+  *ngIf="validateListDetail(listDetail)">
+  <!--Imagen-->
+  <div class="list-detail-img">
+    <img class="img-fluid rounded-circle" title="listDetail.name" src={{imageValidate(listDetail)}} />
+    <div *ngIf="chatState(listDetail)" class="list-detail-img-state"></div>
+  </div>
+  <!--Nombre y mensaje-->
+  <div class="list-detail-name">
+    <div class="name">
+      {{listDetail.name}}
     </div>
-    <div class="list-detail-name">
-      <!--Nombre y mensaje-->
-      <div class="list-detail-name">
-        <div class="content">
-          {{listDetail.name}}
-        </div>
-        <div class="content">
-          {{messageLast(listDetail.message)}}
-        </div>
-      </div>
+    <div class="message">
+      {{messageLast(listDetail.message)}}
     </div>
-    <div class="list-detail-date">
-      <!--fecha y notifiaciones-->
-      <div class="list-detail-date">
-        <div class="content ngx-utilitario-fecha-chat">
-          {{dateLast(listDetail.message)}}
-        </div>
-        <div *ngIf="notificationValidate(listDetail.notification)" class="content ngx-util-label-notification">
-          {{listDetail.notification}}
-        </div>
-      </div>
+  </div>
+  <!--fecha y notifiaciones-->
+  <div class="list-detail-date">
+    <div class="date">
+      {{dateLast(listDetail.message)}}
     </div>
-  </div> 
+    <div *ngIf="notificationValidate(listDetail.notification)" class="badge badge-success badge-pill notification">
+      {{listDetail.notification}}
+    </div>
+  </div>
 </div>

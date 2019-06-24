@@ -32,6 +32,7 @@ export class ChatListComponent implements OnInit {
    * @param detail las propiedades del chat
    */
   click(detail: IChatListDetail) {
+    console.log('fasdfs');
     this.clickList.emit(detail);
   }
 

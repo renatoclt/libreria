@@ -8,6 +8,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ChatDetailComponent } from './chat/chat-detail/chat-detail.component';
 import { ChatDetailAddComponent } from './chat/chat-detail-add/chat-detail-add.component';
 import { NgxUtilitarioFormstModule } from '../forms/ngx-utilitario-rclt-forms.module';
+import { NgxUtilitarioRcltPerfectScroll } from '../perfect-scroll/ngx-utilitario-rclt-perfect-scroll';
 /**
  * Modulo Chat el cual contiene las partes necesarias para el correcto funcinamiento de un chat
  */
@@ -23,7 +24,8 @@ import { NgxUtilitarioFormstModule } from '../forms/ngx-utilitario-rclt-forms.mo
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    NgxUtilitarioFormstModule
+    NgxUtilitarioFormstModule,
+    NgxUtilitarioRcltPerfectScroll
   ],
   exports: [
     ChatComponent,

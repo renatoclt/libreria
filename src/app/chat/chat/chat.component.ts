@@ -44,7 +44,7 @@ export class ChatComponent implements OnInit, OnChanges {
   detalle: IChatListDetail = {
     state: EChatState.online,
     id: '1',
-    img: 'fd',
+    img: '',
     message: [this.conversacion1,],
     name: 're1',
     notification: 2,
@@ -57,7 +57,7 @@ export class ChatComponent implements OnInit, OnChanges {
   detalle2: IChatListDetail = {
     state: EChatState.online,
     id: '1',
-    img: 'fd',
+    img: '',
     message: [this.conversacion1,
     this.conversacion1,
     this.conversacion1,
@@ -85,19 +85,12 @@ export class ChatComponent implements OnInit, OnChanges {
   /**
    * Lista de conversaciones a mostrar
    */
-  @Input() lista: IChatListDetail[] = [this.detalle, this.detalle2];
+  @Input() lista: IChatListDetail[] = [this.detalle, this.detalle2, this.detalle, this.detalle2, this.detalle, this.detalle2, this.detalle, this.detalle2, this.detalle, this.detalle2];
 
   /**
    * Conversacion actual a mostrar puede no estar en la lista
    */
-  @Input() conversacion: IChatDetail = {
-    id: '',
-    img: '',
-    name: '',
-    state: null,
-    messages: [],
-    lock: EChatLock.unlocked
-  };
+  @Input() chatDetail: IChatDetail = undefined;
   /**
    * Se envia un evento si se escribio un nuevo mensaje
    */
@@ -132,9 +125,9 @@ export class ChatComponent implements OnInit, OnChanges {
   ngOnChanges(changes: SimpleChanges): void {
     if (changes.lista) {
       this.lista.forEach(chat => {
-        if (chat.id === this.conversacion.id) {
-          this.conversacion.messages = chat.message;
-          this.conversacion.lock = chat.lock;
+        if (chat.id === this.chatDetail.id) {
+          this.chatDetail.messages = chat.message;
+          this.chatDetail.lock = chat.lock;
         }
       });
     }
@@ -145,7 +138,8 @@ export class ChatComponent implements OnInit, OnChanges {
    * y emitimos un evento
    * @param detalle propiedades de la conversacion
    */
-  clickListaDetalle(detalle: IChatListDetail) {
+  listDetailClick(detalle: IChatListDetail) {
+    console.log('ingrese');
     this.clickLista.emit(detalle);
     this.cambiarConversacion(detalle);
   }
@@ -154,13 +148,15 @@ export class ChatComponent implements OnInit, OnChanges {
    * Cambiamos conversacion actual 
    * @param detalle  propiedades de la conversacion
    */
-  cambiarConversacion(detalle: IChatListDetail) {
-    this.conversacion.state = detalle.state;
-    this.conversacion.name = detalle.name;
-    this.conversacion.id = detalle.id;
-    this.conversacion.messages = detalle.message;
-    this.conversacion.img = detalle.img;
-    this.conversacion.lock = detalle.lock;
+  cambiarConversacion(detail: IChatListDetail) {
+    this.chatDetail = {
+      state: detail.state,
+      name: detail.name,
+      id: detail.id,
+      messages: detail.message,
+      img: detail.img,
+      lock: detail.lock
+    };
   }
 
   /**
@@ -168,16 +164,16 @@ export class ChatComponent implements OnInit, OnChanges {
    * @param mensaje propiedades del mensaje enviado
    */
   enviarMensaje(mensaje) {
-    this.conversacion.messages.push(mensaje);
-    this.nuevoMensaje.emit(this.conversacion);
+    this.chatDetail.messages.push(mensaje);
+    this.nuevoMensaje.emit(this.chatDetail);
   }
 
   /**
    * Al eliminar mensajes emitiremos un evento y limpiaremos elementos
    */
   eliminarMensajes() {
-    this.conversacion.messages = [];
-    this.eliminarConversacion.emit(this.conversacion);
+    this.chatDetail.messages = [];
+    this.eliminarConversacion.emit(this.chatDetail);
   }
 
   /**
@@ -185,7 +181,7 @@ export class ChatComponent implements OnInit, OnChanges {
    * @param estadoBloqueo los estados pueden ser desbloqueado, bloqueado, bloqueo
    */
   bloquearChat(estadoBloqueo) {
-    this.conversacion.lock = estadoBloqueo;
-    this.bloquearConversacion.emit(this.conversacion);
+    this.chatDetail.lock = estadoBloqueo;
+    this.bloquearConversacion.emit(this.chatDetail);
   }
 }

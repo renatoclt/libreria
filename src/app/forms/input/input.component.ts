@@ -1,5 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { FormGroup, FormControlName, FormBuilder } from '@angular/forms';
 /**
  * Input con material 
  */
@@ -18,6 +18,10 @@ export class InputComponent implements OnInit {
    */
   @Input() parent: FormGroup = new FormGroup({});
   /**
+   * padre del input
+   */
+  @Input() name = 'default';
+  /**
    * tooltip a mostrar
    */
   @Input() tooltip = '';
@@ -34,32 +38,61 @@ export class InputComponent implements OnInit {
    */
   @Input() label = '';
   /**
-   * @ignore
+   * Icono  en la parte final del textbox
    */
-  constructor() { }
+  @Input() iconMatSuffix = '';
+  /**
+   * texto en la parte final del textbox
+   */
+  @Input() spanMatSuffix = '';
+  /**
+   * Icono  en la parte inicial del textbox
+   */
+  @Input() iconMatPrefix = '';
+  /**
+   * texto en la parte inicial del textbox
+   */
+  @Input() spanMatPrefix = '';
+  /**
+   * evento keydown emita un evnto
+   */
+  @Output() keydown: EventEmitter<any> = new EventEmitter();
+  /**
+   * evento que retorna el valor del input
+   */
+  @Output() value: EventEmitter<any> = new EventEmitter();
+  constructor(private formBuilder: FormBuilder) {
+    this.parent = this.formBuilder.group({
+      default: ''
+    });
+  }
 
   /**
    * @ignore
    */
   ngOnInit() {
   }
-
   /**
-   * Validacion de propiedades hint
+   * Validacion de que los elementos no sean null undefined o vacios 
    */
-  validationHint() {
-    if (this.hint !== undefined && this.hint !== null && this.hint !== '') {
+  validationValue(element: any) {
+    if (element !== undefined && element !== null && element !== '') {
       return true;
     }
     return false;
   }
   /**
-   * Validacion de label
+   * Retornamos un nuevo evento y llamamos a la funcion emitValue 
+   * @param event Evento al presionar una tecla
    */
-  validationLabel() {
-    if (this.label !== undefined && this.label !== null && this.label !== '') {
-      return true;
-    }
-    return false;
+  keydownFun(event) {
+    this.keydown.emit(event);
+    this.emitValue();
+  }
+  /**
+   * Emitimos un evento retornando el valor actual del input
+   */
+  emitValue() {
+    this.value.emit(this.parent.controls[this.name].value);
   }
 }

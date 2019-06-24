@@ -2,7 +2,8 @@
     display: flex;
     flex-flow: column;
     // position: relative; 
-    height: 450px;
+    width: 100%;
+    height: 100%;
 }
 .ngx-util-detail-head{
     height: 64px;
@@ -119,8 +120,8 @@
     color: green;   
 }
 
-.img-height-3-7{
-    height: 3.7rem;
+.img-profile-chat-detail{
+    height: 3.125rem;
 }
 
 

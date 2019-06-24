@@ -1,15 +1,19 @@
-<div class="row row-no-padding ngx-utilitario-chat">
-  <div class="col-4">
-    <header class="header-chat">
-      Chats
-      <span class="fa fa-pencil-square-o"></span>
-    </header>
-    <ngx-utilitario-chat-search></ngx-utilitario-chat-search>
-    <ngx-utilitario-chat-list [list]="lista" (clickLista)="clickListaDetalle($event)"></ngx-utilitario-chat-list>
-  </div>
-  <div class="col-8">
-    <!-- <ngx-utilitario-chat-conversacion [conversacion]="conversacion" (nuevoMensaje)="enviarMensaje($event)"
-      (eliminarMensajes)="eliminarMensajes()" (bloquearConversacion)="bloquearChat($event)">
-    </ngx-utilitario-chat-conversacion> -->
+<div class="container-fluid row-no-padding ngx-utilitario-chat" style="height: 400px">
+  <div class="row">
+    <div class="col-4 ngx-utilitario-chat-list">
+      <header class="ngx-util-list-header">
+        Chats
+        <span class="fa fa-pencil-square-o"></span>
+      </header>
+      <ngx-utilitario-chat-search class="ngx-util-list-search"></ngx-utilitario-chat-search>
+      <ngx-utilitario-chat-list class="ngx-util-list-detail" [list]="lista" (clickList)="listDetailClick($event)">
+      </ngx-utilitario-chat-list>
+    </div>
+    <div class="col-8">
+      <ngx-utilitario-chat-detail [chatDetail]="chatDetail"></ngx-utilitario-chat-detail>
+      <!-- <ngx-utilitario-chat-conversacion  (nuevoMensaje)="enviarMensaje($event)"
+        (eliminarMensajes)="eliminarMensajes()" (bloquearConversacion)="bloquearChat($event)">
+      </ngx-utilitario-chat-conversacion> -->
+    </div>
   </div>
 </div>

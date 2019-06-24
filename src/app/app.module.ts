@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
-// import { NgxUtilitarioRcltModule } from 'ngx-utilitario-rclt';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material';
 import { NumberToArrayPipe } from './pipe/number-to-array.pipe';
@@ -15,6 +14,7 @@ import { NgxUtilitarioDynamicModule } from './dynamic-component/ngx-utilitario-r
 import { NgxUtilitarioIconsModule } from './icons/ngx-utilitario-rclt-icons.module';
 import { NgxUtilitarioModalModule } from './modal/ngx-utilitario-rclt-modal.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NgxUtilitarioRcltPerfectScroll } from './perfect-scroll/ngx-utilitario-rclt-perfect-scroll';
 
 @NgModule({
   declarations: [
@@ -25,7 +25,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     /**
      * pipes
      */
-    NumberToArrayPipe
+    NumberToArrayPipe,
   ],
   imports: [
     ReactiveFormsModule,
@@ -40,8 +40,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     NgxUtilitarioCardsModule,
     NgxUtilitarioDynamicModule,
     NgxUtilitarioIconsModule,
-    NgxUtilitarioModalModule
-    // NgxUtilitarioRcltModule
+    NgxUtilitarioModalModule,
+    NgxUtilitarioRcltPerfectScroll
   ],
   providers: [],
   bootstrap: [AppComponent]

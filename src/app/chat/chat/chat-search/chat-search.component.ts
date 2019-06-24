@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 
 /**
@@ -11,6 +11,10 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 })
 export class ChatSearchComponent implements OnInit {
 
+  /**
+   * Emitimos el valor de la busqueda
+   */
+  @Output() searchChange: EventEmitter<any> = new EventEmitter();
   /**
    * Variable en la cual guardaremos la busqueda
    */
@@ -35,5 +39,10 @@ export class ChatSearchComponent implements OnInit {
       search: ''
     });
   }
-
+  /**
+   * Emitimos cambio
+   */
+  changeValue() {
+    this.searchChange.emit(this.searchForm.controls.search.value);
+  }
 }

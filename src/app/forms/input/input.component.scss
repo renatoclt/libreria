@@ -18,3 +18,9 @@
     background-color: white;
     border-radius: 0.3rem;
 }
+
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-prefix, ::ng-deep .mat-form-field-appearance-outline .mat-form-field-suffix{
+    top: -0.15em !important;
+    padding: 0 0.8rem ;
+}

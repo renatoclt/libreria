@@ -1,23 +1,16 @@
 .ngx-util-chat-detail{
-    // padding: 0.9rem; 
-    // cursor: pointer;
-    // display:flex;
     display: flex;
     width:98%;
-    margin-left: 5px;
+    margin-left: 0.3rem;
+    border-bottom: 1px solid #e0e3e4;
+    padding: 0.5rem 0.8rem;
+    cursor: pointer;
 }
 
 .ngx-utili-date-not-chat{
-    padding: 0px;
+    padding: 0rem;
 }
 
-.ngx-util-label-notification{
-    background-color:  #e7b723;
-    padding: 4px 8px;
-    color: #fff;
-    display: inline-block;
-    border-radius: 0.6rem;   
-}
 
 .ngx-util-date-chat{
     font-size: 0.7rem;
@@ -25,24 +18,44 @@
 
 .list-detail-img-state{
     background: #22af47;
-    border: 1px solid #fff;
-    width: 12px;
-    height: 12px;
+    border: 0.06rem solid #fff;
+    width: 0.62rem;
+    height: 0.62rem;
     position: absolute;
     border-radius: 50%;
-    right: 5px;
-    bottom: 5px;
+    right: 0.12rem;
+    bottom: 0.12rem;
 }
 
 .list-detail-img{
     position: relative;
-    width: 75px;
-    margin-right: 8px;
-    // margin-left: 5px;
+    width: 2.8rem;
+    min-width: 2rem;
+    margin-right: 0.5rem;
 }
 .list-detail-name{
     flex: 1 1 auto;
 }
+.list-detail-name .name{
+    font-size: 0.875rem;
+    font-weight: bold;
+    color: #324148;
+}
+.list-detail-name .message{
+    font-size: 0.815rem;
+    color: #b0b0b0;
+    text-overflow: ellipsis;
+}
 .list-detail-date{
     flex: 0 0 auto;
+}
+.list-detail-date .date{
+    font-size: 0.815rem;
+    color: #5e7d8a;
+}
+.list-detail-date .notification{
+    //dynamic
+    background-color: #e7b723;
+    padding: 0.25rem 0.5rem;
+    float: right;
 }
