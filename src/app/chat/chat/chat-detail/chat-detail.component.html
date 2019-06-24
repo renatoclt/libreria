@@ -5,7 +5,7 @@
 <!--Si es valido chatdetail mostraremos el chat-->
 <div class="container-fluid ngx-util-detail" *ngIf="validateChatDetail()">
   <!--Cabecera del chat-->
-  <div class="row ngx-util-detail-head">
+  <div class="row ngx-util-detail-head no-margin">
     <div class="img-fluid detail-head-img">
       <img class="img-fluid rounded-circle img-profile-chat-detail" alt="chatDetail.name"
         src="{{imageValidate(chatDetail.img)}}" />
@@ -17,22 +17,22 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-12">{{chatDetail.state}}</div>
+        <div class="col-12 detail-head-state-letters">{{nameState(chatDetail.state)}}</div>
       </div>
     </div>
     <div class="detail-head-actions no-padding">
       <div class="ngx-util-btns-actions">
         <button id="btn_chatDelete" type="button" class="col-6 btn ngx-util-btn-icon ngx-util-btn-gray"
           (click)="chatDelete()" title="{{messageTrashIcon}}" >
-          <i class="fa fa-trash-o" aria-hidden="true" title="{{messageTrashIcon}}"></i>
+          <i class="fa fa-trash-o" style="color: #808080" aria-hidden="true" title="{{messageTrashIcon}}"></i>
         </button>
         <button id="btn_chatLock" *ngIf="lookStateValidate(chatDetail.lock, EChatLock.unlocked)" type="button"
           class="col-6 btn ngx-util-btn-icon ngx-util-btn-gray" (click)="lock()" title="{{messageLockIcon}}">
-          <i class="fa fa-ban" aria-hidden="true" title="{{messageLockIcon}}"></i>
+          <i class="fa fa-ban" style="color: #c2272d" aria-hidden="true" title="{{messageLockIcon}}"></i>
         </button>
         <button id="btn_chatUnlock" *ngIf="lookStateValidate(chatDetail.lock, EChatLock.lock)" type="button"
           class="col-6 btn ngx-util-btn-icon ngx-util-btn-gray" title="{{messageUnlockIcon}}" (click)="unlock()">
-          <i class="fa fa-unlock" aria-hidden="true" title="{{messageUnlockIcon}}"></i>
+          <i class="fa fa-unlock" style="color: #228B22" aria-hidden="true" title="{{messageUnlockIcon}}"></i>
         </button>
       </div>
     </div>

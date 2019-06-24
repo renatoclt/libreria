@@ -199,4 +199,13 @@ export class ChatDetailComponent implements OnInit {
     return true;
   }
 
+  /**
+   * Cambiar el estado de 1 o 0 a letras
+   */
+  nameState(state: number): string{
+    if(state === 1 ){
+      return 'Online';
+    }
+    return 'Offline';
+  }
 }

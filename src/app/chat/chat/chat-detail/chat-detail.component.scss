@@ -6,6 +6,7 @@
     height: 100%;
 }
 .ngx-util-detail-head{
+    display: flex;
     height: 64px;
 }
 .ngx-util-detail-messages{
@@ -137,26 +138,26 @@
 }
 
 .detail-head-img{
-    flex: 0 0 7%;
-    max-width: 7%;
-    min-width: 7%;
+    position: relative;
+    width: 4.8rem;
+    min-width: 2rem;
+    margin-right: 0.5rem;
 }
 
 
 .detail-head-name{
-    flex: 0 0 84%;
-    max-width: 84%;
-    @media screen and (max-width: 1130px){
-        max-width: 82%;
-        flex: 0 0 82%;
-    }
-    @media screen and (max-width: 880px){
-        max-width: 80%;
-        flex: 0 0 80%;
-    }
+    font-size: 1rem;
+    font-weight: bold;
+    flex: 1 1 auto;
+    color: #324148;
+}
+
+.detail-head-state-letters{
+    font-size: 0.75rem;
+    width: 3rem;
+    color: #b0b0b0;
 }
 
 .detail-head-actions{
-    flex: 0 0 8%;
-    max-width: 8%;
+    flex: 0 0 auto;
 }

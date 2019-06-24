@@ -6,6 +6,7 @@
 .ngx-util-detail-add{
     padding: 0.95rem;
     background: #fff;
+    display: flex;
 }
 
 
@@ -18,5 +19,10 @@
     padding: 0.9rem !important;
     font-size: 0.8rem;
     border:none;
+    flex: 1 1 auto;
 }
 
+.ngx-util-btns-actions{
+    flex: 0 0 auto;
+    width: 3rem;
+}

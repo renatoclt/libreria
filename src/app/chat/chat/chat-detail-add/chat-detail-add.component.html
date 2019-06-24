@@ -1,11 +1,13 @@
 <div class="container-fluid">
-  <div class="row ngx-util-detail-add">
+  <div class="row ngx-util-detail-add no-margin">
+    <!--Input-->
     <div class="col-11">
       <form [formGroup]="messageForm">
         <input id="txt_message" class="col-12" formControlName="message" [attr.disabled]="disabled ? '' : null"
-          [placeholder]="placeholder">
+        [placeholder]="placeholder">
       </form>
     </div>
+    <!--Acciones-->
     <div class="col-1 no-padding">
       <div class="ngx-util-btns-actions">
         <input class="ngx-util-input-file" type="file" accept="image/*" #file (change)="sendImage($event)">
