@@ -2,11 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { IChatListDetail } from '../../dto/ichat-list-detail';
 import { IChatDetailMessage } from '../../dto/ichat-detail-message';
 import { Fecha } from '../../../utilitario/fecha';
-import { EChatLock } from '../../dto/echat-lock';
-import { EChatState } from '../../dto/echat-state';
 import { environment } from 'src/environments/environment';
-import { EMessageType } from '../../dto/emensaje-type';
-import { EMessageState } from '../../dto/emessage-state';
 
 /**
  * Componente que muestra la lista de conversaciones

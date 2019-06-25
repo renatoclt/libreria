@@ -139,7 +139,6 @@ export class ChatComponent implements OnInit, OnChanges {
    * @param detalle propiedades de la conversacion
    */
   listDetailClick(detalle: IChatListDetail) {
-    console.log('ingrese');
     this.clickLista.emit(detalle);
     this.cambiarConversacion(detalle);
   }

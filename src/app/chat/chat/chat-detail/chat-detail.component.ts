@@ -70,9 +70,13 @@ export class ChatDetailComponent implements OnInit {
    */
   @Input() imageChat = environment.chatWifi;
   /**
-   * Variable para usar enume en html
+   * Variable para usar enume en html EChatLock
    */
   EChatLock = EChatLock;
+  /**
+   * Variable para usar enume en html EMessageState
+   */
+  EMessageState = EMessageState;
   /**
    * @ignore
    */
@@ -86,8 +90,10 @@ export class ChatDetailComponent implements OnInit {
    * @param index index del elemento en el arreglo
    * @returns si debe mostrar una linea o no
    */
-  dayLine(date: Date, index: number): boolean {
-    if (date !== null && date !== undefined) {
+  dayLine(dateString: string, index: number): boolean {
+    let date: Date;
+    if (dateString !== null && dateString !== undefined && dateString !== '') {
+      date = new Date(dateString);
       if (!isNaN(date.getTime())) {
         let tDate: Date;
         if (index === 0) {
@@ -106,7 +112,7 @@ export class ChatDetailComponent implements OnInit {
    * @param date fecha del mensaje
    */
   dayDifference(date: Date) {
-    const temDate = this.date.differenceDaysText(date);
+    const temDate = this.date.differenceDaysText(new Date(date));
     return temDate !== undefined ? temDate : '';
   }
   /**

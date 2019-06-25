@@ -1,9 +1,10 @@
 <!--Si es invalido chatdetail mostraremos una imagen-->
-<div class="container-fluid ngx-util-detail" *ngIf="!validateChatDetail()" style="background: #ffe4c4">
+<div class="container-fluid ngx-util-detail no-margin no-padding" *ngIf="!validateChatDetail()"
+  style="background: #ffe4c4">
   <img class="ngx-util-img-height-res-center" title="Chat" src={{imageChat}} />
 </div>
 <!--Si es valido chatdetail mostraremos el chat-->
-<div class="container-fluid ngx-util-detail" *ngIf="validateChatDetail()">
+<div class="container-fluid ngx-util-detail no-margin no-padding" *ngIf="validateChatDetail()">
   <!--Cabecera del chat-->
   <div class="row ngx-util-detail-head no-margin">
     <div class="img-fluid detail-head-img">
@@ -23,7 +24,7 @@
     <div class="detail-head-actions no-padding">
       <div class="ngx-util-btns-actions">
         <button id="btn_chatDelete" type="button" class="col-6 btn ngx-util-btn-icon ngx-util-btn-gray"
-          (click)="chatDelete()" title="{{messageTrashIcon}}" >
+          (click)="chatDelete()" title="{{messageTrashIcon}}">
           <i class="fa fa-trash-o" style="color: #808080" aria-hidden="true" title="{{messageTrashIcon}}"></i>
         </button>
         <button id="btn_chatLock" *ngIf="lookStateValidate(chatDetail.lock, EChatLock.unlocked)" type="button"
@@ -38,41 +39,87 @@
     </div>
   </div>
   <!--Mensajes del chat-->
-  <div class="container-fluid ngx-util-detail-messages">
-    <div class="row ngx-utilitario-cuerpo-Chat">
-      <div class="col-12" *ngFor="let item of chatDetail.mensajes; let i=index ">
-        <div class="container">
-          <div class="row" *ngIf="lineaDia(item.fecha,i)">
-            <div class="w-100 ngx-utilitario-chat-linea">
-              <span class="ngx-utilitario-chat-linea-span">
-                {{diferenciaDias(item.fecha)}}
-              </span>
-            </div>
-          </div>
-        </div>
-        <div class="container">
-          <div [ngClass]="escogerEstilo(item.tipoMensaje)">
-            <div>{{item.mensaje}}</div>
-            <div>{{item.hora}}
-              <span *ngIf="estadoMensaje(item.estadoMensaje, item.tipoMensaje, EMessageState.enviado )"
-              class="ngx-utilitario-msj-enviado">
-              <em class="fa fa-check"></em>
-            </span>
-            <span *ngIf="estadoMensaje(item.estadoMensaje, item.tipoMensaje, EMessageState.recibido)"
-            class="ngx-utilitario-msj-recibido">
-            <em class="fa fa-check"></em>
-            <em class="fa fa-check"></em>
-          </span>
-              <span *ngIf="estadoMensaje(item.estadoMensaje, item.tipoMensaje, EMessageState.leido )"
-                class="ngx-utilitario-msj-leido">
-                <em class="fa fa-check"></em>
-                <em class="fa fa-check"></em>
-              </span>
-            </div>
-          </div>
-        </div>
+  <div class="ngx-util-cuerpo-Chat">
+    <ngx-utilitario-perfect-scroll>
+      <div class="ngx-util-detail-messages-show">
+        1<hr>
+        1<hr>
+        1<hr>
+        1<hr>
+        1<hr>
+        1<hr>
+        1<hr>
+        1<hr>
+        1<hr>
+        1<hr>
+        1<hr>
+        1<hr>
+        1<hr>
+        1<hr>
+        1<hr>
+        1<hr>
+        1<hr>
+        1<hr>
+        1<hr>
+        1<hr>
+        1<hr>
+        1<hr>
+        1<hr>
+        1<hr>
+        1<hr>
+        1<hr>
+        1<hr>
+        1<hr>
+        1<hr>
+        1<hr>
+        1<hr>
+        1<hr>
+        1<hr>
+        1<hr>
+        1<hr>
+        1<hr>
+        1<hr>
+        1<hr>
+        1<hr>
+        1<hr>
+
       </div>
-    </div>
+      
+      <!-- <div class="ngx-util-detail-messages-show">
+          <div class="col-12" *ngFor="let item of chatDetail.messages; let i=index ">
+            <div class="container-fluid ">
+              <div class="row" *ngIf="dayLine(item.date,i)">
+                <div class="w-100 ngx-util-chat-linea">
+                  <span class="ngx-util-chat-linea-span">
+                    {{dayDifference(item.date)}}
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="container-fluid ">
+              <div [ngClass]="chooseStyle(item.messageType)">
+                <div>{{item.message}}</div>
+                <div>{{item.hour}}
+                  <span *ngIf="messageState(item.messageState, item.messageType, EMessageState.sent )"
+                    class="ngx-util-msj-enviado">
+                    <em class="fa fa-check"></em>
+                  </span>
+                  <span *ngIf="messageState(item.messageState, item.messageType, EMessageState.recived)"
+                    class="ngx-util-msj-recibido">
+                    <em class="fa fa-check"></em>
+                    <em class="fa fa-check"></em>
+                  </span>
+                  <span *ngIf="messageState(item.messageState, item.messageType, EMessageState.read )"
+                    class="ngx-util-msj-leido">
+                    <em class="fa fa-check"></em>
+                    <em class="fa fa-check"></em>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> -->
+    </ngx-utilitario-perfect-scroll>
   </div>
   <!--Agregar chat-->
   <div class="container-fluid ngx-util-detail-add">
