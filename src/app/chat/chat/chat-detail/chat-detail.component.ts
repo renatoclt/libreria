@@ -5,7 +5,6 @@ import { IChatDetailMessage } from '../../dto/ichat-detail-message';
 import { EMessageState } from '../../dto/emessage-state';
 import { EChatLock } from '../../dto/echat-lock';
 import { Fecha } from '../../../utilitario/fecha';
-import { EChatState } from '../../dto/echat-state';
 import { environment } from 'src/environments/environment';
 
 /**
@@ -43,16 +42,7 @@ export class ChatDetailComponent implements OnInit {
    * Al bloquear una conversacion
    */
   @Output() lockChat: EventEmitter<EChatLock> = new EventEmitter();
-  /**
-   * Variable en la cual trabajaremos las fechas
-   */
-  date: Fecha;
-  /**
-   * @ignore
-   */
-  constructor() {
-    this.date = new Fecha();
-  }
+
   /**
    * Alt en icono de trash
    */
@@ -66,77 +56,26 @@ export class ChatDetailComponent implements OnInit {
    */
   @Input() messageUnlockIcon = 'desbloquear conversacion';
   /**
-   * Imagen a mostrar en el chat cuando chatDetail esta vacio 
+   * Imagen a mostrar en el chat cuando chatDetail esta vacio
    */
   @Input() imageChat = environment.chatWifi;
+
   /**
-   * Variable para usar enume en html EChatLock
+   * Variable para usar un enum en html
    */
   EChatLock = EChatLock;
+
   /**
-   * Variable para usar enume en html EMessageState
+   * @ignore
    */
-  EMessageState = EMessageState;
+  constructor() { }
   /**
    * @ignore
    */
   ngOnInit() {
   }
-  /**
-   * Si el index es 0 a la fecha enviada se le restara un dia para que retorne true y genere una linea
-   * Si el index es mayor a 0 tomara la fecha del mensaje anterior y la comparara
-   * si se envia un undefined un null o una fecha invalidad no imprimira linea
-   * @param date recibe la fecha del mensaje
-   * @param index index del elemento en el arreglo
-   * @returns si debe mostrar una linea o no
-   */
-  dayLine(dateString: string, index: number): boolean {
-    let date: Date;
-    if (dateString !== null && dateString !== undefined && dateString !== '') {
-      date = new Date(dateString);
-      if (!isNaN(date.getTime())) {
-        let tDate: Date;
-        if (index === 0) {
-          tDate = new Date(date);
-          tDate.setDate(tDate.getDate() - 1);
-        } else {
-          tDate = new Date(this.chatDetail.messages[index - 1].date);
-        }
-        return !this.date.compareDates(new Date(date), tDate);
-      }
-    }
-    return false;
-  }
-  /**
-   * Compara los dias entre la fecha actual y la enviada para insertar el texto en el chat 
-   * @param date fecha del mensaje
-   */
-  dayDifference(date: Date) {
-    const temDate = this.date.differenceDaysText(new Date(date));
-    return temDate !== undefined ? temDate : '';
-  }
-  /**
-   * Insertamos el estilo al mensaje dependiendo el tipo del mensaje
-   * @param messageType si es recibido o enviado
-   */
-  chooseStyle(messageType: EMessageType): string {
-    if (messageType === EMessageType.sent) {
-      return 'ngx-util-chat-right float-right arrow_box';
-    }
-    return 'ngx-util-chat-left float-left';
-  }
-  /**
-   * Validamos si el tipo de mensaje es enviado
-   * @param state estado actual del mensaje
-   * @param messageType enviado o recibido
-   * @param stateSearch tipo que se consulta
-   */
-  messageState(state: EMessageState, messageType: EMessageType, stateSearch: EMessageState): boolean {
-    if (state === stateSearch && messageType === EMessageType.sent) {
-      return true;
-    }
-    return false;
-  }
+
+
   /**
    * Emitimos un nuevo mensaje y añadimos el mensaje
    * @param message mensaje enviado
@@ -208,8 +147,8 @@ export class ChatDetailComponent implements OnInit {
   /**
    * Cambiar el estado de 1 o 0 a letras
    */
-  nameState(state: number): string{
-    if(state === 1 ){
+  nameState(state: number): string {
+    if (state === 1) {
       return 'Online';
     }
     return 'Offline';

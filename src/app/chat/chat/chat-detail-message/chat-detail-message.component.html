@@ -1,5 +1,5 @@
-<div class="col-12" *ngFor="let item of messages; let i=index ">
-    <div class="container-fluid ">
+<div class="col-12" class="ngx-util-detail-message" *ngFor="let item of messages; let i=index ">
+    <div class="container-fluid">
       <div class="row" *ngIf="dayLine(item.date,i)">
         <div class="w-100 ngx-util-chat-linea">
           <span class="ngx-util-chat-linea-span">
@@ -8,21 +8,21 @@
         </div>
       </div>
     </div>
-    <div class="container-fluid ">
+    <div class="container-fluid"  >
       <div [ngClass]="chooseStyle(item.messageType)">
-        <div>{{item.message}}</div>
-        <div>{{item.hour}}
+        <div class="message">{{item.message}}</div>
+        <div class="hour">{{item.hour}}
           <span *ngIf="messageState(item.messageState, item.messageType, EMessageState.sent )"
-            class="ngx-util-msj-enviado">
+            class="ngx-util-msg-sent">
             <em class="fa fa-check"></em>
           </span>
-          <span *ngIf="messageState(item.messageState, item.messageType, EMessageState.recived)"
-            class="ngx-util-msj-recibido">
+          <span *ngIf="messageState(item.messageState, item.messageType, EMessageState.received)"
+            class="ngx-util-msg-received">
             <em class="fa fa-check"></em>
             <em class="fa fa-check"></em>
           </span>
           <span *ngIf="messageState(item.messageState, item.messageType, EMessageState.read )"
-            class="ngx-util-msj-leido">
+            class="ngx-util-msg-read">
             <em class="fa fa-check"></em>
             <em class="fa fa-check"></em>
           </span>
