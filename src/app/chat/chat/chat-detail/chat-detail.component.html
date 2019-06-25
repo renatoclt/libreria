@@ -39,10 +39,9 @@
     </div>
   </div>
   <!--Mensajes del chat-->
-  <div class="ngx-util-detail-messages" style="background: green">
-    <ngx-utilitario-perfect-scroll>
-      <ngx-utilitario-chat-detail-message style="background: rgb(245, 245, 246);"></ngx-utilitario-chat-detail-message>
-
+  <div class="ngx-util-detail-messages" style="background: rgb(245, 245, 246);">
+    <ngx-utilitario-perfect-scroll [position]="position">
+      <ngx-utilitario-chat-detail-message [messages]="chatDetail.messages"></ngx-utilitario-chat-detail-message>
     </ngx-utilitario-perfect-scroll>
   </div>
   <!--Agregar chat-->

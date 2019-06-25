@@ -6,6 +6,7 @@ import { EMessageType } from '../dto/emensaje-type';
 import { IChatDetailMessage } from '../dto/ichat-detail-message';
 import { IChatDetail } from '../dto/ichat-detail';
 import { EChatLock } from '../dto/echat-lock';
+import { EScrollPosition } from 'src/app/perfect-scroll/dto/escroll-position';
 /**
  * Chat component por el cual mostramos una lista de chat y una conversacion 
  */
@@ -107,6 +108,11 @@ export class ChatComponent implements OnInit, OnChanges {
    * Si bloquea una conversacion
    */
   @Output() bloquearConversacion: EventEmitter<any> = new EventEmitter();
+
+  /**
+   * Enum para ir al inicial scroll y final scroll
+   */
+  EScrollPosition: EScrollPosition;
 
   /**
    * @ignore

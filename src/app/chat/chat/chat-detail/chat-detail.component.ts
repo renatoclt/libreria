@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, AfterViewChecked } from '@angular/core';
 import { IChatDetail } from '../../dto/ichat-detail';
 import { EMessageType } from '../../dto/emensaje-type';
 import { IChatDetailMessage } from '../../dto/ichat-detail-message';
@@ -6,6 +6,7 @@ import { EMessageState } from '../../dto/emessage-state';
 import { EChatLock } from '../../dto/echat-lock';
 import { Fecha } from '../../../utilitario/fecha';
 import { environment } from 'src/environments/environment';
+import { EScrollPosition } from 'src/app/perfect-scroll/dto/escroll-position';
 
 /**
  * Componente donde mostramos los mensajes de la conversacion
@@ -15,7 +16,7 @@ import { environment } from 'src/environments/environment';
   templateUrl: './chat-detail.component.html',
   styleUrls: ['./chat-detail.component.scss']
 })
-export class ChatDetailComponent implements OnInit {
+export class ChatDetailComponent implements OnInit  {
   /**
    * Las caracteristicas de la conversacion
    * Si se envia null en lock no podra bloquear ni desbloquear un chat
@@ -66,6 +67,11 @@ export class ChatDetailComponent implements OnInit {
   EChatLock = EChatLock;
 
   /**
+   * posicion del scroll
+   */
+  position: [number, number] = [EScrollPosition.start, EScrollPosition.end];
+
+  /**
    * @ignore
    */
   constructor() { }
@@ -73,9 +79,8 @@ export class ChatDetailComponent implements OnInit {
    * @ignore
    */
   ngOnInit() {
+    console.log('ingrese');
   }
-
-
   /**
    * Emitimos un nuevo mensaje y añadimos el mensaje
    * @param message mensaje enviado

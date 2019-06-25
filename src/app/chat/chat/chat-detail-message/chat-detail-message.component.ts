@@ -11,8 +11,19 @@ import { EMessageType } from '../../dto/emensaje-type';
 })
 export class ChatDetailMessageComponent implements OnInit {
 
-  @Input() messages: IChatDetailMessage[] = [];
-
+  prueba: IChatDetailMessage = {
+    date: '12/12/2019',
+    hour: '12:12',
+    message: '12:12',
+    img: '',
+    messageState: EMessageState.sent,
+    messageType: EMessageType.sent
+  };
+  @Input() messages: IChatDetailMessage[];
+  /**
+   * Variable para usar enum en html
+   */
+  EMessageState = EMessageState;
   /**
    * Variable en la cual trabajaremos las fechas
    */
@@ -50,7 +61,6 @@ export class ChatDetailMessageComponent implements OnInit {
         } else {
           tDate = new Date(this.messages[index - 1].date);
         }
-        console.log(!this.date.compareDates(new Date(date), tDate));
         return !this.date.compareDates(new Date(date), tDate);
       }
     }

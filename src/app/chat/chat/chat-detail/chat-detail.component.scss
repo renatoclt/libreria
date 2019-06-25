@@ -49,6 +49,8 @@
 .ngx-util-detail-messages{
     flex-grow : 1;
     overflow: hidden;
+    height: -webkit-fill-available;
+    overflow-y: hidden;
 }
 
 .ngx-util-detail-messages-show{

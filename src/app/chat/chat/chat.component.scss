@@ -28,11 +28,17 @@
     font-size: inherit;
 }
 
-.ngx-util-list-search{
-    height: 14rem;
-}
+//altura dl componente search 
+// .ngx-util-list-search{
+//     height: 6.5rem;
+// }
 
 .ngx-util-list-detail{
     flex-grow : 1;
     overflow: hidden;
+}
+
+//eliminamos el padding de scroll por defecto
+::ng-deep .scrollable-content{
+    padding: 0px !important;
 }
