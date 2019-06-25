@@ -9,6 +9,7 @@ import { ChatDetailComponent } from './chat/chat-detail/chat-detail.component';
 import { ChatDetailAddComponent } from './chat/chat-detail-add/chat-detail-add.component';
 import { NgxUtilitarioFormstModule } from '../forms/ngx-utilitario-rclt-forms.module';
 import { NgxUtilitarioRcltPerfectScroll } from '../perfect-scroll/ngx-utilitario-rclt-perfect-scroll';
+import { ChatDetailMessageComponent } from './chat/chat-detail-message/chat-detail-message.component';
 /**
  * Modulo Chat el cual contiene las partes necesarias para el correcto funcinamiento de un chat
  */
@@ -19,7 +20,8 @@ import { NgxUtilitarioRcltPerfectScroll } from '../perfect-scroll/ngx-utilitario
     ChatListComponent,
     ChatListDetailComponent,
     ChatDetailComponent,
-    ChatDetailAddComponent
+    ChatDetailAddComponent,
+    ChatDetailMessageComponent
   ],
   imports: [
     CommonModule,
@@ -33,7 +35,8 @@ import { NgxUtilitarioRcltPerfectScroll } from '../perfect-scroll/ngx-utilitario
     ChatListComponent,
     ChatListDetailComponent,
     ChatDetailComponent,
-    ChatDetailAddComponent
+    ChatDetailAddComponent,
+    ChatDetailMessageComponent
   ]
 })
 export class NgxUtilitarioChatModule { }
