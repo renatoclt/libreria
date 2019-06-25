@@ -86,7 +86,7 @@ export class ChatComponent implements OnInit, OnChanges {
   /**
    * Lista de conversaciones a mostrar
    */
-  @Input() lista: IChatListDetail[] = [this.detalle, this.detalle2, this.detalle, this.detalle2, this.detalle, this.detalle2, this.detalle, this.detalle2, this.detalle, this.detalle2];
+  @Input() list: IChatListDetail[] = [this.detalle, this.detalle2, this.detalle, this.detalle2, this.detalle, this.detalle2, this.detalle, this.detalle2, this.detalle, this.detalle2];
 
   /**
    * Conversacion actual a mostrar puede no estar en la lista
@@ -110,10 +110,17 @@ export class ChatComponent implements OnInit, OnChanges {
   @Output() bloquearConversacion: EventEmitter<any> = new EventEmitter();
 
   /**
-   * Enum para ir al inicial scroll y final scroll
+   * Variable en la cual se guardara la lista de busqueda
    */
-  EScrollPosition: EScrollPosition;
-
+  searchList: IChatListDetail[] = [];
+  /**
+   * Variable en la cual se guardara la lista ingresada o la de busqueda 
+   */
+  finalList: IChatListDetail[] = [];
+  /**
+   * Flag que nos dira si hay una busqueda o no
+   */
+  searchFlag = false;
   /**
    * @ignore
    */
@@ -125,20 +132,30 @@ export class ChatComponent implements OnInit, OnChanges {
   }
 
   /**
-   * si el input lista cambia actualizamos los valores de la conversacion
+   * 1.- si el chat que se esta mostrando a cambiado sus mensajes
+   * 2.- si existe una lista de busqued
    * @param changes Si cambia algun item de la lista se actualizara
    */
   ngOnChanges(changes: SimpleChanges): void {
     if (changes.lista) {
-      this.lista.forEach(chat => {
+      this.list.forEach(chat => {
         if (chat.id === this.chatDetail.id) {
           this.chatDetail.messages = chat.message;
           this.chatDetail.lock = chat.lock;
         }
       });
+      this.searchValidate();
     }
   }
 
+  /**
+   * Si hay una busqueda activa no se actualiza la lista
+   */
+  searchValidate(){
+    if (this.searchFlag ) {
+      this.finalList = this.list;
+    }
+  }
   /**
    * Si realiza un click en un item de la lista del chat cambiamos la conversacion
    * y emitimos un evento
@@ -188,5 +205,40 @@ export class ChatComponent implements OnInit, OnChanges {
   bloquearChat(estadoBloqueo) {
     this.chatDetail.lock = estadoBloqueo;
     this.bloquearConversacion.emit(this.chatDetail);
+  }
+  /**
+   * Comprobar si debe realizar una busqueda o no
+   */
+  searchChange(palabra: string) {
+    if (palabra.length > 0 ) {
+      this.searchFlag = true;
+      this.searchChatName();
+      this.searchChatMessage();
+    } else {
+      this.searchFlag = false;
+      this.searchListClean()
+      this.searchValidate();
+    }
+  }
+
+  /*
+   * Buscamos en la lista actual en los nombres del chat
+   */
+  searchChatName(){
+    // this.
+  }
+
+  /*
+   * Buscamos en la lista actual los mensajes del chat
+   */
+  searchChatMessage(){
+    // this.
+  }
+
+  /**
+   * Limpiamos la lista de busqueda
+   */
+  searchListClean(){
+    this.searchList = [];
   }
 }
