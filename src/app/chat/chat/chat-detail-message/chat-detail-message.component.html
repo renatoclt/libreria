@@ -1,4 +1,4 @@
-<div class="col-12" class="ngx-util-detail-message" *ngFor="let item of messages; let i=index ">
+<div id="message_{{i}}" class="col-12" class="ngx-util-detail-message" *ngFor="let item of messages; let i=index ">
     <div class="container-fluid">
       <div class="row" *ngIf="dayLine(item.date,i)">
         <div class="w-100 ngx-util-chat-linea">

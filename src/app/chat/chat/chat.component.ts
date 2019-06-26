@@ -86,7 +86,8 @@ export class ChatComponent implements OnInit, OnChanges {
   /**
    * Lista de conversaciones a mostrar
    */
-  @Input() list: IChatListDetail[] = [this.detalle, this.detalle2];
+  @Input() list: IChatListDetail[] = [this.detalle, this.detalle2, this.detalle, this.detalle2, this.detalle, this.detalle2, this.detalle,
+  this.detalle2, this.detalle, this.detalle2, this.detalle, this.detalle2, this.detalle, this.detalle2, this.detalle, this.detalle2];
 
   /**
    * Conversacion actual a mostrar puede no estar en la lista
@@ -95,19 +96,19 @@ export class ChatComponent implements OnInit, OnChanges {
   /**
    * Se envia un evento si se escribio un nuevo mensaje
    */
-  @Output() nuevoMensaje: EventEmitter<any> = new EventEmitter();
+  @Output() messageNew: EventEmitter<any> = new EventEmitter();
   /**
    * Si hace click en una conversacion de la lista
    */
-  @Output() clickLista: EventEmitter<any> = new EventEmitter();
+  @Output() listClick: EventEmitter<any> = new EventEmitter();
   /**
    * Si elimina la conversacion
    */
-  @Output() eliminarConversacion: EventEmitter<any> = new EventEmitter();
+  @Output() chatDelete: EventEmitter<any> = new EventEmitter();
   /**
    * Si bloquea una conversacion
    */
-  @Output() bloquearConversacion: EventEmitter<any> = new EventEmitter();
+  @Output() chatLock: EventEmitter<any> = new EventEmitter();
 
   /**
    * Variable en la cual se guardara la lista ingresada o la de busqueda
@@ -122,9 +123,18 @@ export class ChatComponent implements OnInit, OnChanges {
    */
   searchFlag = false;
   /**
-   * Texto a buscar 
+   * Texto a buscar
    */
   searchText = '';
+  /**
+   * Variable en la cual tenemos la posicion del mensaje y se envia chat detail
+   */
+  moveToMessageIndex: number;
+  /**
+   * Variable en la cual tenemos la posicion del mensaje encontrado
+   * mientras no se cambie de chat no se actualizara la principal
+   */
+  moveToMessageIndexTem: number;
   /**
    * @ignore
    */
@@ -169,17 +179,16 @@ export class ChatComponent implements OnInit, OnChanges {
    * @param detalle propiedades de la conversacion
    */
   listDetailClick(detalle: IChatListDetail) {
-    this.clickLista.emit(detalle);
-    this.cambiarConversacion(detalle);
+    this.listClick.emit(detalle);
+    this.changeDetail(detalle);
   }
 
   /**
    * Cambiamos conversacion actual y muestra la conversacion que tiene la lista por el usuario
    * @param detalle  propiedades de la conversacion
    */
-  cambiarConversacion(detail: IChatListDetail) {
+  changeDetail(detail: IChatListDetail) {
     const listTem = this.list.filter(list => list.id === detail.id)[0];
-    console.log(listTem.message.length);
     this.chatDetail = {
       state: listTem.state,
       name: listTem.name,
@@ -188,37 +197,39 @@ export class ChatComponent implements OnInit, OnChanges {
       img: listTem.img,
       lock: listTem.lock
     };
+    this.moveToMessageIndex = this.moveToMessageIndexTem;
   }
 
   /**
    * Cuando el usuario envie un mensaje añadimos propiedad a la lista y realizamos un push
    * @param mensaje propiedades del mensaje enviado
    */
-  enviarMensaje(mensaje) {
+  messageSend(mensaje) {
     this.chatDetail.messages.push(mensaje);
-    this.nuevoMensaje.emit(this.chatDetail);
+    this.messageNew.emit(this.chatDetail);
   }
 
   /**
    * Al eliminar mensajes emitiremos un evento y limpiaremos elementos
    */
-  eliminarMensajes() {
+  messageDelete() {
     this.chatDetail.messages = [];
-    this.eliminarConversacion.emit(this.chatDetail);
+    this.chatDelete.emit(this.chatDetail);
   }
 
   /**
    * Accion de bloquear chat
    * @param estadoBloqueo los estados pueden ser desbloqueado, bloqueado, bloqueo
    */
-  bloquearChat(estadoBloqueo) {
+  chatLocking(estadoBloqueo) {
     this.chatDetail.lock = estadoBloqueo;
-    this.bloquearConversacion.emit(this.chatDetail);
+    this.chatLock.emit(this.chatDetail);
   }
   /**
    * Comprobar si debe realizar una busqueda o no
    */
   searchChange(text: string) {
+    this.moveToMessageIndexTem = undefined;
     this.searchText = text;
     this.searchListClean();
     if (text.length > 0) {
@@ -249,13 +260,16 @@ export class ChatComponent implements OnInit, OnChanges {
    */
   searchChatMessage(text: string) {
     this.list.forEach(chat => {
-      for (const message of chat.message) {
-        if (message.message.includes(text)) {
+      // ya que necesitamos el index
+      // tslint:disable-next-line: prefer-for-of
+      for (let i = 0; i < chat.message.length; i++) {
+        if (chat.message[i].message.includes(text)) {
+          this.moveToMessageIndexTem = i;
           this.searchList.push({
-            id : chat.id,
+            id: chat.id,
             img: chat.img,
             lock: chat.lock,
-            message: [message] ,
+            message: [chat.message[i]],
             name: chat.name,
             notification: chat.notification,
             state: chat.state

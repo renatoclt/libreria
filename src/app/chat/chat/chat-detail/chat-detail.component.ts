@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter, AfterViewChecked } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, AfterViewChecked, OnChanges, SimpleChanges } from '@angular/core';
 import { IChatDetail } from '../../dto/ichat-detail';
 import { EMessageType } from '../../dto/emensaje-type';
 import { IChatDetailMessage } from '../../dto/ichat-detail-message';
@@ -16,7 +16,7 @@ import { EScrollPosition } from 'src/app/perfect-scroll/dto/escroll-position';
   templateUrl: './chat-detail.component.html',
   styleUrls: ['./chat-detail.component.scss']
 })
-export class ChatDetailComponent implements OnInit  {
+export class ChatDetailComponent implements OnChanges {
   /**
    * Las caracteristicas de la conversacion
    * Si se envia null en lock no podra bloquear ni desbloquear un chat
@@ -60,7 +60,10 @@ export class ChatDetailComponent implements OnInit  {
    * Imagen a mostrar en el chat cuando chatDetail esta vacio
    */
   @Input() imageChat = environment.chatWifi;
-
+  /**
+   * Id del mensaje al que desea moverse
+   */
+  @Input() moveToMessage: number;
   /**
    * Variable para usar un enum en html
    */
@@ -72,13 +75,19 @@ export class ChatDetailComponent implements OnInit  {
   position: [number, number] = [EScrollPosition.start, EScrollPosition.end];
 
   /**
-   * @ignore
+   * Nombre del mensaje al que queremos movernos
    */
-  constructor() { }
+  elementName: string;
   /**
    * @ignore
    */
-  ngOnInit() {
+  constructor() { }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes.moveToMessage) {
+      console.log(changes.moveToMessage.currentValue);
+      this.messageMove(changes.moveToMessage.currentValue);
+    }
   }
   /**
    * Emitimos un nuevo mensaje y añadimos el mensaje
@@ -156,5 +165,16 @@ export class ChatDetailComponent implements OnInit  {
       return 'Online';
     }
     return 'Offline';
+  }
+
+  /**
+   * Vamos a mover al mensaje indicado
+   */
+  messageMove(id: number) {
+    if (id !== undefined) {
+      this.elementName = 'message_' + id;
+    } else {
+      this.elementName = undefined;
+    }
   }
 }
