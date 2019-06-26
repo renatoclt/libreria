@@ -6,7 +6,7 @@
         <span class="fa fa-pencil-square-o"></span>
       </header>
       <ngx-utilitario-chat-search class="ngx-util-list-search" (searchChange)="searchChange($event)"></ngx-utilitario-chat-search>
-      <ngx-utilitario-chat-list class="ngx-util-list-detail" [list]="lista" (clickList)="listDetailClick($event)">
+      <ngx-utilitario-chat-list class="ngx-util-list-detail" [list]="finalList" (clickList)="listDetailClick($event)" [search]="searchText">
       </ngx-utilitario-chat-list>
     </div>
     <div class="col-md-8 col-sm-12">

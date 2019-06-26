@@ -8,7 +8,7 @@ import { IChatDetail } from '../dto/ichat-detail';
 import { EChatLock } from '../dto/echat-lock';
 import { EScrollPosition } from 'src/app/perfect-scroll/dto/escroll-position';
 /**
- * Chat component por el cual mostramos una lista de chat y una conversacion 
+ * Chat component por el cual mostramos una lista de chat y una conversacion
  */
 @Component({
   selector: 'ngx-utilitario-chat',
@@ -24,7 +24,7 @@ export class ChatComponent implements OnInit, OnChanges {
     date: 'may. 18, 19',
     hour: '13:30',
     img: null,
-    message: 'fas',
+    message: 'prua',
     messageType: EMessageType.sent
   };
   /**
@@ -46,7 +46,7 @@ export class ChatComponent implements OnInit, OnChanges {
     state: EChatState.online,
     id: '1',
     img: '',
-    message: [this.conversacion1,],
+    message: [this.conversacion2],
     name: 're1',
     notification: 2,
     lock: EChatLock.unlocked
@@ -57,7 +57,7 @@ export class ChatComponent implements OnInit, OnChanges {
    */
   detalle2: IChatListDetail = {
     state: EChatState.online,
-    id: '1',
+    id: '2',
     img: '',
     message: [this.conversacion1,
     this.conversacion1,
@@ -70,7 +70,7 @@ export class ChatComponent implements OnInit, OnChanges {
     this.conversacion1,
     this.conversacion1,
     this.conversacion1,
-    this.conversacion1,
+    this.conversacion2,
     this.conversacion1,
     this.conversacion1,
     this.conversacion1,
@@ -86,7 +86,7 @@ export class ChatComponent implements OnInit, OnChanges {
   /**
    * Lista de conversaciones a mostrar
    */
-  @Input() list: IChatListDetail[] = [this.detalle, this.detalle2, this.detalle, this.detalle2, this.detalle, this.detalle2, this.detalle, this.detalle2, this.detalle, this.detalle2];
+  @Input() list: IChatListDetail[] = [this.detalle, this.detalle2];
 
   /**
    * Conversacion actual a mostrar puede no estar en la lista
@@ -110,17 +110,21 @@ export class ChatComponent implements OnInit, OnChanges {
   @Output() bloquearConversacion: EventEmitter<any> = new EventEmitter();
 
   /**
+   * Variable en la cual se guardara la lista ingresada o la de busqueda
+   */
+  finalList: IChatListDetail[] = [];
+  /**
    * Variable en la cual se guardara la lista de busqueda
    */
   searchList: IChatListDetail[] = [];
   /**
-   * Variable en la cual se guardara la lista ingresada o la de busqueda 
-   */
-  finalList: IChatListDetail[] = [];
-  /**
    * Flag que nos dira si hay una busqueda o no
    */
   searchFlag = false;
+  /**
+   * Texto a buscar 
+   */
+  searchText = '';
   /**
    * @ignore
    */
@@ -129,6 +133,7 @@ export class ChatComponent implements OnInit, OnChanges {
    * @ignore
    */
   ngOnInit() {
+    this.searchValidate();
   }
 
   /**
@@ -151,9 +156,11 @@ export class ChatComponent implements OnInit, OnChanges {
   /**
    * Si hay una busqueda activa no se actualiza la lista
    */
-  searchValidate(){
-    if (this.searchFlag ) {
+  searchValidate() {
+    if (!this.searchFlag) {
       this.finalList = this.list;
+    } else {
+      this.finalList = this.searchList;
     }
   }
   /**
@@ -167,17 +174,19 @@ export class ChatComponent implements OnInit, OnChanges {
   }
 
   /**
-   * Cambiamos conversacion actual 
+   * Cambiamos conversacion actual y muestra la conversacion que tiene la lista por el usuario
    * @param detalle  propiedades de la conversacion
    */
   cambiarConversacion(detail: IChatListDetail) {
+    const listTem = this.list.filter(list => list.id === detail.id)[0];
+    console.log(listTem.message.length);
     this.chatDetail = {
-      state: detail.state,
-      name: detail.name,
-      id: detail.id,
-      messages: detail.message,
-      img: detail.img,
-      lock: detail.lock
+      state: listTem.state,
+      name: listTem.name,
+      id: listTem.id,
+      messages: listTem.message,
+      img: listTem.img,
+      lock: listTem.lock
     };
   }
 
@@ -209,36 +218,58 @@ export class ChatComponent implements OnInit, OnChanges {
   /**
    * Comprobar si debe realizar una busqueda o no
    */
-  searchChange(palabra: string) {
-    if (palabra.length > 0 ) {
+  searchChange(text: string) {
+    this.searchText = text;
+    this.searchListClean();
+    if (text.length > 0) {
       this.searchFlag = true;
-      this.searchChatName();
-      this.searchChatMessage();
+      this.searchChatName(text);
+      this.searchChatMessage(text);
     } else {
       this.searchFlag = false;
-      this.searchListClean()
-      this.searchValidate();
     }
+    this.searchValidate();
   }
 
-  /*
+  /**
    * Buscamos en la lista actual en los nombres del chat
+   * @param text palabra a buscar
    */
-  searchChatName(){
-    // this.
+  searchChatName(text: string) {
+    this.list.forEach(chat => {
+      if (chat.name.includes(text)) {
+        this.searchList.push(chat);
+      }
+    });
   }
 
-  /*
-   * Buscamos en la lista actual los mensajes del chat
+  /**
+   * Buscamos en la lista actual los mensajes del chat y cambiamos el ultimo chat por el chat encontrado
+   * @param text palabra a buscar
    */
-  searchChatMessage(){
-    // this.
+  searchChatMessage(text: string) {
+    this.list.forEach(chat => {
+      for (const message of chat.message) {
+        if (message.message.includes(text)) {
+          this.searchList.push({
+            id : chat.id,
+            img: chat.img,
+            lock: chat.lock,
+            message: [message] ,
+            name: chat.name,
+            notification: chat.notification,
+            state: chat.state
+          });
+          break;
+        }
+      }
+    });
   }
 
   /**
    * Limpiamos la lista de busqueda
    */
-  searchListClean(){
+  searchListClean() {
     this.searchList = [];
   }
 }

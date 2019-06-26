@@ -79,7 +79,6 @@ export class ChatDetailComponent implements OnInit  {
    * @ignore
    */
   ngOnInit() {
-    console.log('ingrese');
   }
   /**
    * Emitimos un nuevo mensaje y añadimos el mensaje

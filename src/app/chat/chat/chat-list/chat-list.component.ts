@@ -14,6 +14,10 @@ export class ChatListComponent implements OnInit {
    */
   @Input() list: IChatListDetail[] = [];
   /**
+   * Si se desea resaltar un texto en la lista de un chat
+   */
+  @Input() search = '';
+  /**
    * Si hace click en una conversacion retornara un evento
    */
   @Output() clickList: EventEmitter<any> =  new EventEmitter();

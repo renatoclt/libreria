@@ -7,12 +7,8 @@
   </div>
   <!--Nombre y mensaje-->
   <div class="list-detail-name">
-    <div class="name">
-      {{listDetail.name}}
-    </div>
-    <div class="message">
-      {{messageLast(listDetail.message)}}
-    </div>
+    <div class="name" innerHTML="{{ listDetail.name | highlight : search}}"></div>
+    <div class="message"  innerHTML="{{ messageLast(listDetail.message) | highlight : search}}"></div>
   </div>
   <!--fecha y notifiaciones-->
   <div class="list-detail-date">

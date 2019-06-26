@@ -1,3 +1,6 @@
-body {
+.fondo {
     background: gray !important;
+}
+::ng-deep .search-highlight{
+    background: red;
 }

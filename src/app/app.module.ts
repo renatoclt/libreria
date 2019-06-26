@@ -5,7 +5,6 @@ import { AppComponent } from './app.component';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material';
-import { NumberToArrayPipe } from './pipe/number-to-array.pipe';
 import { NgxUtilitarioFormstModule } from './forms/ngx-utilitario-rclt-forms.module';
 import { NgxUtilitarioChatModule } from './chat/ngx-utilitario-rclt-chat.module';
 import { NgxUtilitarioMenuModule } from './menu/ngx-utilitario-menu.module';
@@ -14,7 +13,8 @@ import { NgxUtilitarioDynamicModule } from './dynamic-component/ngx-utilitario-r
 import { NgxUtilitarioIconsModule } from './icons/ngx-utilitario-rclt-icons.module';
 import { NgxUtilitarioModalModule } from './modal/ngx-utilitario-rclt-modal.module';
 import { ReactiveFormsModule } from '@angular/forms';
-import { NgxUtilitarioRcltPerfectScroll } from './perfect-scroll/ngx-utilitario-rclt-perfect-scroll';
+import { NgxUtilitarioRcltPerfectScrollModule } from './perfect-scroll/ngx-utilitario-rclt-perfect-scroll.module';
+import { NgxUtilitarioPipesModule } from './pipe/ngx-utilitario-rclt-pipes.module';
 
 @NgModule({
   declarations: [
@@ -22,10 +22,6 @@ import { NgxUtilitarioRcltPerfectScroll } from './perfect-scroll/ngx-utilitario-
      * component
      */
     AppComponent,
-    /**
-     * pipes
-     */
-    NumberToArrayPipe,
   ],
   imports: [
     ReactiveFormsModule,
@@ -41,7 +37,8 @@ import { NgxUtilitarioRcltPerfectScroll } from './perfect-scroll/ngx-utilitario-
     NgxUtilitarioDynamicModule,
     NgxUtilitarioIconsModule,
     NgxUtilitarioModalModule,
-    NgxUtilitarioRcltPerfectScroll
+    NgxUtilitarioRcltPerfectScrollModule,
+    NgxUtilitarioPipesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

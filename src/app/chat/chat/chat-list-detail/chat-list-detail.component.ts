@@ -23,12 +23,17 @@ export class ChatListDetailComponent implements OnInit {
    */
   @Input() imageName = 'Foto';
   /**
+   * Si se desea resaltar un texto en el chat
+   */
+  @Input() search = '';
+  /**
    * Retorna un evento cuando cuando cuando hace click en una conversacion
    */
   @Output() clickDetail: EventEmitter<any> = new EventEmitter();
   /**
    * Variable con la cual podremos trabajar de una forma mas sencilla los datos de tipo date
    */
+  
   date: Fecha;
   /**
    * @ignore

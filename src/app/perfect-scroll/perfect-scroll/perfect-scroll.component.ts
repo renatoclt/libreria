@@ -41,7 +41,6 @@ export class PerfectScrollComponent implements AfterViewChecked {
    * @param position Array con el eje x y
    */
   calculatePosition(position: number[]) {
-    console.log('ingrese', this.position, position[0]);
     if (position[0] === EScrollPosition.start) {
       this.scrollToLeft();
     }
@@ -100,7 +99,6 @@ export class PerfectScrollComponent implements AfterViewChecked {
    * mover el scroll al final
    */
   public scrollToBottom(): void {
-    console.log(this.componentRef);
     if (this.componentRef !== undefined && this.componentRef.directiveRef) {
       this.componentRef.directiveRef.scrollToBottom();
     }
@@ -111,7 +109,6 @@ export class PerfectScrollComponent implements AfterViewChecked {
    * @param event scroll
    */
   public onScrollEvent(event: any): void {
-    // console.log(event);
     event.preventDefault();
     event.stopPropagation();
   }
