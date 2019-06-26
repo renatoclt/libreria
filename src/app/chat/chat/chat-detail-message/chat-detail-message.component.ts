@@ -4,6 +4,9 @@ import { Fecha } from 'src/app/utilitario/fecha';
 import { EMessageState } from '../../dto/emessage-state';
 import { EMessageType } from '../../dto/emensaje-type';
 
+/**
+ * Componente que muestra los mensajes de un chat
+ */
 @Component({
   selector: 'ngx-utilitario-chat-detail-message',
   templateUrl: './chat-detail-message.component.html',
@@ -11,14 +14,9 @@ import { EMessageType } from '../../dto/emensaje-type';
 })
 export class ChatDetailMessageComponent implements OnInit {
 
-  prueba: IChatDetailMessage = {
-    date: '12/12/2019',
-    hour: '12:12',
-    message: '12:12',
-    img: '',
-    messageState: EMessageState.sent,
-    messageType: EMessageType.sent
-  };
+  /**
+   * Variable que Contiene todos los mensajes de un chat
+   */
   @Input() messages: IChatDetailMessage[];
   /**
    * Variable para usar enum en html

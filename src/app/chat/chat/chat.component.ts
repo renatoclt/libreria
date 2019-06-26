@@ -205,6 +205,7 @@ export class ChatComponent implements OnInit, OnChanges {
    * @param mensaje propiedades del mensaje enviado
    */
   messageSend(mensaje) {
+    this.moveToMessageIndex = undefined;
     this.chatDetail.messages.push(mensaje);
     this.messageNew.emit(this.chatDetail);
   }

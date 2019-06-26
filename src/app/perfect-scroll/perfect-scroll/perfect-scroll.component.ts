@@ -20,8 +20,14 @@ export class PerfectScrollComponent implements AfterViewChecked {
    */
   @ViewChild(PerfectScrollbarComponent, { static: false }) componentRef?: PerfectScrollbarComponent;
 
+  /**
+   * Posicion a la que se desea enviar el scrollbar
+   */
   @Input() position: [number, number];
 
+  /**
+   * id del elemento html que se desea ir con el scrollbar
+   */
   @Input() elementName: string;
   /**
    * @ignore
@@ -32,7 +38,6 @@ export class PerfectScrollComponent implements AfterViewChecked {
    * Despues de verificar que carge el viewchild mueve el scroll a la parte deseada
    */
   ngAfterViewChecked(): void {
-    console.log('perfect',this.position,  this.elementName);
     if (this.position !== undefined && this.elementName === undefined) {
       this.calculatePosition(this.position);
     } else if (this.elementName !== undefined) {

@@ -31,18 +31,6 @@ export class ChatDetailComponent implements OnChanges {
   //   messages: [],
   //   lock: EChatLock.unlocked
   // };
-  /**
-   * Al enviar un nuevo mensaje
-   */
-  @Output() newMessage: EventEmitter<IChatDetailMessage> = new EventEmitter();
-  /**
-   * Al eliminar la conversacion
-   */
-  @Output() deleteMessages: EventEmitter<any> = new EventEmitter();
-  /**
-   * Al bloquear una conversacion
-   */
-  @Output() lockChat: EventEmitter<EChatLock> = new EventEmitter();
 
   /**
    * Alt en icono de trash
@@ -65,27 +53,44 @@ export class ChatDetailComponent implements OnChanges {
    */
   @Input() moveToMessage: number;
   /**
+   * Al enviar un nuevo mensaje
+   */
+  @Output() newMessage: EventEmitter<IChatDetailMessage> = new EventEmitter();
+  /**
+   * Al eliminar la conversacion
+   */
+  @Output() deleteMessages: EventEmitter<any> = new EventEmitter();
+  /**
+   * Al bloquear una conversacion
+   */
+  @Output() lockChat: EventEmitter<EChatLock> = new EventEmitter();
+  /**
    * Variable para usar un enum en html
    */
   EChatLock = EChatLock;
-
   /**
    * posicion del scroll
    */
   position: [number, number] = [EScrollPosition.start, EScrollPosition.end];
-
   /**
    * Nombre del mensaje al que queremos movernos
    */
   elementName: string;
   /**
+   * Variable en la cual se guarda las imagenes recibidas
+   */
+  filesPreview: FileList;
+  /**
    * @ignore
    */
   constructor() { }
 
+  /**
+   * Se validara si el cambio es de movetomessage
+   * @param changes index del mensaje a mostrar
+   */
   ngOnChanges(changes: SimpleChanges): void {
     if (changes.moveToMessage) {
-      console.log(changes.moveToMessage.currentValue);
       this.messageMove(changes.moveToMessage.currentValue);
     }
   }
@@ -100,6 +105,28 @@ export class ChatDetailComponent implements OnChanges {
       hour: new Fecha().format(new Date(), 'HH:mm'),
       img: null,
       message,
+      messageType: EMessageType.sent
+    };
+    this.newMessage.emit(newMessage);
+  }
+  /**
+   * imagePreview
+   * @param fileList imagenes Seleccionadas 
+   */
+  imagePreview(fileList: FileList) {
+    this.filesPreview = fileList;
+  }
+  /**
+   * Emitimos un nuevo mensaje y añadimos la imagen
+   * @param fileList Imagenes seleccionadas
+   */
+  imageSend(fileList: FileList) {
+    const newMessage: IChatDetailMessage = {
+      messageState: EMessageState.sent,
+      date: new Fecha().format(new Date(), 'LL'),
+      hour: new Fecha().format(new Date(), 'HH:mm'),
+      img: fileList,
+      message : '',
       messageType: EMessageType.sent
     };
     this.newMessage.emit(newMessage);

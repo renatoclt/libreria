@@ -6,9 +6,9 @@ import { EMessageState } from './emessage-state';
  */
 export interface IChatDetailMessage {
     /**
-     * Si el mensaje enviado es una imagen o un texto
+     * Si el mensaje enviado es una imagen o un url
      */
-    img: string | null;
+    img: string | null | FileList;
     /**
      * El mensaje enviado
      */

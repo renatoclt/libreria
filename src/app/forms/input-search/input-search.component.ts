@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+/**
+ * Input con autocomplete definido
+ */
 @Component({
   selector: 'ngx-utilitario-input-search',
   templateUrl: './input-search.component.html',
@@ -7,8 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InputSearchComponent implements OnInit {
 
+  /**
+   * @ignore
+   */
   constructor() { }
 
+  /**
+   * @ignore
+   */
   ngOnInit() {
   }
 

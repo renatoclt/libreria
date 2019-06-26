@@ -2,7 +2,7 @@
   *ngIf="validateListDetail(listDetail)">
   <!--Imagen-->
   <div class="list-detail-img">
-    <img class="img-fluid rounded-circle" title="listDetail.name" src={{imageValidate(listDetail)}} />
+    <img class="img-fluid rounded-circle" title="listDetail.name" alt="User Image" src={{imageValidate(listDetail)}} />
     <div *ngIf="chatState(listDetail)" class="list-detail-img-state"></div>
   </div>
   <!--Nombre y mensaje-->

@@ -33,7 +33,7 @@ export class ChatListDetailComponent implements OnInit {
   /**
    * Variable con la cual podremos trabajar de una forma mas sencilla los datos de tipo date
    */
-  
+
   date: Fecha;
   /**
    * @ignore
@@ -91,7 +91,7 @@ export class ChatListDetailComponent implements OnInit {
     return '';
   }
   /**
-   * Funcion para verficar el estado actual del usuario con el que se esta conversando 
+   * Funcion para verficar el estado actual del usuario con el que se esta conversando
    * @param listDetail propiedades de la conversacion conectado, desconectado
    */
   chatState(listDetail: IChatListDetail) {

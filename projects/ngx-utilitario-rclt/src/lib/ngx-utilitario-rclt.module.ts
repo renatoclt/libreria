@@ -1,33 +1,14 @@
 import { NgModule } from '@angular/core';
-import { CardsComponent } from './cards/cards.component';
 import { CommonModule } from '@angular/common';
-import { CardsImgTextComponent } from './cards-img-text/cards-img-text.component';
-import { RepeatIconComponent } from './repeat-icon/repeat-icon.component';
-import { NumberToArrayPipe } from './pipe/number-to-array.pipe';
-import { CardsImgTextNdivComponent } from './cards-img-text-ndiv/cards-img-text-ndiv.component';
-import { ModalComponent } from './modal/modal.component';
-import { NgxUtilitarioChatModule } from './chat/ngx-utilitario-rclt-chat.module';
-import { NgxUtilitarioDynamicComponentModule } from './dynamic-component/ngx-utilitario-rclt-dynamic-component.module';
+import { PruebaComponent } from './prueba/prueba.component';
+
 
 @NgModule({
-  declarations: [CardsComponent, CardsImgTextComponent, RepeatIconComponent, NumberToArrayPipe, CardsImgTextNdivComponent, ModalComponent],
+  declarations: [PruebaComponent],
   imports: [
     CommonModule,
-    NgxUtilitarioChatModule,
-    NgxUtilitarioDynamicComponentModule
+    
   ],
-  exports: [
-            /**
-             * component
-             *  */
-            CardsComponent,
-            CardsImgTextComponent,
-            RepeatIconComponent,
-            CardsImgTextNdivComponent,
-            ModalComponent,
-            /**
-             * pipes
-             *  */
-            NumberToArrayPipe]
+  exports: []
 })
 export class NgxUtilitarioRcltModule { }

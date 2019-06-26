@@ -1,13 +1,14 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ChatComponent } from './chat.component';
-import { ChatBusquedaComponent } from 'projects/ngx-utilitario-rclt/src/lib/chat/chat/chat-busqueda/chat-busqueda.component';
-import { ChatListaComponent } from 'projects/ngx-utilitario-rclt/src/lib/chat/chat/chat-lista/chat-lista.component';
-import { ChatDetalleComponent } from 'projects/ngx-utilitario-rclt/src/lib/chat/chat/chat-detalle/chat-detalle.component';
-import { ChatConversacionComponent } from 'projects/ngx-utilitario-rclt/src/lib/chat/chat/chat-conversacion/chat-conversacion.component';
 // tslint:disable-next-line: max-line-length
-import { ChatDetalleAgregarComponent } from 'projects/ngx-utilitario-rclt/src/lib/chat/chat/chat-detalle-agregar/chat-detalle-agregar.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ChatSearchComponent } from './chat-search/chat-search.component';
+import { ChatListComponent } from './chat-list/chat-list.component';
+import { ChatListDetailComponent } from './chat-list-detail/chat-list-detail.component';
+import { ChatDetailComponent } from './chat-detail/chat-detail.component';
+import { ChatDetailAddComponent } from './chat-detail-add/chat-detail-add.component';
+import { ChatDetailMessageComponent } from './chat-detail-message/chat-detail-message.component';
 
 describe('ChatComponent', () => {
   let component: ChatComponent;
@@ -15,12 +16,14 @@ describe('ChatComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ChatComponent,
-        ChatBusquedaComponent,
-        ChatListaComponent,
-        ChatDetalleComponent,
-        ChatConversacionComponent,
-        ChatDetalleAgregarComponent],
+      declarations: [
+        ChatComponent,
+        ChatSearchComponent,
+        ChatListComponent,
+        ChatListDetailComponent,
+        ChatDetailComponent,
+        ChatDetailAddComponent,
+        ChatDetailMessageComponent,],
       imports: [
         ReactiveFormsModule
       ]

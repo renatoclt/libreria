@@ -5,31 +5,31 @@
  * modules
  */
 export * from './lib/ngx-utilitario-rclt.module';
-export * from './lib/chat/ngx-utilitario-rclt-chat.module';
-export * from './lib/dynamic-component/ngx-utilitario-rclt-dynamic-component.module';
+// export * from './lib/chat/ngx-utilitario-rclt-chat.module';
+// export * from './lib/dynamic-component/ngx-utilitario-rclt-dynamic-component.module';
 
 /**
  *
  * utilitario
  */
-export * from './lib/utilitario/fecha';
+// export * from './lib/utilitario/fecha';
 
 /**
  *
  * Servicios
  */
 
-export * from './lib/dynamic-component/dynamic-component.service';
+// export * from './lib/dynamic-component/dynamic-component.service';
 
 /**
  *
  * Enum
  */
 
-export * from './lib/chat/dto/eestado-chat';
-export * from './lib/chat/dto/ebloqueo-chat';
-export * from './lib/chat/dto/eestado-mensaje';
-export * from './lib/chat/dto/etipo-mensaje';
+// export * from './lib/chat/dto/eestado-chat';
+// export * from './lib/chat/dto/ebloqueo-chat';
+// export * from './lib/chat/dto/eestado-mensaje';
+// export * from './lib/chat/dto/etipo-mensaje';
 
 // component
 

@@ -11,7 +11,7 @@ export class AppComponent {
   /**
    * Titulo a mostrar al inicializar el componente
    */
-  title = 'renatoclt';
+  title = 'ngx-util-soluacioneOnline';
   /**
    * @ignore
    */

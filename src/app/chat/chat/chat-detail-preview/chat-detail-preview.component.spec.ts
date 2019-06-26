@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CardsImgTextComponent } from './cards-img-text.component';
+import { ChatDetailPreviewComponent } from './chat-detail-preview.component';
 
-describe('CardsImgTextComponent', () => {
-  let component: CardsImgTextComponent;
-  let fixture: ComponentFixture<CardsImgTextComponent>;
+describe('ChatDetailPreviewComponent', () => {
+  let component: ChatDetailPreviewComponent;
+  let fixture: ComponentFixture<ChatDetailPreviewComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CardsImgTextComponent ]
+      declarations: [ ChatDetailPreviewComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CardsImgTextComponent);
+    fixture = TestBed.createComponent(ChatDetailPreviewComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

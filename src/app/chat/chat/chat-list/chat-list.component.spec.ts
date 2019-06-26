@@ -3,8 +3,9 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { ChatListComponent } from './chat-list.component';
 import { ChatListDetailComponent } from '../chat-list-detail/chat-list-detail.component';
 import { ReactiveFormsModule } from '@angular/forms';
-
-describe('ChatListaComponent', () => {
+import { HighlightPipe } from 'src/app/pipe/highlight.pipe';
+import { NgxUtilitarioPerfectScrollModule } from 'src/app/perfect-scroll/ngx-utilitario-perfect-scroll.module';
+describe('ChatListComponent', () => {
   let component: ChatListComponent;
   let fixture: ComponentFixture<ChatListComponent>;
 
@@ -12,10 +13,12 @@ describe('ChatListaComponent', () => {
     TestBed.configureTestingModule({
       declarations: [
         ChatListComponent,
-        ChatListDetailComponent
+        ChatListDetailComponent,
+        HighlightPipe
       ],
       imports: [
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        NgxUtilitarioPerfectScrollModule
       ]
     })
     .compileComponents();

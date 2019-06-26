@@ -1,7 +1,7 @@
 <!--Si es invalido chatdetail mostraremos una imagen-->
 <div class="container-fluid ngx-util-detail no-margin no-padding" *ngIf="!validateChatDetail()"
   style="background: #ffe4c4">
-  <img class="ngx-util-img-height-res-center" title="Chat" src={{imageChat}} />
+  <img class="ngx-util-img-height-res-center" title="Chat" alt="Chat Image" src={{imageChat}} />
 </div>
 <!--Si es valido chatdetail mostraremos el chat-->
 <div class="container-fluid ngx-util-detail no-margin no-padding" *ngIf="validateChatDetail()">
@@ -47,8 +47,9 @@
   <!--Agregar chat-->
   <div class="container-fluid ngx-util-detail-add">
     <div class="row">
-      <ngx-utilitario-chat-detail-add class="col-12 ngx-utilitario-chat-agregar" (messageSend)="messageSend($event)"
+      <ngx-utilitario-chat-detail-add class="col-12 ngx-utilitario-chat-agregar" (newMessage)="messageSend($event)" (newImage)="imagePreview($event)"
         [disabled]="chatDetail.lock"></ngx-utilitario-chat-detail-add>
     </div>
   </div>
 </div>
+<ngx-utilitario-chat-detail-preview [files]="filesPreview"></ngx-utilitario-chat-detail-preview> 

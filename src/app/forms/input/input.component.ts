@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormControlName, FormBuilder } from '@angular/forms';
 /**
- * Input con material 
+ * Input con material
  */
 @Component({
   selector: 'ngx-utilitario-input',
@@ -61,6 +61,10 @@ export class InputComponent implements OnInit {
    * evento que retorna el valor del input
    */
   @Output() value: EventEmitter<any> = new EventEmitter();
+
+  /**
+   * Crearemos un formGroup por defecto en caso no se envie
+   */
   constructor(private formBuilder: FormBuilder) {
     this.parent = this.formBuilder.group({
       default: ''
@@ -73,7 +77,7 @@ export class InputComponent implements OnInit {
   ngOnInit() {
   }
   /**
-   * Validacion de que los elementos no sean null undefined o vacios 
+   * Validacion de que los elementos no sean null undefined o vacios
    */
   validationValue(element: any) {
     if (element !== undefined && element !== null && element !== '') {
@@ -82,7 +86,7 @@ export class InputComponent implements OnInit {
     return false;
   }
   /**
-   * Retornamos un nuevo evento y llamamos a la funcion emitValue 
+   * Retornamos un nuevo evento y llamamos a la funcion emitValue
    * @param event Evento al presionar una tecla
    */
   keydownFun(event) {

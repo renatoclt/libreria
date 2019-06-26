@@ -9,14 +9,15 @@ import { IChatDetailMessage } from '../../dto/ichat-detail-message';
 import { EMessageState } from '../../dto/emessage-state';
 import { EMessageType } from '../../dto/emensaje-type';
 import { Fecha } from 'src/app/utilitario/fecha';
+import { HighlightPipe } from 'src/app/pipe/highlight.pipe';
 
-describe('ChatDetalleComponent', () => {
+describe('ChatListDetail', () => {
   let component: ChatListDetailComponent;
   let fixture: ComponentFixture<ChatListDetailComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ChatListDetailComponent ]
+      declarations: [ ChatListDetailComponent, HighlightPipe ]
     })
     .compileComponents();
   }));
@@ -86,7 +87,7 @@ describe('ChatDetalleComponent', () => {
         messageState: EMessageState.sent,
         messageType: EMessageType.recived
       };
-      component.listDetail.message = [message1]
+      component.listDetail.message = [message1];
     }));
     it('Se espera la fecha enviada' , () => {
       expect(component.dateLast(component.listDetail.message)).toBe('05-05-2018');

@@ -13,7 +13,7 @@ import { NgxUtilitarioDynamicModule } from './dynamic-component/ngx-utilitario-r
 import { NgxUtilitarioIconsModule } from './icons/ngx-utilitario-rclt-icons.module';
 import { NgxUtilitarioModalModule } from './modal/ngx-utilitario-rclt-modal.module';
 import { ReactiveFormsModule } from '@angular/forms';
-import { NgxUtilitarioRcltPerfectScrollModule } from './perfect-scroll/ngx-utilitario-rclt-perfect-scroll.module';
+import { NgxUtilitarioPerfectScrollModule } from './perfect-scroll/ngx-utilitario-perfect-scroll.module';
 import { NgxUtilitarioPipesModule } from './pipe/ngx-utilitario-rclt-pipes.module';
 
 @NgModule({
@@ -37,7 +37,7 @@ import { NgxUtilitarioPipesModule } from './pipe/ngx-utilitario-rclt-pipes.modul
     NgxUtilitarioDynamicModule,
     NgxUtilitarioIconsModule,
     NgxUtilitarioModalModule,
-    NgxUtilitarioRcltPerfectScrollModule,
+    NgxUtilitarioPerfectScrollModule,
     NgxUtilitarioPipesModule
   ],
   providers: [],
