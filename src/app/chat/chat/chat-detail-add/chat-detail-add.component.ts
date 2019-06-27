@@ -59,12 +59,8 @@ export class ChatDetailAddComponent implements OnInit {
    * Emitimos de que hay un nuevo mensaje y limpiamos la caja de texto
    */
   sendMessage() {
-    if (this.messageForm.controls.message.value !== '' &&
-        this.messageForm.controls.message.value !== undefined &&
-        this.messageForm.controls.message.value !== null) {
-      this.newMessage.emit(this.messageForm.controls.message.value);
-      this.messageForm.reset();
-    }
+    this.newMessage.emit(this.messageForm.controls.message.value);
+    this.messageForm.reset();
   }
   /**
    * Emitimos de que hay una nueva imagen a enviar

@@ -10,6 +10,10 @@ export interface IChatDetailMessage {
      */
     img: string | null | FileList;
     /**
+     * Si se envia un DataUrl
+     */
+    imgUrl?: any;
+    /**
      * El mensaje enviado
      */
     message: string;

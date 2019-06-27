@@ -4,9 +4,10 @@
 </p>
 <!--div donde mostrara la imagen  seleccionada e insercion del texto-->
 <div class="ngx-util-preview-body">
-    <img src="{{imgUrl}}" height="200" *ngIf="imgUrl">
+    <img src="{{imgUrl}}" alt="img preview" height="200" *ngIf="imgUrl">
 </div>
 <!--todos los archivos seleccionados y la posibilidad de añadir mas archivos-->
 <div class="ngx-util-preview-files">
-
+  <img *ngFor="let index of filesCount() | numberToArray"  src="{{imgUrls[index]}}" alt="img preview" height="100" (click)="previewFile(imgUrls[index])" >
+  
 </div>

@@ -39,10 +39,13 @@
     </div>
   </div>
   <!--Mensajes del chat-->
-  <div class="ngx-util-detail-messages" style="background: rgb(245, 245, 246);">
+  <div class="ngx-util-detail-messages" style="background: rgb(245, 245, 246);" *ngIf="filesPreview === undefined">
     <ngx-utilitario-perfect-scroll [position]="position" [elementName] = "elementName" >
       <ngx-utilitario-chat-detail-message [messages]="chatDetail.messages"></ngx-utilitario-chat-detail-message>
     </ngx-utilitario-perfect-scroll>
+  </div>
+  <div *ngIf="filesPreview !== undefined">
+    <ngx-utilitario-chat-detail-preview [files]="filesPreview" ></ngx-utilitario-chat-detail-preview>
   </div>
   <!--Agregar chat-->
   <div class="container-fluid ngx-util-detail-add">
@@ -52,4 +55,3 @@
     </div>
   </div>
 </div>
-<ngx-utilitario-chat-detail-preview [files]="filesPreview"></ngx-utilitario-chat-detail-preview> 

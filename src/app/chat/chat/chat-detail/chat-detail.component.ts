@@ -87,50 +87,63 @@ export class ChatDetailComponent implements OnChanges {
 
   /**
    * Se validara si el cambio es de movetomessage
+   * Validara si se cambio de chat y eliminar previsualizacion
    * @param changes index del mensaje a mostrar
    */
   ngOnChanges(changes: SimpleChanges): void {
     if (changes.moveToMessage) {
       this.messageMove(changes.moveToMessage.currentValue);
     }
+    if (changes.chatDetail) {
+      this.filesPreview = undefined;
+    }
   }
   /**
    * Emitimos un nuevo mensaje y añadimos el mensaje
+   * si no tiene mensajes ni imagenes no realizara ningua accion
    * @param message mensaje enviado
    */
   messageSend(message: string) {
-    const newMessage: IChatDetailMessage = {
-      messageState: EMessageState.sent,
-      date: new Fecha().format(new Date(), 'LL'),
-      hour: new Fecha().format(new Date(), 'HH:mm'),
-      img: null,
-      message,
-      messageType: EMessageType.sent
-    };
-    this.newMessage.emit(newMessage);
+    console.log('prueba', this.filesPreview, message);
+    if ((message === '' || message === null) && this.filesPreview === undefined){
+      return;
+    }
+    let newMessage: IChatDetailMessage;
+    if (this.filesPreview  === undefined) {
+      newMessage = {
+        messageState: EMessageState.sent,
+        date: new Fecha().format(new Date(), 'LL'),
+        hour: new Fecha().format(new Date(), 'HH:mm'),
+        img: this.filesPreview,
+        message,
+        messageType: EMessageType.sent
+      };
+      this.newMessage.emit(newMessage);
+    } else {
+      Array.from(this.filesPreview).forEach((file: any) => {
+        const newFileList = new FileList();
+        newFileList[0] = file;
+        newMessage = {
+          messageState: EMessageState.sent,
+          date: new Fecha().format(new Date(), 'LL'),
+          hour: new Fecha().format(new Date(), 'HH:mm'),
+          img:  newFileList,
+          message,
+          messageType: EMessageType.sent
+        };
+        this.newMessage.emit(newMessage);
+      });
+      this.filesPreview = undefined;
+    }
   }
   /**
    * imagePreview
-   * @param fileList imagenes Seleccionadas 
+   * @param fileList imagenes Seleccionadas
    */
   imagePreview(fileList: FileList) {
     this.filesPreview = fileList;
   }
-  /**
-   * Emitimos un nuevo mensaje y añadimos la imagen
-   * @param fileList Imagenes seleccionadas
-   */
-  imageSend(fileList: FileList) {
-    const newMessage: IChatDetailMessage = {
-      messageState: EMessageState.sent,
-      date: new Fecha().format(new Date(), 'LL'),
-      hour: new Fecha().format(new Date(), 'HH:mm'),
-      img: fileList,
-      message : '',
-      messageType: EMessageType.sent
-    };
-    this.newMessage.emit(newMessage);
-  }
+
   /**
    * Se eliminaran los mensajes en esta conversacion
    */
@@ -186,6 +199,7 @@ export class ChatDetailComponent implements OnChanges {
 
   /**
    * Cambiar el estado de 1 o 0 a letras
+   * @param state Enum del estado actual
    */
   nameState(state: number): string {
     if (state === 1) {
@@ -196,6 +210,7 @@ export class ChatDetailComponent implements OnChanges {
 
   /**
    * Vamos a mover al mensaje indicado
+   * @param id id del mensaje a moverse
    */
   messageMove(id: number) {
     if (id !== undefined) {

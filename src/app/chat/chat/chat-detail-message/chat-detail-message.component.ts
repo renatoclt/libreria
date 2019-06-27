@@ -3,6 +3,7 @@ import { IChatDetailMessage } from '../../dto/ichat-detail-message';
 import { Fecha } from 'src/app/utilitario/fecha';
 import { EMessageState } from '../../dto/emessage-state';
 import { EMessageType } from '../../dto/emensaje-type';
+import { isString } from 'util';
 
 /**
  * Componente que muestra los mensajes de un chat
@@ -26,11 +27,13 @@ export class ChatDetailMessageComponent implements OnInit {
    * Variable en la cual trabajaremos las fechas
    */
   date: Fecha;
+
   /**
    * @ignore
    */
   constructor() {
     this.date = new Fecha();
+    
   }
 
   /**
@@ -96,4 +99,56 @@ export class ChatDetailMessageComponent implements OnInit {
     }
     return 'ngx-util-chat-left float-left';
   }
+
+  /**
+   * Validaremos si debe mostrar el mensaje o no
+   * @param message mensaje recibido
+   */
+  validateMessage(message: string) {
+    if (message === '' || message === undefined || message === null) {
+      return false;
+    }
+    return true;
+  }
+  /**
+   * Validaremos si debe mostrar imagen o no
+   * si mostramos una imagen pasaremos el Filelist a DataUrl
+   * @param image imagen en el mensaje
+   */
+  validateImage(message: IChatDetailMessage) {
+    if (message.img === '' || message.img === undefined || message.img === null) {
+      return false;
+    }
+    if (!isString(message.img)) {
+      if(message.imgUrl === undefined){
+        this.messageImageUrl(message.img, message);
+      }
+    } else {
+      message.imgUrl = message.img;
+    }
+    return true;
+  }
+
+  /**
+   * Parseara el data enviado a una url
+   * @param image Ruta de la image o el archivo de la imagen
+   * @returns la imagen
+   */
+  messageImageUrl(image: any, message: IChatDetailMessage): any {
+    if (image) {
+      if (image.length < 1) {
+        return;
+      }
+      const mimeType = image[0].type;
+      if (mimeType.match(/image\/*/) == null) {
+        return;
+      }
+      const reader = new FileReader();
+      reader.onload = (e: any) => {
+        message.imgUrl =  e.target.result;
+      };
+      reader.readAsDataURL(image[0]);
+    }
+  }
+
 }

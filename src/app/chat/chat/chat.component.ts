@@ -23,7 +23,7 @@ export class ChatComponent implements OnInit, OnChanges {
     messageState: EMessageState.sent,
     date: 'may. 18, 19',
     hour: '13:30',
-    img: null,
+    img: '',
     message: 'prua',
     messageType: EMessageType.sent
   };
@@ -34,7 +34,8 @@ export class ChatComponent implements OnInit, OnChanges {
     messageState: EMessageState.sent,
     date: 'may. 18, 19',
     hour: '13:30',
-    img: null,
+// tslint:disable-next-line: max-line-length
+    img: 'https://firebasestorage.googleapis.com/v0/b/tbusca-57c7e.appspot.com/o/Resources%2Fdefault-img.jpg?alt=media&token=978ddd8c-17fb-4691-aed1-5e8e15605f4d',
     message: 'fas',
     messageType: EMessageType.sent
   };

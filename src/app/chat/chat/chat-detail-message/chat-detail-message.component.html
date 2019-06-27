@@ -10,7 +10,10 @@
     </div>
     <div class="container-fluid"  >
       <div [ngClass]="chooseStyle(item.messageType)">
-        <div class="message">{{item.message}}</div>
+        <div *ngIf="validateImage(item)">
+          <img src="{{item.imgUrl}}" alt="Message" class="img-message">
+        </div>
+        <div *ngIf="validateMessage(item.message)" class="message">{{item.message}}</div>
         <div class="hour">{{item.hour}}
           <span *ngIf="messageState(item.messageState, item.messageType, EMessageState.sent )"
             class="ngx-util-msg-sent">

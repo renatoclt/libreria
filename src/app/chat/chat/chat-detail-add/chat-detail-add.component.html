@@ -10,7 +10,7 @@
     <!--Acciones-->
     <div class="col-1 no-padding">
       <div class="ngx-util-btns-actions">
-        <input class="ngx-util-input-file" type="file" accept="image/*" #file (change)="sendImage($event)">
+        <input class="ngx-util-input-file" type="file" accept="image/*" #file (change)="sendImage($event)" multiple>
         <button id="btn_sendImage" type="button" class="col-6 btn ngx-util-btn-icon ngx-util-btn-gray" (click)="file.click()" [attr.disabled]="disabled ? '' : null"><i
             class="fa fa-camera" aria-hidden="true"></i></button>
         <button id="btn_sendMessage" type="button" class="col-6 btn ngx-util-btn-icon ngx-util-btn-gray" [attr.disabled]="disabled ? '' : null"

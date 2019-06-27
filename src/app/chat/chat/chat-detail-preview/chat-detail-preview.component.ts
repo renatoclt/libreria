@@ -27,6 +27,10 @@ export class ChatDetailPreviewComponent implements OnChanges {
    */
   imgUrl: any;
   /**
+   * arreglo en el cual guardaremos las imagenes seleccionadas
+   */
+  imgUrls: any[] = [];
+  /**
    * @ignore
    */
   constructor() { }
@@ -38,15 +42,21 @@ export class ChatDetailPreviewComponent implements OnChanges {
   ngOnChanges(changes: SimpleChanges): void {
     if (changes.files) {
       this.finalFiles = changes.files.currentValue;
-      this.preview();
+      this.previewFiles();
+      this.previewFile();
     }
   }
   /**
-   * Metodo el cual mostrara la imagen seleccionada
+   * Metodo el cual mostrara la imagen seleccionada o la primera por defecto
+   * @param index imagen a mostrar
    */
-  preview() {
+  previewFile(imgUrl?: any) {
+    if (imgUrl !== undefined) {
+      this.imgUrl = imgUrl;
+      return;
+    }
     if (this.finalFiles) {
-      if (this.finalFiles.length === 0) {
+      if (this.finalFiles.length <= 0) {
         return;
       }
       const mimeType = this.finalFiles[0].type;
@@ -57,10 +67,40 @@ export class ChatDetailPreviewComponent implements OnChanges {
       // this.imagePath = this.finalFiles;
       reader.readAsDataURL(this.finalFiles[0]);
       reader.onload = () => {
-        console.log('ingrese');
         this.imgUrl = reader.result;
+      };
+    }
+  }
+  /**
+   * Metodo que permitira visualizar todas las imagenes
+   */
+  previewFiles() {
+    if (this.finalFiles) {
+      if ( this.finalFiles.length === 0) {
+        return;
       }
+      const mimeType = this.finalFiles[0].type;
+      if (mimeType.match(/image\/*/) == null) {
+        return;
+      }
+      this.imgUrls = [];
+      Array.from(this.finalFiles).forEach(file => {
+        const readerGallery = new FileReader();
+        readerGallery.onload = (e: any) => {
+          this.imgUrls.push(e.target.result);
+        };
+        readerGallery.readAsDataURL(file);
+      });
     }
   }
 
+  /**
+   * Devulve la longitud de archivos en finalFiles o sero en caso sea undefined
+   */
+  filesCount() {
+    if (this.finalFiles === undefined) {
+      return 0;
+    }
+    return this.finalFiles.length;
+  }
 }
