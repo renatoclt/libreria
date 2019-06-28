@@ -12,6 +12,8 @@ import { ElementRef, Component } from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { ChatDetailMessageComponent } from '../chat-detail-message/chat-detail-message.component';
 import { NgxUtilitarioPerfectScrollModule } from 'src/app/perfect-scroll/ngx-utilitario-perfect-scroll.module';
+import { ChatDetailPreviewComponent } from 'projects/ngx-utilitario-rclt/src/lib/chat/chat/chat-detail-preview/chat-detail-preview.component';
+import { NgxUtilitarioPipesModule } from 'src/app/pipe/ngx-utilitario-rclt-pipes.module';
 
 describe('ChatDetailComponent', () => {
   let component: ChatDetailComponent;
@@ -22,11 +24,13 @@ describe('ChatDetailComponent', () => {
       declarations: [
         ChatDetailComponent,
         ChatDetailAddComponent,
-        ChatDetailMessageComponent
+        ChatDetailMessageComponent,
+        ChatDetailPreviewComponent
       ],
       imports: [
         ReactiveFormsModule,
-        NgxUtilitarioPerfectScrollModule
+        NgxUtilitarioPerfectScrollModule,
+        NgxUtilitarioPipesModule
       ]
     })
     .compileComponents();

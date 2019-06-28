@@ -1,0 +1,64 @@
+//estilos para la cabecera del componente
+.ngx-util-preview-title{
+    background: #e7b723;
+    color: #fff;
+    padding: 0.9375rem 1.25rem;
+    font-size: 1rem;
+}
+.ngx-util-em-action{
+    padding: 0.625rem 0.875rem;
+    transition: 0.2s ease-in-out;
+    transform-style: preserve-3d;
+}
+.ngx-util-em-action:hover{
+    background: rgba(255, 255, 255, 0.2);
+    outline: none !important;
+    text-decoration: none;
+    border-radius: 50%;
+}
+//Estilos para la imagen selecionada
+.ngx-util-preview-body {
+    text-align: center;
+    padding: 18px 0px;
+}
+
+//Estilos a la previsualizacion de todas las imagenes y añadir mas imagenes
+.ngx-util-preview-files{
+    height: 6.875rem;
+    padding: 10px 5px;
+    background: #dddde0;
+}
+.ngx-util-preview-all-files{
+    display: flex;
+    // overflow: hidden;
+}
+
+.ngx-util-preview-files-item {
+    float: left;
+    flex: 0 0 16.666667%;
+    max-width: 16.666667%;
+    text-align: center;
+    margin: 0rem 0.3125rem;
+}
+.ngx-util-preview-files-item img{
+    flex: 0 0 90%;
+    max-width: 90%;
+    height: -webkit-fill-available;
+}
+
+.ngx-util-preview-files-add{
+    flex: 0 0 14%;
+    max-width: 14%;
+    font-size: 14px;
+    color: #e7b723;
+    text-align: center;
+    padding: 0.5rem 3% !important;
+    background: #fff;
+    margin-left: 0.625rem;
+    cursor: pointer;
+}
+.ngx-util-preview-files-add-icon{
+    display: block;
+    font-weight: 900;
+    font-size: xx-large
+}

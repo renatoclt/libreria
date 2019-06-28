@@ -1,13 +1,24 @@
 <!--Titulo del componente-->
-<p class="w-100 ngx-util-preview-title">
-  {{title}}
-</p>
+<div class="w-100 ngx-util-preview-title">
+  <em class="fa fa-times ngx-util-em-action" (click)="closePreview()"></em> {{title}}
+</div>
 <!--div donde mostrara la imagen  seleccionada e insercion del texto-->
 <div class="ngx-util-preview-body">
-    <img src="{{imgUrl}}" alt="img preview" height="200" *ngIf="imgUrl">
+  <img src="{{imgUrl}}" alt="img preview" height="200" *ngIf="imgUrl">
 </div>
 <!--todos los archivos seleccionados y la posibilidad de añadir mas archivos-->
 <div class="ngx-util-preview-files">
-  <img *ngFor="let index of filesCount() | numberToArray"  src="{{imgUrls[index]}}" alt="img preview" height="100" (click)="previewFile(imgUrls[index])" >
-  
+  <div class="row no-margin">
+    <ngx-utilitario-perfect-scroll class="col-10">
+      <div class="ngx-util-preview-all-files">
+        <div *ngFor="let index of filesCount() | numberToArray" class="ngx-util-preview-files-item">
+          <img src="{{imgUrls[index]}}" alt="img preview" height="100" (click)="previewFile(imgUrls[index])">
+          <!-- <div style="height: 100px; width: 100px; background:red; border: 1px solid black"></div> -->
+        </div>
+      </div>
+    </ngx-utilitario-perfect-scroll>
+    <input class="ngx-util-input-file" type="file" accept="image/*" #file (change)="sendImage($event)" multiple>
+    <div class="ngx-util-preview-files-add" (click)="file.click()"> 
+      <em class="fa fa-plus ngx-util-preview-files-add-icon"></em> Agregar Imagenes</div>
+  </div>
 </div>

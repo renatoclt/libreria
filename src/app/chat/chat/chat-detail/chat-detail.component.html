@@ -45,7 +45,7 @@
     </ngx-utilitario-perfect-scroll>
   </div>
   <div *ngIf="filesPreview !== undefined">
-    <ngx-utilitario-chat-detail-preview [files]="filesPreview" ></ngx-utilitario-chat-detail-preview>
+    <ngx-utilitario-chat-detail-preview [files]="filesPreview" (close)="closePreview($event)"></ngx-utilitario-chat-detail-preview>
   </div>
   <!--Agregar chat-->
   <div class="container-fluid ngx-util-detail-add">

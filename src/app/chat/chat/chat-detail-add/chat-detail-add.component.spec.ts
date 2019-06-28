@@ -77,14 +77,7 @@ describe('ChatDetailAddComponent', () => {
       spyOn(component.newMessage, 'emit');
       button.nativeElement.click();
       fixture.detectChanges();
-      expect(component.newMessage.emit).toHaveBeenCalledTimes(0);
-    });
-    it('Al hacer click en el boton enviar no enviar evento si la caja de texto es undefined o null', () => {
-      component.messageForm.controls.message.setValue(undefined);
-      spyOn(component.newMessage, 'emit');
-      button.nativeElement.click();
-      fixture.detectChanges();
-      expect(component.newMessage.emit).toHaveBeenCalledTimes(0);
+      expect(component.newMessage.emit).toHaveBeenCalledTimes(1);
     });
     it('Al hacer click en el boton enviar limpiar el input', () => {
       component.messageForm.controls.message.setValue('asdfsad');

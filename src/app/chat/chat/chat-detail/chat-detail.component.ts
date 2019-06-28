@@ -217,4 +217,10 @@ export class ChatDetailComponent implements OnChanges {
       this.elementName = undefined;
     }
   }
+  /**
+   * Cerrar la ventanta preview
+   */
+  closePreview() {
+    this.filesPreview = undefined;
+  }
 }

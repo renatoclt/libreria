@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges, Output, EventEmitter } from '@angular/core';
 /**
  * Componente en el cual podremos visualizar una imagen
  */
@@ -17,6 +17,10 @@ export class ChatDetailPreviewComponent implements OnChanges {
    * Variable en la cual se guarda los archivos enviados desde otro componente
    */
   @Input() files: FileList;
+  /**
+   * Evento indicando que cierre la ventana
+   */
+  @Output() close: EventEmitter<boolean> = new EventEmitter();
   /**
    * Variable en la cual mostraremos los archivos recibidos y los cargados en esta pantalla
    */
@@ -95,12 +99,18 @@ export class ChatDetailPreviewComponent implements OnChanges {
   }
 
   /**
-   * Devulve la longitud de archivos en finalFiles o sero en caso sea undefined
+   * Devulve la longitud de archivos en finalFiles o cero en caso sea undefined
    */
   filesCount() {
     if (this.finalFiles === undefined) {
       return 0;
     }
     return this.finalFiles.length;
+  }
+  /**
+   * Emite un evento para cerrar vista
+   */
+  closePreview(){
+    this.close.emit(true);
   }
 }
