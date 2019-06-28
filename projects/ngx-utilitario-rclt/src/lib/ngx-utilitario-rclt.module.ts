@@ -12,7 +12,7 @@ import { NgxUtilitarioMenuModule } from './menu/ngx-utilitario-menu.module';
 import { NgxUtilitarioCardsModule } from './cards/cards.module';
 import { NgxUtilitarioDynamicModule } from './dynamic-component/ngx-utilitario-rclt-dynamic.module';
 import { NgxUtilitarioIconsModule } from './icons/ngx-utilitario-rclt-icons.module';
-import { NgxUtilitarioModalModule } from '../modal/ngx-utilitario-rclt-modal.module';
+import { NgxUtilitarioModalModule } from './modal/ngx-utilitario-rclt-modal.module';
 import { NgxUtilitarioPerfectScrollModule } from './perfect-scroll/ngx-utilitario-perfect-scroll.module';
 import { NgxUtilitarioPipesModule } from './pipe/ngx-utilitario-rclt-pipes.module';
 
