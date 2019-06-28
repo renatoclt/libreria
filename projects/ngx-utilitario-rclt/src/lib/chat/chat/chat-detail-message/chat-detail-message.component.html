@@ -1,0 +1,35 @@
+<div id="message_{{i}}" class="col-12" class="ngx-util-detail-message" *ngFor="let item of messages; let i=index ">
+    <div class="container-fluid">
+      <div class="row" *ngIf="dayLine(item.date,i)">
+        <div class="w-100 ngx-util-chat-linea">
+          <span class="ngx-util-chat-linea-span">
+            {{dayDifference(item.date)}}
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid"  >
+      <div [ngClass]="chooseStyle(item.messageType)">
+        <div *ngIf="validateImage(item)">
+          <img src="{{item.imgUrl}}" alt="Message" class="img-message">
+        </div>
+        <div *ngIf="validateMessage(item.message)" class="message">{{item.message}}</div>
+        <div class="hour">{{item.hour}}
+          <span *ngIf="messageState(item.messageState, item.messageType, EMessageState.sent )"
+            class="ngx-util-msg-sent">
+            <em class="fa fa-check"></em>
+          </span>
+          <span *ngIf="messageState(item.messageState, item.messageType, EMessageState.received)"
+            class="ngx-util-msg-received">
+            <em class="fa fa-check"></em>
+            <em class="fa fa-check"></em>
+          </span>
+          <span *ngIf="messageState(item.messageState, item.messageType, EMessageState.read )"
+            class="ngx-util-msg-read">
+            <em class="fa fa-check"></em>
+            <em class="fa fa-check"></em>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>

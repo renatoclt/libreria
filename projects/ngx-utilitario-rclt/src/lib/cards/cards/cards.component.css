@@ -1,0 +1,48 @@
+.cards{
+    background: #fff;
+    box-shadow: rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    width: 100%;
+    float: left;
+}
+
+.cards:hover{
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.cardsTitulo{
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #595959;
+    padding: 1rem 0 0 1.2rem;  
+    margin: 0;
+}
+.cardsSubtitulo{
+    color: #b0b0b0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.5;
+    padding: 0 0 0 1.2rem;  
+}
+.cardsContenido{
+    color: #595959;
+    font-size: 1.0rem;
+    font-weight: 500;
+    line-height: 1.2;
+    padding: 0 0 0 1.2rem; 
+}
+
+.cardIcono{
+    padding: 1rem 0.5rem 0.5rem 0;
+}
+
+.classIcono{
+    display: table-cell;
+    width: auto;
+}
+
+.fontSize2-5{
+    font-size: 2.5rem;
+    padding-right: 0rem;
+}

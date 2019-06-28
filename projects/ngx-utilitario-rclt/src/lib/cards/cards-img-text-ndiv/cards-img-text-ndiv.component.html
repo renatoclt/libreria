@@ -1,0 +1,17 @@
+<div class="cards row row-no-padding" [style.color]="color" (click)="clickCard($event)">
+  <div class="col-2 float-left">
+      <img class="cardsImagen" src={{imagen}} alt="imagen de card cambiar a dinamico" [style.height]="height"/>
+  </div>
+  <div class="col-{{10 - contenido.length }} float-left">
+      <div [ngClass]="classTexto">
+          <h2 class="cardsTitulo" [style.color]="color">{{titulo}}</h2>
+          <h3 class="cardsDescripcion">{{descripcion}}</h3>
+          <h3 class="cardsEtiqueta" [style.background]="color">{{etiqueta}}</h3>
+          <h3 class="cardsContenido"><ng-content></ng-content></h3>
+      </div>
+  </div>
+  <div *ngFor="let item of contenido" class="col-1 float-left center-middle" [style.line-height]="height">
+      <ng-content *ngIf="item==='content'"></ng-content>
+      <span *ngIf="item!=='content'">{{item}}</span>
+  </div>
+</div>

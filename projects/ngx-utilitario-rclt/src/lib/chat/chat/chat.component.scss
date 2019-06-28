@@ -1,0 +1,44 @@
+.ngx-utilitario-chat{
+    display: flex;
+    flex-flow: column;
+    height: 21.87rem;
+}
+
+.ngx-utilitario-chat-list {
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+}
+
+.ngx-util-list-header{
+    background: #fff;
+    color: #324148;
+    padding: 1.37rem 0.93rem;
+    border-bottom: 0.06rem solid #e0e3e4;
+    text-align: center;
+    font-size: 1.12rem;
+    font-weight: 600;
+    font-family: 'Lato', sans-serif;
+    height: 4.37rem;
+
+}
+
+.ngx-util-list-header span{
+    float: right;
+    font-size: inherit;
+}
+
+//altura dl componente search 
+// .ngx-util-list-search{
+//     height: 6.5rem;
+// }
+
+.ngx-util-list-detail{
+    flex-grow : 1;
+    overflow: hidden;
+}
+
+//eliminamos el padding de scroll por defecto
+::ng-deep .scrollable-content{
+    padding: 0px !important;
+}

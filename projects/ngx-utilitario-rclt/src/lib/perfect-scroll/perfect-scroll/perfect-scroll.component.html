@@ -1,0 +1,7 @@
+<perfect-scrollbar class="scroll-container window__list" fxFlex="auto" [config]="config" [scrollIndicators]="true"
+  (psXReachEnd)="onScrollEvent($event)" (psYReachEnd)="onScrollEvent($event)" (psXReachStart)="onScrollEvent($event)"
+  (psYReachStart)="onScrollEvent($event)">
+  <div class="scrollable-content">
+    <ng-content></ng-content>
+  </div>
+</perfect-scrollbar>

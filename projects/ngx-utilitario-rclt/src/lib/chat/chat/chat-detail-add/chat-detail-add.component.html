@@ -1,0 +1,21 @@
+<div class="container-fluid">
+  <div class="row ngx-util-detail-add no-margin">
+    <!--Input-->
+    <div class="col-11">
+      <form [formGroup]="messageForm">
+        <input id="txt_message" class="col-12" formControlName="message" [attr.disabled]="disabled ? '' : null"
+        [placeholder]="placeholder">
+      </form>
+    </div>
+    <!--Acciones-->
+    <div class="col-1 no-padding">
+      <div class="ngx-util-btns-actions">
+        <input class="ngx-util-input-file" type="file" accept="image/*" #file (change)="sendImage($event)" multiple>
+        <button id="btn_sendImage" type="button" class="col-6 btn ngx-util-btn-icon ngx-util-btn-gray" (click)="file.click()" [attr.disabled]="disabled ? '' : null"><i
+            class="fa fa-camera" aria-hidden="true"></i></button>
+        <button id="btn_sendMessage" type="button" class="col-6 btn ngx-util-btn-icon ngx-util-btn-gray" [attr.disabled]="disabled ? '' : null"
+          (click)="sendMessage()"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+      </div>
+    </div>
+  </div>
+</div>

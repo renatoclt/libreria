@@ -1,0 +1,20 @@
+<div class="container-fluid row-no-padding ngx-utilitario-chat" style="height: 400px">
+  <div class="row">
+    <div class="col-md-4 col-sm-12 ngx-utilitario-chat-list">
+      <header class="ngx-util-list-header">
+        Chats
+        <span class="fa fa-pencil-square-o"></span>
+      </header>
+      <ngx-utilitario-chat-search class="ngx-util-list-search" (searchChange)="searchChange($event)">
+      </ngx-utilitario-chat-search>
+      <ngx-utilitario-chat-list class="ngx-util-list-detail" [list]="finalList" (clickList)="listDetailClick($event)"
+        [search]="searchText">
+      </ngx-utilitario-chat-list>
+    </div>
+    <div class="col-md-8 col-sm-12">
+      <ngx-utilitario-chat-detail [chatDetail]="chatDetail" [moveToMessage]="moveToMessageIndex"
+        (newMessage)="messageSend($event)" (deleteMessages)="messageDelete($event)" (lockChat)="chatLocking($event)">
+      </ngx-utilitario-chat-detail>
+    </div>
+  </div>
+</div>

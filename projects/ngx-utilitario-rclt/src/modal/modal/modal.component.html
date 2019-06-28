@@ -1,0 +1,17 @@
+<div class="ngx-utilitario-modal">
+  <div class="ngx-utilitario-modal-body">
+    <div class="ngx-utilitario-modal-content">
+      <div style="position: relative;">
+        <button type="button" class="ngx-utilitario-modal-cerrar" (click)="close()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <div class="ngx-utilitario-modal-ngcontent" [@openClose]="openclose">
+          <ng-content>
+          </ng-content>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="ngx-utilitario-modal-background" [@openCloseBackground]="openclose"></div>
+<div class="ngx-utilitario-modal-open"></div>

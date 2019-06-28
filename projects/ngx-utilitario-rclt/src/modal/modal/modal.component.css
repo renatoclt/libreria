@@ -1,0 +1,81 @@
+/**
+* modal center. 
+* modal aparece y desaparece
+*/
+
+.ngx-utilitario-modal {
+    display: table;
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1000;
+    margin-top: 15px;
+}
+
+.ngx-utilitario-modal .ngx-utilitario-modal-body {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 0;
+    margin: 0;
+    width: fit-content;
+    height: fit-content;
+}
+
+.ngx-utilitario-modal .ngx-utilitario-modal-content {
+    background: #fff;
+    margin: 0 auto;
+    width: fit-content;
+    height: fit-content;
+    max-height: 100%;
+    /* overflow-y: visible;
+  overflow-x: hidden; */
+    padding: 15px;
+}
+
+.ngx-utilitario-modal .ngx-utilitario-modal-content .ngx-utilitario-modal-cerrar {
+    opacity: 1;
+    font-size: 18px;
+    position: absolute;
+    top: -30px;
+    right: -30px;
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    border-radius: 100%;
+    -moz-border-radius: 100%;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+    padding: 0px;
+    z-index: 901;
+}
+
+.ngx-utilitario-modal .ngx-utilitario-modal-content .ngx-utilitario-modal-ngcontent {
+    overflow-y: auto;
+    max-height: -webkit-fill-available;
+}
+
+.ngx-utilitario-modal-background {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #000;
+    opacity: 0.75;
+    z-index: 900;
+    animation-delay: 2s;
+    animation-duration: 4s;
+    animation-direction: reverse;
+}
+
+/* .aparecer{
+  transition: width 2s, height 2s, margin 2s; 
+} */
+
+.ngx-utilitario-modal-open {
+    /* body overflow is hidden to hide main scrollbar when modal window is open */
+    overflow: hidden !important;
+}

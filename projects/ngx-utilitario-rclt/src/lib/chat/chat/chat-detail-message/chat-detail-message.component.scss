@@ -1,0 +1,94 @@
+//estilos pagina
+.ngx-util-detail-message{
+    background: inherit; 
+    display: flow-root;
+}
+//estilos linea
+.ngx-util-chat-linea {
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+    font-size: 0.87rem;
+    margin: 0.93rem 3.125rem;
+    text-transform: capitalize;
+    color: #9e9e9e;
+}
+.ngx-util-chat-linea::before {
+    background: #e0e3e4;
+    content: "";
+    height: 0.0625rem;
+    right: 50%;
+    margin-right: 2.5rem;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+}
+.ngx-util-chat-linea::after{
+    background: #e0e3e4;
+    content: "";
+    height: 0.0625rem;
+    left: 50%;
+    margin-left: 2.5rem;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+}
+//estilo chats
+.ngx-util-chat-right{
+    background: #e7b723;
+    padding: 0.3125rem 0.9375rem;
+    border-radius: .25rem;
+    display: inline-block;
+    position: relative;
+    margin-bottom: 0.3125rem;
+    word-wrap: break-word;
+    max-width: 60%;
+    color: white;
+    text-align: right;
+}
+
+.ngx-util-chat-left{
+    background: #fff;
+    padding: 0.3125rem 0.9375rem;
+    border-radius: .25rem;
+    display: inline-block;
+    position: relative;
+    margin-bottom: 0.3125rem;
+    word-wrap: break-word;
+    max-width: 60%;
+    color: white;
+    text-align: left;
+}
+
+//estilos por estado del mensaje enviado
+.ngx-util-chat-right .message{
+    color: #fff;
+    margin: 0;
+    opacity: 1;
+    font-size: 0.875rem;
+}
+.img-message{
+    height: 10rem;
+    width: auto; 
+}
+.ngx-util-chat-right .hour{
+    color: rgba(255, 255, 255, 0.5);
+    opacity: 1;
+    font-size: 0.8125rem;
+}
+//estilos por estado del mensaje recibido
+.ngx-util-chat-left .message{
+    color: #324148;
+    margin: 0;
+    opacity: 1;
+    font-size: 0.875rem;
+}
+.ngx-util-chat-left .hour{
+    color: rgba(50, 65, 72, 0.4);;
+    opacity: 1;
+    font-size: 0.8125rem;
+}
+
+.ngx-util-msg-read{
+    color: #fff;
+}

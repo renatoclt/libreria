@@ -1,0 +1,11 @@
+<div [formGroup]="parent" class="w-100">
+  <mat-form-field class="w-100" [appearance]="appearance" [matTooltip]="tooltip" [matTooltipPosition]="position" >
+    <mat-label *ngIf="validationValue(label)">{{label}}</mat-label>
+    <input matInput (keyup)="keydownFun($event)" formControlName="{{name}}" >
+    <em *ngIf="validationValue(iconMatPrefix)" [ngClass]="iconMatPrefix" matPrefix></em>
+    <span *ngIf="validationValue(spanMatPrefix)" matPrefix>spanMatPrefix</span>
+    <em *ngIf="validationValue(iconMatSuffix)" [ngClass]="iconMatSuffix" matSuffix></em>
+    <span *ngIf="validationValue(spanMatSuffix)" matSuffix>spanMatSuffix</span>
+    <mat-hint *ngIf="validationValue(hint)">{{hint}}</mat-hint>
+  </mat-form-field>
+</div>
