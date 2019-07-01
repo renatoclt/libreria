@@ -1,5 +1,10 @@
-import * as moment from 'moment';
+import * as _moment from 'moment';
 import { Moment } from 'moment';
+/**
+ * Si no importo '_moment' me da error
+ * y para mantener las buenas practicas elimino el subguion
+ */
+const moment = _moment;
 /**
  * Clase que trabajara sobre el tipo de dato "date" con la libreria "moment"
  */
