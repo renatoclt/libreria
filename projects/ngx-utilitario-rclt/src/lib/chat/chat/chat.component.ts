@@ -74,7 +74,7 @@ export class ChatComponent implements OnInit, OnChanges {
    * @ignore
    */
   ngOnInit() {
-    this.searchValidate();
+    this.searchValidate(this.list);
   }
 
   /**
@@ -90,18 +90,20 @@ export class ChatComponent implements OnInit, OnChanges {
           this.chatDetail.lock = chat.lock;
         }
       });
-      this.searchValidate();
+      this.searchValidate(changes.lista.currentValue);
     }
   }
 
   /**
    * Si hay una busqueda activa no se actualiza la lista
    */
-  searchValidate() {
+  searchValidate(chatListDetail: IChatListDetail[]) {
     if (!this.searchFlag) {
-      this.finalList = this.list;
+      this.finalList = chatListDetail;
+      console.log('ingrese', this.finalList);
     } else {
       this.finalList = this.searchList;
+      console.log('ingrese searc', this.finalList);
     }
   }
   /**
@@ -171,7 +173,7 @@ export class ChatComponent implements OnInit, OnChanges {
     } else {
       this.searchFlag = false;
     }
-    this.searchValidate();
+    this.searchValidate(this.list);
   }
 
   /**
