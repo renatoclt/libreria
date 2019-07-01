@@ -11,7 +11,7 @@ import { ChatDetailAddComponent } from './chat/chat-detail-add/chat-detail-add.c
 import { NgxUtilitarioFormstModule } from '../forms/ngx-utilitario-rclt-forms.module';
 import { ChatDetailMessageComponent } from './chat/chat-detail-message/chat-detail-message.component';
 import { NgxUtilitarioPipesModule } from '../pipe/ngx-utilitario-rclt-pipes.module';
-import { NgxUtilitarioPerfectScrollModule } from '../perfect-scroll/ngx-utilitario-perfect-scroll.module';
+import { NgxUtilitarioPerfectScrollModule } from '../perfect-scroll/ngx-utilitario-rclt-perfect-scroll.module';
 import { ChatDetailPreviewComponent } from './chat/chat-detail-preview/chat-detail-preview.component';
 /**
  * Modulo Chat el cual contiene las partes necesarias para el correcto funcinamiento de un chat

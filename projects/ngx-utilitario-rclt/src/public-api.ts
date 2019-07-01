@@ -1,3 +1,5 @@
+import { from } from 'rxjs';
+
 /*
  * Public API Surface of ngx-utilitario-rclt
  */
@@ -6,7 +8,14 @@
  */
 export * from './lib/ngx-utilitario-rclt.module';
 export * from './lib/chat/ngx-utilitario-rclt-chat.module';
-// export * from './lib/dynamic-component/ngx-utilitario-rclt-dynamic-component.module';
+export * from './lib/cards/ngx-utilitario-rclt-cards.module';
+export * from  './lib/dynamic-component/ngx-utilitario-rclt-dynamic.module';
+export * from './lib/forms/ngx-utilitario-rclt-forms.module';
+export * from './lib/icons/ngx-utilitario-rclt-icons.module';
+export * from './lib/menu/ngx-utilitario-rclt-menu.module';
+export * from './lib/modal/ngx-utilitario-rclt-modal.module';
+export * from './lib/perfect-scroll/ngx-utilitario-rclt-perfect-scroll.module';
+export * from './lib/pipe/ngx-utilitario-rclt-pipes.module';
 
 /**
  *

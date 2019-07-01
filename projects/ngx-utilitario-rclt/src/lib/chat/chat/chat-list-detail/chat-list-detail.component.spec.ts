@@ -9,7 +9,7 @@ import { IChatDetailMessage } from '../../dto/ichat-detail-message';
 import { EMessageState } from '../../dto/emessage-state';
 import { EMessageType } from '../../dto/emensaje-type';
 import { Fecha } from '../../../utilitario/fecha/fecha';
-import { HighlightPipe } from '../../../pipe/highlight.pipe';
+import { HighlightPipe } from '../../../pipe/highlight/highlight.pipe';
 
 describe('ChatListDetail', () => {
   let component: ChatListDetailComponent;

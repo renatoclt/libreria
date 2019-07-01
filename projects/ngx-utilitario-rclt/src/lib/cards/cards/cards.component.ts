@@ -20,7 +20,7 @@ export class CardsComponent implements OnInit {
   /**
    * Icono a mostrar en el card
    */
-  @Input() icono = 'fa fa-user'
+  @Input() icono = 'fa fa-user';
   /**
    * Clase a aplicar al texto
    */

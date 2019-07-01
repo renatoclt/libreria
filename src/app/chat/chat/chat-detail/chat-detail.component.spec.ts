@@ -12,7 +12,7 @@ import { EMessageState } from '../../dto/emessage-state';
 import { EMessageType } from '../../dto/emensaje-type';
 import { ChatDetailMessageComponent } from '../chat-detail-message/chat-detail-message.component';
 import { ChatDetailPreviewComponent } from '../chat-detail-preview/chat-detail-preview.component';
-import { NgxUtilitarioPerfectScrollModule } from '../../../perfect-scroll/ngx-utilitario-perfect-scroll.module';
+import { NgxUtilitarioPerfectScrollModule } from '../../../perfect-scroll/ngx-utilitario-rclt-perfect-scroll.module';
 import { NgxUtilitarioPipesModule } from '../../../pipe/ngx-utilitario-rclt-pipes.module';
 
 describe('ChatDetailComponent', () => {
