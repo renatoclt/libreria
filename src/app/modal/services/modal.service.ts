@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { zip } from 'rxjs';
 
 /**
  * Servicio que permite añadir modales

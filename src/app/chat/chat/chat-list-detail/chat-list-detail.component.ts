@@ -1,8 +1,8 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { IChatListDetail } from '../../dto/ichat-list-detail';
 import { IChatDetailMessage } from '../../dto/ichat-detail-message';
-import { Fecha } from '../../../utilitario/fecha';
-import { environment } from 'src/environments/environment';
+import { Fecha } from '../../../utilitario/fecha/fecha';
+import { environment } from '../../../utilitario/environment/environment';
 
 /**
  * Componente que muestra la lista de conversaciones

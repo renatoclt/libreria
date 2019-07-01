@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { IChatDetailMessage } from '../../dto/ichat-detail-message';
-import { Fecha } from 'src/app/utilitario/fecha';
+import { Fecha } from '../../../utilitario/fecha/fecha';
 import { EMessageState } from '../../dto/emessage-state';
 import { EMessageType } from '../../dto/emensaje-type';
 import { isString } from 'util';

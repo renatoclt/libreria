@@ -13,7 +13,7 @@
     </div>
     <div class="col-md-8 col-sm-12">
       <ngx-utilitario-chat-detail [chatDetail]="chatDetail" [moveToMessage]="moveToMessageIndex"
-        (newMessage)="messageSend($event)" (deleteMessages)="messageDelete($event)" (lockChat)="chatLocking($event)">
+        (newMessage)="messageSend($event)" (deleteMessages)="messageDelete()" (lockChat)="chatLocking($event)">
       </ngx-utilitario-chat-detail>
     </div>
   </div>

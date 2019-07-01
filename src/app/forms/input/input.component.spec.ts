@@ -31,7 +31,7 @@ describe('InputComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-  it('Validar la funcion que no acepta null, undefined o vacio', () =>{
+  it('Validar la funcion que no acepta null, undefined o vacio', () => {
     expect(component.validationValue('')).toBeFalsy();
   });
 });

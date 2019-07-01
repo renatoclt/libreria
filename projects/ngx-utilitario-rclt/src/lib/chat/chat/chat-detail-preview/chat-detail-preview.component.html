@@ -17,8 +17,9 @@
         </div>
       </div>
     </ngx-utilitario-perfect-scroll>
-    <input class="ngx-util-input-file" type="file" accept="image/*" #file (change)="sendImage($event)" multiple>
+    <input class="ngx-util-input-file" type="file" accept="image/*" #file (change)="addImage($event)" multiple>
     <div class="ngx-util-preview-files-add" (click)="file.click()"> 
-      <em class="fa fa-plus ngx-util-preview-files-add-icon"></em> Agregar Imagenes</div>
+      <em class="fa fa-plus ngx-util-preview-files-add-icon"></em> Agregar Imagenes
+    </div>
   </div>
 </div>

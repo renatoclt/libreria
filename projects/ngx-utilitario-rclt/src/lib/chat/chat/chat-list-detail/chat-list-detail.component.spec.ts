@@ -1,15 +1,15 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { ChatListDetailComponent } from './chat-list-detail.component';
 import { ElementRef } from '@angular/core';
 import { By } from '@angular/platform-browser';
+
+import { ChatListDetailComponent } from './chat-list-detail.component';
 import { EChatLock } from '../../dto/echat-lock';
 import { EChatState } from '../../dto/echat-state';
 import { IChatDetailMessage } from '../../dto/ichat-detail-message';
 import { EMessageState } from '../../dto/emessage-state';
 import { EMessageType } from '../../dto/emensaje-type';
-import { Fecha } from 'src/app/utilitario/fecha';
-import { HighlightPipe } from 'src/app/pipe/highlight.pipe';
+import { Fecha } from '../../../utilitario/fecha/fecha';
+import { HighlightPipe } from '../../../pipe/highlight.pipe';
 
 describe('ChatListDetail', () => {
   let component: ChatListDetailComponent;

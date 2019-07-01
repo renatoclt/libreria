@@ -110,7 +110,14 @@ export class ChatDetailPreviewComponent implements OnChanges {
   /**
    * Emite un evento para cerrar vista
    */
-  closePreview(){
+  closePreview() {
     this.close.emit(true);
+  }
+
+  /**
+   * Agregaremos mas imagenes a las imagenes mostradas actualmente
+   */
+  addImage(images) {
+
   }
 }

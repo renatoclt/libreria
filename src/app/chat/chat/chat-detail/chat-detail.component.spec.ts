@@ -1,19 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ElementRef, Component } from '@angular/core';
+import { By } from '@angular/platform-browser';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { ChatDetailComponent } from './chat-detail.component';
-import { ReactiveFormsModule } from '@angular/forms';
 import { ChatDetailAddComponent } from '../chat-detail-add/chat-detail-add.component';
 import { EChatLock } from '../../dto/echat-lock';
 import { EChatState } from '../../dto/echat-state';
 import { IChatDetailMessage } from '../../dto/ichat-detail-message';
 import { EMessageState } from '../../dto/emessage-state';
 import { EMessageType } from '../../dto/emensaje-type';
-import { ElementRef, Component } from '@angular/core';
-import { By } from '@angular/platform-browser';
 import { ChatDetailMessageComponent } from '../chat-detail-message/chat-detail-message.component';
-import { NgxUtilitarioPerfectScrollModule } from 'src/app/perfect-scroll/ngx-utilitario-perfect-scroll.module';
-import { ChatDetailPreviewComponent } from 'projects/ngx-utilitario-rclt/src/lib/chat/chat/chat-detail-preview/chat-detail-preview.component';
-import { NgxUtilitarioPipesModule } from 'src/app/pipe/ngx-utilitario-rclt-pipes.module';
+import { ChatDetailPreviewComponent } from '../chat-detail-preview/chat-detail-preview.component';
+import { NgxUtilitarioPerfectScrollModule } from '../../../perfect-scroll/ngx-utilitario-perfect-scroll.module';
+import { NgxUtilitarioPipesModule } from '../../../pipe/ngx-utilitario-rclt-pipes.module';
 
 describe('ChatDetailComponent', () => {
   let component: ChatDetailComponent;

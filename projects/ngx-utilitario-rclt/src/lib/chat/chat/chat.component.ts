@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter, SimpleChanges, SimpleChange, OnChanges } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, SimpleChanges, OnChanges } from '@angular/core';
 import { IChatListDetail } from '../dto/ichat-list-detail';
 import { EChatState } from '../dto/echat-state';
 import { EMessageState } from '../dto/emessage-state';
@@ -6,7 +6,6 @@ import { EMessageType } from '../dto/emensaje-type';
 import { IChatDetailMessage } from '../dto/ichat-detail-message';
 import { IChatDetail } from '../dto/ichat-detail';
 import { EChatLock } from '../dto/echat-lock';
-import { EScrollPosition } from 'src/app/perfect-scroll/dto/escroll-position';
 /**
  * Chat component por el cual mostramos una lista de chat y una conversacion
  */

@@ -1,8 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ChatSearchComponent } from './chat-search.component';
-import { NgxUtilitarioFormstModule } from 'src/app/forms/ngx-utilitario-rclt-forms.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgxUtilitarioFormstModule } from '../../../forms/ngx-utilitario-rclt-forms.module';
 
 describe('ChatSearchComponent', () => {
   let component: ChatSearchComponent;

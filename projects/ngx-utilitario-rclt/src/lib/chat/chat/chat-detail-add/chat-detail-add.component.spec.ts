@@ -1,9 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { ChatDetailAddComponent } from './chat-detail-add.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DebugElement, ElementRef } from '@angular/core';
 import { By } from '@angular/platform-browser';
+
+import { ChatDetailAddComponent } from './chat-detail-add.component';
 
 describe('ChatDetailAddComponent', () => {
   let component: ChatDetailAddComponent;

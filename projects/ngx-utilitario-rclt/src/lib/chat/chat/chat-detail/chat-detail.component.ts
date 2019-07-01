@@ -4,9 +4,9 @@ import { EMessageType } from '../../dto/emensaje-type';
 import { IChatDetailMessage } from '../../dto/ichat-detail-message';
 import { EMessageState } from '../../dto/emessage-state';
 import { EChatLock } from '../../dto/echat-lock';
-import { Fecha } from '../../../utilitario/fecha';
-import { environment } from 'src/environments/environment';
-import { EScrollPosition } from 'src/app/perfect-scroll/dto/escroll-position';
+import { Fecha } from '../../../utilitario/fecha/fecha';
+import { environment } from '../../../utilitario/environment/environment';
+import { EScrollPosition } from '../../../perfect-scroll/dto/escroll-position';
 
 /**
  * Componente donde mostramos los mensajes de la conversacion

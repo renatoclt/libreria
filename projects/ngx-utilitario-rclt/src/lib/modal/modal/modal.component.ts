@@ -1,8 +1,7 @@
 import { Component, OnInit, Input, ElementRef, Renderer2, Inject, ViewEncapsulation, OnDestroy } from '@angular/core';
-import { ModalService } from '../services/modal.service';
 import { DOCUMENT } from '@angular/common';
-import { openClose } from '../../animaciones/open-close';
-import { trigger, transition, useAnimation, state, style, animate } from '@angular/animations';
+import { trigger, transition, state, style, animate } from '@angular/animations';
+import { ModalService } from '../services/modal.service';
 /**
  * Abre el nuevo componente enuna ventana emergente con una animacion de oppocity
  */
@@ -68,13 +67,21 @@ export class ModalComponent implements OnInit, OnDestroy {
    */
   private element: any;
 
+  /***
+   * Variable tipo document
+   * no lo inicializamos en el constructor ya que es ilegal en una libreria
+   * buscar una mejor solucion
+   */
+  private document?: Document;
+
   /**
    * @ignore
    */
-  constructor(@Inject(DOCUMENT) private document: Document,
-              private modalService: ModalService,
+  constructor(private modalService: ModalService,
               private el: ElementRef,
-              private renderer: Renderer2) {
+              private renderer: Renderer2,
+              @Inject(DOCUMENT) document?: any) {
+    this.document = document as Document;
     this.element = el.nativeElement;
   }
 
@@ -90,7 +97,7 @@ export class ModalComponent implements OnInit, OnDestroy {
     }
 
     // añadimos el modal despues </body>) para que se pueda mostrar sobre todos los elementos
-    document.body.appendChild(this.element);
+    this.document.body.appendChild(this.element);
 
     // cerrar modal
     this.element.addEventListener('click', (e: any) => {
