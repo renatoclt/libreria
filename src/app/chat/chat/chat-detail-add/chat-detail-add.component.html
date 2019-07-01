@@ -4,7 +4,7 @@
     <div class="col-11">
       <form [formGroup]="messageForm">
         <input id="txt_message" class="col-12" formControlName="message" [attr.disabled]="disabled ? '' : null"
-        [placeholder]="placeholder">
+        [placeholder]="placeholder" (keyup.enter)="sendMessage()">
       </form>
     </div>
     <!--Acciones-->

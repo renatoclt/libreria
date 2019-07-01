@@ -1,24 +1,28 @@
 # NgxUtilitarioRclt
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.0.
 
-## Code scaffolding
+This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.1.
 
-Run `ng generate component component-name --project ngx-utilitario-rclt` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ngx-utilitario-rclt`.
-> Note: Don't forget to add `--project ngx-utilitario-rclt` or else it will be added to the default project in your `angular.json` file. 
+The library is in developmenting
 
-## Build
+documentation with compodoc
 
-Run `ng build ngx-utilitario-rclt` to build the project. The build artifacts will be stored in the `dist/` directory.
+testing with jasmine and karma
 
-## Publishing
+quality with sonaqube
 
-After building your library with `ng build ngx-utilitario-rclt`, go to the dist folder `cd dist/ngx-utilitario-rclt` and run `npm publish`.
+## documentation
 
-## Running unit tests
+Run `npm run compodoc` 
 
-Run `ng test ngx-utilitario-rclt` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## testing
+
+Run `npm run test` 
+
+## quality
+
+Run `npm run sonarqube` 
 
 ## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+send a email to renatoclt@hotmail.com. i try help you.

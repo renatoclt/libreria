@@ -1,5 +1,3 @@
-import { from } from 'rxjs';
-
 /*
  * Public API Surface of ngx-utilitario-rclt
  */
@@ -28,17 +26,24 @@ export * from './lib/pipe/ngx-utilitario-rclt-pipes.module';
  * Servicios
  */
 
-// export * from './lib/dynamic-component/dynamic-component.service';
+export * from './lib/dynamic-component/dynamic-component/dynamic-component.service';
 
 /**
  *
  * Enum
  */
 
-// export * from './lib/chat/dto/eestado-chat';
-// export * from './lib/chat/dto/ebloqueo-chat';
-// export * from './lib/chat/dto/eestado-mensaje';
-// export * from './lib/chat/dto/etipo-mensaje';
+export * from './lib/chat/dto/echat-lock';
+export * from './lib/chat/dto/echat-state';
+export * from './lib/chat/dto/emensaje-type';
+export * from './lib/chat/dto/emessage-state';
+
+/**
+ * Interface
+ */
+export * from './lib/chat/dto/ichat-detail';
+export * from './lib/chat/dto/ichat-detail-message';
+export * from './lib/chat/dto/ichat-list-detail';
 
 // component
 

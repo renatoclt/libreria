@@ -10,6 +10,9 @@ import { CardsImgTextNdivComponent } from './cards-img-text-ndiv/cards-img-text-
   declarations: [CardsComponent, CardsImgTextComponent, CardsImgTextNdivComponent],
   imports: [
     CommonModule
+  ],
+  exports: [
+    CardsComponent, CardsImgTextComponent, CardsImgTextNdivComponent
   ]
 })
 export class NgxUtilitarioCardsModule { }

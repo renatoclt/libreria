@@ -3,7 +3,6 @@ import { IChatDetailMessage } from '../../dto/ichat-detail-message';
 import { Fecha } from '../../../utilitario/fecha/fecha';
 import { EMessageState } from '../../dto/emessage-state';
 import { EMessageType } from '../../dto/emensaje-type';
-import { isString } from 'util';
 
 /**
  * Componente que muestra los mensajes de un chat
@@ -118,7 +117,7 @@ export class ChatDetailMessageComponent implements OnInit {
     if (message.img === '' || message.img === undefined || message.img === null) {
       return false;
     }
-    if (!isString(message.img)) {
+    if (typeof (message.img) !== 'string') {
       if (message.imgUrl === undefined) {
         this.messageImageUrl(message.img, message);
       }

@@ -16,78 +16,9 @@ import { EChatLock } from '../dto/echat-lock';
 })
 export class ChatComponent implements OnInit, OnChanges {
   /**
-   * Variable a eliminar
-   */
-  conversacion1: IChatDetailMessage = {
-    messageState: EMessageState.sent,
-    date: 'may. 18, 19',
-    hour: '13:30',
-    img: '',
-    message: 'prua',
-    messageType: EMessageType.sent
-  };
-  /**
-   * Variable a eliminar
-   */
-  conversacion2: IChatDetailMessage = {
-    messageState: EMessageState.sent,
-    date: 'may. 18, 19',
-    hour: '13:30',
-// tslint:disable-next-line: max-line-length
-    img: 'https://firebasestorage.googleapis.com/v0/b/tbusca-57c7e.appspot.com/o/Resources%2Fdefault-img.jpg?alt=media&token=978ddd8c-17fb-4691-aed1-5e8e15605f4d',
-    message: 'fas',
-    messageType: EMessageType.sent
-  };
-
-  /**
-   * Variable a eliminar
-   */
-  detalle: IChatListDetail = {
-    state: EChatState.online,
-    id: '1',
-    img: '',
-    message: [this.conversacion2],
-    name: 're1',
-    notification: 2,
-    lock: EChatLock.unlocked
-  };
-
-  /**
-   * Variable a eliminar
-   */
-  detalle2: IChatListDetail = {
-    state: EChatState.online,
-    id: '2',
-    img: '',
-    message: [this.conversacion1,
-    this.conversacion1,
-    this.conversacion1,
-    this.conversacion1,
-    this.conversacion1,
-    this.conversacion1,
-    this.conversacion1,
-    this.conversacion1,
-    this.conversacion1,
-    this.conversacion1,
-    this.conversacion1,
-    this.conversacion2,
-    this.conversacion1,
-    this.conversacion1,
-    this.conversacion1,
-    this.conversacion1,
-    this.conversacion1,
-    this.conversacion1,
-    this.conversacion1,
-    this.conversacion1],
-    name: 'r2',
-    notification: 2,
-    lock: EChatLock.unlocked
-  };
-  /**
    * Lista de conversaciones a mostrar
    */
-  @Input() list: IChatListDetail[] = [this.detalle, this.detalle2, this.detalle, this.detalle2, this.detalle, this.detalle2, this.detalle,
-  this.detalle2, this.detalle, this.detalle2, this.detalle, this.detalle2, this.detalle, this.detalle2, this.detalle, this.detalle2];
+  @Input() list: IChatListDetail[] = [];
 
   /**
    * Conversacion actual a mostrar puede no estar en la lista

@@ -10,6 +10,7 @@ import { NgxUtilitarioPipesModule } from '../pipe/ngx-utilitario-rclt-pipes.modu
   imports: [
     CommonModule,
     NgxUtilitarioPipesModule
-  ]
+  ],
+  exports: [RepeatIconComponent]
 })
 export class NgxUtilitarioIconsModule { }

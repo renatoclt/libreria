@@ -2,9 +2,15 @@
   "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
   "dest": "../../dist/ngx-utilitario-rclt",
   "lib": {
-    "entryFile": "src/public-api.ts"
+    "entryFile": "src/public-api.ts",
+    "umdModuleIds": {
+      "angular-font-awesome": "angular-font-awesome",
+      "moment": "moment",
+      "ngx-perfect-scrollbar": "ngx-perfect-scrollbar"
+    }
   },
   "whitelistedNonPeerDependencies": [
-    "moment"
+    "moment",
+    "angular-font-awesome"
   ]
 }
