@@ -1,6 +1,6 @@
 {
   "name": "ngx-utilitario-rclt",
-  "version": "0.4.28",
+  "version": "0.5.1",
   "author": "renato cohaila la torre",
   "description": "Esta es una libreria que contiene los utilitarios que puede necesitar cualquier proyectos como cards, fechas, chat, etc.",
   "keywords" :["Angular","Utilitario","fecha","chat"],
@@ -10,10 +10,14 @@
   },
   "peerDependencies": {
     "@angular/common": "^8.0.1",
-    "@angular/core": "^8.0.1"
+    "@angular/core": "^8.0.1",
+    "@types/jquery": "^3.3.30"
   },
   "dependencies": {
     "angular-font-awesome": "^3.1.2",
-    "moment": "^2.24.0"
+    "moment": "^2.24.0",
+    "@types/owl.carousel": "^2.3.1",
+    "ngx-owl-carousel": "^2.0.7",
+    "owl.carousel": "^2.3.4"
   }
 }

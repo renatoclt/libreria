@@ -11,6 +11,9 @@
   },
   "whitelistedNonPeerDependencies": [
     "moment",
-    "angular-font-awesome"
+    "angular-font-awesome",
+    "@types/owl.carousel",
+    "ngx-owl-carousel",
+    "owl.carousel"
   ]
 }
