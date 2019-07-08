@@ -6,6 +6,7 @@ import { IOwlcarouselOptions } from './dto/iowlcarousel-options';
  * para ser utilizado necesita estos estilos
  * "./node_modules/jquery/dist/jquery.min.js"
  * "./node_modules/owl.carousel/dist/owl.carousel.min.js"
+ * "./node_modules/owl.carousel/dist/assets/owl.theme.green.min.css",
  *
  * se puede evitar eso si se incluye esto al scss principal
  * import "~owl.carousel/dist/assets/owl.carousel.css";
@@ -20,19 +21,17 @@ import { IOwlcarouselOptions } from './dto/iowlcarousel-options';
   templateUrl: './carousel.component.html',
   styleUrls: ['./carousel.component.scss']
 })
-export class CarouselComponent  {
+export class CarouselComponent implements OnInit{
   /**
    * Propiedades del carrusel
    */
   @Input() owlCarouselOptions: IOwlcarouselOptions;
   /**
-   * Imagenes a mostrar en el carrusel
-   */
-  @Input() images: any[];
-  /**
    * @ignore
    */
-  constructor(private  zone: NgZone) {
+  constructor(private zone: NgZone) {
+  }
+  ngOnInit() {
     this.owlCarouselOptions = {
       items: 3,
       dots: true,
@@ -44,7 +43,7 @@ export class CarouselComponent  {
       autoplayHoverPause: false,
       loop: true,
       center: true,
-      onTranslate: (e) => this.zone.run(() => {}),
+      onTranslate: (e) => this.zone.run(() => { }),
     };
   }
   /**

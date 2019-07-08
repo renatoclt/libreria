@@ -14,6 +14,10 @@
     "angular-font-awesome",
     "@types/owl.carousel",
     "ngx-owl-carousel",
-    "owl.carousel"
+    "owl.carousel",
+    "ngx-perfect-scrollbar",
+    "jquery",
+    "@angular/material",
+    "@angular/cdk"
   ]
 }
