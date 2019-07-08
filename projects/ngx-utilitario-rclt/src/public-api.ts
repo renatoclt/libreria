@@ -14,6 +14,8 @@ export * from './lib/menu/ngx-utilitario-rclt-menu.module';
 export * from './lib/modal/ngx-utilitario-rclt-modal.module';
 export * from './lib/perfect-scroll/ngx-utilitario-rclt-perfect-scroll.module';
 export * from './lib/pipe/ngx-utilitario-rclt-pipes.module';
+export * from './lib/image/ngx-utilitario-rclt-image.module';
+
 
 /**
  *
@@ -44,6 +46,8 @@ export * from './lib/chat/dto/emessage-state';
 export * from './lib/chat/dto/ichat-detail';
 export * from './lib/chat/dto/ichat-detail-message';
 export * from './lib/chat/dto/ichat-list-detail';
+
+export * from './lib/image/carousel/dto/iowlcarousel-options';
 
 // component
 

@@ -10,7 +10,10 @@ module.exports = function (config) {
       require('karma-chrome-launcher'),
       require('karma-jasmine-html-reporter'),
       require('karma-coverage-istanbul-reporter'),
-      require('@angular-devkit/build-angular/plugins/karma')
+      require('@angular-devkit/build-angular/plugins/karma'),
+    ],
+    files: [
+      'https://code.jquery.com/jquery-1.11.2.min.js'
     ],
     client: {
       clearContext: false // leave Jasmine Spec Runner output visible in browser
