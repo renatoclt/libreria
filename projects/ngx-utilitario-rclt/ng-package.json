@@ -18,6 +18,7 @@
     "ngx-perfect-scrollbar",
     "jquery",
     "@angular/material",
-    "@angular/cdk"
+    "@angular/cdk",
+    "mapbox-gl"
   ]
 }
