@@ -16,6 +16,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { NgxUtilitarioPerfectScrollModule } from './perfect-scroll/ngx-utilitario-rclt-perfect-scroll.module';
 import { NgxUtilitarioPipesModule } from './pipe/ngx-utilitario-rclt-pipes.module';
 import { NgxUtilitarioImageModule } from './image/ngx-utilitario-rclt-image.module';
+import { NgxUtilitarioMapboxModule } from './mapbox/ngx-utilitario-rclt-mapbox.module';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { NgxUtilitarioImageModule } from './image/ngx-utilitario-rclt-image.modu
     NgxUtilitarioImageModule,
     NgxUtilitarioModalModule,
     NgxUtilitarioPerfectScrollModule,
-    NgxUtilitarioPipesModule
+    NgxUtilitarioPipesModule,
+    NgxUtilitarioMapboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]
