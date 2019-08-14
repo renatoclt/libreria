@@ -47,7 +47,14 @@ export class DynamicComponentService {
     const div = document.createElement('div');
     div.appendChild(this.compRef.location.nativeElement);
 
-    // Retornamos al dom el nuevo div creado
+    // Retornamos la referencia del componetent
     return div;
+  }
+
+  /**
+   * Retornamos el componente
+   */
+  getCompoRef() { 
+    return this.compRef;
   }
 }

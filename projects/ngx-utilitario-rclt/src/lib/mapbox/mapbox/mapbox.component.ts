@@ -1,9 +1,10 @@
 import { Component, OnInit, DoCheck, AfterContentChecked, AfterViewInit } from '@angular/core';
 import { SettingsMapbox } from '../dto/settingsMapbox';
-import * as mapboxgl from 'mapbox-gl';
+import * as _mapboxgl from 'mapbox-gl';
 import { GeoJson } from '../dto/geoJson';
 import { FeatureCollection } from '../dto/featureCollection';
 
+const mapboxgl = _mapboxgl;
 /**
  * Componente para mostrar mapas
  *
@@ -25,18 +26,19 @@ export class MapboxComponent implements OnInit, AfterViewInit {
    */
   map: mapboxgl.Map;
   /**
-   * Inicializaremos el token enviado por el usuario
+   * @ignore
    */
   constructor() {
-    this.settingsMapbox = new SettingsMapbox();
-    this.settingsMapbox.token = 'pk.eyJ1IjoicmVuYXRvY2x0IiwiYSI6ImNqeTF4dGx6NjBpdnAzb214ZzkyaTlhMmEifQ.XC4hqJu4hERG1pTmkNRrmA';
-    mapboxgl.accessToken = this.settingsMapbox.token;
+    // mapboxgl.accessToken = this.settingsMapbox.token;
   }
 
   /**
    * Inicializamos settings por defecto
    */
   ngOnInit() {
+    this.settingsMapbox = new SettingsMapbox();
+    this.settingsMapbox.token = 'pk.eyJ1IjoicmVuYXRvY2x0IiwiYSI6ImNqeTF4dGx6NjBpdnAzb214ZzkyaTlhMmEifQ.XC4hqJu4hERG1pTmkNRrmA';
+    this.assign(mapboxgl, 'accessToken', this.settingsMapbox.token );
     this.settingsMapbox.id = 'id1';
     this.settingsMapbox.lat = 37.75;
     this.settingsMapbox.lng = -122.41;
@@ -153,14 +155,14 @@ export class MapboxComponent implements OnInit, AfterViewInit {
         id: 'TbuscaLayer',
         // type: 'fill',
         type: 'symbol',
-        source: {
+        source: `{
           type: 'geojson',
           // data: 'https://d2ad6b4ur7yvpq.cloudfront.net/naturalearth-3.3.0/ne_50m_urban_areas.geojson'
           data: dataSource,
           cluster: true,
           clusterMaxZoom: 14, // Max zoom to cluster points on
           clusterRadius: 50 // Radius of each cluster when clustering points (defaults to 50)
-        },
+        }`,
         layout: {
           // 'text-field': '{message}',
           'text-size': 24,
@@ -180,29 +182,29 @@ export class MapboxComponent implements OnInit, AfterViewInit {
 
 
       this.map.addLayer({
-        id: "clusters",
-        type: "circle",
-        source: {
+        id: 'clusters',
+        type: 'circle',
+        source: `{
           type: 'geojson',
           data: dataSource,
           cluster: true,
           clusterMaxZoom: 14, // Max zoom to cluster points on
-          clusterRadius: 10 // Radius of each cluster when clustering points (defaults to 50)
-        },
-        filter: ["has", "point_count"],
+          clusterRadius: 50 // Radius of each cluster when clustering points (defaults to 50)
+        }`,
+        filter: ['has', 'point_count'],
         paint: {
-          "circle-color": [
-            "step",
-            ["get", "point_count"],
-            "#51bbd6",
+          'circle-color': [
+            'step',
+            ['get', 'point_count'],
+            '#51bbd6',
             100,
-            "#f1f075",
+            '#f1f075',
             750,
-            "#f28cb1"
+            '#f28cb1'
           ],
-          "circle-radius": [
-            "step",
-            ["get", "point_count"],
+          'circle-radius': [
+            'step',
+            ['get', 'point_count'],
             20,
             100,
             30,
@@ -213,22 +215,22 @@ export class MapboxComponent implements OnInit, AfterViewInit {
       });
 
       this.map.addLayer({
-        id: "cluster-count",
-        type: "symbol",
-        source: {
+        id: 'cluster-count',
+        type: 'symbol',
+        source: `{
           type: 'geojson',
           data: dataSource,
           cluster: true,
           clusterMaxZoom: 14, // Max zoom to cluster points on
           clusterRadius: 50 // Radius of each cluster when clustering points (defaults to 50)
-        },
-        filter: ["has", "point_count"],
+        }`,
+        filter: ['has', 'point_count'],
         layout: {
-        "text-field": "{point_count_abbreviated}",
-        "text-font": ["DIN Offc Pro Medium", "Arial Unicode MS Bold"],
-        "text-size": 12
+          'text-field': '{point_count_abbreviated}',
+          'text-font': ['DIN Offc Pro Medium', 'Arial Unicode MS Bold'],
+          'text-size': 12
         }
-        });
+      });
     });
 
   }
@@ -239,7 +241,28 @@ export class MapboxComponent implements OnInit, AfterViewInit {
    */
   flyTo(data: GeoJson) {
     this.map.flyTo({
-      center: data.geometry.coordinates
+      center: { lng: data.geometry[0], lat: data.geometry[1] }
     });
+  }
+
+  /**
+   * Asignar el token a mapbox
+   */
+  private assign(obj: any, prop: any, value: any) {
+    if (typeof prop === 'string') {
+      prop = prop.split('.');
+    }
+
+    if (prop.length > 1) {
+      const e = prop.shift();
+      this.assign(obj[e] =
+        Object.prototype.toString.call(obj[e]) === '[object Object]'
+          ? obj[e]
+          : {},
+        prop,
+        value);
+    } else {
+      obj[prop[0]] = value;
+    }
   }
 }

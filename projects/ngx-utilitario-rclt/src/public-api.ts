@@ -21,7 +21,7 @@ export * from './lib/image/ngx-utilitario-rclt-image.module';
  *
  * utilitario
  */
-// export * from './lib/utilitario/fecha';
+export * from './lib/utilitario/fecha/fecha';
 
 /**
  *
