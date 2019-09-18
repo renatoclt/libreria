@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { ChartDataSets } from 'chart.js';
 
 @Component({
   selector: 'ngx-utilitario-bar-chart',
@@ -13,6 +14,7 @@ export class BarChartComponent implements OnInit {
     scaleShowVerticalLines: false,
     responsive: true
   };
+
   public barChartType = 'bar';
   /**
    * Mostrar leyenda en la parte superior
@@ -26,7 +28,7 @@ export class BarChartComponent implements OnInit {
    * Data a mostrar en el grafico
    * example [{ data: [], label: ''}],
    */
-  @Input() barChartData = undefined;
+  @Input() barChartData: ChartDataSets = undefined;
 
   ngOnInit() {
   }
