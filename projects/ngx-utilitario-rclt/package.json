@@ -1,6 +1,6 @@
 {
   "name": "ngx-utilitario-rclt",
-  "version": "0.6.5",
+  "version": "0.6.11",
   "author": "renato cohaila la torre",
   "description": "Esta es una libreria que contiene los utilitarios que puede necesitar cualquier proyectos como cards, fechas, chat, etc.",
   "keywords" :["Angular","Utilitario","fecha","chat"],

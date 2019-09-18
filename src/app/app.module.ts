@@ -17,6 +17,7 @@ import { NgxUtilitarioPerfectScrollModule } from './perfect-scroll/ngx-utilitari
 import { NgxUtilitarioPipesModule } from './pipe/ngx-utilitario-rclt-pipes.module';
 import { NgxUtilitarioImageModule } from './image/ngx-utilitario-rclt-image.module';
 import { NgxUtilitarioMapboxModule } from './mapbox/ngx-utilitario-rclt-mapbox.module';
+import { NgxUtilitarioGraphicsModule } from './graphics/graphics.module';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { NgxUtilitarioMapboxModule } from './mapbox/ngx-utilitario-rclt-mapbox.m
     NgxUtilitarioMenuModule,
     NgxUtilitarioCardsModule,
     NgxUtilitarioDynamicModule,
+    NgxUtilitarioGraphicsModule,
     NgxUtilitarioIconsModule,
     NgxUtilitarioImageModule,
     NgxUtilitarioModalModule,

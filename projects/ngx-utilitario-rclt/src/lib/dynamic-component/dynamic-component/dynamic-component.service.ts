@@ -54,7 +54,7 @@ export class DynamicComponentService {
   /**
    * Retornamos el componente
    */
-  getCompoRef() { 
+  getCompoRef() {
     return this.compRef;
   }
 }

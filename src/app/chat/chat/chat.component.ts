@@ -83,14 +83,16 @@ export class ChatComponent implements OnInit, OnChanges {
    * @param changes Si cambia algun item de la lista se actualizara
    */
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes.lista) {
+    if (changes.list) {
       this.list.forEach(chat => {
-        if (chat.id === this.chatDetail.id) {
-          this.chatDetail.messages = chat.message;
-          this.chatDetail.lock = chat.lock;
+        if (this.chatDetail) {
+          if (chat.id === this.chatDetail.id) {
+            this.chatDetail.messages = chat.message;
+            this.chatDetail.lock = chat.lock;
+          }
         }
       });
-      this.searchValidate(changes.lista.currentValue);
+      this.searchValidate(changes.list.currentValue);
     }
   }
 
@@ -140,7 +142,7 @@ export class ChatComponent implements OnInit, OnChanges {
   messageSend(mensaje) {
     this.moveToMessageIndex = undefined;
     this.chatDetail.messages.push(mensaje);
-    this.messageNew.emit(this.chatDetail);
+    this.messageNew.emit(mensaje);
   }
 
   /**
