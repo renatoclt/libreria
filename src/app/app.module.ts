@@ -18,6 +18,7 @@ import { NgxUtilitarioPipesModule } from './pipe/ngx-utilitario-rclt-pipes.modul
 import { NgxUtilitarioImageModule } from './image/ngx-utilitario-rclt-image.module';
 import { NgxUtilitarioMapboxModule } from './mapbox/ngx-utilitario-rclt-mapbox.module';
 import { NgxUtilitarioGraphicsModule } from './graphics/graphics.module';
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { NgxUtilitarioGraphicsModule } from './graphics/graphics.module';
     BrowserAnimationsModule,
     MatButtonModule,
     AppRoutingModule,
+    ChartsModule,
     AngularFontAwesomeModule,
     NgxUtilitarioFormstModule,
     NgxUtilitarioChatModule,
