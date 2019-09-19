@@ -18,6 +18,12 @@ export class AppComponent {
   barChartLabels = undefined;
 
   barChartData = undefined;
+  /**
+   * AÑOS
+   */
+  lineChartData = undefined;
+
+  lineChartLabels = undefined;
 
   prueba = false;
 
@@ -44,6 +50,17 @@ export class AppComponent {
     }
   }
   cambiarLine() {
-
+    this.prueba = !this.prueba;
+    if (this.prueba) {
+      this.lineChartLabels = ['1', '2', '3', '4', '5', '6', '7'];
+      this.lineChartData = [
+        { data: [1, 5, 8, 8, 5, 5, 4], label: 'Series A', stack: 'a' },
+        { data: [2, 3, 2, 2, 1, 2, 1], label: 'Series B', stack: 'a' }];
+    } else {
+    this.lineChartLabels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+    this.lineChartData = [
+      { data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A', stack: 'a' },
+      { data: [15, 19, 20, 21, 16, 25, 10], label: 'Series B', stack: 'a' }];
+    }
   }
 }
