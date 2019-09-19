@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ChartDataSets, ChartOptions, ChartPluginsOptions } from 'chart.js';
+import { ChartDataSets, ChartOptions, ChartPluginsOptions, ChartType } from 'chart.js';
 import { Label, Color } from 'ng2-charts';
 
 @Component({
@@ -38,6 +38,7 @@ export class LineChartComponent implements OnInit {
   };
   /**
    * Color de las lineas en ese orden
+   * si deseas las lines sin color define el color
    * example
    * [
    * {
@@ -48,7 +49,7 @@ export class LineChartComponent implements OnInit {
    */
   @Input() lineChartColors: Color[] = [];
   public lineChartLegend = true;
-  public lineChartType = 'line';
+  public lineChartType: ChartType  = 'line';
   public lineChartPlugins = [];
 
   constructor() { }

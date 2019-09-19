@@ -1,21 +1,30 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ChartDataSets } from 'chart.js';
+import { ChartDataSets, ChartType } from 'chart.js';
 
 @Component({
   selector: 'ngx-utilitario-bar-chart',
   templateUrl: './bar-chart.component.html',
   styleUrls: ['./bar-chart.component.scss']
 })
-export class BarChartComponent implements OnInit {
+export class BarChartComponent {
 
+  /**
+   * @ignore
+   */
   constructor() { }
 
+  /**
+   * mostrar escalas verticales y que sea responsivo
+   */
   public barChartOptions = {
     scaleShowVerticalLines: false,
     responsive: true
   };
 
-  public barChartType = 'bar';
+  /**
+   * Tipo de grafica
+   */
+  public barChartType: ChartType  = 'bar';
   /**
    * Mostrar leyenda en la parte superior
    */
@@ -29,8 +38,5 @@ export class BarChartComponent implements OnInit {
    * example [{ data: [], label: ''}],
    */
   @Input() barChartData: ChartDataSets = undefined;
-
-  ngOnInit() {
-  }
 
 }
