@@ -2,12 +2,15 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ChartDataSets, ChartOptions, ChartPluginsOptions, ChartType } from 'chart.js';
 import { Label, Color } from 'ng2-charts';
 
+/**
+ * Componenente utilizando chart.js para generar un grafico de lineas
+ */
 @Component({
   selector: 'ngx-utilitario-line-chart',
   templateUrl: './line-chart.component.html',
   styleUrls: ['./line-chart.component.scss']
 })
-export class LineChartComponent implements OnInit {
+export class LineChartComponent {
 
   /**
    * Data En el grafico
@@ -48,13 +51,23 @@ export class LineChartComponent implements OnInit {
    * ];
    */
   @Input() lineChartColors: Color[] = [];
-  public lineChartLegend = true;
-  public lineChartType: ChartType  = 'line';
-  public lineChartPlugins = [];
+  /**
+   * Mostrar leyenda
+   */
+  @Input() lineChartLegend = true;
+  /**
+   * Tipo de grafica
+   */
+  lineChartType: ChartType  = 'line';
 
+  /**
+   * Si tendra un plugin la grafica
+   */
+  @Input() lineChartPlugins = [];
+
+  /**
+   * @ignore
+   */
   constructor() { }
-
-  ngOnInit() {
-  }
 
 }

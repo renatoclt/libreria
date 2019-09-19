@@ -15,6 +15,7 @@ import { IOwlcarouselOptions } from './dto/iowlcarousel-options';
  * y este script
  * "./node_modules/jquery/dist/jquery.min.js"
  * "./node_modules/owl.carousel/dist/owl.carousel.min.js"
+ * me da error al esperar imagenes async
  */
 @Component({
   selector: 'ngx-utilitario-image-carousel',
@@ -31,6 +32,9 @@ export class CarouselComponent implements OnInit{
    */
   constructor(private zone: NgZone) {
   }
+  /**
+   * Propiedades del carousel
+   */
   ngOnInit() {
     this.owlCarouselOptions = {
       items: 3,

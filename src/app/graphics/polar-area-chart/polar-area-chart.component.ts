@@ -2,6 +2,9 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Label, SingleDataSet } from 'ng2-charts';
 import { ChartType } from 'chart.js';
 
+/**
+ * Componenente utilizando chart.js para generar un grafico polar area
+ */
 @Component({
   selector: 'ngx-utilitario-polar-area-chart',
   templateUrl: './polar-area-chart.component.html',

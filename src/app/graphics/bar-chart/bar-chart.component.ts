@@ -1,6 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ChartDataSets, ChartType } from 'chart.js';
 
+/**
+ * Componenente utilizando chart.js para generar un grafico de barras
+ */
 @Component({
   selector: 'ngx-utilitario-bar-chart',
   templateUrl: './bar-chart.component.html',
