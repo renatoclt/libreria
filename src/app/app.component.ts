@@ -28,6 +28,15 @@ export class AppComponent {
   prueba = false;
 
   /**
+   * Label a mostrar en el grafico
+   */
+  polarAreaChartLabels = undefined;
+  /**
+   * Data a mostrar en el polar area
+   */
+  polarAreaChartData = undefined;
+
+  /**
    * @ignore
    */
   constructor() {
@@ -61,6 +70,16 @@ export class AppComponent {
     this.lineChartData = [
       { data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A', stack: 'a' },
       { data: [15, 19, 20, 21, 16, 25, 10], label: 'Series B', stack: 'a' }];
+    }
+  }
+  cambiarPolar() {
+    this.prueba = !this.prueba;
+    if (this.prueba) {
+      this.polarAreaChartLabels = ['Download Sales', 'In-Store Sales', 'Mail Sales', 'Telesales', 'Corporate Sales'];
+      this.polarAreaChartData = [300, 500, 100, 40, 120];
+    } else {
+      this.polarAreaChartLabels = ['11111111111', '2', '444444', '5555555', '66666666666'];
+      this.polarAreaChartData = [1, 2, 4, 5, 6];
     }
   }
 }
