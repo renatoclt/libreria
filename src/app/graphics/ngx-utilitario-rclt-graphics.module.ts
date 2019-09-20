@@ -4,9 +4,10 @@ import { BarChartComponent } from './bar-chart/bar-chart.component';
 import { ChartsModule } from 'ng2-charts';
 import { LineChartComponent } from './line-chart/line-chart.component';
 import { PolarAreaChartComponent } from './polar-area-chart/polar-area-chart.component';
+import { PieChartComponent } from './pie-chart/pie-chart.component';
 
 @NgModule({
-  declarations: [BarChartComponent, LineChartComponent, PolarAreaChartComponent],
+  declarations: [BarChartComponent, LineChartComponent, PolarAreaChartComponent, PieChartComponent],
   imports: [
     CommonModule,
     ChartsModule
@@ -14,7 +15,8 @@ import { PolarAreaChartComponent } from './polar-area-chart/polar-area-chart.com
   exports: [
     BarChartComponent,
     LineChartComponent,
-    PolarAreaChartComponent
+    PolarAreaChartComponent,
+    PieChartComponent
   ]
 })
 export class NgxUtilitarioGraphicsModule {}

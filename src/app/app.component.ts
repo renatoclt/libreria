@@ -36,6 +36,10 @@ export class AppComponent {
    */
   polarAreaChartData = undefined;
 
+
+  pieChartLabels = undefined;
+
+  pieChartData = undefined;
   /**
    * @ignore
    */
@@ -66,10 +70,10 @@ export class AppComponent {
         { data: [1, 5, 8, 8, 5, 5, 4], label: 'Series A', stack: 'a' },
         { data: [2, 3, 2, 2, 1, 2, 1], label: 'Series B', stack: 'a' }];
     } else {
-    this.lineChartLabels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
-    this.lineChartData = [
-      { data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A', stack: 'a' },
-      { data: [15, 19, 20, 21, 16, 25, 10], label: 'Series B', stack: 'a' }];
+      this.lineChartLabels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+      this.lineChartData = [
+        { data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A', stack: 'a' },
+        { data: [15, 19, 20, 21, 16, 25, 10], label: 'Series B', stack: 'a' }];
     }
   }
   cambiarPolar() {
@@ -82,4 +86,8 @@ export class AppComponent {
       this.polarAreaChartData = [1, 2, 4, 5, 6];
     }
   }
+  cambiarPie() {
+    this.pieChartLabels = [['Download', 'Sales'], ['In', 'Store', 'Sales'], 'Mail Sales'];
+    this.pieChartData = [300, 500, 100];
+}
 }
