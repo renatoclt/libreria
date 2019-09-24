@@ -15,6 +15,7 @@ export * from './lib/modal/ngx-utilitario-rclt-modal.module';
 export * from './lib/perfect-scroll/ngx-utilitario-rclt-perfect-scroll.module';
 export * from './lib/pipe/ngx-utilitario-rclt-pipes.module';
 export * from './lib/image/ngx-utilitario-rclt-image.module';
+export * from './lib/mapbox/ngx-utilitario-rclt-mapbox.module';
 
 
 /**

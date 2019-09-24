@@ -3,7 +3,7 @@ import { SettingsMapbox } from '../dto/settingsMapbox';
 import * as mapboxgl from 'mapbox-gl';
 import { GeoJson } from '../dto/geoJson';
 import { FeatureCollection } from '../dto/featureCollection';
-import { GeoJSONSourceRaw, GeoJSONSource, GeoJSONSourceOptions, Point } from 'mapbox-gl';
+import { GeoJSONSourceRaw, GeoJSONSource } from 'mapbox-gl';
 
 /**
  * Componente para mostrar mapas
@@ -31,7 +31,7 @@ export class MapboxComponent implements OnInit, AfterViewInit {
   constructor() {
     this.settingsMapbox = new SettingsMapbox();
     this.settingsMapbox.token = 'pk.eyJ1IjoicmVuYXRvY2x0IiwiYSI6ImNqeTF4dGx6NjBpdnAzb214ZzkyaTlhMmEifQ.XC4hqJu4hERG1pTmkNRrmA';
-
+    
   }
 
   /**
@@ -103,8 +103,6 @@ export class MapboxComponent implements OnInit, AfterViewInit {
           break;
         }
       }
-
-
       // const dataSource = new GeoJson([this.settingsMapbox.lng, this.settingsMapbox.lat], { 'marker-color': '#3bb2d0',
       // 'marker-size': 'large',
       // 'marker-symbol': 'rocket' });
@@ -165,11 +163,11 @@ export class MapboxComponent implements OnInit, AfterViewInit {
         source: dataSource,
         filter: ['has', 'point_count'],
         layout: {
-          'text-field': '{point_count_abbreviated}',
-          'text-font': ['DIN Offc Pro Medium', 'Arial Unicode MS Bold'],
-          'text-size': 12
+        'text-field': '{point_count_abbreviated}',
+        'text-font': ['DIN Offc Pro Medium', 'Arial Unicode MS Bold'],
+        'text-size': 12
         }
-      });
+        });
     });
 
   }

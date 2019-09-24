@@ -13,6 +13,7 @@
     "moment",
     "angular-font-awesome",
     "@types/owl.carousel",
+    "@types/mapbox-gl",
     "ngx-owl-carousel",
     "owl.carousel",
     "ngx-perfect-scrollbar",
