@@ -1,0 +1,10 @@
+<div>
+  <div style="display: block;" *ngIf="polarAreaChartLabels && polarAreaChartData">
+    <canvas baseChart 
+      [data]="polarAreaChartData" 
+      [labels]="polarAreaChartLabels" 
+      [legend]="polarAreaLegend"
+      [chartType]="polarAreaChartType">
+    </canvas>
+  </div>
+</div>

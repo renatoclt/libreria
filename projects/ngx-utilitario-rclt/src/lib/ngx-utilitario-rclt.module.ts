@@ -15,6 +15,7 @@ import { NgxUtilitarioMenuModule } from './menu/ngx-utilitario-rclt-menu.module'
 import { NgxUtilitarioCardsModule } from './cards/ngx-utilitario-rclt-cards.module';
 import { NgxUtilitarioPerfectScrollModule } from './perfect-scroll/ngx-utilitario-rclt-perfect-scroll.module';
 import { NgxUtilitarioImageModule } from './image/ngx-utilitario-rclt-image.module';
+import { NgxUtilitarioGraphicsModule } from './graphics/ngx-utilitario-rclt-graphics.module';
 
 
 
@@ -32,6 +33,7 @@ import { NgxUtilitarioImageModule } from './image/ngx-utilitario-rclt-image.modu
     NgxUtilitarioMenuModule,
     NgxUtilitarioCardsModule,
     NgxUtilitarioDynamicModule,
+    NgxUtilitarioGraphicsModule,
     NgxUtilitarioIconsModule,
     NgxUtilitarioModalModule,
     NgxUtilitarioPerfectScrollModule,

@@ -13,7 +13,6 @@ import { environment } from '../../../utilitario/environment/environment';
   styleUrls: ['./chat-list-detail.component.scss']
 })
 export class ChatListDetailComponent implements OnInit {
-
   /**
    * Caracteristicas de una conversacion
    */
@@ -33,8 +32,8 @@ export class ChatListDetailComponent implements OnInit {
   /**
    * Variable con la cual podremos trabajar de una forma mas sencilla los datos de tipo date
    */
-
   date: Fecha;
+
   /**
    * @ignore
    */
@@ -71,6 +70,7 @@ export class ChatListDetailComponent implements OnInit {
     }
     return '';
   }
+
   /**
    * De la lista de mensajes obtememos el ultimo mensaje y lo mostramos en caso de imagen mostramos la palabra foto
    * debe estar ordenado los mensajes
@@ -81,7 +81,8 @@ export class ChatListDetailComponent implements OnInit {
       if (messages.length > 0) {
         if (!isNaN(new Date(messages[messages.length - 1].date).getTime())) {
           if (this.date.differenceDays(new Date(messages[messages.length - 1].date))) {
-            return messages[messages.length - 1].date;
+            const date = new Date(messages[messages.length - 1].date);
+            return this.date.format(date, 'DD/MM/YYYY');
           } else {
             return messages[messages.length - 1].hour;
           }
@@ -90,6 +91,7 @@ export class ChatListDetailComponent implements OnInit {
     }
     return '';
   }
+
   /**
    * Funcion para verficar el estado actual del usuario con el que se esta conversando
    * @param listDetail propiedades de la conversacion conectado, desconectado
