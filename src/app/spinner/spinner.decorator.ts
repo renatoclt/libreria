@@ -13,32 +13,26 @@ export const isLoading$ = indicatorSubject.asObservable().pipe(distinctUntilChan
 
 /**
  * Decorador para comenzar el spinner
- * @param target
- * @param propertyKey
- * @param propertyDescriptor
  */
 export function startLoadingIndicator(target: any, propertyKey: string | symbol, propertyDescriptor: PropertyDescriptor): any {
-    const original = propertyDescriptor.value;
-    propertyDescriptor.value = (...args) => {
-        indicatorSubject.next(true);
-        const result = original.call(target, ...args);
-        return result;
-    };
-    return propertyDescriptor;
+  const original = propertyDescriptor.value;
+  propertyDescriptor.value = (...args) => {
+    indicatorSubject.next(true);
+    const result = original.call(target, ...args);
+    return result;
+  };
+  return propertyDescriptor;
 }
 
 /**
  * Decorador para finalizar el spinner
- * @param target 
- * @param propertyKey 
- * @param propertyDescriptor 
  */
 export function stopLoadingIndicator(target: any, propertyKey: string, propertyDescriptor: PropertyDescriptor): any {
-    const original = propertyDescriptor.value;
-    propertyDescriptor.value = (...args) => {
-      indicatorSubject.next(false);
-      const result = original.call(target, ...args);
-      return result;
-    };
-    return propertyDescriptor;
-  }
+  const original = propertyDescriptor.value;
+  propertyDescriptor.value = (...args) => {
+    indicatorSubject.next(false);
+    const result = original.call(target, ...args);
+    return result;
+  };
+  return propertyDescriptor;
+}
