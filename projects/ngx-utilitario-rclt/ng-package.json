@@ -6,7 +6,9 @@
     "umdModuleIds": {
       "angular-font-awesome": "angular-font-awesome",
       "moment": "moment",
-      "ngx-perfect-scrollbar": "ngx-perfect-scrollbar"
+      "ngx-perfect-scrollbar": "ngx-perfect-scrollbar",
+      "ng2-charts": "ng2Charts",
+      "ngx-owl-carousel": "ngxOwlCarousel"
     }
   },
   "whitelistedNonPeerDependencies": [
@@ -19,6 +21,8 @@
     "jquery",
     "@angular/material",
     "@angular/cdk",
-    "mapbox-gl"
+    "mapbox-gl",
+    "chart.js",
+    "ng2-charts"
   ]
 }
