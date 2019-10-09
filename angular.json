@@ -30,8 +30,12 @@
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "node_modules/font-awesome/css/font-awesome.css",
               "node_modules/mapbox-gl/dist/mapbox-gl.css",
-              "src/stylesheets/main.scss"
+              "src/sass/main.scss",
+              "src/styles.css"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": ["src/sass"]
+            },
             "scripts": [
               "./node_modules/jquery/dist/jquery.min.js",
               "./node_modules/chart.js/dist/Chart.js"

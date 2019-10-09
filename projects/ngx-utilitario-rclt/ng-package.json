@@ -18,12 +18,12 @@
     "@types/mapbox-gl",
     "ngx-owl-carousel",
     "owl.carousel",
-    "ngx-perfect-scrollbar",
     "jquery",
     "@angular/material",
     "@angular/cdk",
     "mapbox-gl",
     "chart.js",
-    "ng2-charts"
+    "ng2-charts",
+    "ngx-perfect-scrollbar"
   ]
 }
