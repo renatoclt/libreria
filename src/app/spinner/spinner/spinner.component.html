@@ -1,5 +1,13 @@
-<div class="btp-overlay" *ngIf="isLoading$ | async">
-  <div class="btp-loading-indicator__container" [style.width]="indicatorSize" [style.height]="indicatorSize">
-    <btp-spinner></btp-spinner>
+<div style="position: fixed; top: 0; left: 0; background: rgba(0, 0, 0, 0.1)" >
+  <div class="btp-overlay">
+    <div class="btp-loading-indicator__container" [style.width]="indicatorSize" [style.height]="indicatorSize">
+      <div class="btp-spinner">
+        <div class="btp-spinner__part" [style.border-width]="borderWidth" [style.border-color]="borderColor"></div>
+        <div class="btp-spinner__part" [style.border-width]="borderWidth" [style.border-color]="borderColor"></div>
+        <div class="btp-spinner__part" [style.border-width]="borderWidth" [style.border-color]="borderColor"></div>
+        <div class="btp-spinner__part" [style.border-width]="borderWidth" [style.border-color]="borderColor"></div>
+      </div>
+    </div>
   </div>
 </div>
+  

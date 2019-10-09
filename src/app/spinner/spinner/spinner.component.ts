@@ -10,7 +10,11 @@ import { isLoading$ } from '../spinner.decorator';
   styleUrls: ['./spinner.component.scss']
 })
 export class SpinnerComponent implements OnInit {
-
+  INDICATOR_COLOR = '#7B1FA2';
+  DEFAULT_SIZE = 40;
+  color = this.INDICATOR_COLOR;
+  size = this.DEFAULT_SIZE;
+  indicatorSize = '40px';
   constructor(
     @Inject(SPINNER_INDICATOR_CONFIG)
     private config: ISpinnerConfig) { }
@@ -22,4 +26,11 @@ export class SpinnerComponent implements OnInit {
     return isLoading$;
   }
 
+  get borderColor(): string {
+    return `${this.color} transparent transparent transparent`;
+  }
+
+  get borderWidth(): string {
+    return `${this.size / 8}px`;
+  }
 }

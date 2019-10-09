@@ -19,6 +19,8 @@ import { NgxUtilitarioImageModule } from './image/ngx-utilitario-rclt-image.modu
 import { NgxUtilitarioMapboxModule } from './mapbox/ngx-utilitario-rclt-mapbox.module';
 import { NgxUtilitarioGraphicsModule } from './graphics/ngx-utilitario-rclt-graphics.module';
 import { ChartsModule } from 'ng2-charts';
+import { SpinnerModule } from './spinner/spinner.module';
+import { SPINNER_INDICATOR_CONFIG, DEFAULT_CONFIG } from './spinner/spinner.config';
 
 @NgModule({
   declarations: [
@@ -46,9 +48,13 @@ import { ChartsModule } from 'ng2-charts';
     NgxUtilitarioModalModule,
     NgxUtilitarioPerfectScrollModule,
     NgxUtilitarioPipesModule,
-    NgxUtilitarioMapboxModule
+    NgxUtilitarioMapboxModule,
+    SpinnerModule
   ],
-  providers: [],
+  providers: [
+    {provide: SPINNER_INDICATOR_CONFIG, useValue: DEFAULT_CONFIG}
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
