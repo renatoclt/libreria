@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { IChatDetail } from './chat/dto/ichat-detail';
+import { EChatLock } from './chat/dto/echat-lock';
+import { EChatState } from './chat/dto/echat-state';
 /**
  * Principal componente de la aplicacion
  */
@@ -40,6 +43,15 @@ export class AppComponent {
   pieChartLabels = undefined;
 
   pieChartData = undefined;
+
+  chatDetail: IChatDetail = {
+    id: '1',
+    img: undefined,
+    lock: EChatLock.lock,
+    messages: [],
+    name: 'renaot jesus cohaila la torre un nombre super largo para editarlo',
+    state: EChatState.offline
+  };
   /**
    * @ignore
    */
@@ -89,5 +101,5 @@ export class AppComponent {
   cambiarPie() {
     this.pieChartLabels = [['Download', 'Sales'], ['In', 'Store', 'Sales'], 'Mail Sales'];
     this.pieChartData = [300, 500, 100];
-}
+  }
 }

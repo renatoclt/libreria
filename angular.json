@@ -30,16 +30,15 @@
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "node_modules/font-awesome/css/font-awesome.css",
               "node_modules/mapbox-gl/dist/mapbox-gl.css",
-              "./node_modules/owl.carousel/dist/assets/owl.carousel.min.css",
-              "./node_modules/owl.carousel/dist/assets/owl.theme.default.min.css",
-              "./node_modules/owl.carousel/dist/assets/owl.theme.green.min.css",
-              "src/styles.css",
-              "src/themes_custom.scss"
+              "src/sass/main.scss",
+              "src/styles.css"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": ["src/sass"]
+            },
             "scripts": [
               "./node_modules/jquery/dist/jquery.min.js",
-              "./node_modules/chart.js/dist/Chart.js",
-              "./node_modules/owl.carousel/dist/owl.carousel.min.js"
+              "./node_modules/chart.js/dist/Chart.js"
             ],
             "es5BrowserSupport": true
           },

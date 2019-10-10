@@ -1,5 +1,5 @@
 <div class="container-fluid row-no-padding ngx-utilitario-chat">
-  <div class="row">
+  <div class="row" style="height: 100%">
     <div class="col-md-4 col-sm-12 ngx-utilitario-chat-list">
       <header class="ngx-util-list-header">
         Chats
@@ -11,7 +11,7 @@
         [search]="searchText">
       </ngx-utilitario-chat-list>
     </div>
-    <div class="col-md-8 col-sm-12">
+    <div class="col-md-8 col-sm-12" style="height: 100%;">
       <ngx-utilitario-chat-detail [chatDetail]="chatDetail" [moveToMessage]="moveToMessageIndex"
         (newMessage)="messageSend($event)" (deleteMessages)="messageDelete()" (lockChat)="chatLocking($event)">
       </ngx-utilitario-chat-detail>

@@ -1,19 +1,24 @@
 <!--Si es invalido chatdetail mostraremos una imagen-->
-<div class="container-fluid ngx-util-detail no-margin no-padding" *ngIf="!validateChatDetail()"
-  style="background: #ffe4c4">
-  <img class="ngx-util-img-height-res-center" title="Chat" alt="Chat Image" src={{imageChat}} />
+<div class="container-fluid ngx-util-detail no-margin no-padding" *ngIf="!validateChatDetail()" style="height: 100%; display: table;">
+  <div class="col-md-12" style="padding: 1rem 0 7rem 0;text-align: center; height: 100%; display: table-cell; vertical-align: middle">
+      <img class="img-fluid" src="{{imageChat}}" alt="Wi-Fi" style="height: 100%;  max-height: 300px;">
+      <p style="font-size: 16px;">
+          <b style="font-size: 24px;">Tbusca te mantiene conectado</b><br><br>
+          Conversa con tus lugares favoritos y de interes de un modo seguro y eficaz
+      </p>
+    </div>
 </div>
 <!--Si es valido chatdetail mostraremos el chat-->
 <div class="container-fluid ngx-util-detail no-margin no-padding" *ngIf="validateChatDetail()">
   <!--Cabecera del chat-->
   <div class="row ngx-util-detail-head no-margin">
-    <div class="img-fluid detail-head-img">
+    <div class="col-2 img-fluid detail-head-img no-padding">
       <img class="img-fluid rounded-circle img-profile-chat-detail" alt="chatDetail.name"
         src="{{imageValidate(chatDetail.img)}}" />
     </div>
-    <div class="detail-head-name">
+    <div class="detail-head-name col-7">
       <div class="row">
-        <div class="col-12">
+        <div class="col-12 text-ellipsis">
           {{chatDetail.name}}
         </div>
       </div>

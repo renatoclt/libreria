@@ -11,7 +11,7 @@
         [search]="searchText">
       </ngx-utilitario-chat-list>
     </div>
-    <div class="col-md-8 col-sm-12">
+    <div class="col-md-8 col-sm-12" style="height: 100%;">
       <ngx-utilitario-chat-detail [chatDetail]="chatDetail" [moveToMessage]="moveToMessageIndex"
         (newMessage)="messageSend($event)" (deleteMessages)="messageDelete()" (lockChat)="chatLocking($event)">
       </ngx-utilitario-chat-detail>

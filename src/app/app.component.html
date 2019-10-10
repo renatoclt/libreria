@@ -16,11 +16,28 @@
 </section> -->
 
 <!-- <ngx-utilitario-mapbox></ngx-utilitario-mapbox> -->
-<ngx-utilitario-bar-chart [barChartLabels]="barChartLabels" [barChartData]="barChartData"></ngx-utilitario-bar-chart>
+<!-- <ngx-utilitario-bar-chart [barChartLabels]="barChartLabels" [barChartData]="barChartData"></ngx-utilitario-bar-chart>
 <button (click)="cambiar()">cambiar lable</button>
 <ngx-utilitario-line-chart [lineChartLabels]="lineChartLabels" [lineChartData]="lineChartData"></ngx-utilitario-line-chart>
 <button (click)="cambiarLine()">cambiar lable</button>
 <ngx-utilitario-polar-area-chart [polarAreaChartLabels]="polarAreaChartLabels" [polarAreaChartData]="polarAreaChartData"></ngx-utilitario-polar-area-chart>
 <button (click)="cambiarPolar()">cambiar</button>
 <ngx-utilitario-pie-chart [pieChartLabels]="pieChartLabels" [pieChartData]="pieChartData"></ngx-utilitario-pie-chart>
-<button (click)="cambiarPie()">cambiar</button>
+<button (click)="cambiarPie()">cambiar</button> -->
+<!-- <div style="height: 300px">
+    <div style="height: 100%">
+        <div class="col-md-4 col-sm-12 ngx-utilitario-chat-list">
+            <header class="ngx-util-list-header">
+                Chats
+                <span class="fa fa-pencil-square-o"></span>
+            </header>
+            <ngx-utilitario-chat-search class="ngx-util-list-search"></ngx-utilitario-chat-search>
+            <ngx-utilitario-chat-list class="ngx-util-list-detail" style="background: red">
+            </ngx-utilitario-chat-list>
+        </div>
+    </div>
+</div> -->
+<div style="height: 300px" class="col-md-4 col-sm-12">
+    <ngx-utilitario-chat-detail [chatDetail]="chatDetail" [moveToMessage]="moveToMessageIndex"></ngx-utilitario-chat-detail>
+</div>
+<ngx-utilitario-spinner></ngx-utilitario-spinner>
