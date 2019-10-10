@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { INDICATOR_COLOR, DEFAULT_SIZE } from '../constants/indicator.constants';
 
 @Component({
   selector: 'ngx-utilitario-spinner',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SpinnerComponent implements OnInit {
 
+  color = INDICATOR_COLOR;
+  size = DEFAULT_SIZE;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  get borderColor(): string {
+    return `${this.color} transparent transparent transparent`;
+  }
+
+  get borderWidth(): string {
+    return `${this.size / 8}px`;
   }
 
 }

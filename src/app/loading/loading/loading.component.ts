@@ -1,4 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, Inject, ComponentFactoryResolver, ComponentRef } from '@angular/core';
+import { IndicatorHostDirective } from '../directives/indicator-host.directive';
+import { LOADING_INDICATOR_CONFIG } from '../loading.config';
+import { LoadingIndicatorConfig } from '../interfaces/loading.interfaces';
+import { SpinnerComponent } from '../spinner/spinner.component';
+import { INDICATOR_COLOR, DEFAULT_SIZE } from '../constants/indicator.constants';
 
 @Component({
   selector: 'ngx-utilitario-loading',
@@ -7,9 +12,38 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoadingComponent implements OnInit {
 
-  constructor() { }
+  /**
+   * Directiva que nos indica que componentes se aceptaran
+   */
+  @ViewChild(IndicatorHostDirective, { static: true }) host: IndicatorHostDirective;
+
+  /**
+   * @param config La configuracion que utlizaremos para el loading
+   * @param componentFactoryResolver Nos permitira mostrar el componente
+   */
+  constructor(
+    @Inject(LOADING_INDICATOR_CONFIG) private config: LoadingIndicatorConfig,
+    private componentFactoryResolver: ComponentFactoryResolver) { }
 
   ngOnInit() {
+    this.loadComponent();
   }
 
+  get indicatorSize(): string {
+    return `${this.config.size}px`;
+  }
+
+  /**
+   * Obtendremos el loading a mostrar
+   * Si no indico ningun loading enviamos el SpinnerComponent
+   */
+  private loadComponent() {
+    const component = this.config.indicatorComponent || SpinnerComponent;
+    const componentFactory = this.componentFactoryResolver.resolveComponentFactory(component as any);
+    const viewContainerRef = this.host.viewContainerRef;
+    viewContainerRef.clear();
+    const componentRef: ComponentRef<any> = viewContainerRef.createComponent(componentFactory);
+    componentRef.instance.color = this.config.color || INDICATOR_COLOR;
+    componentRef.instance.size = this.config.size || DEFAULT_SIZE;
+  }
 }
