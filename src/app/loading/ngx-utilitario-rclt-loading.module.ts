@@ -5,8 +5,7 @@ import { LoadingComponent } from './loading/loading.component';
 import { OverlayComponent } from './overlay/overlay.component';
 import { SpinnerComponent } from './spinner/spinner.component';
 import { IndicatorHostDirective } from './directives/indicator-host.directive';
-import { LOADING_INDICATOR_CONFIG } from './loading.config';
-import { DEFAULT_CONFIG } from '../spinner/spinner.config';
+import { LOADING_INDICATOR_CONFIG, DEFAULT_CONFIG } from './loading.config';
 
 @NgModule({
   declarations: [EllipsisComponent, LoadingComponent, OverlayComponent, SpinnerComponent, IndicatorHostDirective],

@@ -1,3 +1,4 @@
-<p>
-  overlay works!
-</p>
+<input class="clt-screen-top-left" #focusTrap type="hidden" tabindex="-1" style="opacity: 1" (blur)="disableKeyboardEvents($event)" />
+<div class="clt-overlay-center"  [style.background-color]="overlayColor">
+  <ng-content></ng-content>
+</div>
