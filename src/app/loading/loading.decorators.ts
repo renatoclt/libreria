@@ -14,7 +14,7 @@ export const isLoading$ = indicatorSubject.asObservable().pipe(distinctUntilChan
 /**
  * Decorado que permite inicializar el loading
  */
-export function startLoadingIndicator(target: any, propertyKey: string | symbol, propertyDescriptor: PropertyDescriptor): any {
+export function startLoading(target: any, propertyKey: string | symbol, propertyDescriptor: PropertyDescriptor): any {
     const original = propertyDescriptor.value;
     propertyDescriptor.value = function(...args: any[]) {
         indicatorSubject.next(true);
@@ -27,7 +27,7 @@ export function startLoadingIndicator(target: any, propertyKey: string | symbol,
 /**
  * Decorado que permite detiene el loading
  */
-export function stopLoadingIndicator(target: any, propertyKey: string | symbol, propertyDescriptor: PropertyDescriptor): any {
+export function stopLoading(target: any, propertyKey: string | symbol, propertyDescriptor: PropertyDescriptor): any {
     const original = propertyDescriptor.value;
     propertyDescriptor.value = function(...args: any[]) {
         indicatorSubject.next(false);

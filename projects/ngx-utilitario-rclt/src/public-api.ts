@@ -59,6 +59,9 @@ export * from './lib/loading/spinner/spinner.component';
 //Constantes
 export {LOADING_INDICATOR_CONFIG, DEFAULT_CONFIG } from './lib/loading/loading.config';
 
+
+//Decorators
+export {startLoading , stopLoading} from './lib/loading/loading.decorators';
 // export {CardsImgTextComponent} from './lib/cards/cards.component'
 // export {RepeatIconComponent} from './lib/cards/cards.component'
 // export {CardsImgTextNdivComponent} from './lib/cards/cards.component'
