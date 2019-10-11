@@ -57,7 +57,7 @@ import { EllipsisComponent } from './loading/ellipsis/ellipsis.component';
       color: '#fff',
       overlayColor: 'rgba(100,100,100,0.3)',
       indicatorComponent: EllipsisComponent
-  }}
+    }}
   ],
   bootstrap: [AppComponent]
 })

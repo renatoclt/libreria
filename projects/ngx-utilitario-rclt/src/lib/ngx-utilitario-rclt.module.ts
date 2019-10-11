@@ -16,6 +16,7 @@ import { NgxUtilitarioCardsModule } from './cards/ngx-utilitario-rclt-cards.modu
 import { NgxUtilitarioPerfectScrollModule } from './perfect-scroll/ngx-utilitario-rclt-perfect-scroll.module';
 import { NgxUtilitarioImageModule } from './image/ngx-utilitario-rclt-image.module';
 import { NgxUtilitarioGraphicsModule } from './graphics/ngx-utilitario-rclt-graphics.module';
+import { NgxUtilitarioLoadingModule } from './loading/ngx-utilitario-rclt-loading.module';
 
 
 
@@ -23,6 +24,9 @@ import { NgxUtilitarioGraphicsModule } from './graphics/ngx-utilitario-rclt-grap
   declarations: [],
   imports: [
     CommonModule,
+    NgxUtilitarioPipesModule,
+    NgxUtilitarioLoadingModule,
+
     ReactiveFormsModule,
     BrowserModule,
     BrowserAnimationsModule,
@@ -37,8 +41,7 @@ import { NgxUtilitarioGraphicsModule } from './graphics/ngx-utilitario-rclt-grap
     NgxUtilitarioIconsModule,
     NgxUtilitarioModalModule,
     NgxUtilitarioPerfectScrollModule,
-    NgxUtilitarioPipesModule,
-    NgxUtilitarioImageModule
+    NgxUtilitarioImageModule,
   ],
   exports: []
 })

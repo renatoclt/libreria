@@ -1,0 +1,70 @@
+/**
+ * evitaremos acciones del mouse
+ * y lo posiccionaremos sobre * el overview que tiene el siguiente z-index 9999
+ */
+.clt-loading-indicator {
+  pointer-events: none;
+  position: relative;
+  z-index: 10000;
+}
+
+/**
+   * Ocuparemos todo el espacio dado por el padre 
+   */
+.clt-spinner {
+  position: relative;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/**
+   * Estilos al spinner 
+   * definimos el estilo de rotar de forma indefinida
+   */
+.clt-spinner div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  margin: 8px;
+  border: 8px solid transparent;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #fff transparent transparent transparent;
+}
+
+/**
+   * Tiempo de la animacion del spinner
+   */
+.clt-spinner div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+/**
+   * Tiempo de la  animacion del spinner
+   */
+.clt-spinner div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+/**
+   * tiempo de la animacion del spinner 
+   */
+.clt-spinner div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+
+/**
+   * animacion de rotar
+   */
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

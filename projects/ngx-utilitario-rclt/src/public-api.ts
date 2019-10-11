@@ -16,6 +16,7 @@ export * from './lib/perfect-scroll/ngx-utilitario-rclt-perfect-scroll.module';
 export * from './lib/pipe/ngx-utilitario-rclt-pipes.module';
 export * from './lib/image/ngx-utilitario-rclt-image.module';
 export * from './lib/graphics/ngx-utilitario-rclt-graphics.module';
+export * from './lib/loading/ngx-utilitario-rclt-loading.module';
 
 
 /**
@@ -44,15 +45,20 @@ export * from './lib/chat/dto/emessage-state';
 /**
  * Interface
  */
+export * from './lib/loading/interfaces/loading.interfaces';
 export * from './lib/chat/dto/ichat-detail';
 export * from './lib/chat/dto/ichat-detail-message';
 export * from './lib/chat/dto/ichat-list-detail';
-
 export * from './lib/image/carousel/dto/iowlcarousel-options';
 
-// component
+//component
 
-// export {CardsComponent} from './lib/cards/cards.component'
+export * from './lib/loading/ellipsis/ellipsis.component';
+export * from './lib/loading/spinner/spinner.component';
+
+//Constantes
+export {LOADING_INDICATOR_CONFIG, DEFAULT_CONFIG } from './lib/loading/loading.config';
+
 // export {CardsImgTextComponent} from './lib/cards/cards.component'
 // export {RepeatIconComponent} from './lib/cards/cards.component'
 // export {CardsImgTextNdivComponent} from './lib/cards/cards.component'
