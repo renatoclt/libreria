@@ -120,3 +120,73 @@ export class AppComponent {
     Result
 
 ![alt text](https://firebasestorage.googleapis.com/v0/b/ngx-utilitario-rclt.appspot.com/o/numberToArray.PNG?alt=media&token=cd0ae69f-d8b3-4c8b-82c1-8b66676d0a5a)
+
+
+### loading
+
+
+
+Add package to NgModule imports:
+
+```sh
+    import {NgxUtilitarioLoadingModule,
+        LOADING_INDICATOR_CONFIG,
+        EllipsisComponent} from 'ngx-utilitario-rclt';
+  @NgModule({
+    imports: [
+      NgxUtilitarioLoadingModule
+    ],
+    providers: [
+      {provide: LOADING_INDICATOR_CONFIG, useValue: {
+        size: '5.5',
+        color: '#fff',
+        overlayColor: 'rgba(100,100,100,0.3)',
+        indicatorComponent: EllipsisComponent
+        }}
+      ],
+    })
+  ],
+```
+
+or you can use configuration for default
+
+```sh
+  providers: [
+    {provide: LOADING_INDICATOR_CONFIG, useValue: DEFAULT_CONFIG}
+  ],
+```
+You can use "Ellipsis Component" or "Spinner Component". I use spinner for default. i try add more loading
+
+  Example
+I recommend use inside app.component.html
+.html
+```sh
+  <ngx-utilitario-loading></ngx-utilitario-loading>
+```
+.ts
+```sh
+export class AppComponent implements OnInit {
+  ngOnInit() {
+    this.triggerLoadingIndicator();
+  }
+
+  @startLoading
+  triggerLoadingIndicator() {
+    setTimeout(this.triggerLoadingIndicatorStop.bind(this), 2000);
+  }
+
+  @stopLoading
+  triggerLoadingIndicatorStop() {
+    console.log('stopped');
+  }
+}
+
+```
+
+If you add styles in angular.json you dont need any more. else add this styles in app.component.css
+pd: i trying delete this step.
+
+```sh
+
+```
+

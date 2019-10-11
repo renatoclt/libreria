@@ -52,12 +52,7 @@ import { EllipsisComponent } from './loading/ellipsis/ellipsis.component';
     NgxUtilitarioLoadingModule
   ],
   providers: [
-    {provide: LOADING_INDICATOR_CONFIG, useValue: {
-      size: '5.5',
-      color: '#fff',
-      overlayColor: 'rgba(100,100,100,0.3)',
-      indicatorComponent: EllipsisComponent
-    }}
+    {provide: LOADING_INDICATOR_CONFIG, useValue: DEFAULT_CONFIG}
   ],
   bootstrap: [AppComponent]
 })
