@@ -1,7 +1,10 @@
-.clt-loading-indicator__container {
+/**
+ * evitaremos acciones del mouse
+ * y lo posiccionaremos sobre * el overview que tiene el siguiente z-index 9999
+ */
+ .clt-loading-indicator {
     pointer-events: none;
     position: relative;
     z-index: 10000;
-}
-  
+  }
   

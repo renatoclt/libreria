@@ -21,6 +21,7 @@ import { ChartsModule } from 'ng2-charts';
 import { NgxUtilitarioLoadingModule } from './loading/ngx-utilitario-rclt-loading.module';
 import { LOADING_INDICATOR_CONFIG, DEFAULT_CONFIG } from './loading/loading.config';
 import { SpinnerComponent } from './loading/spinner/spinner.component';
+import { EllipsisComponent } from './loading/ellipsis/ellipsis.component';
 
 @NgModule({
   declarations: [
@@ -52,13 +53,11 @@ import { SpinnerComponent } from './loading/spinner/spinner.component';
   ],
   providers: [
     {provide: LOADING_INDICATOR_CONFIG, useValue: {
-      size: '2.5',
+      size: '5.5',
       color: '#fff',
       overlayColor: 'rgba(100,100,100,0.3)',
-      indicatorComponent: SpinnerComponent
-  }
-  }
-
+      indicatorComponent: EllipsisComponent
+  }}
   ],
   bootstrap: [AppComponent]
 })

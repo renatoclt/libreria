@@ -35,6 +35,6 @@ export class EllipsisComponent {
    * tamaño de los puntos
    */
   get indicatorSize(): string {
-    return `${this.size}px`;
+    return `${this.size}rem`;
   }
 }

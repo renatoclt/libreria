@@ -1,0 +1,35 @@
+/**
+ * Estilo que posicionara en la parte superior izquiera
+ */
+ .clt-screen-top-left {
+    position: fixed;
+    top: 0;
+    left: 0;
+} 
+/**
+ * Estilo que posicionara en la parte superior derecha
+ */
+.clt-screen-top-righ {
+    position: fixed;
+    top: 0;
+    right: 0;
+} 
+
+/**
+ * ocupara toda la pantalla y se pondra delente de todos los elementos y sus elementos estaran centrados
+ * 1 eliminamos acciones por el mouse
+ */
+.clt-overlay-center {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1 auto;
+    pointer-events: none;
+}
