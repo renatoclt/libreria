@@ -40,6 +40,21 @@ $ npm install ngx-utilitario-rclt
     - Pipes:
     -- highlight
     -- numberToArray
+    - Components (Adding manual):
+    -- Loading 
+    --- Spinner, ellipsis.
+    -- cards
+    -- chat
+    -- Dynamic-Component
+    -- form dynamic
+    -- graphics
+    -- icons
+    -- mapbox
+    -- menu
+    -- modal
+    -- perfect-scroll
+    - Class (Adding manual):
+    -- Fecha
 
 ## Usage
 
@@ -53,7 +68,7 @@ Add package to NgModule imports:
   ],
 ```
 
-    Example
+  ExamExample
 
 .html
 ```sh
@@ -87,7 +102,7 @@ Add package to NgModule imports:
   ],
 ```
 
-    Example
+  Example
 
 .html
 ```sh

@@ -4,6 +4,9 @@ import { LOADING_INDICATOR_CONFIG } from '../loading.config';
 import { LoadingIndicatorConfig } from '../interfaces/loading.interfaces';
 import { isLoading$ } from '../loading.decorators';
 
+/**
+ * Componente que sera la capa del loading
+ */
 @Component({
   selector: 'ngx-utilitario-overlay',
   templateUrl: './overlay.component.html',
@@ -27,6 +30,7 @@ export class OverlayComponent implements OnInit, OnDestroy {
    */
   private nextFocusTarget: HTMLElement;
   /**
+   * constructor
    * @param config Configuracion del spinner colores y componente a mostrar
    */
   constructor(@Inject(LOADING_INDICATOR_CONFIG) private config: LoadingIndicatorConfig ) { }
@@ -99,5 +103,4 @@ export class OverlayComponent implements OnInit, OnDestroy {
     event.stopPropagation();
     this.nextFocusTarget.focus();
   }
-
 }

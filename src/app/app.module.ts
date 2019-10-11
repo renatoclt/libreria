@@ -15,12 +15,12 @@ import { NgxUtilitarioModalModule } from './modal/ngx-utilitario-rclt-modal.modu
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgxUtilitarioPerfectScrollModule } from './perfect-scroll/ngx-utilitario-rclt-perfect-scroll.module';
 import { NgxUtilitarioPipesModule } from './pipe/ngx-utilitario-rclt-pipes.module';
-import { NgxUtilitarioImageModule } from './image/ngx-utilitario-rclt-image.module';
 import { NgxUtilitarioMapboxModule } from './mapbox/ngx-utilitario-rclt-mapbox.module';
 import { NgxUtilitarioGraphicsModule } from './graphics/ngx-utilitario-rclt-graphics.module';
 import { ChartsModule } from 'ng2-charts';
 import { NgxUtilitarioLoadingModule } from './loading/ngx-utilitario-rclt-loading.module';
 import { LOADING_INDICATOR_CONFIG, DEFAULT_CONFIG } from './loading/loading.config';
+import { SpinnerComponent } from './loading/spinner/spinner.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +44,6 @@ import { LOADING_INDICATOR_CONFIG, DEFAULT_CONFIG } from './loading/loading.conf
     NgxUtilitarioDynamicModule,
     NgxUtilitarioGraphicsModule,
     NgxUtilitarioIconsModule,
-    NgxUtilitarioImageModule,
     NgxUtilitarioModalModule,
     NgxUtilitarioPerfectScrollModule,
     NgxUtilitarioPipesModule,
@@ -52,7 +51,13 @@ import { LOADING_INDICATOR_CONFIG, DEFAULT_CONFIG } from './loading/loading.conf
     NgxUtilitarioLoadingModule
   ],
   providers: [
-    {provide: LOADING_INDICATOR_CONFIG, useValue: DEFAULT_CONFIG}
+    {provide: LOADING_INDICATOR_CONFIG, useValue: {
+      size: '2.5',
+      color: '#fff',
+      overlayColor: 'rgba(100,100,100,0.3)',
+      indicatorComponent: SpinnerComponent
+  }
+  }
 
   ],
   bootstrap: [AppComponent]

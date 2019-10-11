@@ -1,5 +1,4 @@
-:host,
-.btp-spinner {
+.clt-spinner {
   position: relative;
   top: 0;
   bottom: 0;
@@ -9,7 +8,7 @@
   height: 100%;
 }
 
-.btp-spinner div {
+.clt-spinner div {
   box-sizing: border-box;
   display: block;
   position: absolute;
@@ -22,15 +21,15 @@
   border-color: #fff transparent transparent transparent;
 }
 
-.btp-spinner div:nth-child(1) {
+.clt-spinner div:nth-child(1) {
   animation-delay: -0.45s;
 }
 
-.btp-spinner div:nth-child(2) {
+.clt-spinner div:nth-child(2) {
   animation-delay: -0.3s;
 }
 
-.btp-spinner div:nth-child(3) {
+.clt-spinner div:nth-child(3) {
   animation-delay: -0.15s;
 }
 

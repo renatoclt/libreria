@@ -5,6 +5,9 @@ import { LoadingIndicatorConfig } from '../interfaces/loading.interfaces';
 import { SpinnerComponent } from '../spinner/spinner.component';
 import { INDICATOR_COLOR, DEFAULT_SIZE } from '../constants/indicator.constants';
 
+/**
+ * Componente que contendra todos los tipos de loading
+ */
 @Component({
   selector: 'ngx-utilitario-loading',
   templateUrl: './loading.component.html',
@@ -18,6 +21,7 @@ export class LoadingComponent implements OnInit {
   @ViewChild(IndicatorHostDirective, { static: true }) host: IndicatorHostDirective;
 
   /**
+   * Configuracion necesaria del loading
    * @param config La configuracion que utlizaremos para el loading
    * @param componentFactoryResolver Nos permitira mostrar el componente
    */
@@ -25,12 +29,18 @@ export class LoadingComponent implements OnInit {
     @Inject(LOADING_INDICATOR_CONFIG) private config: LoadingIndicatorConfig,
     private componentFactoryResolver: ComponentFactoryResolver) { }
 
+  /**
+   * Escojeremos que loading mostraremos
+   */
   ngOnInit() {
     this.loadComponent();
   }
 
+  /**
+   * Daremos el tamaño al spinner
+   */
   get indicatorSize(): string {
-    return `${this.config.size}px`;
+    return `${this.config.size}rem`;
   }
 
   /**

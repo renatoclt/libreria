@@ -1,9 +1,7 @@
 import { Component, OnInit, DoCheck, AfterContentChecked, AfterViewInit } from '@angular/core';
-import { SettingsMapbox } from '../dto/settingsMapbox';
 import * as mapboxgl from 'mapbox-gl';
-import { GeoJson } from '../dto/geoJson';
-import { FeatureCollection } from '../dto/featureCollection';
 import { GeoJSONSourceRaw, GeoJSONSource, GeoJSONSourceOptions, Point } from 'mapbox-gl';
+import { SettingsMapbox } from '../dto/settingsMapbox';
 
 /**
  * Componente para mostrar mapas
@@ -174,13 +172,4 @@ export class MapboxComponent implements OnInit, AfterViewInit {
 
   }
 
-  /**
-   * Ir a un punto en el mapa
-   * @param data Punto a ir [longitud, latitud]
-   */
-  flyTo(data: GeoJson) {
-    this.map.flyTo({
-      // center:  data.geometry.coordinates
-    });
-  }
 }
