@@ -1,0 +1,4 @@
+{
+  "entry": "./src/sass/main.scss",
+  "dest": "./dist/ngx-utilitario-rclt/clt.scss"
+}

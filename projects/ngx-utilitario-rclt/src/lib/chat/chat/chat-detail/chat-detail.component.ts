@@ -104,7 +104,6 @@ export class ChatDetailComponent implements OnChanges {
    * @param message mensaje enviado
    */
   messageSend(message: string) {
-    console.log('prueba', this.filesPreview, message);
     if ((message === '' || message === null) && this.filesPreview === undefined) {
       return;
     }

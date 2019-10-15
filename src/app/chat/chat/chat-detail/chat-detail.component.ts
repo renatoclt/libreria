@@ -92,7 +92,9 @@ export class ChatDetailComponent implements OnChanges {
    */
   ngOnChanges(changes: SimpleChanges): void {
     if (changes.moveToMessage) {
-      this.messageMove(changes.moveToMessage.currentValue);
+      if ( this.moveToMessage !== changes.moveToMessage.currentValue ) {
+        this.messageMove(changes.moveToMessage.currentValue);
+      }
     }
     if (changes.chatDetail) {
       this.filesPreview = undefined;
@@ -104,7 +106,6 @@ export class ChatDetailComponent implements OnChanges {
    * @param message mensaje enviado
    */
   messageSend(message: string) {
-    console.log('prueba', this.filesPreview, message);
     if ((message === '' || message === null) && this.filesPreview === undefined) {
       return;
     }

@@ -92,7 +92,6 @@ export class ModalComponent implements OnInit, OnDestroy {
     const modal = this;
     // Validamos si tiene el atributo id
     if (!this.id) {
-      console.error('modal must have an id');
       return;
     }
 
