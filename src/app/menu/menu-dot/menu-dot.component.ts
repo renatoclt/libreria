@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { IMenuDot } from '../dto/Imenu-dto';
+import { Component, Input } from '@angular/core';
+
 /**
  * Mustra un menu dot
  */
@@ -7,41 +7,16 @@ import { IMenuDot } from '../dto/Imenu-dto';
   selector: 'ngx-utilitario-menu-dot',
   templateUrl: './menu-dot.component.html',
 })
-export class MenuDotComponent implements OnInit {
- /**
-  * Opciones de un menu
-  */
- menu1: IMenuDot = {
-   icon: 'block',
-   nombre: 'bloqueo',
-   text: 'Ver Chats Bloqueados'
-  };
+export class MenuDotComponent {
+
   /**
-   * Opciones de un menu
+   * Enviar el icono
    */
-  menu2: IMenuDot = {
-    icon: 'block',
-    nombre: 'bloqueo',
-    text: 'block 2'
-  };
-  /**
-   * menu a mostrar
-   */
-  menus: IMenuDot[] = [this.menu1, this.menu2];
+  @Input() menuIcon = 'fa fa-ellipsis-v';
+
   /**
    * @ignore
    */
   constructor() { }
 
-  /**
-   * @ignore
-   */
-  ngOnInit() {
-  }
-
-  /**
-   * Al hacer click en un elemento retornara el nombre del menu que realizo click
-   */
-  menuClick(item: IMenuDot) {
-  }
 }
