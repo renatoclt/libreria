@@ -17,6 +17,7 @@ import { NgxUtilitarioPerfectScrollModule } from './perfect-scroll/ngx-utilitari
 import { NgxUtilitarioImageModule } from './image/ngx-utilitario-rclt-image.module';
 import { NgxUtilitarioGraphicsModule } from './graphics/ngx-utilitario-rclt-graphics.module';
 import { NgxUtilitarioLoadingModule } from './loading/ngx-utilitario-rclt-loading.module';
+import { NgxUtilitarioErrorHandlerModule } from './error-handler/ngx-utilitario-rclt-error-handler.module';
 
 
 
@@ -26,7 +27,6 @@ import { NgxUtilitarioLoadingModule } from './loading/ngx-utilitario-rclt-loadin
     CommonModule,
     NgxUtilitarioPipesModule,
     NgxUtilitarioLoadingModule,
-
     ReactiveFormsModule,
     BrowserModule,
     BrowserAnimationsModule,
@@ -42,6 +42,7 @@ import { NgxUtilitarioLoadingModule } from './loading/ngx-utilitario-rclt-loadin
     NgxUtilitarioModalModule,
     NgxUtilitarioPerfectScrollModule,
     NgxUtilitarioImageModule,
+    NgxUtilitarioErrorHandlerModule.forRoot(),
   ],
   exports: []
 })

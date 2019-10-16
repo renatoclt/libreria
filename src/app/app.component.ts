@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { IChatDetail } from './chat/dto/ichat-detail';
 import { EChatLock } from './chat/dto/echat-lock';
 import { EChatState } from './chat/dto/echat-state';
@@ -10,7 +10,10 @@ import { EChatState } from './chat/dto/echat-state';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+  ngOnInit(): void {
+    throw new Error("Method not implemented.");
+  }
   /**
    * Titulo a mostrar al inicializar el componente
    */
