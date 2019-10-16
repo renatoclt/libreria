@@ -53,16 +53,16 @@ export * from './lib/chat/dto/ichat-detail-message';
 export * from './lib/chat/dto/ichat-list-detail';
 export * from './lib/image/carousel/dto/iowlcarousel-options';
 
-//component
+// component
 
 export * from './lib/loading/ellipsis/ellipsis.component';
 export * from './lib/loading/spinner/spinner.component';
 
-//Constantes
+// Constantes
 export {LOADING_INDICATOR_CONFIG, DEFAULT_CONFIG } from './lib/loading/loading.config';
 export {ERROR_INJECTOR_TOKEN} from './lib/error-handler/constants/error-handler.constants';
 
-//Decorators
+// Decorators
 export {startLoading , stopLoading} from './lib/loading/loading.decorators';
 // export {CardsImgTextComponent} from './lib/cards/cards.component'
 // export {RepeatIconComponent} from './lib/cards/cards.component'
