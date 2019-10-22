@@ -38,3 +38,13 @@
   width: $width;
   height: $height;
 }
+
+
+// Mixin para dar efecto de redondear
+/// @author renato cohaila 
+@mixin borderRadius($radius) {
+  -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    border-radius: $radius;
+}
+
