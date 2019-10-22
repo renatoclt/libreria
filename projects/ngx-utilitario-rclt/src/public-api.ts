@@ -53,14 +53,14 @@ export * from './lib/chat/dto/ichat-detail-message';
 export * from './lib/chat/dto/ichat-list-detail';
 export * from './lib/image/carousel/dto/iowlcarousel-options';
 
-// component
-
+// Component
 export * from './lib/loading/ellipsis/ellipsis.component';
 export * from './lib/loading/spinner/spinner.component';
 
 // Constantes
-export {LOADING_INDICATOR_CONFIG, DEFAULT_CONFIG } from './lib/loading/loading.config';
-export {ERROR_INJECTOR_TOKEN} from './lib/error-handler/constants/error-handler.constants';
+export { LOADING_INDICATOR_CONFIG, DEFAULT_CONFIG } from './lib/loading/loading.config';
+export { ERROR_INJECTOR_TOKEN } from './lib/error-handler/constants/error-handler.constants';
+export { ERROR_HANDLER_CONFIG, DEFAULT_ERROR_HANDLER_CONFIG } from './lib/error-handler/error-handler.config';
 
 // Decorators
 export {startLoading , stopLoading} from './lib/loading/loading.decorators';

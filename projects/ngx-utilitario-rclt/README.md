@@ -206,11 +206,12 @@ This component catch their error in a modal
     NgxUtilitarioErrorHandlerModule.forRoot()
   ],
   providers: [
-    {provide: ERROR_HANDLER_CONFIG, useValue: {}}
+    {provide: ERROR_HANDLER_CONFIG, useValue: DEFAULT_ERROR_HANDLER_CONFIG}
   ],
 ```
 
 add clt.scss in angular.json
+
 pd: i trying delete this step.
 
 ```sh
@@ -223,9 +224,29 @@ pd: i trying delete this step.
 
 If you want to see console errors
 
+Create a class, i recommended create a directory helpers, and  create the class error-logger
 ```sh
-  
-```
+export class ErrorLogger {
+  public static logErrorMessage({ message }): void {
+    console.error(`An error with the following message has occured: ${message}`)
+  }
+}
 
+```
+```sh
+const CustomErrorHandlerConfig: ErrorHandlerConfig = {
+  errorHandlerHooks: [
+    ErrorLogger.logErrorMessage,
+    console.error,
+  ]
+};
+
+@NgModule({
+  imports: [
+    NgxUtilitarioErrorHandlerModule.forRoot()
+  ],
+ {provide: ERROR_HANDLER_CONFIG, useValue: CustomErrorHandlerConfig}
+})
+```
 
 pd: soon i adding error send option

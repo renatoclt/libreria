@@ -20,8 +20,9 @@
 @import 'layout/footer';
 
 // 5. Components
-@import 'components/loading';
 @import 'components/button';
+@import 'components/error-handler';
+@import 'components/loading';
 
 // 6. Page-specific styles
 @import 'pages/home';

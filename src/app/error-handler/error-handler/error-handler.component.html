@@ -1,10 +1,10 @@
-<section cdkTrapFocus [cdkTrapFocusAutoCapture]="true" class="btp-error-handler__container">
+<section cdkTrapFocus [cdkTrapFocusAutoCapture]="true" class="clt-error-handler-container">
   <h2>Error</h2>
   <p>{{error.message}}</p>
-  <div class="btp-error-handler__scrollable">
+  <div class="clt-error-handler-scrollable">
     <ng-container *ngFor="let detail of error.details">
       <div>{{detail}}</div>
     </ng-container>
   </div>
-  <button class="btp-error-handler__dismiss button red" (click)="dismiss()">DISMISS</button>
+  <button class="clt-error-handler-btn button red" (click)="dismiss()">DISMISS</button>
 </section>`

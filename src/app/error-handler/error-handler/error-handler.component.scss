@@ -1,3 +1,11 @@
+$modalwidth: 600px !default;
+$modalHeight: 450px !default;
+$errorHeight: 350px !default;
+$ErrorBackgroundActive: #c43c35 !default;
+$ErrorBackgroundActive: #c43c35 !default;
+/**
+ * El tamaño sera de toda la pantala y centrado
+ */
 :host {
   width: 100vw;
   height: 100vh;
@@ -6,12 +14,15 @@
   align-items: center;
 }
 
-.btp-error-handler__container {
+/**
+ * Le daremos un 
+ */
+.clt-error-handler-container {
   padding: 10px 15px;
   background-color: white;
-  width: 600px;
+  width: $modalwidth;
   max-width: 100%;
-  height: 450px;
+  height: $modalHeight;
   max-height: 100%;
   overflow: hidden;
   border-radius: 15px;
@@ -23,11 +34,11 @@ h2 {
   margin: 0 auto;
 }
 
-.btp-error-handler__scrollable {
+.clt-error-handler-scrollable {
   font-family: "Roboto Mono", monospace;
   line-height: 1.5em;
   position: relative;
-  height: 350px;
+  height: $errorHeight;
   max-height: 60%;
   border-left: 2px solid #ca3535;
   background-color: rgba(176, 0, 32, 0.16);
@@ -36,12 +47,12 @@ h2 {
   overflow: auto;
 }
 
-.button::-moz-focus-inner {
+.clt-error-handler-btn::-moz-focus-inner {
   border: 0;
   padding: 0;
 }
 
-.button {
+.clt-error-handler-btn {
   display: block;
   margin: 15px auto;
   zoom: 1;
@@ -66,12 +77,12 @@ h2 {
   user-select: none;
 }
 
-.button:hover {
+.clt-error-handler-btn:hover {
   background-color: #eee;
   color: #555;
 }
 
-.button:active {
+.clt-error-handler-btn:active {
   background: #e9e9e9;
   position: relative;
   top: 1px;
@@ -79,9 +90,9 @@ h2 {
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3) inset;
 }
 
-.button[disabled],
-.button[disabled]:hover,
-.button[disabled]:active {
+.clt-error-handler-btn[disabled],
+.clt-error-handler-btn[disabled]:hover,
+.clt-error-handler-btn[disabled]:active {
   border-color: #eaeaea;
   background: #fafafa;
   cursor: default;
@@ -91,7 +102,7 @@ h2 {
   text-shadow: none !important;
 }
 
-.button.red {
+.clt-error-handler-btn.red {
   color: #fff;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
   background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
@@ -99,17 +110,17 @@ h2 {
   border-color: #c43c35;
 }
 
-.button.red:hover {
+.clt-error-handler-btn.red:hover {
   background-color: #ee5f5b;
 }
 
-.button.red:active {
+.clt-error-handler-btn.red:active {
   background: #c43c35;
 }
 
-.red[disabled],
-.red[disabled]:hover,
-.red[disabled]:active {
+.clt-error-handler-btn.red[disabled],
+.clt-error-handler-btn.red[disabled]:hover,
+.clt-error-handler-btn.red[disabled]:active {
   border-color: #c43c35;
   background: #c43c35;
   color: #ffd3d3;
