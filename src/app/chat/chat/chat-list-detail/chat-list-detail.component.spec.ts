@@ -90,7 +90,7 @@ describe('ChatListDetail', () => {
       component.listDetail.message = [message1];
     }));
     it('Se espera la fecha enviada' , () => {
-      expect(component.dateLast(component.listDetail.message)).toBe('05-05-2018');
+      expect(component.dateLast(component.listDetail.message)).toBe('05/05/2018');
     });
     it('Al enviar un undefined se espera un vacio' , () => {
       expect(component.dateLast(undefined)).toBe('');
@@ -107,7 +107,7 @@ describe('ChatListDetail', () => {
     it('Al enviar 2 mensajes obtenga el ultimo mensaje' , () => {
       component.listDetail.message.push(message1);
       component.listDetail.message[1].date = '05-21-2019';
-      expect(component.dateLast(component.listDetail.message)).toBe('05-21-2019');
+      expect(component.dateLast(component.listDetail.message)).toBe('21/05/2019');
     });
   });
 });
