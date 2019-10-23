@@ -68,7 +68,7 @@ Add package to NgModule imports:
   ],
 ```
 
-  ExamExample
+  Example
 
 .html
 ```sh
@@ -183,10 +183,70 @@ export class AppComponent implements OnInit {
 
 ```
 
-If you add styles in angular.json you dont need any more. else add this styles in app.component.css
+add clt.scss in angular.json
 pd: i trying delete this step.
 
 ```sh
-
+"styles": [
+  "./node_modules/ngx-utilitario-rclt/clt.scss",
+],
 ```
 
+pd: i add more styles soon
+
+
+
+### Handle-error
+
+This component catch their error in a modal
+
+
+```sh
+  imports: [
+    NgxUtilitarioErrorHandlerModule.forRoot()
+  ],
+  providers: [
+    {provide: ERROR_HANDLER_CONFIG, useValue: DEFAULT_ERROR_HANDLER_CONFIG}
+  ],
+```
+
+add clt.scss in angular.json
+
+pd: i trying delete this step.
+
+```sh
+"styles": [
+  "./node_modules/ngx-utilitario-rclt/clt.scss",
+],
+```
+
+#### optional
+
+If you want to see console errors
+
+Create a class, i recommended create a directory helpers, and  create the class error-logger
+```sh
+export class ErrorLogger {
+  public static logErrorMessage({ message }): void {
+    console.error(`An error with the following message has occured: ${message}`)
+  }
+}
+
+```
+```sh
+const CustomErrorHandlerConfig: ErrorHandlerConfig = {
+  errorHandlerHooks: [
+    ErrorLogger.logErrorMessage,
+    console.error,
+  ]
+};
+
+@NgModule({
+  imports: [
+    NgxUtilitarioErrorHandlerModule.forRoot()
+  ],
+ {provide: ERROR_HANDLER_CONFIG, useValue: CustomErrorHandlerConfig}
+})
+```
+
+pd: soon i adding error send option

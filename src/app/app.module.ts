@@ -22,6 +22,12 @@ import { NgxUtilitarioLoadingModule } from './loading/ngx-utilitario-rclt-loadin
 import { LOADING_INDICATOR_CONFIG, DEFAULT_CONFIG } from './loading/loading.config';
 import { SpinnerComponent } from './loading/spinner/spinner.component';
 import { EllipsisComponent } from './loading/ellipsis/ellipsis.component';
+import { ERROR_HANDLER_CONFIG } from './error-handler/error-handler.config';
+import { ErrorHandlerConfig } from './error-handler/interfaces/error-handler.interfaces';
+import { NgxUtilitarioErrorHandlerModule } from './error-handler/ngx-utilitario-rclt-error-handler.module';
+// import {ErrorLogger} from './helpers/error-logger';
+
+
 
 @NgModule({
   declarations: [
@@ -49,10 +55,12 @@ import { EllipsisComponent } from './loading/ellipsis/ellipsis.component';
     NgxUtilitarioPerfectScrollModule,
     NgxUtilitarioPipesModule,
     NgxUtilitarioMapboxModule,
-    NgxUtilitarioLoadingModule
+    NgxUtilitarioLoadingModule,
+    NgxUtilitarioErrorHandlerModule.forRoot()
   ],
   providers: [
-    {provide: LOADING_INDICATOR_CONFIG, useValue: DEFAULT_CONFIG}
+    {provide: LOADING_INDICATOR_CONFIG, useValue: DEFAULT_CONFIG},
+    {provide: ERROR_HANDLER_CONFIG, useValue: {}}
   ],
   bootstrap: [AppComponent]
 })

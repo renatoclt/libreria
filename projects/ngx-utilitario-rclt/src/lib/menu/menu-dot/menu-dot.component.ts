@@ -43,6 +43,5 @@ export class MenuDotComponent implements OnInit {
    * Al hacer click en un elemento retornara el nombre del menu que realizo click
    */
   menuClick(item: IMenuDot) {
-    console.log(item);
   }
 }

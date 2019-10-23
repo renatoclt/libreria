@@ -1,4 +1,13 @@
 /**
+ * Posicionaremos el componente en la parte alta de la pantalla
+ */
+ngx-utilitario-loading{
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+/**
  * evitaremos acciones del mouse
  * y lo posiccionaremos sobre * el overview que tiene el siguiente z-index 9999
  */

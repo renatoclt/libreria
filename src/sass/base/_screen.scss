@@ -44,3 +44,86 @@
     flex: 1 1 auto;
     pointer-events: none;
 }
+
+/**
+ * Permite ocupar el tamaño al 100%
+ */
+.clt-width-100{
+    width: 100%;
+}
+
+/**
+ * Cambiamos el estado a flex y lo usamos con float para sus hijos
+ */
+ .clt-flex{
+    display: flex;
+}
+/**
+ * Cambiamos el estado a flex y lo usamos con .clt-flex-10 para un tamaño
+ */
+ .clt-flex-row{
+    display: flex;
+    flex-wrap: wrap;
+}
+/**
+ * Permite ocupar el tamaño al 10%
+ */
+.clt-flex-10{
+    flex: 0 0 10%;
+    max-width: 10%;
+}
+/**
+ * Permite ocupar el tamaño al 50%
+ */
+.clt-flex-50{
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+/**
+ * Permite ocupar el tamaño al 80%
+ */
+.clt-flex-80{
+    flex: 0 0 80%;
+    max-width: 80%;
+}
+
+
+/**
+ * Ocultamos elemnto
+ */
+.clt-hidden{
+    display: none;
+}
+
+/**
+ * Eliminaremos el padding
+ */
+.clt-no-padding{
+    padding: 0;
+}
+
+/**
+ * Eliminaremos el margin
+ */
+.clt-no-padding{
+    margin: 0;
+}
+
+/**
+ * Tamaño dinamico
+ */
+.clt-width-auto{
+    width: auto;
+    margin: 0 auto;
+}
+
+/**
+ * Enviar a la derecha
+ */
+.clt-float-right{
+    float: right;
+}
+
+.clt-float-left{
+    float: left;
+}

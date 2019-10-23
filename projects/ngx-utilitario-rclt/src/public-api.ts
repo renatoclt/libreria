@@ -1,4 +1,4 @@
-/*
+/**
  * Public API Surface of ngx-utilitario-rclt
  */
 /**
@@ -17,6 +17,7 @@ export * from './lib/pipe/ngx-utilitario-rclt-pipes.module';
 export * from './lib/image/ngx-utilitario-rclt-image.module';
 export * from './lib/graphics/ngx-utilitario-rclt-graphics.module';
 export * from './lib/loading/ngx-utilitario-rclt-loading.module';
+export * from './lib/error-handler/ngx-utilitario-rclt-error-handler.module';
 
 
 /**
@@ -46,21 +47,22 @@ export * from './lib/chat/dto/emessage-state';
  * Interface
  */
 export * from './lib/loading/interfaces/loading.interfaces';
+export * from './lib/error-handler/interfaces/error-handler.interfaces';
 export * from './lib/chat/dto/ichat-detail';
 export * from './lib/chat/dto/ichat-detail-message';
 export * from './lib/chat/dto/ichat-list-detail';
 export * from './lib/image/carousel/dto/iowlcarousel-options';
 
-//component
-
+// Component
 export * from './lib/loading/ellipsis/ellipsis.component';
 export * from './lib/loading/spinner/spinner.component';
 
-//Constantes
-export {LOADING_INDICATOR_CONFIG, DEFAULT_CONFIG } from './lib/loading/loading.config';
+// Constantes
+export { LOADING_INDICATOR_CONFIG, DEFAULT_CONFIG } from './lib/loading/loading.config';
+export { ERROR_INJECTOR_TOKEN } from './lib/error-handler/constants/error-handler.constants';
+export { ERROR_HANDLER_CONFIG, DEFAULT_ERROR_HANDLER_CONFIG } from './lib/error-handler/error-handler.config';
 
-
-//Decorators
+// Decorators
 export {startLoading , stopLoading} from './lib/loading/loading.decorators';
 // export {CardsImgTextComponent} from './lib/cards/cards.component'
 // export {RepeatIconComponent} from './lib/cards/cards.component'

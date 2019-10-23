@@ -102,10 +102,8 @@ export class ChatComponent implements OnInit, OnChanges {
   searchValidate(chatListDetail: IChatListDetail[]) {
     if (!this.searchFlag) {
       this.finalList = chatListDetail;
-      console.log('ingrese', this.finalList);
     } else {
       this.finalList = this.searchList;
-      console.log('ingrese searc', this.finalList);
     }
   }
   /**
