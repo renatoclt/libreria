@@ -1,7 +1,7 @@
-<div id="message_{{i}}" class="col-12" class="ngx-util-detail-message" *ngFor="let item of messages; let i=index ">
+<div id="message_{{i}}" class="clt-width-100 clt-clean-float" *ngFor="let item of messages; let i=index " style="background: grey;">
     <div class="container-fluid">
-      <div class="row" *ngIf="dayLine(item.date,i)">
-        <div class="w-100 ngx-util-chat-linea">
+      <div class="clt-flex-row" *ngIf="dayLine(item.date,i)">
+        <div class="clt-width-100 ngx-util-chat-linea">
           <span class="ngx-util-chat-linea-span">
             {{dayDifference(item.date)}}
           </span>

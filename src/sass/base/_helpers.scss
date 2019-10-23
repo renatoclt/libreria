@@ -53,3 +53,10 @@
   position: absolute;
   width: 1px;
 }
+
+/**
+ * Limpiar los elementos con float  
+ */
+.clt-clean-float{
+  display: flow-root;
+}

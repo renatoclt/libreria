@@ -93,9 +93,9 @@ export class ChatDetailMessageComponent implements OnInit {
    */
   chooseStyle(messageType: EMessageType): string {
     if (messageType === EMessageType.sent) {
-      return 'ngx-util-chat-right float-right arrow_box';
+      return 'clt-chat-right clt-float-right arrow_box';
     }
-    return 'ngx-util-chat-left float-left';
+    return 'clt-chat-left clt-float-left';
   }
 
   /**

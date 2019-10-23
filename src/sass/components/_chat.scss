@@ -1,0 +1,71 @@
+//estilo chats
+/**
+ * los estilos para los mensajes enviados 
+ */
+.clt-chat-right {
+  background: #e7b723;
+  padding: 0.3125rem 0.9375rem;
+  border-radius: 0.25rem;
+  display: inline-block;
+  position: relative;
+  margin-bottom: 0.3125rem;
+  word-wrap: break-word;
+  max-width: 60%;
+  color: white;
+  text-align: right;
+  .message {
+    color: #fff;
+    margin: 0;
+    opacity: 1;
+    font-size: 0.875rem;
+    text-align: start;
+  }
+  .hour {
+    color: rgba(255, 255, 255, 0.5);
+    opacity: 1;
+    font-size: 0.8125rem;
+  }
+}
+
+/**
+ * los estilos para los mensajes recibidos 
+ */
+.clt-chat-left {
+  background: #fff;
+  padding: 0.3125rem 0.9375rem;
+  border-radius: 0.25rem;
+  display: inline-block;
+  position: relative;
+  margin-bottom: 0.3125rem;
+  word-wrap: break-word;
+  max-width: 60%;
+  color: white;
+  text-align: left;
+  .message {
+    color: #324148;
+    margin: 0;
+    opacity: 1;
+    font-size: 0.875rem;
+    text-align: start;
+  }
+  .hour {
+    color: rgba(50, 65, 72, 0.4);
+    opacity: 1;
+    font-size: 0.8125rem;
+  }
+}
+
+/**
+ * Agregar imagen
+ */
+.img-message {
+  height: 10rem;
+  width: auto;
+}
+
+/**
+ * Estilo al leer los mensajes
+ */
+.clt-msg-read {
+  color: #fff;
+}
