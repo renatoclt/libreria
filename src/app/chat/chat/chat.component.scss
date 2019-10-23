@@ -31,8 +31,3 @@
     flex-grow : 1;
     overflow: hidden;
 }
-
-//eliminamos el padding de scroll por defecto
-::ng-deep .scrollable-content{
-    padding: 0px !important;
-}

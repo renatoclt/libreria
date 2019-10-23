@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { OverlayComponent } from './overlay.component';
+import { LOADING_INDICATOR_CONFIG, DEFAULT_CONFIG } from '../loading.config';
 
 describe('OverlayComponent', () => {
   let component: OverlayComponent;
@@ -8,7 +9,8 @@ describe('OverlayComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ OverlayComponent ]
+      declarations: [ OverlayComponent ],
+      providers: [{provide: LOADING_INDICATOR_CONFIG, useValue: DEFAULT_CONFIG}]
     })
     .compileComponents();
   }));

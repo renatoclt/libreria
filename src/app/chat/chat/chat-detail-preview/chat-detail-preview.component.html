@@ -6,14 +6,13 @@
 <div class="ngx-util-preview-body">
   <img src="{{imgUrl}}" alt="img preview" height="200" *ngIf="imgUrl">
 </div>
-<!--todos los archivos seleccionados y la posibilidad de añadir mas archivos-->
+<!--los archivos seleccionados y la posibilidad de añadir mas archivos-->
 <div class="ngx-util-preview-files">
   <div class="row no-margin">
     <ngx-utilitario-perfect-scroll class="col-10">
       <div class="ngx-util-preview-all-files">
         <div *ngFor="let index of filesCount() | numberToArray" class="ngx-util-preview-files-item">
           <img src="{{imgUrls[index]}}" alt="img preview" height="100" (click)="previewFile(imgUrls[index])">
-          <!-- <div style="height: 100px; width: 100px; background:red; border: 1px solid black"></div> -->
         </div>
       </div>
     </ngx-utilitario-perfect-scroll>
