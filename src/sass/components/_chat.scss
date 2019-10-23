@@ -69,3 +69,44 @@
 .clt-msg-read {
   color: #fff;
 }
+
+
+/**
+ * Estilos para la linea en el chat
+ */
+.clt-chat-linea {
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+  font-size: 0.87rem;
+  margin: 0.93rem 3.125rem;
+  text-transform: capitalize;
+  color: #9e9e9e;
+  &:before {
+    background: #e0e3e4;
+    content: "";
+    height: 0.0625rem;
+    right: 50%;
+    margin-right: 2.5rem;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+  }
+  &:after{
+    background: #e0e3e4;
+    content: "";
+    height: 0.0625rem;
+    left: 50%;
+    margin-left: 2.5rem;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+  }
+}
+
+/**
+ * Color de la linea
+ */
+.clt-chat-linea-span{
+  // color: #fff;
+}

@@ -1,8 +1,8 @@
-<div id="message_{{i}}" class="clt-width-100 clt-clean-float" *ngFor="let item of messages; let i=index " style="background: grey;">
+<div id="message_{{i}}" class="clt-width-100 clt-clean-float" *ngFor="let item of messages; let i=index">
     <div class="container-fluid">
       <div class="clt-flex-row" *ngIf="dayLine(item.date,i)">
-        <div class="clt-width-100 ngx-util-chat-linea">
-          <span class="ngx-util-chat-linea-span">
+        <div class="clt-width-100 clt-chat-linea">
+          <span class="clt-chat-linea-span">
             {{dayDifference(item.date)}}
           </span>
         </div>
@@ -11,7 +11,7 @@
     <div class="container-fluid"  >
       <div [ngClass]="chooseStyle(item.messageType)">
         <div *ngIf="validateImage(item)">
-          <img src="{{item.imgUrl}}" alt="Message" class="img-message">
+          <img src="{{item.imgUrl}}" alt="Send Image" class="img-message">
         </div>
         <div *ngIf="validateMessage(item.message)" class="message">{{item.message}}</div>
         <div class="hour">{{item.hour}}
