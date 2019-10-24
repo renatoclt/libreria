@@ -1,6 +1,6 @@
 <!--Titulo del componente-->
-<div class="w-100 ngx-util-preview-title">
-  <em class="fa fa-times ngx-util-em-action" (click)="closePreview()"></em> {{title}}
+<div class="w-100 clt-preview-title">
+  <em class="fa fa-times clt-em-action" (click)="closePreview()"></em> {{title}}
 </div>
 <!--div donde mostrara la imagen  seleccionada e insercion del texto-->
 <div class="ngx-util-preview-body">
@@ -8,17 +8,17 @@
 </div>
 <!--los archivos seleccionados y la posibilidad de añadir mas archivos-->
 <div class="ngx-util-preview-files">
-  <div class="row no-margin">
-    <ngx-utilitario-perfect-scroll class="col-10">
-      <div class="ngx-util-preview-all-files">
+  <div class="clt-flex-row">
+    <ngx-utilitario-perfect-scroll class="clt-flex-80 clt-no-padding">
+      <div class="ngx-util-preview-all-files clt-no-padding">
         <div *ngFor="let index of filesCount() | numberToArray" class="ngx-util-preview-files-item">
           <img src="{{imgUrls[index]}}" alt="img preview" height="100" (click)="previewFile(imgUrls[index])">
         </div>
       </div>
     </ngx-utilitario-perfect-scroll>
-    <input class="ngx-util-input-file" type="file" accept="image/*" #file (change)="addImage($event)" multiple>
-    <div class="ngx-util-preview-files-add" (click)="file.click()"> 
-      <em class="fa fa-plus ngx-util-preview-files-add-icon"></em> Agregar Imagenes
+    <input class="clt-hidden" type="file" accept="image/*" #file (change)="addImage($event)" multiple>
+    <div class="clt-preview-files-add" (click)="file.click()"> 
+      <em class="fa fa-plus clt-preview-files-add-icon"></em> Agregar Imagenes
     </div>
   </div>
 </div>

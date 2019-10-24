@@ -29,7 +29,7 @@ export class AppComponent implements OnInit {
     date: '01/01/2019',
     hour: '01/01',
     messageType: EMessageType.recived,
-    messageState: EMessageState.read
+    messageState: EMessageState.received
   }, {
     img: null,
     imgUrl: undefined,
@@ -45,7 +45,7 @@ export class AppComponent implements OnInit {
     date: '01/01/2019',
     hour: '01/01',
     messageType: EMessageType.sent,
-    messageState: EMessageState.read
+    messageState: EMessageState.received
   }, {
     img: 'https://firebasestorage.googleapis.com/v0/b/tbusca-57c7e.appspot.com/o/Establecimientos%2F-LpnThHdGJalM6zyHj4R%2FimagenPrincipal?alt=media&amp;token=32c88031-6c3f-4c2c-a4c8-216b58a714c0',
     imgUrl: '',

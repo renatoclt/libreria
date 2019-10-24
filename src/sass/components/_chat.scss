@@ -13,14 +13,14 @@
   max-width: 60%;
   color: white;
   text-align: right;
-  .message {
+  .clt-message {
     color: #fff;
     margin: 0;
     opacity: 1;
     font-size: 0.875rem;
     text-align: start;
   }
-  .hour {
+  .clt-message-hour {
     color: rgba(255, 255, 255, 0.5);
     opacity: 1;
     font-size: 0.8125rem;
@@ -41,14 +41,14 @@
   max-width: 60%;
   color: white;
   text-align: left;
-  .message {
+  .clt-message {
     color: #324148;
     margin: 0;
     opacity: 1;
     font-size: 0.875rem;
     text-align: start;
   }
-  .hour {
+  .clt-message-hour {
     color: rgba(50, 65, 72, 0.4);
     opacity: 1;
     font-size: 0.8125rem;
@@ -58,15 +58,16 @@
 /**
  * Agregar imagen
  */
-.img-message {
+.clt-message-img {
   height: 10rem;
   width: auto;
+  max-width: 100%;
 }
 
 /**
  * Estilo al leer los mensajes
  */
-.clt-msg-read {
+.clt-message-read {
   color: #fff;
 }
 

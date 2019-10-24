@@ -1,0 +1,14 @@
+/**
+ * Elemento em 
+ */
+.clt-em-action{
+    padding: 0.625rem 0.875rem;
+    transition: 0.2s ease-in-out;
+    transform-style: preserve-3d;
+    &:hover{
+        background: rgba(255, 255, 255, 0.2);
+        outline: none !important;
+        text-decoration: none;
+        border-radius: 50%;
+    }
+}

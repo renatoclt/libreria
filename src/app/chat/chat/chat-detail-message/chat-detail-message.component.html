@@ -11,21 +11,21 @@
     <div class="container-fluid"  >
       <div [ngClass]="chooseStyle(item.messageType)">
         <div *ngIf="validateImage(item)">
-          <img src="{{item.imgUrl}}" alt="Send Image" class="img-message">
+          <img src="{{item.imgUrl}}" alt="Send Image" class="clt-message-img">
         </div>
-        <div *ngIf="validateMessage(item.message)" class="message">{{item.message}}</div>
-        <div class="hour">{{item.hour}}
+        <div *ngIf="validateMessage(item.message)" class="clt-message">{{item.message}}</div>
+        <div class="clt-message-hour">{{item.hour}}
           <span *ngIf="messageState(item.messageState, item.messageType, EMessageState.sent )"
-            class="ngx-util-msg-sent">
+            class="clt-message-sent">
             <em class="fa fa-check"></em>
           </span>
           <span *ngIf="messageState(item.messageState, item.messageType, EMessageState.received)"
-            class="ngx-util-msg-received">
+            class="clt-message-sent">
             <em class="fa fa-check"></em>
             <em class="fa fa-check"></em>
           </span>
           <span *ngIf="messageState(item.messageState, item.messageType, EMessageState.read )"
-            class="ngx-util-msg-read">
+            class="clt-message-read">
             <em class="fa fa-check"></em>
             <em class="fa fa-check"></em>
           </span>
