@@ -9,47 +9,52 @@
     </div>
 </div>
 <!--Si es valido chatdetail mostraremos el chat-->
-<div class="container-fluid ngx-util-detail no-margin no-padding" *ngIf="validateChatDetail()">
+<div class="clt-height-dynamic no-margin no-padding" *ngIf="validateChatDetail()">
   <!--Cabecera del chat-->
-  <div class="row ngx-util-detail-head no-margin">
-    <div class="col-2 img-fluid detail-head-img no-padding">
+  <div class="clt-flex ngx-util-detail-head no-margin">
+    <!-- Imagen -->
+    <div class="clt-padding-1">
       <img class="img-fluid rounded-circle img-profile-chat-detail" alt="chatDetail.name"
         src="{{imageValidate(chatDetail.img)}}" />
     </div>
-    <div class="detail-head-name col-7">
-      <div class="row">
-        <div class="col-12 text-ellipsis">
+    <!-- Nombre y estado -->
+    <div class="clt-width-100">
+      <div class="">
+        <div class="">
           {{chatDetail.name}}
         </div>
       </div>
-      <div class="row">
-        <div class="col-12 detail-head-state-letters">{{nameState(chatDetail.state)}}</div>
+      <div class="">
+        <div class="">{{nameState(chatDetail.state)}}</div>
       </div>
     </div>
-    <div class="detail-head-actions no-padding">
-      <div class="ngx-util-btns-actions">
-        <button id="btn_chatDelete" type="button" class="col-6 btn ngx-util-btn-icon ngx-util-btn-gray"
-          (click)="chatDelete()" title="{{messageTrashIcon}}">
-          <i class="fa fa-trash-o" style="color: #808080" aria-hidden="true" title="{{messageTrashIcon}}"></i>
-        </button>
-        <button id="btn_chatLock" *ngIf="lookStateValidate(chatDetail.lock, EChatLock.unlocked)" type="button"
-          class="col-6 btn ngx-util-btn-icon ngx-util-btn-gray" (click)="lock()" title="{{messageLockIcon}}">
-          <i class="fa fa-ban" style="color: #c2272d" aria-hidden="true" title="{{messageLockIcon}}"></i>
-        </button>
-        <button id="btn_chatUnlock" *ngIf="lookStateValidate(chatDetail.lock, EChatLock.lock)" type="button"
-          class="col-6 btn ngx-util-btn-icon ngx-util-btn-gray" title="{{messageUnlockIcon}}" (click)="unlock()">
-          <i class="fa fa-unlock" style="color: #228B22" aria-hidden="true" title="{{messageUnlockIcon}}"></i>
-        </button>
-      </div>
-    </div>
+    <!-- Menu en el chat -->
+    <button class="clt-btn-icon" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>
+        <!-- <mat-icon>dialpad</mat-icon> -->
+        <span>Redial</span>
+      </button>
+      <button mat-menu-item disabled>
+        <!-- <mat-icon>voicemail</mat-icon> -->
+        <span>Check voice mail</span>
+      </button>
+      <button mat-menu-item>
+        <!-- <mat-icon>notifications_off</mat-icon> -->
+        <span>Disable alerts</span>
+      </button>
+    </mat-menu>
   </div>
   <!--Mensajes del chat-->
-  <div class="ngx-util-detail-messages" style="background: rgb(245, 245, 246);" *ngIf="filesPreview === undefined">
+  <div class="clt-height-dynamic-row" style="background: rgb(245, 245, 246);" *ngIf="filesPreview === undefined">
     <ngx-utilitario-perfect-scroll [position]="position" [elementName] = "elementName" >
       <ngx-utilitario-chat-detail-message [messages]="chatDetail.messages"></ngx-utilitario-chat-detail-message>
     </ngx-utilitario-perfect-scroll>
   </div>
-  <div *ngIf="filesPreview !== undefined">
+  <!--Previsualizar las imagenes-->
+  <div *ngIf="filesPreview !== undefined" class="clt-height-dynamic-row" >
     <ngx-utilitario-chat-detail-preview [files]="filesPreview" (close)="closePreview()"></ngx-utilitario-chat-detail-preview>
   </div>
   <!--Agregar chat-->

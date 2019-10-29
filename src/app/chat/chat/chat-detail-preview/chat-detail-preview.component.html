@@ -1,24 +1,26 @@
-<!--Titulo del componente-->
-<div class="w-100 clt-preview-title">
-  <em class="fa fa-times clt-em-action" (click)="closePreview()"></em> {{title}}
-</div>
-<!--div donde mostrara la imagen  seleccionada e insercion del texto-->
-<div class="ngx-util-preview-body">
-  <img src="{{imgUrl}}" alt="img preview" height="200" *ngIf="imgUrl">
-</div>
-<!--los archivos seleccionados y la posibilidad de añadir mas archivos-->
-<div class="ngx-util-preview-files">
-  <div class="clt-flex-row">
-    <ngx-utilitario-perfect-scroll class="clt-flex-80 clt-no-padding">
-      <div class="ngx-util-preview-all-files clt-no-padding">
-        <div *ngFor="let index of filesCount() | numberToArray" class="ngx-util-preview-files-item">
-          <img src="{{imgUrls[index]}}" alt="img preview" height="100" (click)="previewFile(imgUrls[index])">
+<div class="clt-height-dynamic">
+  <!--Titulo del componente-->
+  <div class="w-100 clt-preview-title">
+    <em class="fa fa-times clt-em-action" (click)="closePreview()"></em> {{title}}
+  </div>
+  <!--div donde mostrara la imagen  seleccionada e insercion del texto-->
+  <div class="clt-height-dynamic-row ngx-util-preview-body">
+    <img *ngIf="imgUrl" src="{{imgUrl}}" alt="img preview" class="clt-max-100">
+  </div>
+  <!--los archivos seleccionados y la posibilidad de añadir mas archivos-->
+  <div class="ngx-util-preview-files">
+    <div class="clt-width-dynamic">
+      <ngx-utilitario-perfect-scroll class="clt-width-dynamic-col clt-no-padding">
+        <div class="ngx-util-preview-all-files clt-no-padding">
+          <div *ngFor="let index of filesCount() | numberToArray" class="ngx-util-preview-files-item">
+            <img src="{{imgUrls[index]}}" alt="img preview" height="100" (click)="previewFile(imgUrls[index])">
+          </div>
         </div>
+      </ngx-utilitario-perfect-scroll>
+      <input class="clt-hidden" type="file" accept="image/*" #file (change)="addImage($event)" multiple>
+      <div class="clt-preview-files-add" (click)="file.click()"> 
+        <em class="fa fa-plus clt-preview-files-add-icon"></em> Agregar Imagenes
       </div>
-    </ngx-utilitario-perfect-scroll>
-    <input class="clt-hidden" type="file" accept="image/*" #file (change)="addImage($event)" multiple>
-    <div class="clt-preview-files-add" (click)="file.click()"> 
-      <em class="fa fa-plus clt-preview-files-add-icon"></em> Agregar Imagenes
     </div>
   </div>
 </div>

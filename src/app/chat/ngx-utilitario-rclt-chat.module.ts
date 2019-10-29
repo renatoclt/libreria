@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatIconModule } from '@angular/material';
+import { MatIconModule, MatMenuModule } from '@angular/material';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ChatComponent } from './chat/chat.component';
 import { ChatSearchComponent } from './chat/chat-search/chat-search.component';
@@ -33,7 +33,8 @@ import { ChatDetailPreviewComponent } from './chat/chat-detail-preview/chat-deta
     NgxUtilitarioFormstModule,
     NgxUtilitarioPerfectScrollModule,
     NgxUtilitarioPipesModule,
-    MatIconModule
+    MatIconModule,
+    MatMenuModule
   ],
   exports: [
     ChatComponent,

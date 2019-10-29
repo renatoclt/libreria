@@ -1,129 +1,193 @@
-@import '../abstracts/mixins';
+@import "../abstracts/mixins";
 /**
  * Estilo que ocupara toda la pantalla
  */
 .clt-screen-100 {
-    position: fixed;
-    top: 0;
-    left: 0;
-    @include size(100%, 100%);
-} 
+  position: fixed;
+  top: 0;
+  left: 0;
+  @include size(100%, 100%);
+}
 
 /**
  * Estilo que posicionara en la parte superior izquiera
  */
 .clt-screen-top-left {
-    position: fixed;
-    top: 0;
-    left: 0;
-} 
+  position: fixed;
+  top: 0;
+  left: 0;
+}
 /**
  * Estilo que posicionara en la parte superior derecha
  */
 .clt-screen-top-righ {
-    position: fixed;
-    top: 0;
-    right: 0;
-} 
+  position: fixed;
+  top: 0;
+  right: 0;
+}
 
 /**
  * ocupara toda la pantalla y se pondra delente de todos los elementos y sus elementos estaran centrados
  * 1 eliminamos acciones por el mouse
  */
 .clt-overlay-center {
-    display: flex;
-    width: 100vw;
-    height: 100vh;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 9999;
-    justify-content: center;
-    align-items: center;
-    flex: 1 1 auto;
-    pointer-events: none;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+  flex: 1 1 auto;
+  pointer-events: none;
 }
 
 /**
  * Permite ocupar el tamaño al 100%
  */
-.clt-width-100{
-    width: 100%;
+.clt-width-100 {
+  width: 100%;
 }
 
 /**
  * Cambiamos el estado a flex y lo usamos con float para sus hijos
  */
- .clt-flex{
-    display: flex;
+.clt-flex {
+  display: flex;
 }
 /**
  * Cambiamos el estado a flex y lo usamos con .clt-flex-10 para un tamaño
  */
- .clt-flex-row{
-    display: flex;
-    flex-wrap: wrap;
+.clt-flex-row {
+  display: flex;
+  flex-wrap: wrap;
 }
 /**
  * Permite ocupar el tamaño al 10%
  */
-.clt-flex-10{
-    flex: 0 0 10%;
-    max-width: 10%;
+.clt-flex-10 {
+  flex: 0 0 10%;
+  max-width: 10%;
+}
+/**
+ * Permite ocupar el tamaño al 20%
+ */
+.clt-flex-20 {
+  flex: 0 0 20%;
+  max-width: 20%;
+}
+/**
+ * Permite ocupar el tamaño al 30%
+ */
+.clt-flex-30 {
+  flex: 0 0 30%;
+  max-width: 30%;
+}
+/**
+ * Permite ocupar el tamaño al 30%
+ */
+.clt-flex-40 {
+  flex: 0 0 40%;
+  max-width: 40%;
 }
 /**
  * Permite ocupar el tamaño al 50%
  */
-.clt-flex-50{
-    flex: 0 0 50%;
-    max-width: 50%;
+.clt-flex-50 {
+  flex: 0 0 50%;
+  max-width: 50%;
 }
 /**
  * Permite ocupar el tamaño al 80%
  */
-.clt-flex-80{
-    flex: 0 0 80%;
-    max-width: 80%;
+.clt-flex-80 {
+  flex: 0 0 80%;
+  max-width: 80%;
 }
-
 
 /**
  * Ocultamos elemnto
  */
-.clt-hidden{
-    display: none;
+.clt-hidden {
+  display: none;
 }
 
 /**
  * Eliminaremos el padding
  */
-.clt-no-padding{
-    padding: 0;
+.clt-no-padding {
+  padding: 0;
 }
 
 /**
  * Eliminaremos el margin
  */
-.clt-no-padding{
-    margin: 0;
+.clt-no-margin {
+  margin: 0;
 }
 
 /**
  * Tamaño dinamico
  */
-.clt-width-auto{
-    width: auto;
-    margin: 0 auto;
+.clt-width-auto {
+  width: auto;
+  margin: 0 auto;
 }
 
 /**
  * Enviar a la derecha
  */
-.clt-float-right{
-    float: right;
+.clt-float-right {
+  float: right;
 }
 
-.clt-float-left{
-    float: left;
+.clt-float-left {
+  float: left;
+}
+
+/**
+ * Contenido del div sea siempre del 100%
+ * Se debe declarar en el div clt-height-dynamic
+ * en el hijo clt-height-dynamic-row
+ */
+.clt-height-dynamic {
+  display: flex;
+  flex-flow: column;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+//Altura se ajustara al padre menos los hijos
+.clt-height-dynamic-row {
+  flex-grow: 1;
+  overflow: hidden;
+  height: -webkit-fill-available;
+  overflow-y: hidden;
+}
+
+/**
+ * Contenido del div sea siempre del 100%
+ * Se debe declarar en el div clt-width-dynamic
+ * en el hijo clt-height-dynamic-col
+ */
+.clt-width-dynamic {
+  display: flex;
+  flex-flow: row;
+}
+
+//Altura se ajustara al padre menos los hijos
+.clt-width-dynamic-col {
+  flex-grow: 1;
+}
+
+/**
+ * Que no pase el 100%
+ */
+.clt-max-100 {
+    max-width: 100%;
+    max-height: 100%;
 }

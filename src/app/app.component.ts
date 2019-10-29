@@ -64,6 +64,14 @@ export class AppComponent implements OnInit {
     messageType: EMessageType.sent,
     messageState: EMessageState.read
   }];
+  chatDetail: IChatDetail = {
+    id: '1',
+    img: undefined,
+    lock: EChatLock.unlocked,
+    messages: [],
+    name: 'prueba de nombre',
+    state: EChatState.offline
+  };
   ngOnInit(): void {
   }
   add() {
