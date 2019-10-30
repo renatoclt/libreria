@@ -60,3 +60,18 @@
 .clt-clean-float{
   display: flow-root;
 }
+
+/**
+ * Mostrar solo una linea
+ */
+.clt-linea-1{
+    display: block;
+    display: -webkit-box;
+    height: $font-size * $line-height * 1;
+    font-size: $font-size;
+    line-height: $font-size * $line-height;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

@@ -13,7 +13,7 @@
 <!--Si es valido chatdetail mostraremos el chat-->
 <div class="clt-height-dynamic clt-no-margin clt-no-padding" *ngIf="validateChatDetail()">
   <!--Cabecera del chat-->
-  <div class="clt-flex clt-chat-detail-head no-margin">
+  <div class="clt-flex clt-chat-detail-head clt-no-margin">
     <!-- Imagen -->
     <div class="clt-padding-1">
       <img class="clt-chat-detail-head-img" alt="chatDetail.name" src="{{imageValidate(chatDetail.img)}}" />
@@ -33,15 +33,15 @@
     <mat-menu #menu="matMenu">
       <button mat-menu-item>
         <!-- <mat-icon>dialpad</mat-icon> -->
-        <span>Redial</span>
+        <span>Bloquear</span>
       </button>
-      <button mat-menu-item disabled>
+      <button mat-menu-item>
         <!-- <mat-icon>voicemail</mat-icon> -->
-        <span>Check voice mail</span>
+        <span>Eliminar conversación</span>
       </button>
       <button mat-menu-item>
         <!-- <mat-icon>notifications_off</mat-icon> -->
-        <span>Disable alerts</span>
+        <span>Ver anuncio</span>
       </button>
     </mat-menu>
   </div>

@@ -1,19 +1,5 @@
-$font-size: 20px;
-$line-height: 1.4;
-$lines: 1;
-$font-size-chat : 16px;
 
-.clt-linea-1{
-    display: block;
-    display: -webkit-box;
-    height: $font-size * $line-height * $lines;
-    font-size: $font-size;
-    line-height: $line-height;
-    -webkit-line-clamp: $lines;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
+
 
 // .clt-chat-detail-head{
 //     padding: 0.62rem 0.93rem;
