@@ -71,3 +71,9 @@ $breakpoints: (
 /// @example scss - When using a CDN
 ///   $base-url: 'http://cdn.example.com/assets/';
 $base-url: '/assets/' !default;
+
+
+/**
+ * Tamaño base para el componente del chat
+ */ 
+$font-size-chat: 1rem;

@@ -1,7 +1,7 @@
-<div class="clt-width-100 clt-flex" style="padding: 15px;">
+<div class="clt-width-100 clt-flex clt-chat-detail-add">
   <!--Input-->
   <form [formGroup]="messageForm" class="clt-width-100">
-    <input id="txt_message" class="clt-width-100 clt-txt-search" formControlName="message" [attr.disabled]="disabled ? '' : null"
+    <input id="txt_message" class="clt-width-100 clt-txt-search clt-chat-detail-add-input" formControlName="message" [attr.disabled]="disabled ? '' : null"
       [placeholder]="placeholder" (keyup.enter)="sendMessage()">
   </form>
   <div class="clt-float-right  clt-flex-row" style="width: 110px;">

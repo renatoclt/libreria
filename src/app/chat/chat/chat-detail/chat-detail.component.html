@@ -1,35 +1,33 @@
 <!--Si es invalido chatdetail mostraremos una imagen-->
-<div class="container-fluid ngx-util-detail no-margin no-padding" *ngIf="!validateChatDetail()" style="height: 100%; display: table;">
-  <div class="col-md-12" style="padding: 1rem 0 7rem 0;text-align: center; height: 100%; display: table-cell; vertical-align: middle">
-      <img class="img-fluid" src="{{imageChat}}" alt="Wi-Fi" style="height: 100%;  max-height: 300px;">
-      <p style="font-size: 16px;">
-          <strong style="font-size: 24px;">Tbusca te mantiene conectado</strong><br><br>
-          Conversa con tus lugares favoritos y de interes de un modo seguro y eficaz
-      </p>
-    </div>
+<div class="container-fluid ngx-util-detail no-margin no-padding" *ngIf="!validateChatDetail()"
+  style="height: 100%; display: table;">
+  <div class="col-md-12"
+    style="padding: 1rem 0 7rem 0;text-align: center; height: 100%; display: table-cell; vertical-align: middle">
+    <img class="img-fluid" src="{{imageChat}}" alt="Wi-Fi" style="height: 100%;  max-height: 300px;">
+    <p style="font-size: 16px;">
+      <strong style="font-size: 24px;">Tbusca te mantiene conectado</strong><br><br>
+      Conversa con tus lugares favoritos y de interes de un modo seguro y eficaz
+    </p>
+  </div>
 </div>
 <!--Si es valido chatdetail mostraremos el chat-->
-<div class="clt-height-dynamic no-margin no-padding" *ngIf="validateChatDetail()">
+<div class="clt-height-dynamic clt-no-margin clt-no-padding" *ngIf="validateChatDetail()">
   <!--Cabecera del chat-->
-  <div class="clt-flex ngx-util-detail-head no-margin">
+  <div class="clt-flex clt-chat-detail-head no-margin">
     <!-- Imagen -->
     <div class="clt-padding-1">
-      <img class="img-fluid rounded-circle img-profile-chat-detail" alt="chatDetail.name"
-        src="{{imageValidate(chatDetail.img)}}" />
+      <img class="clt-chat-detail-head-img" alt="chatDetail.name" src="{{imageValidate(chatDetail.img)}}" />
     </div>
     <!-- Nombre y estado -->
-    <div class="clt-width-100">
-      <div class="">
-        <div class="">
-          {{chatDetail.name}}
-        </div>
+    <div class="clt-width-100 clt-chat-head-title">
+      <div class="clt-chat-detail-head-name clt-linea-1" title="{{chatDetail.name}}">
+        {{chatDetail.name}}
       </div>
-      <div class="">
-        <div class="">{{nameState(chatDetail.state)}}</div>
-      </div>
+      <div class="clt-chat-detail-head-state">{{nameState(chatDetail.state)}}</div>
     </div>
     <!-- Menu en el chat -->
-    <button class="clt-btn-icon" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+    <button class="clt-btn-icon" mat-icon-button [matMenuTriggerFor]="menu"
+      aria-label="Example icon-button with a menu">
       <mat-icon>more_vert</mat-icon>
     </button>
     <mat-menu #menu="matMenu">
@@ -49,19 +47,20 @@
   </div>
   <!--Mensajes del chat-->
   <div class="clt-height-dynamic-row" style="background: rgb(245, 245, 246);" *ngIf="filesPreview === undefined">
-    <ngx-utilitario-perfect-scroll [position]="position" [elementName] = "elementName" >
+    <ngx-utilitario-perfect-scroll [position]="position" [elementName]="elementName">
       <ngx-utilitario-chat-detail-message [messages]="chatDetail.messages"></ngx-utilitario-chat-detail-message>
     </ngx-utilitario-perfect-scroll>
   </div>
   <!--Previsualizar las imagenes-->
-  <div *ngIf="filesPreview !== undefined" class="clt-height-dynamic-row" >
-    <ngx-utilitario-chat-detail-preview [files]="filesPreview" (close)="closePreview()"></ngx-utilitario-chat-detail-preview>
+  <div *ngIf="filesPreview !== undefined" class="clt-height-dynamic-row">
+    <ngx-utilitario-chat-detail-preview [files]="filesPreview" (close)="closePreview()">
+    </ngx-utilitario-chat-detail-preview>
   </div>
   <!--Agregar chat-->
   <div class="container-fluid ngx-util-detail-add">
     <div class="row">
-      <ngx-utilitario-chat-detail-add class="col-12 ngx-utilitario-chat-agregar" (newMessage)="messageSend($event)" (newImage)="imagePreview($event)"
-        [disabled]="chatDetail.lock"></ngx-utilitario-chat-detail-add>
+      <ngx-utilitario-chat-detail-add class="col-12 ngx-utilitario-chat-agregar" (newMessage)="messageSend($event)"
+        (newImage)="imagePreview($event)" [disabled]="chatDetail.lock"></ngx-utilitario-chat-detail-add>
     </div>
   </div>
 </div>

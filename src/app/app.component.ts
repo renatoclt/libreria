@@ -68,8 +68,8 @@ export class AppComponent implements OnInit {
     id: '1',
     img: undefined,
     lock: EChatLock.unlocked,
-    messages: [],
-    name: 'prueba de nombre',
+    messages: this.messages,
+    name: 'Renato - Establecimiento, se mira mejor evitar las dos lineas',
     state: EChatState.offline
   };
   ngOnInit(): void {

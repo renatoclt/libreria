@@ -1,5 +1,18 @@
 //estilo chats
 /**
+ * Agregar estilos al insertar un nuevo mensajes 
+ */
+.clt-chat-detail-add{
+  padding: 15px;
+}
+
+/**
+ * dar tamaño al input 
+ */
+.clt-chat-detail-add-input{
+  font-size: $font-size-chat;
+}
+/**
  * los estilos para los mensajes enviados 
  */
 .clt-chat-right {
@@ -17,13 +30,13 @@
     color: #fff;
     margin: 0;
     opacity: 1;
-    font-size: 0.875rem;
+    font-size: $font-size-chat / 1.25;
     text-align: start;
   }
   .clt-message-hour {
     color: rgba(255, 255, 255, 0.5);
     opacity: 1;
-    font-size: 0.8125rem;
+    font-size: $font-size-chat / 1.26;
   }
 }
 
@@ -45,13 +58,13 @@
     color: #324148;
     margin: 0;
     opacity: 1;
-    font-size: 0.875rem;
+    font-size: $font-size-chat / 1.25;
     text-align: start;
   }
   .clt-message-hour {
     color: rgba(50, 65, 72, 0.4);
     opacity: 1;
-    font-size: 0.8125rem;
+    font-size: $font-size-chat / 1.26;
   }
 }
 
@@ -109,5 +122,42 @@
  * Color de la linea
  */
 .clt-chat-linea-span{
-  // color: #fff;
+  color: #fff;
+}
+
+
+/**
+ * daremos un tamaño estatico al header del chat
+ */
+.clt-chat-detail-head{
+  padding: 0.62rem 0.93rem;
+  height: 4.37rem;
+  border-bottom: 0.0625rem solid #e0e3e4;
+}
+
+/**
+ * Le daremos un tamaño a la imagen en el chat y le daremos efecto circular
+ */
+.clt-chat-detail-head-img{
+  height: 3.125rem;
+  margin-right: 1rem;
+  border-radius: 50%;
+}
+
+/**
+ * Se generara el estado del offline de un color plomo
+ */
+.clt-chat-detail-head-state{
+  color: #b0b0b0;
+  font-size: $font-size-chat / 1.35;
+  display: block;
+  margin-top: -2px;
+}
+
+/**
+* resaltaremos el color del nombre del usuario en el chat y un tamaño
+*/
+.clt-chat-detail-head-name{
+  font-size: $font-size-chat;
+  font-weight: bolder;
 }

@@ -117,7 +117,17 @@ export class ChatDetailPreviewComponent implements OnChanges {
   /**
    * Agregaremos mas imagenes a las imagenes mostradas actualmente
    */
-  addImage(images) {
+  addImage(event: Event) {
+    const target = event.target as HTMLInputElement;
+    const fileList: FileList = target.files;
+    this.finalFiles = this.toArray(this.finalFiles).concat(this.toArray(fileList));
+    this.previewFiles();
+  }
 
+  /**
+   * concataremos 2 file list
+   */
+  toArray(fileList) {
+    return Array.prototype.slice.call(fileList);
   }
 }
