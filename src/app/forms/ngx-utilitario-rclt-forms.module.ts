@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { InputComponent } from './input/input.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { MatInputModule, MatFormFieldModule, MatTooltipModule } from '@angular/material';
+import { MatInputModule, MatFormFieldModule, MatTooltipModule, MatIconModule } from '@angular/material';
 import { InputSearchComponent } from './input-search/input-search.component';
 
 @NgModule({
@@ -12,7 +12,8 @@ import { InputSearchComponent } from './input-search/input-search.component';
     CommonModule,
     MatFormFieldModule,
     MatInputModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatIconModule
   ],
   exports: [
     InputComponent,

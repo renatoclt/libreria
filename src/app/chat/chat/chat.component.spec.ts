@@ -23,7 +23,7 @@ describe('ChatComponent', () => {
         ChatListDetailComponent,
         ChatDetailComponent,
         ChatDetailAddComponent,
-        ChatDetailMessageComponent,],
+        ChatDetailMessageComponent],
       imports: [
         ReactiveFormsModule
       ]

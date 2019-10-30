@@ -7,7 +7,7 @@
  */
 .clearfix::after {
   clear: both;
-  content: '';
+  content: "";
   display: table;
 }
 
@@ -24,7 +24,7 @@
   padding-left: 20px; /* 3 */
   padding-right: 20px; /* 3 */
   width: 100%; /* 1 */
- }
+}
 
 /**
  * Hide text while making it readable for screen readers
@@ -57,21 +57,43 @@
 /**
  * Limpiar los elementos con float  
  */
-.clt-clean-float{
+.clt-clean-float {
   display: flow-root;
 }
 
 /**
  * Mostrar solo una linea
  */
-.clt-linea-1{
-    display: block;
-    display: -webkit-box;
-    height: $font-size * $line-height * 1;
-    font-size: $font-size;
-    line-height: $font-size * $line-height;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
+.clt-linea-1 {
+  display: block;
+  display: -webkit-box;
+  height: $font-size * $line-height * 1;
+  font-size: $font-size;
+  line-height: $font-size * $line-height;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/**
+ * alinearemos los elementos al centro
+ * actualmete solo alinea div, p, span, img
+ */
+.clt-content-centered {
+  text-align: center;
+  &::before {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -0.25em; /* Adjusts for spacing */
+  }
+  & > div,
+  p,
+  span,
+  img {
+    display: inline-block;
+    vertical-align: middle;
+  }
 }

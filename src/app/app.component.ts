@@ -4,6 +4,7 @@ import { EChatLock } from './chat/dto/echat-lock';
 import { EChatState } from './chat/dto/echat-state';
 import { EMessageType, IChatDetailMessage } from 'projects/ngx-utilitario-rclt/src/public-api';
 import { EMessageState } from './chat/dto/emessage-state';
+import { IChatListDetail } from './chat/dto/ichat-list-detail';
 /**
  * Principal componente de la aplicacion
  */
@@ -72,6 +73,15 @@ export class AppComponent implements OnInit {
     name: 'Renato - Establecimiento, se mira mejor evitar las dos lineas',
     state: EChatState.offline
   };
+  list: IChatListDetail = {
+    id: '1',
+    img: '',
+    lock: EChatLock.locked,
+    message: [],
+    name: 'prueba',
+    notification: 1,
+    state: EChatState.offline
+  }
   ngOnInit(): void {
   }
   add() {

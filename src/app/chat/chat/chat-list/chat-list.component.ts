@@ -7,6 +7,7 @@ import { IChatListDetail } from '../../dto/ichat-list-detail';
 @Component({
   selector: 'ngx-utilitario-chat-list',
   templateUrl: './chat-list.component.html',
+  styleUrls: ['./chat-list.component.scss']
 })
 export class ChatListComponent implements OnInit {
   /**
@@ -31,12 +32,21 @@ export class ChatListComponent implements OnInit {
    */
   ngOnInit() {
   }
+
   /**
    * retorna el chat que realiza click
    * @param detail las propiedades del chat
    */
   click(detail: IChatListDetail) {
     this.clickList.emit(detail);
+  }
+
+
+  /**
+   * Al escribir algo
+   */
+  searchChange() {
+
   }
 
 }
