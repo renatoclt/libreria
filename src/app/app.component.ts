@@ -2,9 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { IChatDetail } from './chat/dto/ichat-detail';
 import { EChatLock } from './chat/dto/echat-lock';
 import { EChatState } from './chat/dto/echat-state';
-import { EMessageType, IChatDetailMessage } from 'projects/ngx-utilitario-rclt/src/public-api';
 import { EMessageState } from './chat/dto/emessage-state';
 import { IChatListDetail } from './chat/dto/ichat-list-detail';
+import { IChatDetailMessage } from './chat/dto/ichat-detail-message';
+import { stopLoading, startLoading } from './loading/loading.decorators';
+import { EMessageType } from './chat/dto/emensaje-type';
 /**
  * Principal componente de la aplicacion
  */
@@ -83,6 +85,7 @@ export class AppComponent implements OnInit {
     state: EChatState.offline
   }
   ngOnInit(): void {
+    this.triggerLoadingIndicator();
   }
   add() {
     this.messages.push({
@@ -94,5 +97,13 @@ export class AppComponent implements OnInit {
       messageType: EMessageType.recived,
       messageState: EMessageState.read
     });
+  }
+
+  @startLoading
+  triggerLoadingIndicator() {
+  }
+ 
+  @stopLoading
+  triggerLoadingIndicatorStop() {
   }
 }

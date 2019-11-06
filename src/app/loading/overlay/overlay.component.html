@@ -1,4 +1,4 @@
 <input class="clt-screen-top-left" #focusTrap type="hidden" tabindex="-1" style="opacity: 1" (blur)="disableKeyboardEvents($event)" />
-<div class="clt-overlay-center" *ngIf="isLoading$ | async" [style.background-color]="overlayColor">
+<div class="clt-overlay-center" *ngIf="loading" [style.background-color]="overlayColor">
   <ng-content></ng-content>
 </div>

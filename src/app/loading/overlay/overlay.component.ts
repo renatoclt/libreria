@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, ViewChild, ElementRef, Inject } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild, ElementRef, Inject, ChangeDetectorRef } from '@angular/core';
 import { Subscription, Observable } from 'rxjs';
 import { LOADING_INDICATOR_CONFIG } from '../loading.config';
 import { LoadingIndicatorConfig } from '../interfaces/loading.interfaces';
@@ -29,11 +29,12 @@ export class OverlayComponent implements OnInit, OnDestroy {
    * Pasaremos el foco al input focusTrap
    */
   private nextFocusTarget: HTMLElement;
+  loading = false;
   /**
    * constructor
    * @param config Configuracion del spinner colores y componente a mostrar
    */
-  constructor(@Inject(LOADING_INDICATOR_CONFIG) private config: LoadingIndicatorConfig ) { }
+  constructor(@Inject(LOADING_INDICATOR_CONFIG) private config: LoadingIndicatorConfig, private changeDetectorRef: ChangeDetectorRef) { }
 
   /**
    * Obtenemos el estado de loading y lo asignamos a un subscribe para eliminarlo
@@ -41,6 +42,9 @@ export class OverlayComponent implements OnInit, OnDestroy {
    */
   ngOnInit(): void {
     this.isLoadingSub = this.isLoading$.subscribe((isLoading: boolean) => {
+      this.loading = isLoading;
+      this.changeDetectorRef.detectChanges();
+      console.log('cambie variable', this.loading);
       if ( isLoading ) {
         this.trapFocus();
       } else {

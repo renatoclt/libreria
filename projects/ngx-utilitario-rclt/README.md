@@ -177,7 +177,6 @@ export class AppComponent implements OnInit {
 
   @stopLoading
   triggerLoadingIndicatorStop() {
-    console.log('stopped');
   }
 }
 
